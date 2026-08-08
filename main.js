@@ -487,6 +487,35 @@ function usbSteuern(aktion) {
   });
 }
 
+// Standard-Audiogeraete von Windows lesen und setzen.
+function audioGeraete(aktion, suche, rolle) {
+  return new Promise((fertig) => {
+    const skript = path.join(__dirname, 'werkzeug', 'audio-geraete.ps1');
+    const args = ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', skript, '-Aktion', aktion];
+    if (suche) args.push('-Suche', suche);
+    if (rolle) args.push('-Rolle', rolle);
+    execFile('powershell.exe', args, { windowsHide: true, timeout: 30000 }, (fehlerObj, aus) => {
+      const text = String(aus || '');
+      const problem = /^FEHLER=(.*)$/m.exec(text);
+      const gesetzt = /^GESETZT=(.*)$/m.exec(text);
+      const geraete = [];
+      for (const zeile of text.split(/\r?\n/)) {
+        const treffer = /^GERAET=(.*)$/.exec(zeile.trim());
+        if (treffer) {
+          const teile = treffer[1].split(';');
+          geraete.push({ art: teile[0], name: teile[1], standard: teile[2] === 'ja' });
+        }
+      }
+      fertig({
+        geraete,
+        gesetzt: gesetzt ? gesetzt[1].trim() : null,
+        problem: problem ? problem[1].trim() : (fehlerObj ? String(fehlerObj.message) : null)
+      });
+    });
+  });
+}
+
+ipcMain.handle('audio-geraete', sicher(audioGeraete));
 ipcMain.handle('usb-steuern', sicher(usbSteuern));
 ipcMain.handle('git-sichern', sicher(gitSichern));
 ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {

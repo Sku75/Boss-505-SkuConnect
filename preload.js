@@ -17,6 +17,7 @@ contextBridge.exposeInMainWorld('sku505', {
   loopsAuflisten:        (p, n)    => ipcRenderer.invoke('loops-auflisten', p, n),
   loopExportieren:       (p, n, s, z) => ipcRenderer.invoke('loop-exportieren', p, n, s, z),
   loopImportieren:       (p, n, s, q) => ipcRenderer.invoke('loop-importieren', p, n, s, q),
+  audioGeraete:          (a, s, r) => ipcRenderer.invoke('audio-geraete', a, s, r),
   usbSteuern:            (a)       => ipcRenderer.invoke('usb-steuern', a),
   gitSichern:            (t)       => ipcRenderer.invoke('git-sichern', t),
   wavSchreiben:          (z, d)    => ipcRenderer.invoke('wav-schreiben', z, d),

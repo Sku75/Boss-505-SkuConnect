@@ -997,6 +997,117 @@ async function betriebsartWechseln(li, ziel) {
   ]);
 }
 
+// =====================================================================
+// Profile
+//
+// Ein Profil stellt in einem Zug die Station und die Audiogeräte von Windows
+// so ein, wie es für eine bestimmte Arbeitsweise passt. Damit entfällt das
+// Zusammensuchen einzelner Einstellungen.
+//
+// Die Werte der Station lassen sich nur im Werkstatt-Modus schreiben, die
+// Windows-Geräte dagegen immer. Sku505 macht darum so viel wie möglich und
+// sagt ehrlich, was noch fehlt.
+// =====================================================================
+
+const PROFILE = [
+  {
+    id: "profil-ueben", text: "Üben, allein spielen",
+    station: { "USB.Mod": "1", "USB.AuRouting": "0" },
+    wiedergabe: "G733", aufnahme: "G733",
+    hinweise: [
+      "Station spielt, USB-Audio läuft nur zur Box",
+      "Windows bleibt auf dem Headset",
+      "Mikrofon für Windows ist das Headset-Mikrofon"
+    ]
+  },
+  {
+    id: "profil-discord", text: "Discord, Stimme und Loops senden",
+    station: { "USB.Mod": "1", "USB.AuRouting": "0" },
+    wiedergabe: "G733", aufnahme: "RC-505",
+    hinweise: [
+      "Discord hört den Mix der Station, also Stimme und Schleifen zusammen",
+      "Die Mitspieler hörst du auf dem Headset, das verhindert Rückkopplung",
+      "In Discord Rauschunterdrückung und Echounterdrückung ausschalten",
+      "Sonst zerhackt Discord die Musik"
+    ]
+  },
+  {
+    id: "profil-audacity", text: "Audacity, Datei in die Station spielen",
+    station: { "USB.Mod": "1", "USB.AuRouting": "2" },
+    wiedergabe: "G733", aufnahme: "G733",
+    hinweise: [
+      "USB-Audio geht jetzt in den Looper, eine Datei lässt sich aufnehmen",
+      "In Audacity die Wiedergabe auf OUT RC-505 stellen",
+      "In Audacity die Aufnahme auf IN RC-505 stellen",
+      "Windows bleibt auf dem Headset, damit kein Systemton in die Schleife gerät"
+    ]
+  },
+  {
+    id: "profil-werkstatt", text: "Werkstatt, Einstellungen ändern",
+    station: { "USB.Mod": "0", "USB.AuRouting": "0" },
+    wiedergabe: "G733", aufnahme: "G733",
+    hinweise: [
+      "Station kommt beim nächsten Einschalten als Laufwerk zurück",
+      "Erst dann sind alle Einstellungen erreichbar"
+    ]
+  }
+];
+
+async function profilSetzen(li, profil) {
+  sage("Stelle " + profil.text + " ein");
+  const zeilen = [];
+  let kurz = profil.text + " gesetzt";
+
+  // 1. Die Station, sofern sie als Laufwerk erreichbar ist.
+  const z = await zustandLesen();
+  if (z === "werkstatt") {
+    const pfad = await quelleSichern();
+    for (const schluessel of Object.keys(profil.station)) {
+      const teile = schluessel.split(".");
+      const wert = profil.station[schluessel];
+      const e = await window.sku505.wertSchreiben(pfad, {
+        datei: "SYSTEM", nummer: 0, abschnitt: teile[0], feld: teile[1], wert
+      });
+      const b = feldBeschreibung(teile[0], teile[1]);
+      const name = b ? b.text : schluessel;
+      if (!e.ok) zeilen.push(name + ": Fehler, " + e.fehler);
+      else if (!e.geaendert) zeilen.push(name + ": stand schon richtig");
+      else if (e.bestaetigt) zeilen.push(name + ": gesetzt auf " + wertText(b ? b.art : "zahl", wert, b));
+      else zeilen.push(name + ": Achtung, nicht bestätigt");
+    }
+    if (profil.station["USB.Mod"] !== undefined) {
+      zeilen.push("Die Betriebsart greift erst nach Aus- und Einschalten der Station");
+    }
+  } else {
+    zeilen.push("Station nicht als Laufwerk da, ihre Werte bleiben unverändert");
+    zeilen.push("Nur im Werkstatt-Modus lassen sich die Werte der Station schreiben");
+  }
+
+  // 2. Die Audiogeräte von Windows, das geht immer.
+  for (const paar of [["wiedergabe", profil.wiedergabe], ["aufnahme", profil.aufnahme]]) {
+    const e = await window.sku505.audioGeraete("setze", paar[1], paar[0]);
+    const wort = paar[0] === "wiedergabe" ? "Wiedergabe" : "Aufnahme";
+    if (!e.ok || e.problem) {
+      zeilen.push(wort + ": nicht gesetzt, " + ((e && e.problem) || e.fehler));
+      kurz = profil.text + ", teilweise gesetzt";
+    } else {
+      zeilen.push(wort + ": " + e.gesetzt);
+    }
+  }
+
+  for (const h of profil.hinweise) zeilen.push(h);
+  ergebnis(li, kurz, zeilen);
+}
+
+async function audioAnsagen(li) {
+  const e = await window.sku505.audioGeraete("liste");
+  if (!e.ok || e.problem) { ergebnis(li, "Konnte die Geräte nicht lesen", ["Fehler", (e && e.problem) || e.fehler]); return; }
+  const standard = e.geraete.filter(g => g.standard);
+  const zeilen = e.geraete.map(g => g.art + ": " + g.name + (g.standard ? ", Standard" : ""));
+  const kurz = standard.map(g => g.art + " " + g.name).join(", ") || "Keine Standardgeräte";
+  ergebnis(li, kurz, zeilen);
+}
+
 async function usbVorbereiten(li) {
   sage("Bereite Trennung vor");
   stationsPfad = null;
@@ -1058,6 +1169,9 @@ const menue = [
     ]}
   ]},
   { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
+  { typ: "ordner", text: "Profile", kinder: [
+    { typ: "aktion", id: "audio-ansagen", text: "Audiogeräte ansagen" }
+  ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
     { typ: "aktion", id: "art-buehne", text: "Auf Bühne umstellen, Audio und MIDI" },
@@ -1082,12 +1196,13 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.23"); return;
+    case "ueber": sage("Sku505 Version 0.24"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "einst-einlesen": await einstellungenEinlesen(li); return;
     case "loops-einlesen": await loopsEinlesen(li); return;
+    case "audio-ansagen": await audioAnsagen(li); return;
     case "art-ansagen": await betriebsartAnsagen(li); return;
     case "art-buehne": await betriebsartWechseln(li, "buehne"); return;
     case "art-werkstatt": await betriebsartWechseln(li, "werkstatt"); return;
@@ -1109,7 +1224,12 @@ async function aktiviere(li) {
     case "aufnahme-start": await aufnahmeStarten(li); return;
     case "aufnahme-stopp": await aufnahmeStoppen(li); return;
     case "nur-lesen": sage("Lässt sich hier nicht ändern"); return;
-    default: sage(li.dataset.text); return;
+    default: {
+      const profil = PROFILE.find(p => p.id === li.dataset.id);
+      if (profil) { await profilSetzen(li, profil); return; }
+      sage(li.dataset.text);
+      return;
+    }
   }
 }
 

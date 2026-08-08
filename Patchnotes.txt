@@ -1,5 +1,15 @@
 Sku505 Patchnotes
 
+Version 0.24, 08.08.2026, Profile
+Neuer Hauptmenüpunkt Profile. Ein Profil stellt in einem Zug die Station und die Audiogeräte von Windows so ein, wie es für eine bestimmte Arbeitsweise passt.
+Üben, allein spielen: Station im Bühnen-Modus, USB-Audio nur zur Box, Windows bleibt auf dem Headset.
+Discord, Stimme und Loops senden: Windows nimmt den Mix der Station auf, hört aber weiter über das Headset. Damit gehen Stimme und Schleifen gemeinsam an die Mitspieler, ohne Rückkopplung.
+Audacity, Datei in die Station spielen: USB-Audio geht in den Looper, damit sich eine Datei auf eine Spur aufnehmen lässt. Windows bleibt auf dem Headset, damit kein Systemton in der Schleife landet.
+Werkstatt, Einstellungen ändern: Station zurück in den Datenmodus.
+Dazu der Punkt Audiogeräte ansagen, der die aktuellen Standardgeräte nennt.
+Die Werte der Station lassen sich nur im Werkstatt-Modus schreiben, die Windows-Geräte dagegen immer. Sku505 macht darum so viel wie möglich und sagt im Tooltip genau, was gesetzt wurde und was noch fehlt.
+Die Kommunikations-Rolle wird mitgesetzt, damit Programme wie Discord folgen, sofern sie auf Standard eingestellt sind.
+
 Version 0.23, 08.08.2026
 Der Start ist deutlich leiser. Bisher meldete die Sprachausgabe den Programmnamen mehrfach, dazu Dokument und Anwendung, bevor überhaupt etwas Nützliches kam.
 Drei Ursachen sind abgestellt:
