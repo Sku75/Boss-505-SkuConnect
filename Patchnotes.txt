@@ -1,5 +1,10 @@
 Sku505 Patchnotes
 
+Version 0.28, 09.08.2026
+Die Profile haben jetzt einen erklärenden Tooltip. Steht man auf einem Profil und öffnet den Tooltip, sagt Sku505 Zeile für Zeile, was nach dem Ausführen eingestellt ist: was die Station macht, was Windows hört, was Windows aufnimmt und was Discord davon hört. Vorher stand dort nur "Bitte ausführen".
+Auch die Meldung nach dem Ausführen ist umformuliert. Sie beginnt jetzt mit "Eingestellt:" und beschreibt den Zustand, statt nur die Handlung zu wiederholen.
+Aktionen können dafür allgemein eine Vorschau mitbringen. Der Tooltip zeigt sie, solange die Aktion noch nicht gelaufen ist, und danach das Ergebnis.
+
 Version 0.27, 09.08.2026
 Das Rode NT-USB ist eingebunden. Neues Profil: Rode-Mikrofon aufnehmen oder senden. Es stellt die Aufnahme von Windows auf das Rode und lässt die Wiedergabe auf dem Headset. Gut für Audacity und für Discord ohne Loops.
 Dieses Profil lässt die Station bewusst unangetastet, denn das Rode hängt am Rechner, nicht an der Station. Sku505 sagt das beim Setzen auch an.

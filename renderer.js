@@ -163,6 +163,7 @@ function neuerEintrag(eintrag) {
     if (eintrag[schluessel] !== undefined) li.dataset[schluessel] = eintrag[schluessel];
   }
   if (eintrag.beschreibung) li._beschreibung = eintrag.beschreibung;
+  if (eintrag.vorschau) li._vorschau = eintrag.vorschau;
 
   const hatUnterebene = eintrag.typ === "ordner" || (eintrag.typ === "wert" && eintrag.laden);
   if (hatUnterebene) {
@@ -395,8 +396,9 @@ function tooltipZeilen(li) {
     return zeilen;
   }
   if (li._ergebnis) return li._ergebnis;
-  // Aktionen, die noch nicht gelaufen sind, sagen was zu tun ist.
-  if (li.dataset.typ === "aktion") return ["Bitte ausführen"];
+  // Aktionen, die noch nicht gelaufen sind, sagen was danach eingestellt ist,
+  // sofern sie eine Vorschau mitbringen. Sonst nur der Hinweis zum Ausführen.
+  if (li.dataset.typ === "aktion") return li._vorschau || ["Bitte ausführen"];
   return null;
 }
 
@@ -1038,32 +1040,62 @@ const PROFILE = [
     id: "profil-ueben", text: "Üben, allein spielen",
     station: { "USB.Mod": "1", "USB.AuRouting": "0" },
     wiedergabe: "G733", aufnahme: "G733",
+    vorschau: [
+      "Danach ist eingestellt:",
+      "Station: Bühnen-Modus, spielbereit",
+      "Stationston geht an die Box, nicht in den Rechner",
+      "Windows hört: Headset G733",
+      "Windows nimmt auf: Headset-Mikrofon G733",
+      "Discord hört dich mit dem Headset-Mikrofon, ohne Loops",
+      "Zum Üben allein, ohne dass etwas in den Rechner läuft"
+    ],
     hinweise: [
-      "Station spielt, USB-Audio läuft nur zur Box",
-      "Windows bleibt auf dem Headset",
-      "Mikrofon für Windows ist das Headset-Mikrofon"
+      "Eingestellt: Station im Bühnen-Modus, Ton an die Box",
+      "Windows hört und nimmt auf mit dem Headset G733"
     ]
   },
   {
     id: "profil-discord", text: "Discord, Stimme und Loops senden",
     station: { "USB.Mod": "1", "USB.AuRouting": "0" },
     wiedergabe: "G733", aufnahme: "RC-505",
-    hinweise: [
-      "Discord hört den Mix der Station, also Stimme und Schleifen zusammen",
+    vorschau: [
+      "Danach ist eingestellt:",
+      "Station: Bühnen-Modus, spielbereit",
+      "Windows hört: Headset G733",
+      "Windows nimmt auf: RC-505, also den Mix der Station",
+      "Discord hört alles, was aus der Station kommt:",
+      "das Mikrofon an der Station, den AUX-Eingang und die Schleifen",
+      "Discord hört das Headset-Mikrofon nicht mehr",
       "Die Mitspieler hörst du auf dem Headset, das verhindert Rückkopplung",
-      "In Discord Rauschunterdrückung und Echounterdrückung ausschalten",
-      "Sonst zerhackt Discord die Musik"
+      "Wichtig: in Discord Rauschunterdrückung und Echounterdrückung aus,",
+      "sonst zerhackt Discord die Musik"
+    ],
+    hinweise: [
+      "Eingestellt: Discord hört jetzt den Mix der Station, nicht das Headset-Mikrofon",
+      "Windows hört weiter auf dem Headset G733",
+      "In Discord Rauschunterdrückung und Echounterdrückung ausschalten"
     ]
   },
   {
     id: "profil-audacity", text: "Audacity, Datei in die Station spielen",
     station: { "USB.Mod": "1", "USB.AuRouting": "2" },
     wiedergabe: "G733", aufnahme: "G733",
-    hinweise: [
-      "USB-Audio geht jetzt in den Looper, eine Datei lässt sich aufnehmen",
+    vorschau: [
+      "Danach ist eingestellt:",
+      "Station: Bühnen-Modus, spielbereit",
+      "USB-Audio-Ziel der Station: Loop In",
+      "Das heißt, was der Rechner sendet, landet im Eingang des Loopers",
+      "und lässt sich dort aufnehmen",
+      "Windows hört: Headset G733",
+      "Windows nimmt auf: Headset-Mikrofon G733",
       "In Audacity die Wiedergabe auf OUT RC-505 stellen",
       "In Audacity die Aufnahme auf IN RC-505 stellen",
-      "Windows bleibt auf dem Headset, damit kein Systemton in die Schleife gerät"
+      "Windows bleibt bewusst auf dem Headset, damit kein Systemton in die Schleife gerät"
+    ],
+    hinweise: [
+      "Eingestellt: USB-Audio geht in den Looper, Loop In",
+      "In Audacity Wiedergabe auf OUT RC-505, Aufnahme auf IN RC-505",
+      "Windows hört und nimmt auf mit dem Headset G733"
     ]
   },
   {
@@ -1072,13 +1104,20 @@ const PROFILE = [
     id: "profil-rode", text: "Rode-Mikrofon aufnehmen oder senden",
     station: {},
     wiedergabe: "G733", aufnahme: "RODE",
+    vorschau: [
+      "Danach ist eingestellt:",
+      "Windows hört: Headset G733",
+      "Windows nimmt auf: Rode NT-USB",
+      "Discord hört dich mit dem Rode, nicht mit dem Headset-Mikrofon",
+      "Audacity nimmt mit dem Rode auf",
+      "Die Station wird nicht angefasst und bleibt, wie sie steht",
+      "Steckt das Rode nicht, bleibt die Wiedergabe sicher auf dem Headset",
+      "und Sku505 sagt, dass die Aufnahme nicht gesetzt wurde"
+    ],
     hinweise: [
-      "Windows nimmt jetzt mit dem Rode NT-USB auf",
-      "Gut für Audacity und für Discord ohne Loops",
-      "Die Station bleibt unverändert",
-      "Zum Loopen des Rode: Kabel vom Kopfhörerausgang des Rode",
-      "in die kleine AUX-Buchse der Station, dann ohne Verzögerung",
-      "Steckt das Rode nicht, meldet Sku505 das und ändert nichts"
+      "Eingestellt: Windows nimmt mit dem Rode NT-USB auf",
+      "Windows hört weiter auf dem Headset G733",
+      "Die Station wurde nicht angefasst"
     ]
   }
 ];
@@ -1235,7 +1274,7 @@ const menue = [
     { typ: "aktion", id: "audio-ansagen", text: "Audiogeräte ansagen" },
     { typ: "aktion", id: "ton-zurueck", text: "Ton zurück auf das Headset" },
     { typ: "aktion", id: "alles-zurueck", text: "Alles auf Standard zurück, Strg F12" }
-  ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text }))) },
+  ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text, vorschau: p.vorschau }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
     { typ: "aktion", id: "art-buehne", text: "Auf Bühne umstellen, Audio und MIDI" },
@@ -1260,7 +1299,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.27"); return;
+    case "ueber": sage("Sku505 Version 0.28"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
