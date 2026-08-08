@@ -3,25 +3,25 @@
 <sys>
 <SETUP>
 	<MemNum>97</MemNum>
-	<LcdContrast>15</LcdContrast>
+	<LcdContrast>7</LcdContrast>
 	<PhantomPwr>1</PhantomPwr>
-	<DispMod>6</DispMod>
+	<DispMod>0</DispMod>
 	<IndMod>0</IndMod>
 	<AutoOff>1</AutoOff>
 	<AllClr>1</AllClr>
-	<QuickClr>1</QuickClr>
-	<KnobMod>0</KnobMod>
+	<QuickClr>0</QuickClr>
+	<KnobMod>1</KnobMod>
 </SETUP>
 <INPUT_OUTPUT>
 	<InNsThrs>40</InNsThrs>
-	<LineOutLvl>50</LineOutLvl>
+	<LineOutLvl>49</LineOutLvl>
 	<InSrc>1</InSrc>
 	<InLineOut>1</InLineOut>
 	<OutLvlSel>0</OutLvlSel>
 </INPUT_OUTPUT>
 <USB>
-	<Mod>1</Mod>
-	<AuRouting>0</AuRouting>
+	<Mod>0</Mod>
+	<AuRouting>1</AuRouting>
 	<InLvl>50</InLvl>
 	<OutLvl>50</OutLvl>
 </USB>
