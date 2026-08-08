@@ -1,5 +1,13 @@
 Sku505 Patchnotes
 
+Version 0.26, 09.08.2026
+Nottaster: Strg und F12 stellt den Ton wieder her, und zwar im ganzen System, auch wenn Sku505 gar nicht im Vordergrund ist. Gedacht für den Fall, dass der Ton verschwindet und der Rechner dadurch nicht mehr bedienbar wäre.
+Der Nottaster setzt Wiedergabe und Aufnahme zurück auf das Headset, holt das Sku505-Fenster nach vorn, damit die Sprachausgabe die Meldung auch vorliest, und spielt zur Bestätigung einen Zweiklang.
+Der Zweiklang ist wichtiger als die gesprochene Meldung: Er kommt über das gerade gesetzte Gerät und ist damit der Beweis, dass der Ton wirklich wieder da ist.
+Die Station selbst wird dabei nicht angefasst.
+Derselbe Vorgang steht auch als Menüpunkt unter Profile: Alles auf Standard zurück, Strg F12.
+Die Anleitung für den Weg vom Bühnen-Modus zurück in die Werkstatt nennt jetzt die genauen Tastenzahlen: 2.2 drei Mal, 1.3 ein Mal, dann 1.2 elf Mal bis zum Anker auf Wert 12, dort die Kontrolle über das Mikrofon, dann 1.2 noch zwei Mal bis zur USB-Betriebsart auf Wert 14.
+
 Version 0.25, 09.08.2026
 Der Ton bleibt jetzt zuverlässig auf dem Headset. Bisher setzte ein Profil die Wiedergabe zwar richtig, aber Windows griff sie sich beim nächsten Erscheinen der Station wieder. Für einen blinden Nutzer ist das gefährlich, weil der Ton dann unbemerkt woanders landet.
 Sku505 hält das jetzt nach: Sobald die Station als Audiogerät auftaucht, holt es die Wiedergabe sofort zurück auf das Headset und sagt es mit an, also zum Beispiel Bühne Audio und MIDI, Ton bleibt auf dem Headset.

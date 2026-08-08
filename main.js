@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, dialog, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog, Menu, globalShortcut } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const fsp = require('fs/promises');
@@ -537,9 +537,25 @@ ipcMain.handle('datei-waehlen', sicher(async (speichern, vorschlag) => {
 
 app.whenReady().then(() => {
   erstelleFenster();
+
+  // Nottaster: Strg und F12 wirkt im ganzen System, auch wenn Sku505 nicht
+  // im Vordergrund ist. Gedacht fuer den Fall, dass der Ton verschwindet und
+  // der Rechner dadurch nicht mehr bedienbar waere.
+  const angemeldet = globalShortcut.register('Control+F12', () => {
+    const fenster = BrowserWindow.getAllWindows()[0];
+    if (!fenster) return;
+    // Nach vorn holen, sonst liest die Sprachausgabe die Meldung nicht vor.
+    if (fenster.isMinimized()) fenster.restore();
+    fenster.show();
+    fenster.focus();
+    fenster.webContents.send('nottaster');
+  });
+  if (!angemeldet) console.log('Strg F12 konnte nicht angemeldet werden');
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) erstelleFenster();
   });
 });
+
+app.on('will-quit', () => globalShortcut.unregisterAll());
 
 app.on('window-all-closed', () => app.quit());

@@ -1008,13 +1008,16 @@ async function betriebsartWechseln(li, ziel) {
     "Im Bühnen-Modus gibt es kein Laufwerk, Sku505 kann nichts schreiben",
     "Dafür reagiert jetzt das Bedienfeld der Station",
     "Schritt 1: Taste 2.2, EXIT, drei Mal drücken, damit du sicher im Spielbildschirm bist",
-    "Schritt 2: Taste 1.3, SYSTEM, genau ein Mal drücken",
-    "Schritt 3: Taste 1.2, Pfeil rechts, genau acht Mal drücken",
-    "Damit stehst du auf der USB-Betriebsart",
-    "Schritt 4: den Regler MEMORY VALUE eine Raste drehen, es gibt nur zwei Werte",
-    "Schritt 5: Taste 2.2, EXIT, einmal drücken",
-    "Am Gerät geändert wirkt sofort, kein Aus- und Einschalten nötig",
-    "Danach USB verbinden, Sku505 sagt an, was da ist"
+    "Schritt 2: Taste 1.3, SYSTEM, genau ein Mal drücken. Du stehst auf Wert 01",
+    "Schritt 3: Taste 1.2, Pfeil rechts, elf Mal drücken. Du stehst auf Wert 12",
+    "Kontrolle: Regler eine Raste nach links und ins Mikrofon sprechen",
+    "Wird das Mikrofon in der Box stumm, stehst du richtig. Regler sofort zurück",
+    "Bleibt das Mikrofon an, stehst du woanders. Dann 2.2 drücken und neu beginnen",
+    "Schritt 4: Taste 1.2 noch zwei Mal drücken. Du stehst auf Wert 14, USB-Betriebsart",
+    "Schritt 5: Regler eine Raste nach links, es gibt nur zwei Werte",
+    "Schritt 6: Taste 2.2, EXIT, einmal drücken",
+    "Schritt 7: Station aus und wieder einschalten, dann USB verbinden",
+    "Die Reihenfolge steht auch in der Werkstatt unter Gerätemenü zum Nachzählen"
   ]);
 }
 
@@ -1120,6 +1123,35 @@ async function profilSetzen(li, profil) {
   ergebnis(li, kurz, zeilen);
 }
 
+// Notfall: alles auf den Stand zurück, mit dem der Rechner sicher bedienbar
+// ist. Wiedergabe und Aufnahme zurück auf das Headset. Erreichbar über den
+// Menüpunkt und über Strg und F12, das wirkt im ganzen System.
+async function allesZurueck(li) {
+  const zeilen = [];
+  let gut = 0;
+
+  const w = await window.sku505.audioGeraete("setze", HOERGERAET, "wiedergabe");
+  if (w.ok && !w.problem) { zeilen.push("Wiedergabe: " + w.gesetzt); gut++; }
+  else zeilen.push("Wiedergabe nicht gesetzt: " + ((w && w.problem) || w.fehler));
+
+  const a = await window.sku505.audioGeraete("setze", HOERGERAET, "aufnahme");
+  if (a.ok && !a.problem) { zeilen.push("Aufnahme: " + a.gesetzt); gut++; }
+  else zeilen.push("Aufnahme nicht gesetzt: " + ((a && a.problem) || a.fehler));
+
+  zeilen.push("Die Station selbst wurde nicht angefasst");
+  zeilen.push("Erreichbar auch über Strg und F12, im ganzen System");
+
+  const kurz = gut === 2 ? "Ton zurück auf dem Headset"
+    : gut === 1 ? "Teilweise zurückgesetzt"
+    : "Headset nicht gefunden, steckt der Dongle?";
+  ergebnis(li, kurz, zeilen);
+
+  // Hörbare Bestätigung. Sie kommt über das gerade gesetzte Gerät, ist also
+  // zugleich der Beweis, dass der Ton wieder da ist. Das ist wichtiger als
+  // die gesprochene Meldung, denn die hört man nur, wenn Sku505 vorn ist.
+  if (gut > 0) window.setTimeout(spieleHauptmenue, 250);
+}
+
 async function audioAnsagen(li) {
   const e = await window.sku505.audioGeraete("liste");
   if (!e.ok || e.problem) { ergebnis(li, "Konnte die Geräte nicht lesen", ["Fehler", (e && e.problem) || e.fehler]); return; }
@@ -1192,7 +1224,8 @@ const menue = [
   { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
   { typ: "ordner", text: "Profile", kinder: [
     { typ: "aktion", id: "audio-ansagen", text: "Audiogeräte ansagen" },
-    { typ: "aktion", id: "ton-zurueck", text: "Ton zurück auf das Headset" }
+    { typ: "aktion", id: "ton-zurueck", text: "Ton zurück auf das Headset" },
+    { typ: "aktion", id: "alles-zurueck", text: "Alles auf Standard zurück, Strg F12" }
   ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
@@ -1218,13 +1251,14 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.25"); return;
+    case "ueber": sage("Sku505 Version 0.26"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "einst-einlesen": await einstellungenEinlesen(li); return;
     case "loops-einlesen": await loopsEinlesen(li); return;
     case "audio-ansagen": await audioAnsagen(li); return;
+    case "alles-zurueck": await allesZurueck(li); return;
     case "ton-zurueck": {
       const geraet = await wiedergabeSichern();
       if (geraet) ergebnis(li, "Ton auf " + geraet, ["Wiedergabe zurückgeholt", geraet]);
@@ -1357,4 +1391,9 @@ window.setTimeout(() => {
     };
   }
   window.setInterval(() => zustandPruefen(true), 2000);
+
+  // Nottaster aus dem Programmkern entgegennehmen.
+  if (window.sku505.beiNottaster) {
+    window.sku505.beiNottaster(() => { allesZurueck(null); });
+  }
 })();
