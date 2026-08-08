@@ -825,6 +825,107 @@ async function loopsEinlesen(li) {
 // Zustand Idling, das Bedienfeld reagiert wieder und die Betriebsart lässt
 // sich umstellen. Solange sie als Laufwerk verbunden ist, sind die Tasten
 // am Gerät wirkungslos.
+// =====================================================================
+// Betriebsart der Station
+//
+// Die Station kann immer nur eines von beidem: als Laufwerk erscheinen
+// (Werkstatt) oder als Audio- und MIDI-Gerät (Bühne). Was sie beim
+// Verbinden wird, steht in ihrer Systemeinstellung USB-Betriebsart.
+//
+// Weil das Display nicht lesbar ist, überwacht Sku505 den Zustand laufend
+// und meldet jede Änderung von selbst. So ist immer klar, woran man ist.
+// =====================================================================
+
+let letzterZustand = null;
+
+async function zustandLesen() {
+  const l = await window.sku505.laufwerkDa();
+  if (l.ok && l.gefunden) return "werkstatt";
+  if (typeof midiHatStation === "function" && midiHatStation()) return "buehne";
+  return "getrennt";
+}
+
+function zustandText(z) {
+  if (z === "werkstatt") return "Werkstatt, Datenmodus";
+  if (z === "buehne") return "Bühne, Audio und MIDI";
+  return "Station nicht verbunden";
+}
+
+async function zustandPruefen(ansagen) {
+  const z = await zustandLesen();
+  if (z !== letzterZustand) {
+    letzterZustand = z;
+    // Bei jedem Wechsel die Erkennung zurücksetzen, damit Sku505 nicht mit
+    // einem veralteten Pfad weiterarbeitet.
+    stationsPfad = null;
+    schreibbar = false;
+    if (ansagen) sage(zustandText(z));
+  }
+  return z;
+}
+
+async function betriebsartAnsagen(li) {
+  const z = await zustandLesen();
+  letzterZustand = z;
+  const zeilen = [zustandText(z)];
+  if (z === "werkstatt") {
+    zeilen.push("Einstellen ist möglich", "Spielen mit gestecktem USB nicht");
+  } else if (z === "buehne") {
+    zeilen.push("Spielen ist möglich", "Ansager, Fernbedienung und Aufnahme gehen");
+    zeilen.push("Einstellungen sind jetzt nicht erreichbar");
+  } else {
+    zeilen.push("Kein Laufwerk und kein MIDI-Gerät", "USB einschalten oder Station einschalten");
+  }
+  ergebnis(li, zustandText(z), zeilen);
+}
+
+// Stellt die Betriebsart um. ziel ist buehne oder werkstatt.
+async function betriebsartWechseln(li, ziel) {
+  const z = await zustandLesen();
+  letzterZustand = z;
+
+  if (z === ziel) {
+    ergebnis(li, "Steht schon auf " + zustandText(ziel), null);
+    return;
+  }
+
+  // Schreiben geht nur, solange die Station als Laufwerk da ist.
+  if (z === "werkstatt") {
+    const pfad = await quelleSichern();
+    if (!pfad || !schreibbar) { sage("Station nicht erreichbar"); return; }
+    const e = await window.sku505.wertSchreiben(pfad, {
+      datei: "SYSTEM", nummer: 0, abschnitt: "USB", feld: "Mod",
+      wert: ziel === "buehne" ? "1" : "0"
+    });
+    if (!e.ok) { ergebnis(li, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
+    if (e.geaendert && !e.bestaetigt) {
+      ergebnis(li, "Achtung, Kontrolle fehlgeschlagen",
+        ["Der Wert wurde nicht bestätigt", "Gelesen: " + e.gelesen]);
+      return;
+    }
+    ergebnis(li, "Eingestellt, jetzt USB kurz aus und wieder an", [
+      "Betriebsart auf " + zustandText(ziel) + " gesetzt",
+      "Die Station übernimmt das beim nächsten Verbinden",
+      "Jetzt USB kurz trennen und wieder verbinden",
+      "Sku505 sagt von selbst an, was danach da ist"
+    ]);
+    return;
+  }
+
+  // In der Bühne gibt es kein Laufwerk. Dafür reagiert dort das Bedienfeld,
+  // also geht es am Gerät. Der Regler-Schritt ist der entscheidende, er wird
+  // am häufigsten vergessen.
+  ergebnis(li, "Am Gerät umstellen, Regler nicht vergessen", [
+    "Im Bühnen-Modus gibt es kein Laufwerk, Sku505 kann nichts schreiben",
+    "Dafür reagiert jetzt das Bedienfeld der Station",
+    "Schritt 1: Taste 1.3, SYSTEM, drei Mal drücken",
+    "Schritt 2: den Regler MEMORY VALUE eine Raste drehen, das ist der wichtige Schritt",
+    "Schritt 3: Taste 2.2, EXIT, einmal drücken",
+    "Danach USB kurz aus und wieder an",
+    "Sku505 sagt von selbst an, was danach da ist"
+  ]);
+}
+
 async function usbVorbereiten(li) {
   sage("Bereite Trennung vor");
   stationsPfad = null;
@@ -886,7 +987,10 @@ const menue = [
     ]}
   ]},
   { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
-  { typ: "ordner", text: "USB-Verbindung", kinder: [
+  { typ: "ordner", text: "Betriebsart und USB", kinder: [
+    { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
+    { typ: "aktion", id: "art-buehne", text: "Auf Bühne umstellen, Audio und MIDI" },
+    { typ: "aktion", id: "art-werkstatt", text: "Auf Werkstatt umstellen, Datenmodus" },
     { typ: "aktion", id: "usb-vorbereiten", text: "Trennung vorbereiten" },
     { typ: "aktion", id: "usb-erneuern", text: "Verbindung erneuern" }
   ]},
@@ -907,12 +1011,15 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.17"); return;
+    case "ueber": sage("Sku505 Version 0.18"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "einst-einlesen": await einstellungenEinlesen(li); return;
     case "loops-einlesen": await loopsEinlesen(li); return;
+    case "art-ansagen": await betriebsartAnsagen(li); return;
+    case "art-buehne": await betriebsartWechseln(li, "buehne"); return;
+    case "art-werkstatt": await betriebsartWechseln(li, "werkstatt"); return;
     case "usb-vorbereiten": await usbVorbereiten(li); return;
     case "usb-erneuern": await usbErneuern(li); return;
     case "git-sichern": await inGitSichern(li); return;
@@ -1009,3 +1116,17 @@ baumElement.addEventListener("keydown", async (ereignis) => {
 baueEbene(menue, baumElement);
 fokussiere(baumElement.querySelector(".eintrag"));
 sage("Sku505 bereit");
+
+// MIDI still im Hintergrund verbinden und den Zustand ab jetzt überwachen.
+// Beim ersten Blick wird noch nichts angesagt, danach jede Änderung.
+(async () => {
+  if (typeof midiStillVerbinden === "function") await midiStillVerbinden();
+  await zustandPruefen(false);
+  if (midiZugang) {
+    midiZugang.onstatechange = async () => {
+      if (typeof midiStillVerbinden === "function") await midiStillVerbinden();
+      await zustandPruefen(true);
+    };
+  }
+  window.setInterval(() => zustandPruefen(true), 2000);
+})();

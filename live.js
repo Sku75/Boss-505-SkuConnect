@@ -66,6 +66,34 @@ async function midiVerbinden(li) {
   }
 }
 
+// Verbindet MIDI leise im Hintergrund, ohne Ansage. Dadurch weiß Sku505
+// jederzeit, ob die Station im Audio-Modus da ist, und meldet Änderungen
+// sofort statt erst beim nächsten Blick.
+async function midiStillVerbinden() {
+  if (!navigator.requestMIDIAccess) return false;
+  try {
+    if (!midiZugang) midiZugang = await navigator.requestMIDIAccess({ sysex: false });
+  } catch { return false; }
+  midiEingang = null;
+  midiAusgang = null;
+  for (const a of midiZugang.inputs.values()) {
+    if (/RC-?505/i.test(a.name) && !midiEingang) midiEingang = a;
+  }
+  for (const a of midiZugang.outputs.values()) {
+    if (/RC-?505/i.test(a.name) && !midiAusgang) midiAusgang = a;
+  }
+  if (midiEingang) midiEingang.onmidimessage = midiEmpfang;
+  return !!(midiEingang || midiAusgang);
+}
+
+// Ist die Station gerade als MIDI-Gerät da?
+function midiHatStation() {
+  if (!midiZugang) return false;
+  for (const a of midiZugang.inputs.values()) if (/RC-?505/i.test(a.name)) return true;
+  for (const a of midiZugang.outputs.values()) if (/RC-?505/i.test(a.name)) return true;
+  return false;
+}
+
 // --- Zuhören ---
 
 function midiEmpfang(nachricht) {

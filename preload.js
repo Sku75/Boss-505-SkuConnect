@@ -2,6 +2,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('sku505', {
+  laufwerkDa:            ()        => ipcRenderer.invoke('laufwerk-da'),
   stationSuchen:         ()        => ipcRenderer.invoke('station-suchen'),
   kenndatenLesen:        (p)       => ipcRenderer.invoke('kenndaten-lesen', p),
   einstellungenEinlesen: (p)       => ipcRenderer.invoke('einstellungen-einlesen', p),

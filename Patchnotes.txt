@@ -1,5 +1,12 @@
 Sku505 Patchnotes
 
+Version 0.18, 08.08.2026, Betriebsart
+Sku505 überwacht ab jetzt laufend, in welchem Zustand die Station ist, und meldet jede Änderung von selbst: Werkstatt Datenmodus, Bühne Audio und MIDI, oder Station nicht verbunden. Damit ist auch ohne Display jederzeit klar, woran man ist.
+Neuer Menüpunkt Betriebsart und USB mit fünf Einträgen: Betriebsart ansagen, Auf Bühne umstellen, Auf Werkstatt umstellen, Trennung vorbereiten und Verbindung erneuern.
+Der Wechsel auf Bühne geht aus der Werkstatt heraus per Knopfdruck, weil Sku505 dort an die Systemeinstellung herankommt. Danach genügt USB kurz aus und wieder an.
+Der Wechsel zurück auf Werkstatt geht nur am Gerät, weil es im Bühnen-Modus kein Laufwerk gibt. Dafür ist dort das Bedienfeld frei. Sku505 sagt die Tastenfolge an und betont dabei den Reglerschritt, der am häufigsten vergessen wird und ohne den sich nichts ändert.
+Die Zustandserkennung nutzt zwei billige Wege: den Blick, ob ein Laufwerk da ist, und die MIDI-Anmeldung. MIDI wird beim Start still im Hintergrund verbunden, ohne Ansage, damit Änderungen sofort auffallen.
+
 Version 0.17, 08.08.2026
 Der USB-Bereich ist neu gebaut, diesmal auf dem Weg, den das Handbuch der Station selbst beschreibt.
 Der bisherige Versuch, die Verbindung über Windows zu kappen, war ein Irrweg: Windows kann das Gerät zwar abmelden, die Station merkt davon aber nichts und bleibt im Zustand Idling. Das Bedienfeld blieb gesperrt, die Betriebsart ließ sich nicht umstellen, und beim Wiederanmelden fragte Windows mehrfach nach.

@@ -436,6 +436,9 @@ function sicher(fn) {
   };
 }
 
+// Sehr schneller Blick, ob die Station als Laufwerk da ist. Bewusst nur
+// Dateisystem, damit die Überwachung im Sekundentakt nichts kostet.
+ipcMain.handle('laufwerk-da', sicher(async () => findeStation()));
 ipcMain.handle('station-suchen', sicher(async () => findeStation()));
 ipcMain.handle('kenndaten-lesen', sicher(kenndatenLesen));
 ipcMain.handle('einstellungen-einlesen', sicher(einstellungenEinlesen));
