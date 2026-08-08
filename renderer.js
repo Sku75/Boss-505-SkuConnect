@@ -102,10 +102,20 @@ function aktualisiereZeile(li, basisText) {
   }
 }
 
-// Liefert alle gerade sichtbaren Baum-Einträge in Lesereihenfolge.
-function sichtbareEintraege() {
-  return Array.from(baumElement.querySelectorAll('li[role="treeitem"]'))
-    .filter(li => li.offsetParent !== null);
+// Anschlagton (aus Skularis übernommen): erklingt am oberen und unteren
+// Rand einer Ebene, statt darüber hinauszuwandern.
+const anschlagTon = new Audio("assets/sounds/anschlag.wav");
+anschlagTon.volume = 0.3;
+function spieleAnschlag() {
+  anschlagTon.currentTime = 0;
+  anschlagTon.play();
+}
+
+// Liefert nur die Geschwister der aktuellen Ebene. Pfeil hoch/runter bewegt
+// sich strikt in dieser Ebene, nie ebenenübergreifend.
+function ebenenEintraege(li) {
+  return Array.from(li.parentElement.children)
+    .filter(e => e.getAttribute("role") === "treeitem");
 }
 
 function fokussiere(li) {
@@ -169,7 +179,7 @@ function aktiviere(li) {
     return;
   }
   if (id === "ueber") {
-    sage("Sku505 Version 0.01. Bediengerüst zur Abnahme mit NVDA und Braille.");
+    sage("Sku505 Version 0.02. Bediengerüst zur Abnahme mit NVDA und Braille.");
     return;
   }
   if (id === "test-aktion") {
@@ -182,27 +192,45 @@ function aktiviere(li) {
 baumElement.addEventListener("keydown", (ereignis) => {
   const aktiv = document.activeElement;
   if (!aktiv || aktiv.getAttribute("role") !== "treeitem") return;
-  const sichtbar = sichtbareEintraege();
-  const index = sichtbar.indexOf(aktiv);
+  const ebene = ebenenEintraege(aktiv);
+  const index = ebene.indexOf(aktiv);
 
   switch (ereignis.key) {
     case "ArrowDown":
       ereignis.preventDefault();
-      fokussiere(sichtbar[Math.min(index + 1, sichtbar.length - 1)]);
+      if (index >= ebene.length - 1) {
+        spieleAnschlag();
+      } else {
+        fokussiere(ebene[index + 1]);
+      }
       break;
     case "ArrowUp":
       ereignis.preventDefault();
-      fokussiere(sichtbar[Math.max(index - 1, 0)]);
+      if (index <= 0) {
+        spieleAnschlag();
+      } else {
+        fokussiere(ebene[index - 1]);
+      }
+      break;
+    case "Home":
+      ereignis.preventDefault();
+      if (index === 0) spieleAnschlag();
+      fokussiere(ebene[0]);
+      break;
+    case "End":
+      ereignis.preventDefault();
+      if (index === ebene.length - 1) spieleAnschlag();
+      fokussiere(ebene[ebene.length - 1]);
       break;
     case "ArrowRight": {
       ereignis.preventDefault();
-      if (aktiv.getAttribute("aria-expanded") === "false") {
+      if (aktiv.hasAttribute("aria-expanded")) {
         oeffne(aktiv);
         const erstesKind = aktiv.querySelector(':scope > ul[role="group"] > li');
         fokussiere(erstesKind);
-      } else if (aktiv.getAttribute("aria-expanded") === "true") {
-        const erstesKind = aktiv.querySelector(':scope > ul[role="group"] > li');
-        fokussiere(erstesKind);
+      } else {
+        // Aktion ohne Unterebene: hier geht es nicht tiefer.
+        spieleAnschlag();
       }
       break;
     }
@@ -215,6 +243,9 @@ baumElement.addEventListener("keydown", (ereignis) => {
         if (eltern) {
           schliesse(eltern);
           fokussiere(eltern);
+        } else {
+          // Hauptebene: weiter zurück geht nicht.
+          spieleAnschlag();
         }
       }
       break;

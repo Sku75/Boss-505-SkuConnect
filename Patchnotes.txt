@@ -1,5 +1,10 @@
 Sku505 Patchnotes
 
+Version 0.02, 08.08.2026
+Navigation strikt ebenenweise: Pfeil hoch und runter bewegen nur noch innerhalb der aktuellen Ebene, nie ebenenübergreifend. Zurück zur höheren Ebene ausschließlich mit Pfeil links.
+Anschlagton aus Skularis übernommen: erklingt am oberen und unteren Rand einer Ebene, auf der Hauptebene bei Pfeil links und auf Aktionen bei Pfeil rechts.
+Pos 1 und Ende springen zum ersten beziehungsweise letzten Eintrag der aktuellen Ebene.
+
 Version 0.01, 08.08.2026
 Erste Version, Bediengerüst zur Abnahme.
 Baummenü nach Anforderungsprofil: Pfeil hoch und runter wandern, Pfeil rechts hinein, Pfeil links heraus, Enter aktiviert.
