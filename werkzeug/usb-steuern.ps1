@@ -1,49 +1,31 @@
-# Steuert die USB-Verbindung zur RC-505, damit das Kabel stecken bleiben kann.
+# Hilft beim Trennen und Wiederverbinden der USB-Verbindung, damit das Kabel
+# stecken bleiben kann.
 #
-# Aktion trennen    Die Station wird von Windows abgemeldet. Sie verlaesst
-#                   damit den Zustand Idling und das Bedienfeld reagiert
-#                   wieder. Erst dann laesst sich die Betriebsart umstellen.
-# Aktion verbinden  Die Station wird wieder angemeldet und in der jetzt am
-#                   Geraet eingestellten Betriebsart erkannt.
-# Aktion neuladen   Beides nacheinander, ersetzt Kabel ziehen und stecken.
+# Die Station hat dafuer einen eigenen Weg, der im Handbuch auf Seite 27 steht:
+# Erst am Rechner die Schreibpuffer leeren, dann am Geraet EXIT druecken und
+# die Rueckfrage mit WRITE bestaetigen. Danach verlaesst die Station den
+# Zustand Idling, das Bedienfeld reagiert wieder und die Betriebsart laesst
+# sich umstellen. Erst dann meldet sie sich neu an.
+#
+# Aktion vorbereiten  Schreibpuffer leeren. Braucht keine erhoehten Rechte.
+# Aktion erneuern     Das Geraet in Windows neu starten, falls es sich nach
+#                     dem Umstellen nicht von selbst wieder meldet.
 #
 # Ausgabe, je eine Zeile:
+#   ZUSTAND=SPEICHER|AUDIO|GETRENNT
 #   GEFUNDEN=<InstanzId>
-#   ZUSTAND=SPEICHER|AUDIO|GETRENNT|WEG
 #   FEHLER=<Text>
 
-param([string]$Aktion = 'neuladen')
+param([string]$Aktion = 'vorbereiten')
 
 $ErrorActionPreference = 'Continue'
 
-function AlleGeraete {
-    Get-PnpDevice -ErrorAction SilentlyContinue |
-        Where-Object { $_.InstanceId -like 'USB\VID_0582&PID_017*' }
-}
-
 function AktivesGeraet {
-    $liste = AlleGeraete | Where-Object { $_.Status -eq 'OK' }
+    $liste = Get-PnpDevice -ErrorAction SilentlyContinue |
+        Where-Object { $_.InstanceId -like 'USB\VID_0582&PID_017*' -and $_.Status -eq 'OK' }
     $anschluss = $liste | Where-Object { $_.Class -eq 'USB' } | Select-Object -First 1
     if ($anschluss) { return $anschluss }
     return $liste | Select-Object -First 1
-}
-
-function PufferLeeren {
-    try {
-        Get-Volume -ErrorAction SilentlyContinue |
-            Where-Object { $_.DriveType -eq 'Removable' -and $_.DriveLetter } |
-            ForEach-Object { Write-VolumeCache -DriveLetter $_.DriveLetter -ErrorAction SilentlyContinue }
-    } catch { }
-}
-
-$istAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-
-function Fuehre([string]$befehl, [string]$id) {
-    if ($istAdmin) {
-        & pnputil $befehl "$id" | Out-Null
-    } else {
-        Start-Process -FilePath 'pnputil' -ArgumentList "$befehl `"$id`"" -Verb RunAs -Wait -WindowStyle Hidden
-    }
 }
 
 function Lage {
@@ -51,31 +33,54 @@ function Lage {
     if (-not $a) { return 'GETRENNT' }
     if ($a.InstanceId -like '*PID_0170*') { return 'SPEICHER' }
     if ($a.InstanceId -like '*PID_0171*') { return 'AUDIO' }
-    return 'WEG'
+    return 'GETRENNT'
 }
 
-if ($Aktion -eq 'trennen' -or $Aktion -eq 'neuladen') {
+if ($Aktion -eq 'vorbereiten') {
+    $anzahl = 0
+    try {
+        Get-Volume -ErrorAction SilentlyContinue |
+            Where-Object { $_.DriveType -eq 'Removable' -and $_.DriveLetter } |
+            ForEach-Object {
+                Write-VolumeCache -DriveLetter $_.DriveLetter -ErrorAction SilentlyContinue
+                $anzahl++
+            }
+    } catch {
+        Write-Output "FEHLER=$($_.Exception.Message)"
+        exit
+    }
+    Write-Output "GELEERT=$anzahl"
+    Write-Output "ZUSTAND=$(Lage)"
+    exit
+}
+
+if ($Aktion -eq 'erneuern') {
     $ziel = AktivesGeraet
     if (-not $ziel) {
-        Write-Output "FEHLER=Keine RC-505 am USB gefunden"
+        # Nichts angemeldet. Dann kann Windows auch nichts neu starten, die
+        # Station meldet sich von selbst, sobald sie wieder bereit ist.
+        Write-Output "ZUSTAND=GETRENNT"
         exit
     }
     Write-Output "GEFUNDEN=$($ziel.InstanceId)"
-    PufferLeeren
-    Fuehre '/disable-device' $ziel.InstanceId
-    Start-Sleep -Milliseconds 1500
-}
-
-if ($Aktion -eq 'verbinden' -or $Aktion -eq 'neuladen') {
-    # Beim Verbinden alle bekannten Kennungen freigeben. Die Station meldet
-    # sich je nach Betriebsart mit einer anderen, darum nicht nur die eine.
-    $abgemeldet = AlleGeraete | Where-Object { $_.Status -ne 'OK' }
-    foreach ($g in $abgemeldet) { Fuehre '/enable-device' $g.InstanceId }
-
-    for ($i = 0; $i -lt 20; $i++) {
+    $istAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    try {
+        if ($istAdmin) {
+            pnputil /restart-device "$($ziel.InstanceId)" | Out-Null
+        } else {
+            # Genau ein Aufruf, damit Windows nur einmal nachfragt.
+            Start-Process -FilePath 'pnputil' -ArgumentList "/restart-device `"$($ziel.InstanceId)`"" -Verb RunAs -Wait -WindowStyle Hidden
+        }
+    } catch {
+        Write-Output "FEHLER=$($_.Exception.Message)"
+        exit
+    }
+    for ($i = 0; $i -lt 16; $i++) {
         Start-Sleep -Milliseconds 500
         if ((Lage) -ne 'GETRENNT') { break }
     }
+    Write-Output "ZUSTAND=$(Lage)"
+    exit
 }
 
-Write-Output "ZUSTAND=$(Lage)"
+Write-Output "FEHLER=Unbekannte Aktion $Aktion"

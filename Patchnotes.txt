@@ -1,5 +1,13 @@
 Sku505 Patchnotes
 
+Version 0.17, 08.08.2026
+Der USB-Bereich ist neu gebaut, diesmal auf dem Weg, den das Handbuch der Station selbst beschreibt.
+Der bisherige Versuch, die Verbindung über Windows zu kappen, war ein Irrweg: Windows kann das Gerät zwar abmelden, die Station merkt davon aber nichts und bleibt im Zustand Idling. Das Bedienfeld blieb gesperrt, die Betriebsart ließ sich nicht umstellen, und beim Wiederanmelden fragte Windows mehrfach nach.
+Richtig geht es so: Erst am Rechner die Schreibpuffer leeren, dann am Gerät EXIT drücken. Im Display erscheint Disconnect OK, das bestätigt man mit WRITE. Erst dadurch verlässt die Station den Speicher-Modus, und das Bedienfeld reagiert wieder.
+Der Menüpunkt USB-Verbindung hat darum jetzt zwei Einträge:
+Trennung vorbereiten leert die Schreibpuffer, ganz ohne Windows-Nachfrage, und sagt danach die Tastenfolge am Gerät an.
+Verbindung erneuern meldet das Gerät bei Windows neu an, falls es sich nach dem Umstellen nicht von selbst zurückmeldet. Nur dieser Punkt kann eine Windows-Nachfrage auslösen, und nur noch eine einzige statt vier.
+
 Version 0.16, 08.08.2026
 Aus USB neu laden wird der Menüpunkt USB-Verbindung mit drei Einträgen: USB trennen, USB verbinden und USB neu laden.
 Hintergrund: Solange die Station als Laufwerk verbunden ist, steht im Display Idling und das Bedienfeld ist gesperrt. Die Tasten am Gerät reagieren dann nicht, die Betriebsart lässt sich also gar nicht umstellen. Genau deshalb blieb die Tastenfolge am Gerät wirkungslos.
