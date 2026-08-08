@@ -1,5 +1,13 @@
 Sku505 Patchnotes
 
+Version 0.09, 08.08.2026
+Keine Ebenen-Ansage mehr. NVDA liest nur noch, worauf der Fokus steht. Erreicht wird das wie in Skularis: Das Menü trägt die Rolle application, die Zeilen sind Schaltflächen, nicht mehr ein Baum mit Ebenen.
+Ebenenwechsel klingen statt zu sprechen: beim Hineingehen der Ton ebene-vor, beim Zurückgehen ebene-zurueck, beide aus Skularis übernommen. Beim Erreichen des Hauptmenüs erklingt ein deutlich anderer Ton.
+Tooltip mit eigenen Klängen beim Öffnen und Schließen, aus dem Ordner vorschläge sounds.
+Tooltip bei Auswahlen: Die erste Zeile nennt jetzt den eingestellten Wert, zum Beispiel Delay eingestellt. Danach folgen die übrigen möglichen Werte.
+Menüfilter, wie im SkuAddon: Ein Buchstabe springt zum nächsten Eintrag mit diesem Anfangsbuchstaben. Zwei Buchstaben in weniger als einer halben Sekunde schalten das Sammeln ein, die Buchstaben werden gesammelt, und erst Pfeil runter zeigt das gefilterte Ergebnis mit Trefferzahl. Escape hebt den Filter auf. Der Filter wirkt in jedem Menü.
+Die Effekt-Parameter heißen jetzt Parameter Taste A, B und C. Sie stehen im jeweiligen Effekt-Ordner unter den Werten. Die Beat-Effekte erscheinen unter Track FX.
+
 Version 0.08, 08.08.2026, Effekte im Klartext und das Live-Studio
 Effekttypen haben jetzt Namen statt Nummern: Filter, Phaser, Flanger, Synth, Lo-Fi, Ring Modulator, Guitar to Bass, Slow Gear, Transpose, Pitch Bend, Robot, Vocal Dist, Vocoder, Dynamics, Equalizer, Isolator, Oktave, Panorama, Tremolo, Slicer, Delay, Panning Delay, Tape Echo, Granular Delay, Roll, Chorus, Reverb und die vier Beat-Effekte. Die Reihenfolge stammt aus dem Zusatzhandbuch zur Version 2.0 und deckt sich genau mit der Reihenfolge der Parameter in der Gerätedatei, sie gilt damit als gesichert.
 Alle Effekt-Parameter sind benannt und einstellbar, zum Beispiel Filter Grenzfrequenz, Delay Wiederholungen oder Reverb Länge. Felder, die eine Art oder ein Muster auswählen, bleiben bis zur Bestätigung am Gerät gesperrt, werden aber angezeigt.

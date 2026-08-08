@@ -25,16 +25,16 @@
       border-bottom: 1px solid var(--schrift);
       margin-bottom: 8px;
     }
-    ul[role="tree"], ul[role="group"] { list-style: none; }
-    ul[role="group"] { padding-left: 28px; }
-    li[role="treeitem"] > .zeile {
+    #baum, #baum ul { list-style: none; }
+    #baum ul { padding-left: 28px; }
+    .eintrag > .zeile {
       display: block;
       padding: 6px 8px;
       cursor: default;
       white-space: nowrap;
     }
-    li[role="treeitem"]:focus { outline: none; }
-    li[role="treeitem"]:focus > .zeile {
+    .eintrag:focus { outline: none; }
+    .eintrag:focus > .zeile {
       background: var(--fokus-hintergrund);
       color: var(--fokus-schrift);
     }
@@ -87,7 +87,7 @@
 </head>
 <body>
   <h1 id="titel">Sku505</h1>
-  <ul id="baum" role="tree" aria-label="Hauptmenü"></ul>
+  <ul id="baum" role="application" aria-label="Sku505 Menü"></ul>
   <input id="eingabefeld" type="text" hidden aria-label="Eingabe, Enter bestätigt, Escape bricht ab">
   <ul id="tooltip" hidden aria-label="Weitere Angaben"></ul>
   <div id="statuszeile" role="status" aria-live="polite"></div>

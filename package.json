@@ -1,6 +1,6 @@
 {
   "name": "sku505",
-  "version": "0.08.0",
+  "version": "0.09.0",
   "description": "Sku505 - barrierefreier Editor und Begleiter fuer die Boss RC-505 MK1 Loopstation",
   "main": "main.js",
   "scripts": {
