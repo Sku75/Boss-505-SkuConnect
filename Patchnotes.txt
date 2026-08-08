@@ -1,5 +1,13 @@
 Sku505 Patchnotes
 
+Version 0.23, 08.08.2026
+Der Start ist deutlich leiser. Bisher meldete die Sprachausgabe den Programmnamen mehrfach, dazu Dokument und Anwendung, bevor überhaupt etwas Nützliches kam.
+Drei Ursachen sind abgestellt:
+Das Fenster wird jetzt erst angezeigt, wenn es fertig geladen ist. Vorher tauchte es dreimal auf, einmal leer, einmal beim Laden und einmal fertig, und jedes Mal meldete die Sprachausgabe es neu.
+Der Fenstertitel wird festgehalten. Ein Wechsel des Titels während des Ladens löste eine weitere Ansage aus.
+Die Menüleiste ist ganz entfernt. Sie hing nur im Baum der Sprachausgabe herum, ohne je gebraucht zu werden.
+Beim Start gibt es jetzt genau eine Ansage: Sku505 bereit, gefolgt vom ersten Menüpunkt. Der erste Eintrag wird still fokussiert, damit er nicht zusätzlich gemeldet wird.
+
 Version 0.22, 08.08.2026
 Im Gerätemenü ist der zuletzt gewählte Speicherplatz nicht mehr aufgeführt. Er steht zwar in der Datei, ist aber kein Menüpunkt der Station, sondern wird im Spielbildschirm mit dem Regler gewählt. Er hatte die ganze Nummerierung um eins verschoben.
 Die Liste beginnt jetzt mit 01 Display-Helligkeit, also genau dem, was erscheint, wenn man am Gerät ein Mal Taste 1.3 drückt.

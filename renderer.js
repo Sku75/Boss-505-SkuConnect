@@ -1082,7 +1082,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.22"); return;
+    case "ueber": sage("Sku505 Version 0.23"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
@@ -1185,8 +1185,15 @@ baumElement.addEventListener("keydown", async (ereignis) => {
 });
 
 baueEbene(menue, baumElement);
-fokussiere(baumElement.querySelector(".eintrag"));
-sage("Sku505 bereit");
+
+// Beim Start still fokussieren und erst danach eine einzige Ansage machen.
+// Die kurze Verzoegerung laesst der Sprachausgabe Zeit, das Fenster selbst
+// zu melden, sonst reden beide durcheinander.
+fokussiere(baumElement.querySelector(".eintrag"), true);
+window.setTimeout(() => {
+  const erster = baumElement.querySelector(".eintrag");
+  sage("Sku505 bereit, " + (erster ? erster.dataset.ansage : ""));
+}, 700);
 
 // MIDI still im Hintergrund verbinden und den Zustand ab jetzt überwachen.
 // Beim ersten Blick wird noch nichts angesagt, danach jede Änderung.

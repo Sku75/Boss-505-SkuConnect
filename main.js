@@ -1,14 +1,22 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog, Menu } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const fsp = require('fs/promises');
 const { execFile } = require('child_process');
 
 function erstelleFenster() {
+  // Die Menueleiste ganz entfernen. Sonst haengt sie im Baum der
+  // Sprachausgabe und wird beim Start mit vorgelesen.
+  Menu.setApplicationMenu(null);
+
   const fenster = new BrowserWindow({
     width: 1000,
     height: 700,
     backgroundColor: '#000000',
+    // Erst zeigen, wenn alles geladen ist. Sonst meldet die Sprachausgabe
+    // das Fenster mehrfach: einmal leer, einmal beim Laden, einmal fertig.
+    show: false,
+    title: 'Sku505',
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -20,6 +28,9 @@ function erstelleFenster() {
   fenster.webContents.session.setPermissionRequestHandler((inhalt, recht, erlauben) => {
     erlauben(recht === 'midi' || recht === 'midiSysex' || recht === 'media');
   });
+  // Titel festhalten, damit ein Wechsel keine zweite Ansage ausloest.
+  fenster.on('page-title-updated', (ereignis) => ereignis.preventDefault());
+  fenster.once('ready-to-show', () => fenster.show());
   fenster.loadFile('index.html');
 }
 
