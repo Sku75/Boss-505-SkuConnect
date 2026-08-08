@@ -538,10 +538,10 @@ ipcMain.handle('datei-waehlen', sicher(async (speichern, vorschlag) => {
 app.whenReady().then(() => {
   erstelleFenster();
 
-  // Nottaster: Strg und F12 wirkt im ganzen System, auch wenn Sku505 nicht
+  // Nottaster: Strg und Punkt wirkt im ganzen System, auch wenn Sku505 nicht
   // im Vordergrund ist. Gedacht fuer den Fall, dass der Ton verschwindet und
   // der Rechner dadurch nicht mehr bedienbar waere.
-  const angemeldet = globalShortcut.register('Control+F12', () => {
+  const angemeldet = globalShortcut.register('Control+.', () => {
     const fenster = BrowserWindow.getAllWindows()[0];
     if (!fenster) return;
     // Nach vorn holen, sonst liest die Sprachausgabe die Meldung nicht vor.
@@ -550,7 +550,11 @@ app.whenReady().then(() => {
     fenster.focus();
     fenster.webContents.send('nottaster');
   });
-  if (!angemeldet) console.log('Strg F12 konnte nicht angemeldet werden');
+  if (!angemeldet) console.log('Strg Punkt konnte nicht angemeldet werden');
+  // Der Renderer fragt nach, ob die Taste wirklich liegt. Ein blinder Nutzer
+  // darf sich nicht auf einen Nottaster verlassen, den ein anderes Programm
+  // schon belegt hat.
+  ipcMain.handle('nottaster-liegt', () => angemeldet);
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) erstelleFenster();
   });

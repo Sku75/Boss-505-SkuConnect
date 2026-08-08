@@ -1173,7 +1173,7 @@ async function profilSetzen(li, profil) {
 
 // Notfall: alles auf den Stand zurück, mit dem der Rechner sicher bedienbar
 // ist. Wiedergabe und Aufnahme zurück auf das Headset. Erreichbar über den
-// Menüpunkt und über Strg und F12, das wirkt im ganzen System.
+// Menüpunkt und über Strg und Punkt, das wirkt im ganzen System.
 async function allesZurueck(li) {
   const zeilen = [];
   let gut = 0;
@@ -1187,7 +1187,7 @@ async function allesZurueck(li) {
   else zeilen.push("Aufnahme nicht gesetzt: " + ((a && a.problem) || a.fehler));
 
   zeilen.push("Die Station selbst wurde nicht angefasst");
-  zeilen.push("Erreichbar auch über Strg und F12, im ganzen System");
+  zeilen.push("Erreichbar auch über Strg und Punkt, im ganzen System");
 
   const kurz = gut === 2 ? "Ton zurück auf dem Headset"
     : gut === 1 ? "Teilweise zurückgesetzt"
@@ -1273,7 +1273,16 @@ const menue = [
   { typ: "ordner", text: "Profile", kinder: [
     { typ: "aktion", id: "audio-ansagen", text: "Audiogeräte ansagen" },
     { typ: "aktion", id: "ton-zurueck", text: "Ton zurück auf das Headset" },
-    { typ: "aktion", id: "alles-zurueck", text: "Alles auf Standard zurück, Strg F12" }
+    { typ: "aktion", id: "alles-zurueck", text: "Alles auf Standard zurück, Strg Punkt",
+      vorschau: [
+        "Danach ist eingestellt:",
+        "Windows hört: Headset G733",
+        "Windows nimmt auf: Headset-Mikrofon G733",
+        "Die Station wird nicht angefasst",
+        "Zur Bestätigung erklingt ein Zweiklang über das gesetzte Gerät",
+        "Dieselbe Taste wirkt im ganzen System: Strg und Punkt",
+        "auch wenn Sku505 gar nicht im Vordergrund ist"
+      ] }
   ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text, vorschau: p.vorschau }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
@@ -1299,7 +1308,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.28"); return;
+    case "ueber": sage("Sku505 Version 0.29"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
@@ -1443,5 +1452,12 @@ window.setTimeout(() => {
   // Nottaster aus dem Programmkern entgegennehmen.
   if (window.sku505.beiNottaster) {
     window.sku505.beiNottaster(() => { allesZurueck(null); });
+  }
+  // Und nachfragen, ob die Taste wirklich liegt. Belegt ein anderes Programm
+  // sie schon, muss das gesagt werden, sonst verlässt man sich im Notfall auf
+  // etwas, das gar nicht da ist.
+  if (window.sku505.nottasterLiegt) {
+    const liegt = await window.sku505.nottasterLiegt();
+    if (!liegt) sage("Achtung, Strg und Punkt ist von einem anderen Programm belegt, der Nottaster wirkt nur im Menü");
   }
 })();

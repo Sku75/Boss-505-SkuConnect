@@ -3,6 +3,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('sku505', {
   beiNottaster:          (fn)      => ipcRenderer.on('nottaster', () => fn()),
+  nottasterLiegt:        ()        => ipcRenderer.invoke('nottaster-liegt'),
   laufwerkDa:            ()        => ipcRenderer.invoke('laufwerk-da'),
   stationSuchen:         ()        => ipcRenderer.invoke('station-suchen'),
   kenndatenLesen:        (p)       => ipcRenderer.invoke('kenndaten-lesen', p),
