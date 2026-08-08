@@ -519,6 +519,44 @@ async function laden(li) {
     return true;
   }
 
+  // Spiegel des Gerätemenüs: alle Systemwerte in genau der Reihenfolge, in
+  // der sie auch an der Station stehen. Damit lässt sich am Bildschirm
+  // abzählen, wie oft man am Gerät den Pfeil rechts drücken muss.
+  //
+  // Dass die Reihenfolge stimmt, ist belegt: In der Datei liegt Eingang auf
+  // Line Out zwei Plätze vor der USB-Betriebsart, und genau dieser Abstand
+  // hat sich am Gerät bestätigt.
+  if (art === "geraetemenu") {
+    const e = await window.sku505.systemLesen(pfad);
+    if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
+    const eintraege = [];
+    let nummer = 0;
+    for (const abschnitt of Object.keys(e.daten)) {
+      for (const feld of Object.keys(e.daten[abschnitt])) {
+        nummer++;
+        const b = feldBeschreibung(abschnitt, feld);
+        const nr = String(nummer).padStart(2, "0");
+        // Der Anker wird eigens benannt, er ist der einzige Wert, den man
+        // am Gerät hören kann.
+        const anker = (abschnitt === "INPUT_OUTPUT" && feld === "InLineOut")
+          ? ", Anker, Mikrofon im Lautsprecher" : "";
+        if (b) {
+          eintraege.push({
+            typ: "wert", text: nr + " " + b.text + anker, art: b.art || "zahl",
+            datei: "SYSTEM", nummer: 0, abschnitt, feld, rohwert: e.daten[abschnitt][feld],
+            beschreibung: b, laden: b.nurLesen ? undefined : "wertoptionen",
+            id: b.nurLesen ? "nur-lesen" : "wert"
+          });
+        } else {
+          eintraege.push({ typ: "aktion", id: "nur-lesen",
+            text: nr + " " + feld + ": " + e.daten[abschnitt][feld] });
+        }
+      }
+    }
+    setzeKinder(li, eintraege);
+    return true;
+  }
+
   if (art === "system") {
     const e = await window.sku505.systemLesen(pfad);
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
@@ -1007,6 +1045,7 @@ const menue = [
       { typ: "aktion", id: "platz-laden", text: "Speicherplätze laden" }
     ]},
     { typ: "ordner", text: "Systemeinstellungen der Station", laden: "system" },
+    { typ: "ordner", text: "Gerätemenü, gleiche Reihenfolge wie an der Station", laden: "geraetemenu" },
     { typ: "ordner", text: "Einlesen und sichern", kinder: [
       { typ: "aktion", id: "einst-einlesen", text: "Einstellungen einlesen, schnell" },
       { typ: "aktion", id: "loops-einlesen", text: "Loop-Aufnahmen einlesen, dauert lange" },
@@ -1038,7 +1077,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.20"); return;
+    case "ueber": sage("Sku505 Version 0.21"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;

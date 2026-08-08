@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.21, 08.08.2026
+Neuer Menüpunkt in der Werkstatt: Gerätemenü, gleiche Reihenfolge wie an der Station.
+Er zeigt alle Systemwerte als eine durchnummerierte Liste in genau der Reihenfolge, in der sie auch am Gerät stehen. Damit kann man am Bildschirm abzählen, wie oft man an der Station den Pfeil rechts drücken muss, statt blind zu raten.
+Dass die Reihenfolge stimmt, ist belegt: Eingang auf Line Out steht zwei Plätze vor der USB-Betriebsart, und genau dieser Abstand hat sich am Gerät bestätigt.
+Eingang auf Line Out ist in der Liste eigens als Anker gekennzeichnet, weil es der einzige Systemwert ist, dessen Änderung man hören kann. Steht er auf Aus, verschwindet das Mikrofon aus dem Lautsprecher. Damit lässt sich am Gerät zweifelsfrei feststellen, wo man steht.
+
 Version 0.20, 08.08.2026
 Das Umschalten des Speicherplatzes im Live-Studio meldet jetzt zurück, ob die Station den Befehl wirklich angenommen hat. Bisher sagte Sku505 nur, was es gesendet hatte.
 So funktioniert es: Die Station meldet einen Speicherplatzwechsel von sich aus über MIDI. Sku505 wartet nach dem Senden kurz auf diese Meldung. Kommt sie, lautet die Ansage von der Station bestätigt. Kommt sie nicht, sagt Sku505 das ehrlich und nennt den Grund, nämlich dass am Gerät die Einstellung Speicherplatz per MIDI melden auf An stehen muss.
