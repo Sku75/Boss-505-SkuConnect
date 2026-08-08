@@ -56,12 +56,40 @@
       border: 2px solid #fff;
     }
     #eingabefeld[hidden] { display: none; }
+
+    /* Tooltip: Shift halten und Pfeil runter. Zeigt das letzte Ergebnis
+       oder die möglichen Werte, Zeile für Zeile. */
+    #tooltip {
+      position: fixed;
+      left: 40px; right: 40px; top: 25%;
+      max-height: 50%;
+      overflow-y: auto;
+      background: #000;
+      border: 2px solid #fff;
+      padding: 8px;
+      list-style: none;
+    }
+    #tooltip[hidden] { display: none; }
+    #tooltip li {
+      padding: 6px 8px;
+      white-space: nowrap;
+    }
+    #tooltip li:focus {
+      outline: none;
+      background: var(--fokus-hintergrund);
+      color: var(--fokus-schrift);
+    }
+    #tooltip .kopf {
+      border-bottom: 1px solid #fff;
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
   <h1 id="titel">Sku505</h1>
   <ul id="baum" role="tree" aria-label="Hauptmenü"></ul>
   <input id="eingabefeld" type="text" hidden aria-label="Eingabe, Enter bestätigt, Escape bricht ab">
+  <ul id="tooltip" hidden aria-label="Weitere Angaben"></ul>
   <div id="statuszeile" role="status" aria-live="polite"></div>
   <script src="felder.js"></script>
   <script src="renderer.js"></script>

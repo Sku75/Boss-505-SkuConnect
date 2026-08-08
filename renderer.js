@@ -1,4 +1,4 @@
-// Sku505 Version 0.06, vollständige Werkstatt.
+// Sku505 Version 0.07, Werkstatt mit Tooltip und kurzen Ansagen.
 //
 // Bedienung: Pfeil hoch und runter wandern innerhalb der Ebene, Pfeil rechts
 // geht hinein, Pfeil links und Rücktaste gehen heraus, Enter aktiviert.
@@ -17,8 +17,22 @@ const eingabefeld = document.getElementById("eingabefeld");
 let stationsPfad = null;   // Pfad zum ROLAND-Ordner
 let schreibbar = false;    // nur wahr, wenn die echte Station verbunden ist
 
+// Ansagen sind bewusst kurz und bühnentauglich. Die Einzelheiten stehen im
+// Tooltip, den man mit Shift und Pfeil runter öffnet.
+//
+// Wichtig: Die Statuszeile meldet nur Änderungen. Bei zweimal demselben Text
+// bliebe die Sprachausgabe sonst stumm. Darum wird sie erst geleert und der
+// Text danach neu gesetzt.
 function sage(text) {
-  statuszeile.textContent = text;
+  statuszeile.textContent = "";
+  window.setTimeout(() => { statuszeile.textContent = text; }, 40);
+}
+
+// Kurze Ansage plus Einzelheiten, die am Menüpunkt hängen bleiben und
+// später über den Tooltip nachlesbar sind.
+function ergebnis(li, ansage, zeilen) {
+  if (li) li._ergebnis = zeilen && zeilen.length ? zeilen : [ansage];
+  sage(ansage);
 }
 
 // --- Anschlagton, erzeugt wie in Skularis: 220 Hertz, 400 Millisekunden ---
@@ -37,6 +51,98 @@ function spieleAnschlag() {
   oszillator.start(jetzt);
   oszillator.stop(jetzt + 0.4);
 }
+
+// =====================================================================
+// Tooltip: Shift halten und Pfeil runter
+//
+// Zeigt zum Menüpunkt unter dem Fokus die Einzelheiten: bei einer Aktion
+// das letzte Ergebnis, bei einem Wert den aktuellen Stand und die möglichen
+// Werte. Solange Shift gehalten wird, wandert man mit Pfeil runter und hoch
+// durch die Zeilen. Beim Loslassen von Shift schließt sich der Tooltip.
+// =====================================================================
+
+const tooltip = document.getElementById("tooltip");
+let tooltipOffen = false;
+let tooltipRueckkehr = null;
+
+// Stellt die Zeilen zusammen, die zu einem Menüpunkt gehören.
+function tooltipZeilen(li) {
+  if (li.dataset.typ === "wert") {
+    const b = li._beschreibung || {};
+    const zeilen = ["Aktuell: " + wertText(li.dataset.art, li.dataset.rohwert, b)];
+    if (b.nurLesen) {
+      zeilen.push("Lässt sich hier nicht ändern");
+    } else {
+      for (const o of auswahlBauen(li.dataset.art, b)) {
+        zeilen.push(String(o.wert) === String(li.dataset.rohwert) ? o.text + ", eingestellt" : o.text);
+      }
+    }
+    return zeilen;
+  }
+  return li._ergebnis || null;
+}
+
+function oeffneTooltip(li) {
+  const zeilen = tooltipZeilen(li);
+  if (!zeilen || !zeilen.length) { sage("Keine weiteren Angaben."); return false; }
+
+  tooltip.innerHTML = "";
+  const kopf = document.createElement("li");
+  kopf.className = "kopf";
+  kopf.textContent = li.dataset.text;
+  kopf.tabIndex = -1;
+  tooltip.appendChild(kopf);
+  for (const z of zeilen) {
+    const zeile = document.createElement("li");
+    zeile.textContent = z;
+    zeile.tabIndex = -1;
+    tooltip.appendChild(zeile);
+  }
+  tooltip.hidden = false;
+  tooltipOffen = true;
+  tooltipRueckkehr = li;
+  tooltip.children[1].focus();
+  return true;
+}
+
+function tooltipWeiter(richtung) {
+  const zeilen = Array.from(tooltip.children);
+  const jetzt = zeilen.indexOf(document.activeElement);
+  const ziel = jetzt + richtung;
+  if (ziel < 1 || ziel >= zeilen.length) { spieleAnschlag(); return; }
+  zeilen[ziel].focus();
+}
+
+function schliesseTooltip() {
+  if (!tooltipOffen) return;
+  tooltip.hidden = true;
+  tooltipOffen = false;
+  if (tooltipRueckkehr) fokussiere(tooltipRueckkehr);
+  tooltipRueckkehr = null;
+}
+
+// In der Erfassungsphase, damit die Pfeil-Navigation des Menüs diese
+// Kombination nicht ebenfalls verarbeitet.
+document.addEventListener("keydown", (e) => {
+  if (!e.shiftKey) return;
+  if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+  if (!eingabefeld.hidden) return;
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.repeat) return;
+
+  if (!tooltipOffen) {
+    const li = document.activeElement;
+    if (!li || li.getAttribute("role") !== "treeitem") return;
+    oeffneTooltip(li);
+    return;
+  }
+  tooltipWeiter(e.key === "ArrowDown" ? 1 : -1);
+}, true);
+
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Shift" && tooltipOffen) schliesseTooltip();
+}, true);
 
 // =====================================================================
 // Werte darstellen und Auswahllisten erzeugen
@@ -217,7 +323,7 @@ async function quelleSichern() {
 async function laden(li) {
   const art = li.dataset.laden;
   const pfad = await quelleSichern();
-  if (!pfad) { sage("Keine Daten. Erst Station suchen oder Einstellungen einlesen."); return false; }
+  if (!pfad) { sage("Keine Daten, erst Station suchen"); return false; }
 
   if (art === "platz") {
     sage("Lese Speicherplatz " + li.dataset.nummer + "...");
@@ -366,36 +472,45 @@ function platzEintraege(daten) {
 // Aktionen
 // =====================================================================
 
-async function stationSuchen() {
-  sage("Suche die Station...");
+async function stationSuchen(li) {
   const e = await window.sku505.stationSuchen();
   if (e.gefunden) {
     stationsPfad = e.rolandPfad; schreibbar = true;
-    sage("Station gefunden auf Laufwerk " + e.laufwerk + ". Ändern ist möglich.");
-  } else {
-    const eigen = await window.sku505.datenordner();
-    if (eigen.ok && eigen.vorhanden) {
-      stationsPfad = eigen.pfad; schreibbar = false;
-      sage("Keine Station. Arbeite mit dem eingelesenen Stand, nur Lesen möglich.");
-    } else {
-      stationsPfad = null; schreibbar = false;
-      sage("Keine Station gefunden. Sie muss im Speicher-Modus angeschlossen sein.");
-    }
+    ergebnis(li, "Station gefunden, Laufwerk " + e.laufwerk, [
+      "Station gefunden", "Laufwerk " + e.laufwerk, "Ändern möglich"
+    ]);
+    return;
   }
+  const eigen = await window.sku505.datenordner();
+  if (eigen.ok && eigen.vorhanden) {
+    stationsPfad = eigen.pfad; schreibbar = false;
+    ergebnis(li, "Keine Station, nur Lesen", [
+      "Keine Station angeschlossen", "Arbeite mit dem eingelesenen Stand", "Ändern nicht möglich"
+    ]);
+    return;
+  }
+  stationsPfad = null; schreibbar = false;
+  ergebnis(li, "Keine Station gefunden", [
+    "Keine Station gefunden", "Sie muss im Speicher-Modus angeschlossen sein",
+    "Am Gerät: SYSTEM drei Mal, Regler auf STORAGE, EXIT, Kabel neu stecken"
+  ]);
 }
 
-async function firmwarePruefen() {
+async function firmwarePruefen(li) {
   const p = await quelleSichern();
-  if (!p) { sage("Keine Daten vorhanden."); return; }
+  if (!p) { ergebnis(li, "Keine Daten vorhanden", null); return; }
   const e = await window.sku505.kenndatenLesen(p);
-  if (!e.ok) { sage("Fehler: " + e.fehler); return; }
-  const fw = e.revision === "2" ? "Firmware 2.0" : "unbekannte Firmware";
-  sage("Gerät " + e.geraet + ", " + fw + ", Datenstand " + e.revision + ".");
+  if (!e.ok) { ergebnis(li, "Fehler beim Lesen", ["Fehler", e.fehler]); return; }
+  const fw = e.revision === "2" ? "Firmware 2.0" : "Firmware unbekannt";
+  ergebnis(li, e.geraet + ", " + fw, [
+    "Gerät " + e.geraet, fw, "Datenstand " + e.revision,
+    schreibbar ? "Ändern möglich" : "Nur Lesen"
+  ]);
 }
 
 async function speicherplaetzeLaden(li) {
   const p = await quelleSichern();
-  if (!p) { sage("Keine Daten vorhanden. Erst Station suchen."); return; }
+  if (!p) { sage("Keine Daten, erst Station suchen"); return; }
   sage("Lese Speicherplätze...");
   const e = await window.sku505.speicherplaetzeLesen(p);
   if (!e.ok) { sage("Fehler: " + e.fehler); return; }
@@ -411,15 +526,18 @@ async function speicherplaetzeLaden(li) {
     };
   });
   zeigeErgebnisse(ordner, { typ: "aktion", id: "platz-laden", text: "Speicherplätze laden" }, eintraege);
-  const belegt = e.plaetze.filter(x => x.spuren > 0).length;
-  sage(e.plaetze.length + " Speicherplätze geladen, " + belegt + " davon belegt.");
+  const belegteListe = e.plaetze.filter(x => x.spuren > 0);
+  const neuerKnopf = ordner.querySelector(':scope > ul[role="group"] > li');
+  ergebnis(neuerKnopf, e.plaetze.length + " Plätze, " + belegteListe.length + " belegt",
+    [e.plaetze.length + " Speicherplätze", belegteListe.length + " davon belegt"].concat(
+      belegteListe.map(x => "Platz " + x.nummer + ", " + x.name.trim() + ", " + x.spuren + " Spuren")));
 }
 
 // Schreibt einen gewählten Wert und meldet das Ergebnis.
 async function wertSetzen(optionLi) {
   const wertLi = elternVon(optionLi);
   if (!schreibbar) {
-    sage("Nur Lesen möglich. Die Station ist nicht im Speicher-Modus verbunden.");
+    sage("Nur Lesen, Station nicht verbunden");
     return;
   }
   const neu = optionLi.dataset.ziel;
@@ -430,18 +548,26 @@ async function wertSetzen(optionLi) {
     feld: wertLi.dataset.feld,
     wert: neu
   };
-  sage("Schreibe " + wertLi.dataset.text + "...");
+  const b = wertLi._beschreibung || {};
+  const alterText = wertText(wertLi.dataset.art, wertLi.dataset.rohwert, b);
   const e = await window.sku505.wertSchreiben(stationsPfad, auftrag);
-  if (!e.ok) { sage("Fehler: " + e.fehler); return; }
+  if (!e.ok) { ergebnis(wertLi, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
 
   if (!e.geaendert) {
-    sage(wertLi.dataset.text + " stand schon auf diesem Wert.");
+    ergebnis(wertLi, "Steht schon auf " + optionLi.dataset.text, null);
   } else if (e.bestaetigt) {
     wertLi.dataset.rohwert = neu;
     aktualisiereZeile(wertLi);
-    sage(wertLi.dataset.text + " ist jetzt " + optionLi.dataset.text + ", geschrieben und geprüft.");
+    ergebnis(wertLi, wertLi.dataset.text + " geändert auf " + optionLi.dataset.text, [
+      wertLi.dataset.text, "Jetzt: " + optionLi.dataset.text, "Vorher: " + alterText,
+      "Zurückgelesen und geprüft"
+    ]);
   } else {
-    sage("Achtung: Rücklesen ergab " + e.gelesen + " statt " + neu + ". Nichts als sicher annehmen.");
+    ergebnis(wertLi, "Achtung, Kontrolle fehlgeschlagen", [
+      "Die Kontrolle nach dem Schreiben hat nicht gestimmt",
+      "Gewünscht: " + neu, "Gelesen: " + e.gelesen,
+      "Den Wert am Gerät prüfen"
+    ]);
     return;
   }
   schliesse(wertLi);
@@ -473,17 +599,17 @@ function frageText(beschriftung, vorgabe) {
 }
 
 async function nameAendern(li) {
-  if (!schreibbar) { sage("Nur Lesen möglich. Station nicht im Speicher-Modus verbunden."); return; }
+  if (!schreibbar) { sage("Nur Lesen, Station nicht verbunden"); return; }
   const alt = li.dataset.text.replace(/^Name: /, "");
   const neu = await frageText("Neuer Name, höchstens 12 Zeichen", alt);
   fokussiere(li);
-  if (neu === null) { sage("Abgebrochen, der Name bleibt " + alt + "."); return; }
-  sage("Schreibe Namen...");
+  if (neu === null) { sage("Abgebrochen"); return; }
   const e = await window.sku505.nameSchreiben(stationsPfad, parseInt(li.dataset.nummer, 10), neu);
-  if (!e.ok) { sage("Fehler: " + e.fehler); return; }
+  if (!e.ok) { ergebnis(li, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
   li.dataset.text = "Name: " + e.name;
   aktualisiereZeile(li);
-  sage("Name ist jetzt " + e.name + ", geschrieben und geprüft.");
+  ergebnis(li, "Name geändert auf " + e.name,
+    ["Name geändert", "Jetzt: " + e.name, "Vorher: " + alt, "Zurückgelesen und geprüft"]);
 }
 
 async function platzUebertragen(optionLi, tauschen) {
@@ -491,16 +617,18 @@ async function platzUebertragen(optionLi, tauschen) {
   const von = parseInt(optionLi.dataset.nummer, 10);
   const nach = parseInt(optionLi.dataset.ziel, 10);
   if (von === nach) { sage("Quelle und Ziel sind derselbe Platz."); return; }
-  const wort = tauschen ? "Tausche" : "Kopiere";
-  sage(wort + " Platz " + von + " und " + nach + "...");
   const e = tauschen
     ? await window.sku505.platzTauschen(stationsPfad, von, nach)
     : await window.sku505.platzKopieren(stationsPfad, von, nach);
-  if (!e.ok) { sage("Fehler: " + e.fehler); return; }
+  if (!e.ok) { ergebnis(optionLi, "Fehler", ["Fehler", e.fehler]); return; }
   if (e.bestaetigt) {
-    sage((tauschen ? "Getauscht" : "Kopiert") + " und geprüft. Achtung: die Loop-Aufnahmen bleiben, wo sie waren.");
+    ergebnis(optionLi, (tauschen ? "Getauscht mit Platz " : "Kopiert auf Platz ") + nach, [
+      (tauschen ? "Getauscht" : "Kopiert"), "Von Platz " + von, "Nach Platz " + nach,
+      "Nur die Einstellungen", "Die Loop-Aufnahmen bleiben liegen", "Zurückgelesen und geprüft"
+    ]);
   } else {
-    sage("Achtung: Die Kontrolle nach dem Schreiben hat nicht gestimmt.");
+    ergebnis(optionLi, "Achtung, Kontrolle fehlgeschlagen",
+      ["Die Kontrolle nach dem Schreiben hat nicht gestimmt", "Den Platz am Gerät prüfen"]);
   }
 }
 
@@ -509,44 +637,53 @@ async function loopExportieren(li) {
   if (!p) { sage("Keine Daten vorhanden."); return; }
   const vorschlag = "Platz" + String(li.dataset.nummer).padStart(2, "0") + "_Spur" + li.dataset.spur + ".wav";
   const wahl = await window.sku505.dateiWaehlen(true, vorschlag);
-  if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen."); return; }
+  if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen"); return; }
   const e = await window.sku505.loopExportieren(p, parseInt(li.dataset.nummer, 10), parseInt(li.dataset.spur, 10), wahl.pfad);
-  if (!e.ok) { sage("Fehler: " + e.fehler); return; }
-  sage("Exportiert, " + Math.round(e.bytes / 1024) + " Kilobyte.");
+  if (!e.ok) { ergebnis(li, "Fehler beim Export", ["Fehler", e.fehler]); return; }
+  ergebnis(li, "Exportiert, " + Math.round(e.bytes / 1024) + " Kilobyte",
+    ["Export fertig", Math.round(e.bytes / 1024) + " Kilobyte", "Datei: " + wahl.pfad]);
 }
 
 async function loopImportieren(li) {
   if (!schreibbar) { sage("Nur Lesen möglich. Station nicht im Speicher-Modus verbunden."); return; }
   const wahl = await window.sku505.dateiWaehlen(false);
-  if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen."); return; }
-  sage("Spiele Datei ein...");
+  if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen"); return; }
+  sage("Spiele Datei ein");
   const e = await window.sku505.loopImportieren(stationsPfad, parseInt(li.dataset.nummer, 10), parseInt(li.dataset.spur, 10), wahl.pfad);
-  if (!e.ok) { sage("Fehler: " + e.fehler); return; }
-  sage("Eingespielt als " + e.datei + ". Die Liste zeigt es nach dem Neuladen.");
+  if (!e.ok) { ergebnis(li, "Einspielen nicht möglich", ["Fehler", e.fehler]); return; }
+  ergebnis(li, "Eingespielt auf Spur " + li.dataset.spur,
+    ["Eingespielt", "Spur " + li.dataset.spur, "Datei: " + e.datei, "Liste neu laden zeigt die Länge"]);
 }
 
-async function einstellungenEinlesen() {
+async function einstellungenEinlesen(li) {
   const p = await quelleSichern();
   if (!p) { sage("Keine Station gefunden."); return; }
   sage("Lese Einstellungen ein...");
   const e = await window.sku505.einstellungenEinlesen(p);
-  sage(e.ok ? "Einstellungen eingelesen, " + Math.round(e.bytes / 1024) + " Kilobyte." : "Fehler: " + e.fehler);
+  if (!e.ok) { ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]); return; }
+  ergebnis(li, "Einstellungen eingelesen",
+    ["Einstellungen eingelesen", Math.round(e.bytes / 1024) + " Kilobyte", "2 Dateien"]);
 }
 
-async function loopsEinlesen() {
+async function loopsEinlesen(li) {
   const p = await quelleSichern();
   if (!p) { sage("Keine Station gefunden."); return; }
   sage("Lese Loop-Aufnahmen ein. Das dauert, das Menü bleibt bedienbar.");
   const e = await window.sku505.loopsEinlesen(p);
-  if (e.ok && e.vollstaendig) sage("Loop-Aufnahmen eingelesen, " + e.kopie + " Dateien, vollständig.");
-  else if (e.ok) sage("Achtung: unvollständig, Quelle " + e.quelle + ", Kopie " + e.kopie + ".");
-  else sage("Fehler: " + e.fehler);
+  if (!e.ok) { ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]); return; }
+  if (e.vollstaendig) {
+    ergebnis(li, "Loops eingelesen, " + e.kopie + " Dateien",
+      ["Loop-Aufnahmen eingelesen", e.kopie + " Dateien", "Vollständig"]);
+  } else {
+    ergebnis(li, "Achtung, unvollständig",
+      ["Unvollständig eingelesen", "Quelle " + e.quelle + " Dateien", "Kopie " + e.kopie + " Dateien"]);
+  }
 }
 
-async function inGitSichern() {
-  sage("Sichere den Stand in Git...");
+async function inGitSichern(li) {
   const e = await window.sku505.gitSichern("Stationsdaten gesichert");
-  sage(e.ok ? e.meldung : "Fehler: " + e.fehler);
+  if (!e.ok) { ergebnis(li, "Fehler beim Sichern", ["Fehler", e.fehler]); return; }
+  ergebnis(li, e.neu ? "In Git gesichert" : "Nichts Neues zu sichern", [e.meldung]);
 }
 
 // =====================================================================
@@ -587,19 +724,19 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.06, vollständige Werkstatt."); return;
-    case "station-suchen": await stationSuchen(); return;
-    case "firmware": await firmwarePruefen(); return;
+    case "ueber": sage("Sku505 Version 0.07"); return;
+    case "station-suchen": await stationSuchen(li); return;
+    case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
-    case "einst-einlesen": await einstellungenEinlesen(); return;
-    case "loops-einlesen": await loopsEinlesen(); return;
-    case "git-sichern": await inGitSichern(); return;
+    case "einst-einlesen": await einstellungenEinlesen(li); return;
+    case "loops-einlesen": await loopsEinlesen(li); return;
+    case "git-sichern": await inGitSichern(li); return;
     case "name-aendern": await nameAendern(li); return;
     case "kopieren-nach": await platzUebertragen(li, false); return;
     case "tauschen-mit": await platzUebertragen(li, true); return;
     case "loop-export": await loopExportieren(li); return;
     case "loop-import": await loopImportieren(li); return;
-    case "nur-lesen": sage(li.dataset.text + ". Dieser Wert lässt sich hier nicht ändern."); return;
+    case "nur-lesen": sage("Lässt sich hier nicht ändern"); return;
     default: sage(li.dataset.text); return;
   }
 }
