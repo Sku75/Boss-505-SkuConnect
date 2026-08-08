@@ -16,7 +16,7 @@
       color: var(--schrift);
       font-family: "Segoe UI", Arial, sans-serif;
       font-size: 22px;
-      padding: 12px;
+      padding: 12px 12px 60px 12px;
     }
     h1 {
       font-size: 24px;
@@ -25,41 +25,45 @@
       border-bottom: 1px solid var(--schrift);
       margin-bottom: 8px;
     }
-    ul[role="tree"], ul[role="group"] {
-      list-style: none;
-    }
-    ul[role="group"] {
-      padding-left: 28px;
-    }
+    ul[role="tree"], ul[role="group"] { list-style: none; }
+    ul[role="group"] { padding-left: 28px; }
     li[role="treeitem"] > .zeile {
       display: block;
       padding: 6px 8px;
       cursor: default;
       white-space: nowrap;
     }
-    li[role="treeitem"]:focus {
-      outline: none;
-    }
+    li[role="treeitem"]:focus { outline: none; }
     li[role="treeitem"]:focus > .zeile {
       background: var(--fokus-hintergrund);
       color: var(--fokus-schrift);
     }
     #statuszeile {
       position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 8px;
+      left: 12px; right: 12px; bottom: 8px;
       padding: 6px 8px;
       border-top: 1px solid var(--schrift);
       font-size: 20px;
       min-height: 34px;
+      background: var(--hintergrund);
     }
+    #eingabefeld {
+      position: fixed;
+      left: 12px; right: 12px; top: 50%;
+      padding: 10px;
+      font-size: 24px;
+      background: #000; color: #fff;
+      border: 2px solid #fff;
+    }
+    #eingabefeld[hidden] { display: none; }
   </style>
 </head>
 <body>
   <h1 id="titel">Sku505</h1>
   <ul id="baum" role="tree" aria-label="Hauptmenü"></ul>
+  <input id="eingabefeld" type="text" hidden aria-label="Eingabe, Enter bestätigt, Escape bricht ab">
   <div id="statuszeile" role="status" aria-live="polite"></div>
+  <script src="felder.js"></script>
   <script src="renderer.js"></script>
 </body>
 </html>

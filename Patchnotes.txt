@@ -1,5 +1,18 @@
 Sku505 Patchnotes
 
+Version 0.06, 08.08.2026, die vollständige Werkstatt
+Speicherplatz öffnen: Jeder der 99 Plätze lässt sich öffnen und zeigt alle Werte. Bereiche: Wiedergabe, Aufnahme, Speicherplatz gesamt, Rhythmus, Spur 1 bis 5, Input FX, Track FX mit den Parametern der Tasten A, B und C, sowie alle 16 Zuweisungen.
+Werte ändern: Auf einem Wert öffnet Pfeil rechts die Auswahl, der Fokus steht sofort auf dem gerade gültigen Wert. Enter schreibt. Geändert wird direkt in der Station.
+Sicherheit beim Schreiben: Vor jeder Änderung wird der Stand der Station in den Projektordner kopiert und in Git festgeschrieben. Nach jeder Änderung liest Sku505 zurück und prüft. Nur wenn Wert und Dateilänge stimmen, meldet es Erfolg.
+Geschrieben wird ausschließlich in Felder mit bekanntem Wertebereich. Alle übrigen Werte werden ehrlich angezeigt, aber nicht verändert. Damit kann nie ein unerlaubter Wert in die Station gelangen.
+Name ändern: Enter auf der Namenszeile öffnet ein Eingabefeld, Enter bestätigt, Escape bricht ab. Zwölf Zeichen.
+Einstellungen kopieren auf einen anderen Platz und tauschen mit einem anderen Platz, jeweils mit Kontrolle. Die Loop-Aufnahmen bleiben dabei liegen, darauf weist die Ansage hin.
+Loop-Aufnahmen je Platz: Länge in Sekunden je Spur, Export als WAV-Datei, Einspielen einer WAV-Datei mit Formatprüfung auf 44100 Hertz, 16 Bit, Stereo.
+Systemeinstellungen der Station lesen und, wo der Bereich bekannt ist, ändern.
+Stand in Git sichern als eigener Menüpunkt.
+Ist keine Station verbunden, arbeitet Sku505 mit dem zuletzt eingelesenen Stand und sagt klar, dass nur Lesen möglich ist.
+Große Listen werden erst beim Öffnen aufgebaut, damit nichts hakt.
+
 Version 0.05, 08.08.2026
 Neue Grundregel für die ganze Software: Erzeugt eine Aktion eine Liste, bleibt ihr Ladeknopf an erster Stelle stehen und behält den Fokus. Die Ergebnisse hängen darunter, Pfeil runter führt also vom Knopf auf das erste Ergebnis. Vorher sprang der Fokus mitten in die frische Liste, man landete direkt auf Platz 2.
 Umgesetzt bei Speicherplätze laden, gilt ab jetzt für alle künftigen Listen.
