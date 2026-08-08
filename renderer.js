@@ -533,6 +533,11 @@ async function laden(li) {
     let nummer = 0;
     for (const abschnitt of Object.keys(e.daten)) {
       for (const feld of Object.keys(e.daten[abschnitt])) {
+        // Der zuletzt gewählte Speicherplatz steht zwar in der Datei, ist aber
+        // kein Menüpunkt der Station. Er wird im Spielbildschirm mit dem
+        // Regler gewählt. Darum bleibt er hier draußen, sonst würde er die
+        // ganze Nummerierung um eins verschieben.
+        if (abschnitt === "SETUP" && feld === "MemNum") continue;
         nummer++;
         const b = feldBeschreibung(abschnitt, feld);
         const nr = String(nummer).padStart(2, "0");
@@ -1077,7 +1082,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.21"); return;
+    case "ueber": sage("Sku505 Version 0.22"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;

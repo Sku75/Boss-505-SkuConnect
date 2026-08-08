@@ -1,5 +1,10 @@
 Sku505 Patchnotes
 
+Version 0.22, 08.08.2026
+Im Gerätemenü ist der zuletzt gewählte Speicherplatz nicht mehr aufgeführt. Er steht zwar in der Datei, ist aber kein Menüpunkt der Station, sondern wird im Spielbildschirm mit dem Regler gewählt. Er hatte die ganze Nummerierung um eins verschoben.
+Die Liste beginnt jetzt mit 01 Display-Helligkeit, also genau dem, was erscheint, wenn man am Gerät ein Mal Taste 1.3 drückt.
+Damit stimmt die Nummer in Sku505 mit der Position am Gerät überein. Der Anker Eingang auf Line Out steht auf 12, die USB-Betriebsart auf 14.
+
 Version 0.21, 08.08.2026
 Neuer Menüpunkt in der Werkstatt: Gerätemenü, gleiche Reihenfolge wie an der Station.
 Er zeigt alle Systemwerte als eine durchnummerierte Liste in genau der Reihenfolge, in der sie auch am Gerät stehen. Damit kann man am Bildschirm abzählen, wie oft man an der Station den Pfeil rechts drücken muss, statt blind zu raten.
