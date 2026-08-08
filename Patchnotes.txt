@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.20, 08.08.2026
+Das Umschalten des Speicherplatzes im Live-Studio meldet jetzt zurück, ob die Station den Befehl wirklich angenommen hat. Bisher sagte Sku505 nur, was es gesendet hatte.
+So funktioniert es: Die Station meldet einen Speicherplatzwechsel von sich aus über MIDI. Sku505 wartet nach dem Senden kurz auf diese Meldung. Kommt sie, lautet die Ansage von der Station bestätigt. Kommt sie nicht, sagt Sku505 das ehrlich und nennt den Grund, nämlich dass am Gerät die Einstellung Speicherplatz per MIDI melden auf An stehen muss.
+Speicherplätze werden jetzt mit Namen und Inhalt angesagt, also zum Beispiel Platz 95, Count One, 5 Spuren, statt nur Platz 95. Die Namen stammen aus dem zuletzt eingelesenen Stand im Programmordner, denn im Bühnen-Modus gibt es kein Laufwerk.
+Das gilt auch für den Ansager: Schaltest du am Gerät um, nennt Sku505 Nummer, Namen und Inhalt.
+
 Version 0.19, 08.08.2026
 Der Wechsel der Betriebsart ist jetzt erprobt und die Anleitung im Programm berichtigt.
 Entscheidende Erkenntnis: Die Station liest die USB-Betriebsart nur beim Einschalten, nicht bei jedem Verbinden. Ein Ändern der Einstellung wirkt darum erst, wenn die Station einmal aus und wieder eingeschaltet wird. Der bisherige Hinweis, USB kurz zu trennen, war falsch und ist ersetzt.

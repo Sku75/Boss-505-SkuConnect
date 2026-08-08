@@ -838,6 +838,28 @@ async function loopsEinlesen(li) {
 
 let letzterZustand = null;
 
+// Die Namen der Speicherplätze aus dem zuletzt eingelesenen Stand. Im
+// Bühnen-Modus gibt es kein Laufwerk, darum stammen sie aus der Kopie im
+// Programmordner. So kann Sku505 auch live sagen, wie ein Platz heißt.
+let platzListe = null;
+
+async function platzListeLaden() {
+  const eigen = await window.sku505.datenordner();
+  if (!eigen.ok || !eigen.vorhanden) return;
+  const e = await window.sku505.speicherplaetzeLesen(eigen.pfad);
+  if (e.ok) platzListe = e.plaetze;
+}
+
+// Beschreibt einen Speicherplatz so kurz wie möglich, mit Namen wenn bekannt.
+function platzBeschreibung(nummer) {
+  if (!nummer) return "Kein Platz gemeldet";
+  const p = platzListe && platzListe.find(x => x.nummer === nummer);
+  if (!p) return "Platz " + nummer;
+  const name = (p.name || "").trim();
+  const inhalt = p.spuren === 0 ? "leer" : p.spuren + " Spuren";
+  return "Platz " + nummer + (name ? ", " + name : "") + ", " + inhalt;
+}
+
 async function zustandLesen() {
   const l = await window.sku505.laufwerkDa();
   if (l.ok && l.gefunden) return "werkstatt";
@@ -1016,7 +1038,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.19"); return;
+    case "ueber": sage("Sku505 Version 0.20"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
@@ -1126,6 +1148,7 @@ sage("Sku505 bereit");
 // Beim ersten Blick wird noch nichts angesagt, danach jede Änderung.
 (async () => {
   if (typeof midiStillVerbinden === "function") await midiStillVerbinden();
+  await platzListeLaden();
   await zustandPruefen(false);
   if (midiZugang) {
     midiZugang.onstatechange = async () => {

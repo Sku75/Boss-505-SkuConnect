@@ -112,11 +112,18 @@ function midiEmpfang(nachricht) {
   }
 
   // Programmwechsel: die Station meldet den gewählten Speicherplatz.
+  // Das ist zugleich die Bestätigung für einen Befehl, den wir gesendet haben.
   if (art === 0xc0) {
     const platz = d[1] + 1;
+    if (wartetAufPlatz && wartetAufPlatz.nummer === platz) {
+      wartetAufPlatz.melden(true);
+      wartetAufPlatz = null;
+      letzterPlatz = platz;
+      return;
+    }
     if (platz !== letzterPlatz) {
       letzterPlatz = platz;
-      if (ansagerAn) sage("Platz " + platz);
+      if (ansagerAn) sage(platzBeschreibung(platz));
     }
     return;
   }
@@ -148,7 +155,7 @@ function platzAnsagen(li) {
     ]);
     return;
   }
-  ergebnis(li, "Platz " + letzterPlatz, ["Zuletzt gemeldet: Platz " + letzterPlatz]);
+  ergebnis(li, platzBeschreibung(letzterPlatz), ["Zuletzt gemeldet: " + platzBeschreibung(letzterPlatz)]);
 }
 
 // --- Steuern ---
@@ -159,11 +166,46 @@ function midiSenden(bytes) {
   return true;
 }
 
-function platzUmschalten(li) {
+// Wartet nach dem Senden auf die Rückmeldung der Station. Sie meldet einen
+// Speicherplatzwechsel von sich aus, sofern am Gerät die Einstellung
+// Speicherplatz per MIDI melden auf An steht. Damit wissen wir sicher, ob der
+// Befehl angekommen ist, statt nur zu hoffen.
+let wartetAufPlatz = null;
+
+async function platzUmschalten(li) {
   const platz = parseInt(li.dataset.ziel, 10);
-  if (!midiSenden([0xc0 | midiKanal, platz - 1])) return;
+  if (!midiAusgang) {
+    ergebnis(li, "Nicht verbunden", ["Kein MIDI-Ausgang", "Erst MIDI verbinden wählen"]);
+    return;
+  }
+
+  const bestaetigung = new Promise((fertig) => {
+    wartetAufPlatz = { nummer: platz, melden: fertig };
+    window.setTimeout(() => {
+      if (wartetAufPlatz && wartetAufPlatz.nummer === platz) {
+        wartetAufPlatz = null;
+        fertig(false);
+      }
+    }, 1200);
+  });
+
+  midiSenden([0xc0 | midiKanal, platz - 1]);
+  const bestaetigt = await bestaetigung;
   letzterPlatz = platz;
-  ergebnis(li, "Platz " + platz, ["Umgeschaltet auf Platz " + platz, "MIDI-Kanal " + (midiKanal + 1)]);
+
+  if (bestaetigt) {
+    ergebnis(li, platzBeschreibung(platz), [
+      platzBeschreibung(platz),
+      "Von der Station bestätigt"
+    ]);
+  } else {
+    ergebnis(li, platzBeschreibung(platz) + ", nicht bestätigt", [
+      platzBeschreibung(platz),
+      "Der Befehl wurde gesendet, die Station hat nicht zurückgemeldet",
+      "Am Gerät muss Speicherplatz per MIDI melden auf An stehen",
+      "Zu finden in der Werkstatt unter Systemeinstellungen, MIDI"
+    ]);
+  }
 }
 
 function steuerbefehlSenden(li) {
