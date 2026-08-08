@@ -5,23 +5,23 @@
 	<MemNum>97</MemNum>
 	<LcdContrast>7</LcdContrast>
 	<PhantomPwr>1</PhantomPwr>
-	<DispMod>0</DispMod>
+	<DispMod>6</DispMod>
 	<IndMod>0</IndMod>
 	<AutoOff>1</AutoOff>
 	<AllClr>1</AllClr>
-	<QuickClr>0</QuickClr>
-	<KnobMod>1</KnobMod>
+	<QuickClr>1</QuickClr>
+	<KnobMod>0</KnobMod>
 </SETUP>
 <INPUT_OUTPUT>
 	<InNsThrs>40</InNsThrs>
-	<LineOutLvl>49</LineOutLvl>
+	<LineOutLvl>50</LineOutLvl>
 	<InSrc>1</InSrc>
 	<InLineOut>1</InLineOut>
 	<OutLvlSel>0</OutLvlSel>
 </INPUT_OUTPUT>
 <USB>
 	<Mod>0</Mod>
-	<AuRouting>1</AuRouting>
+	<AuRouting>0</AuRouting>
 	<InLvl>50</InLvl>
 	<OutLvl>50</OutLvl>
 </USB>
