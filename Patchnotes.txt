@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.10, 08.08.2026
+Das störende Einrast-Geräusch beim Öffnen des Tooltips ist weg. Ursache: Der Tooltip lag außerhalb des Menü-Bereichs, deshalb wechselte die Sprachausgabe beim Hineinspringen ihren Modus und meldete das mit einem Ton. Der Tooltip ist jetzt selbst ein Anwendungsbereich, damit entfällt der Moduswechsel.
+Die Ansage beim Öffnen des Tooltips ist kürzer: Vorgelesen wird nur noch die Zeile, auf der man steht, nicht mehr die Beschriftung des Tooltips dazu.
+Die Ebenen-Töne sind um die Hälfte leiser, für das Hineingehen und das Zurückgehen.
+Der Hauptmenü-Klang ist neu: ein erzeugter Zweiklang, absteigend von hoch nach tief. Der bisherige stammte aus Skularis und ähnelte dem Umschaltton der Sprachausgabe, das war verwirrend.
+
 Version 0.09, 08.08.2026
 Keine Ebenen-Ansage mehr. NVDA liest nur noch, worauf der Fokus steht. Erreicht wird das wie in Skularis: Das Menü trägt die Rolle application, die Zeilen sind Schaltflächen, nicht mehr ein Baum mit Ebenen.
 Ebenenwechsel klingen statt zu sprechen: beim Hineingehen der Ton ebene-vor, beim Zurückgehen ebene-zurueck, beide aus Skularis übernommen. Beim Erreichen des Hauptmenüs erklingt ein deutlich anderer Ton.

@@ -43,20 +43,44 @@ function ergebnis(li, ansage, zeilen) {
 const KLAENGE = {
   ebeneVor:     new Audio("assets/sounds/ebene-vor.wav"),
   ebeneZurueck: new Audio("assets/sounds/ebene-zurueck.wav"),
-  hauptmenue:   new Audio("assets/sounds/hauptmenue.mp3"),
   tooltipAuf:   new Audio("assets/sounds/tooltip-auf.ogg"),
   tooltipZu:    new Audio("assets/sounds/tooltip-zu.ogg")
 };
-for (const k of Object.values(KLAENGE)) k.volume = 0.5;
+// Die Ebenen-Töne bewusst leise, sie erklingen bei jedem Schritt.
+KLAENGE.ebeneVor.volume = 0.25;
+KLAENGE.ebeneZurueck.volume = 0.25;
+KLAENGE.tooltipAuf.volume = 0.5;
+KLAENGE.tooltipZu.volume = 0.5;
+
+let audioKontext = null;
 
 function klang(name) {
+  if (name === "hauptmenue") { spieleHauptmenue(); return; }
   const k = KLAENGE[name];
   if (!k) return;
   try { k.currentTime = 0; k.play(); } catch { /* egal */ }
 }
 
+// Hauptmenü: ein eigener, klar abgesetzter Zweiklang. Bewusst erzeugt und
+// nicht aus einer Datei, damit er keinem Klang der Sprachausgabe ähnelt.
+function spieleHauptmenue() {
+  if (!audioKontext) audioKontext = new (window.AudioContext || window.webkitAudioContext)();
+  const start = audioKontext.currentTime;
+  [[660, 0], [440, 0.14]].forEach(([hz, versatz]) => {
+    const o = audioKontext.createOscillator();
+    const g = audioKontext.createGain();
+    o.type = "triangle";
+    o.frequency.value = hz;
+    o.connect(g); g.connect(audioKontext.destination);
+    const t0 = start + versatz;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.22);
+    o.start(t0); o.stop(t0 + 0.24);
+  });
+}
+
 // Anschlag am Rand einer Ebene: erzeugter Ton, 220 Hertz, wie in Skularis.
-let audioKontext = null;
 function spieleAnschlag() {
   if (!audioKontext) audioKontext = new (window.AudioContext || window.webkitAudioContext)();
   const oszillator = audioKontext.createOscillator();
@@ -829,7 +853,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.09"); return;
+    case "ueber": sage("Sku505 Version 0.10"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
