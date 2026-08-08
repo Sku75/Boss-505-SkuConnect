@@ -1,5 +1,10 @@
 Sku505 Patchnotes
 
+Version 0.11, 08.08.2026
+Der Tooltip spricht wieder. In Version 0.10 war zu viel entfernt worden: Ohne Rolle las die Sprachausgabe die Zeilen im Anwendungsbereich nicht mehr vor. Die Zeilen tragen jetzt dieselbe Rolle wie die Menüzeilen.
+Die Überschrift im Tooltip ist weg. Er beginnt sofort mit der ersten Sachzeile, also zum Beispiel Station gefunden, dann Laufwerk D.
+Aktionen, die noch nicht ausgeführt wurden, melden im Tooltip Bitte ausführen, statt zu schweigen.
+
 Version 0.10, 08.08.2026
 Das störende Einrast-Geräusch beim Öffnen des Tooltips ist weg. Ursache: Der Tooltip lag außerhalb des Menü-Bereichs, deshalb wechselte die Sprachausgabe beim Hineinspringen ihren Modus und meldete das mit einem Ton. Der Tooltip ist jetzt selbst ein Anwendungsbereich, damit entfällt der Moduswechsel.
 Die Ansage beim Öffnen des Tooltips ist kürzer: Vorgelesen wird nur noch die Zeile, auf der man steht, nicht mehr die Beschriftung des Tooltips dazu.

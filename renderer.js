@@ -382,7 +382,10 @@ function tooltipZeilen(li) {
     }
     return zeilen;
   }
-  return li._ergebnis || null;
+  if (li._ergebnis) return li._ergebnis;
+  // Aktionen, die noch nicht gelaufen sind, sagen was zu tun ist.
+  if (li.dataset.typ === "aktion") return ["Bitte ausführen"];
+  return null;
 }
 
 function oeffneTooltip(li) {
@@ -390,15 +393,11 @@ function oeffneTooltip(li) {
   if (!zeilen || !zeilen.length) { sage("Keine weiteren Angaben"); return; }
 
   tooltip.innerHTML = "";
-  const kopf = document.createElement("li");
-  kopf.className = "kopf";
-  kopf.textContent = li.dataset.text;
-  kopf.tabIndex = -1;
-  tooltip.appendChild(kopf);
   for (const z of zeilen) {
     const zeile = document.createElement("li");
-    zeile.textContent = z;
+    zeile.setAttribute("role", "button");
     zeile.setAttribute("aria-label", z);
+    zeile.textContent = z;
     zeile.tabIndex = -1;
     tooltip.appendChild(zeile);
   }
@@ -406,14 +405,14 @@ function oeffneTooltip(li) {
   tooltipOffen = true;
   tooltipRueckkehr = li;
   klang("tooltipAuf");
-  tooltip.children[1].focus();
+  tooltip.children[0].focus();
 }
 
 function tooltipWeiter(richtung) {
   const zeilen = Array.from(tooltip.children);
   const jetzt = zeilen.indexOf(document.activeElement);
   const ziel = jetzt + richtung;
-  if (ziel < 1 || ziel >= zeilen.length) { spieleAnschlag(); return; }
+  if (ziel < 0 || ziel >= zeilen.length) { spieleAnschlag(); return; }
   zeilen[ziel].focus();
 }
 
@@ -853,7 +852,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.10"); return;
+    case "ueber": sage("Sku505 Version 0.11"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
