@@ -3,7 +3,7 @@
 <sys>
 <SETUP>
 	<MemNum>96</MemNum>
-	<LcdContrast>15</LcdContrast>
+	<LcdContrast>2</LcdContrast>
 	<PhantomPwr>1</PhantomPwr>
 	<DispMod>6</DispMod>
 	<IndMod>0</IndMod>
