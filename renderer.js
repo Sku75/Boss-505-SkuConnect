@@ -817,24 +817,53 @@ async function loopsEinlesen(li) {
   }
 }
 
-// Ersetzt das Ziehen und Stecken des USB-Kabels. Die Betriebsart selbst
-// wird am Gerät umgestellt, hier wird nur die Verbindung neu aufgebaut.
-async function usbNeuLaden(li) {
-  sage("Lade USB neu");
+// Ersetzt das Ziehen und Stecken des USB-Kabels.
+//
+// Wichtig: Solange die Station als Laufwerk verbunden ist, steht im Display
+// Idling und das Bedienfeld ist gesperrt. Die Betriebsart lässt sich am Gerät
+// also erst umstellen, wenn die Verbindung getrennt ist.
+async function usbSteuern(li, aktion) {
+  const worte = {
+    trennen:   "Trenne USB",
+    verbinden: "Verbinde USB",
+    neuladen:  "Lade USB neu"
+  };
+  sage(worte[aktion]);
   stationsPfad = null;
   schreibbar = false;
-  const e = await window.sku505.usbNeuLaden();
+
+  const e = await window.sku505.usbSteuern(aktion);
   if (!e.ok) { ergebnis(li, "Fehler", ["Fehler", e.fehler]); return; }
   if (e.problem) {
-    ergebnis(li, "USB nicht neu geladen", ["Es hat nicht geklappt", e.problem,
+    ergebnis(li, "Hat nicht geklappt", ["Es hat nicht geklappt", e.problem,
       "Notfalls hilft weiterhin Kabel ziehen und stecken"]);
     return;
   }
+
+  if (aktion === "trennen") {
+    if (e.zustand === "GETRENNT") {
+      ergebnis(li, "USB getrennt, Station bedienbar", [
+        "USB getrennt",
+        "Das Bedienfeld der Station reagiert jetzt wieder",
+        "Betriebsart umstellen: SYSTEM drei Mal, Regler eine Raste, EXIT",
+        "Danach hier USB verbinden wählen"
+      ]);
+    } else {
+      ergebnis(li, "Station noch verbunden", [
+        "Das Trennen hat nicht gegriffen",
+        "Zustand: " + e.zustand,
+        "Notfalls das Kabel kurz ziehen"
+      ]);
+    }
+    return;
+  }
+
   const zustand = e.zustand === "SPEICHER" ? "Speicher-Modus"
     : e.zustand === "AUDIO" ? "Audio und MIDI"
-    : "noch nicht erkannt";
-  ergebnis(li, "USB neu geladen, " + zustand, [
-    "USB neu geladen",
+    : e.zustand === "GETRENNT" ? "noch getrennt"
+    : "nicht erkannt";
+  ergebnis(li, "USB verbunden, " + zustand, [
+    "USB verbunden",
     "Station jetzt im " + zustand,
     e.geraet ? "Gerät " + e.geraet : "Kein Gerät gemeldet"
   ]);
@@ -865,7 +894,11 @@ const menue = [
     ]}
   ]},
   { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
-  { typ: "aktion", id: "usb-neu-laden", text: "USB neu laden" },
+  { typ: "ordner", text: "USB-Verbindung", kinder: [
+    { typ: "aktion", id: "usb-trennen", text: "USB trennen, Station wird bedienbar" },
+    { typ: "aktion", id: "usb-verbinden", text: "USB verbinden" },
+    { typ: "aktion", id: "usb-neuladen", text: "USB neu laden, trennen und verbinden" }
+  ]},
   { typ: "ordner", text: "Optionen", kinder: [
     { typ: "aktion", id: "ueber", text: "Über Sku505" }
   ]},
@@ -883,13 +916,15 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.15"); return;
+    case "ueber": sage("Sku505 Version 0.16"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "einst-einlesen": await einstellungenEinlesen(li); return;
     case "loops-einlesen": await loopsEinlesen(li); return;
-    case "usb-neu-laden": await usbNeuLaden(li); return;
+    case "usb-trennen": await usbSteuern(li, "trennen"); return;
+    case "usb-verbinden": await usbSteuern(li, "verbinden"); return;
+    case "usb-neuladen": await usbSteuern(li, "neuladen"); return;
     case "git-sichern": await inGitSichern(li); return;
     case "name-aendern": await nameAendern(li); return;
     case "kopieren-nach": await platzUebertragen(li, false); return;

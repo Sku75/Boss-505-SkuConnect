@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.16, 08.08.2026
+Aus USB neu laden wird der Menüpunkt USB-Verbindung mit drei Einträgen: USB trennen, USB verbinden und USB neu laden.
+Hintergrund: Solange die Station als Laufwerk verbunden ist, steht im Display Idling und das Bedienfeld ist gesperrt. Die Tasten am Gerät reagieren dann nicht, die Betriebsart lässt sich also gar nicht umstellen. Genau deshalb blieb die Tastenfolge am Gerät wirkungslos.
+Der Ablauf ist jetzt: USB trennen, dann am Gerät die Betriebsart umstellen, dann USB verbinden. Das Kabel bleibt dabei stecken.
+Nach dem Trennen sagt Sku505 die Tastenfolge für das Gerät gleich mit an.
+
 Version 0.15, 08.08.2026
 Neuer Hauptmenüpunkt USB neu laden, an dritter Stelle unter Live-Studio.
 Er ersetzt das Ziehen und Stecken des USB-Kabels. Die Betriebsart selbst stellst du weiterhin am Gerät um, Sku505 baut danach nur die Verbindung neu auf. Das schont den Stecker.

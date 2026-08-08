@@ -450,12 +450,13 @@ ipcMain.handle('platz-tauschen', sicher(platzTauschen));
 ipcMain.handle('loops-auflisten', sicher(async (p, n) => ({ spuren: await loopsAuflisten(p, n) })));
 ipcMain.handle('loop-exportieren', sicher(loopExportieren));
 ipcMain.handle('loop-importieren', sicher(loopImportieren));
-// Startet die Station am USB neu, statt das Kabel zu ziehen.
-function usbNeuLaden() {
+// Steuert die USB-Verbindung zur Station, damit das Kabel stecken bleibt.
+// aktion ist trennen, verbinden oder neuladen.
+function usbSteuern(aktion) {
   return new Promise((fertig) => {
-    const skript = path.join(__dirname, 'werkzeug', 'usb-neu-laden.ps1');
+    const skript = path.join(__dirname, 'werkzeug', 'usb-steuern.ps1');
     execFile('powershell.exe',
-      ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', skript],
+      ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', skript, '-Aktion', aktion],
       { windowsHide: true, timeout: 90000 },
       (fehler, aus) => {
         const text = String(aus || '');
@@ -472,7 +473,7 @@ function usbNeuLaden() {
   });
 }
 
-ipcMain.handle('usb-neu-laden', sicher(usbNeuLaden));
+ipcMain.handle('usb-steuern', sicher(usbSteuern));
 ipcMain.handle('git-sichern', sicher(gitSichern));
 ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
   await fsp.writeFile(ziel, Buffer.from(daten));
