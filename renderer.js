@@ -1,4 +1,4 @@
-// Sku505 Version 0.07, Werkstatt mit Tooltip und kurzen Ansagen.
+// Sku505 Version 0.08, Werkstatt und Live-Studio.
 //
 // Bedienung: Pfeil hoch und runter wandern innerhalb der Ebene, Pfeil rechts
 // geht hinein, Pfeil links und Rücktaste gehen heraus, Enter aktiviert.
@@ -322,6 +322,13 @@ async function quelleSichern() {
 
 async function laden(li) {
   const art = li.dataset.laden;
+
+  // Die Listen des Live-Bereichs brauchen keine Stationsdaten.
+  if (art === "midiplatz" || art === "midicc" || art === "midikanal") {
+    setzeKinder(li, liveLaden(art, li));
+    return true;
+  }
+
   const pfad = await quelleSichern();
   if (!pfad) { sage("Keine Daten, erst Station suchen"); return false; }
 
@@ -704,9 +711,7 @@ const menue = [
       { typ: "aktion", id: "git-sichern", text: "Stand in Git sichern" }
     ]}
   ]},
-  { typ: "ordner", text: "Live-Studio", kinder: [
-    { typ: "aktion", id: "live-info", text: "Wird in einer späteren Stufe gebaut" }
-  ]},
+  { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
   { typ: "ordner", text: "Optionen", kinder: [
     { typ: "aktion", id: "ueber", text: "Über Sku505" }
   ]},
@@ -724,7 +729,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.07"); return;
+    case "ueber": sage("Sku505 Version 0.08"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
@@ -736,6 +741,15 @@ async function aktiviere(li) {
     case "tauschen-mit": await platzUebertragen(li, true); return;
     case "loop-export": await loopExportieren(li); return;
     case "loop-import": await loopImportieren(li); return;
+    case "midi-verbinden": await midiVerbinden(li); return;
+    case "ansager": ansagerUmschalten(li); return;
+    case "platz-ansagen": platzAnsagen(li); return;
+    case "tempo-ansagen": tempoAnsagen(li); return;
+    case "midi-platz": platzUmschalten(li); return;
+    case "midi-cc": steuerbefehlSenden(li); return;
+    case "midi-kanal": kanalSetzen(li); return;
+    case "aufnahme-start": await aufnahmeStarten(li); return;
+    case "aufnahme-stopp": await aufnahmeStoppen(li); return;
     case "nur-lesen": sage("Lässt sich hier nicht ändern"); return;
     default: sage(li.dataset.text); return;
   }

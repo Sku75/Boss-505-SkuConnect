@@ -1,5 +1,21 @@
 Sku505 Patchnotes
 
+Version 0.08, 08.08.2026, Effekte im Klartext und das Live-Studio
+Effekttypen haben jetzt Namen statt Nummern: Filter, Phaser, Flanger, Synth, Lo-Fi, Ring Modulator, Guitar to Bass, Slow Gear, Transpose, Pitch Bend, Robot, Vocal Dist, Vocoder, Dynamics, Equalizer, Isolator, Oktave, Panorama, Tremolo, Slicer, Delay, Panning Delay, Tape Echo, Granular Delay, Roll, Chorus, Reverb und die vier Beat-Effekte. Die Reihenfolge stammt aus dem Zusatzhandbuch zur Version 2.0 und deckt sich genau mit der Reihenfolge der Parameter in der Gerätedatei, sie gilt damit als gesichert.
+Alle Effekt-Parameter sind benannt und einstellbar, zum Beispiel Filter Grenzfrequenz, Delay Wiederholungen oder Reverb Länge. Felder, die eine Art oder ein Muster auswählen, bleiben bis zur Bestätigung am Gerät gesperrt, werden aber angezeigt.
+Die Beat-Effekt-Abschnitte werden mitgelesen.
+
+Live-Studio, neu:
+MIDI verbinden sucht die Station und meldet, ob Zuhören und Steuern möglich sind.
+Ansager sagt Platzwechsel, Start und Stopp an, sobald am Gerät umgeschaltet wird. Ein- und ausschaltbar.
+Gewählten Platz ansagen und Tempo ansagen, das Tempo wird aus der MIDI-Uhr errechnet.
+Speicherplatz umschalten sendet den Programmwechsel an die Station, alle 99 Plätze.
+Steuerbefehl senden für die Zuweisungen: CC 1 bis 31 und 64 bis 95, je mit Auslösen, Loslassen und Mitte.
+MIDI-Kanal einstellbar von 1 bis 16.
+Aufnahme über USB-Audio: schneidet das Ausgangssignal der Station mit und speichert es als WAV-Datei.
+
+Start ohne schwarzes Konsolenfenster über Sku505 Starten.vbs.
+
 Version 0.06, 08.08.2026, die vollständige Werkstatt
 Speicherplatz öffnen: Jeder der 99 Plätze lässt sich öffnen und zeigt alle Werte. Bereiche: Wiedergabe, Aufnahme, Speicherplatz gesamt, Rhythmus, Spur 1 bis 5, Input FX, Track FX mit den Parametern der Tasten A, B und C, sowie alle 16 Zuweisungen.
 Werte ändern: Auf einem Wert öffnet Pfeil rechts die Auswahl, der Fokus steht sofort auf dem gerade gültigen Wert. Enter schreibt. Geändert wird direkt in der Station.

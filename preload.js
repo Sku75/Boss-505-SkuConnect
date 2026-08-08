@@ -17,6 +17,7 @@ contextBridge.exposeInMainWorld('sku505', {
   loopExportieren:       (p, n, s, z) => ipcRenderer.invoke('loop-exportieren', p, n, s, z),
   loopImportieren:       (p, n, s, q) => ipcRenderer.invoke('loop-importieren', p, n, s, q),
   gitSichern:            (t)       => ipcRenderer.invoke('git-sichern', t),
+  wavSchreiben:          (z, d)    => ipcRenderer.invoke('wav-schreiben', z, d),
   datenordner:           ()        => ipcRenderer.invoke('datenordner'),
   dateiWaehlen:          (s, v)    => ipcRenderer.invoke('datei-waehlen', s, v)
 });

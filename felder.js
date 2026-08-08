@@ -9,9 +9,165 @@
 //   zahl        Zahl von min bis max
 //   tempo       Tempo, in der Datei mit zehn malgenommen (1086 heißt 108,6)
 //   looplaenge  0 heißt AUTO, sonst die Anzahl Takte
-//   text        Freitext
 
 const AUS_AN = ["Aus", "An"];
+
+// ---------------------------------------------------------------------
+// Die Effekttypen der RC-505 mit Firmware 2.0.
+//
+// Die Reihenfolge ist doppelt belegt: Sie entspricht der Aufzählung im
+// Zusatzhandbuch zur Version 2.0 und zugleich der Reihenfolge, in der die
+// Parameter dieser Effekte in der Gerätedatei stehen. Beide stimmen genau
+// überein, darum gilt die Zuordnung als gesichert.
+//
+// Die vier Beat-Effekte ab 27 stehen im Handbuch am Ende der Liste und haben
+// ihre Parameter in eigenen Abschnitten. Ihre Nummern sind abgeleitet.
+// ---------------------------------------------------------------------
+
+const FX_TYPEN = [
+  "Filter", "Phaser", "Flanger", "Synth", "Lo-Fi", "Ring Modulator",
+  "Guitar to Bass", "Slow Gear", "Transpose", "Pitch Bend", "Robot",
+  "Vocal Dist", "Vocoder", "Dynamics", "Equalizer", "Isolator", "Oktave",
+  "Panorama", "Tremolo", "Slicer", "Delay", "Panning Delay", "Tape Echo",
+  "Granular Delay", "Roll", "Chorus", "Reverb",
+  "Beat Repeat", "Beat Shift", "Beat Scatter", "Vinyl Flick"
+];
+
+// ---------------------------------------------------------------------
+// Die Parameter der Effekte.
+//
+// Durchgehende Regler laufen von 0 bis 100 und sind änderbar. Felder, die
+// eine Art oder ein Muster auswählen, bleiben gesperrt, solange ihr
+// Wertebereich nicht am Gerät bestätigt ist. Sie werden aber angezeigt.
+// ---------------------------------------------------------------------
+
+const R = (text) => ({ text, art: "zahl", min: 0, max: 100 });
+const NUR = (text) => ({ text, art: "zahl", nurLesen: true });
+
+const FX_FELDER = {
+  // Filter
+  FilTyp:    { text: "Filter, Art", art: "liste", werte: ["Tiefpass", "Bandpass", "Hochpass"] },
+  FilRat:    R("Filter, Geschwindigkeit"),
+  FilDep:    R("Filter, Tiefe"),
+  FilReso:   R("Filter, Resonanz"),
+  FilCut:    R("Filter, Grenzfrequenz"),
+  FilStpRat: NUR("Filter, Schritttempo"),
+  // Phaser
+  PhRat:    R("Phaser, Geschwindigkeit"),
+  PhDep:    R("Phaser, Tiefe"),
+  PhReso:   R("Phaser, Resonanz"),
+  PhStpRat: NUR("Phaser, Schritttempo"),
+  PhLvl:    R("Phaser, Pegel"),
+  // Flanger
+  FlRat:    R("Flanger, Geschwindigkeit"),
+  FlDep:    R("Flanger, Tiefe"),
+  FlReso:   R("Flanger, Resonanz"),
+  FlStpRat: NUR("Flanger, Schritttempo"),
+  FlLvl:    R("Flanger, Pegel"),
+  // Synth
+  SynFreq:  R("Synth, Frequenz"),
+  SynReso:  R("Synth, Resonanz"),
+  SynDecay: R("Synth, Ausklang"),
+  SynBal:   R("Synth, Balance"),
+  // Lo-Fi
+  LoFiDep:  NUR("Lo-Fi, Bit-Tiefe"),
+  LoFiSmpl: NUR("Lo-Fi, Abtastrate"),
+  LoFiBal:  R("Lo-Fi, Balance"),
+  // Ring Modulator
+  RmFreq: R("Ring Modulator, Frequenz"),
+  RmBal:  R("Ring Modulator, Balance"),
+  // Guitar to Bass
+  GToB: R("Guitar to Bass, Balance"),
+  // Slow Gear
+  SgSens:   R("Slow Gear, Empfindlichkeit"),
+  SgRisTim: R("Slow Gear, Anstiegszeit"),
+  SgLvl:    R("Slow Gear, Pegel"),
+  // Transpose und Pitch Bend
+  Trans: NUR("Transpose, Halbtöne"),
+  PbPit: NUR("Pitch Bend, Tonhöhe"),
+  PbBnd: R("Pitch Bend, Stärke"),
+  // Robot
+  RoboNote: NUR("Robot, Grundton"),
+  RoboGen:  R("Robot, Klangfarbe"),
+  // Vocal Dist
+  DistDist: R("Vocal Dist, Verzerrung"),
+  DistTon:  R("Vocal Dist, Klang"),
+  DistLvl:  R("Vocal Dist, Pegel"),
+  // Vocoder
+  VocoCar:  NUR("Vocoder, Träger"),
+  VocoSens: R("Vocoder, Empfindlichkeit"),
+  VocoAtck: R("Vocoder, Ansprache"),
+  VocoBal:  R("Vocoder, Balance"),
+  // Dynamics
+  DynmTyp:  NUR("Dynamics, Art"),
+  DynmDynm: R("Dynamics, Stärke"),
+  // Equalizer
+  EqLo:   R("Equalizer, Bässe"),
+  EqLoMd: R("Equalizer, untere Mitten"),
+  EqHiMd: R("Equalizer, obere Mitten"),
+  EqHi:   R("Equalizer, Höhen"),
+  EqLvl:  R("Equalizer, Pegel"),
+  // Isolator
+  IsoBnd:    NUR("Isolator, Bereich"),
+  IsoRat:    R("Isolator, Geschwindigkeit"),
+  IsoDep:    R("Isolator, Tiefe"),
+  IsoStpRat: NUR("Isolator, Schritttempo"),
+  IsoLvl:    R("Isolator, Absenkung"),
+  // Oktave
+  OctMod: NUR("Oktave, Art"),
+  OctLvl: R("Oktave, Pegel"),
+  // Panorama
+  PanTyp:    NUR("Panorama, Art"),
+  PanRat:    R("Panorama, Geschwindigkeit"),
+  PanDep:    R("Panorama, Tiefe"),
+  PanStpRat: NUR("Panorama, Schritttempo"),
+  PanPos:    R("Panorama, Position"),
+  // Tremolo
+  TrRat: R("Tremolo, Geschwindigkeit"),
+  TrDep: R("Tremolo, Tiefe"),
+  TrLvl: R("Tremolo, Pegel"),
+  // Slicer
+  SlPat: NUR("Slicer, Muster"),
+  SlRat: R("Slicer, Geschwindigkeit"),
+  SlDep: R("Slicer, Tiefe"),
+  // Delay
+  DlyTim: R("Delay, Zeit"),
+  DlyFb:  R("Delay, Wiederholungen"),
+  DlyLvl: R("Delay, Pegel"),
+  // Panning Delay
+  PanDlyTim: R("Panning Delay, Zeit"),
+  PanDlyFb:  R("Panning Delay, Wiederholungen"),
+  PanDlyLvl: R("Panning Delay, Pegel"),
+  // Tape Echo
+  EchRat: R("Tape Echo, Geschwindigkeit"),
+  EchInt: R("Tape Echo, Intensität"),
+  EchLvl: R("Tape Echo, Pegel"),
+  // Granular Delay
+  GraTim: R("Granular Delay, Zeit"),
+  GraFb:  R("Granular Delay, Wiederholungen"),
+  GraLvl: R("Granular Delay, Pegel"),
+  // Roll
+  RllTim: R("Roll, Zeit"),
+  RllMod: NUR("Roll, Art"),
+  RllFb:  R("Roll, Wiederholungen"),
+  RllLvl: R("Roll, Pegel"),
+  // Chorus
+  ChoRat: R("Chorus, Geschwindigkeit"),
+  ChoDep: R("Chorus, Tiefe"),
+  ChoLvl: R("Chorus, Pegel"),
+  // Reverb
+  RevTim:  R("Reverb, Länge"),
+  RevLvl:  R("Reverb, Pegel"),
+  RevDLvl: R("Reverb, Direktpegel"),
+  // Beat-Effekte
+  RepTyp:   NUR("Beat Repeat, Art"),
+  RepLen:   NUR("Beat Repeat, Länge"),
+  ShftTyp:  NUR("Beat Shift, Art"),
+  ShftShft: NUR("Beat Shift, Versatz"),
+  ScatTyp:  NUR("Beat Scatter, Art"),
+  ScatLen:  NUR("Beat Scatter, Länge"),
+  Flick:    NUR("Vinyl Flick, Stärke")
+};
 
 const FELDER = {
   // --- Speicherplatz gesamt ---
@@ -52,13 +208,13 @@ const FELDER = {
   // --- Effekt-Bänke Input FX und Track FX ---
   "FXBANK.Sw":   { text: "Effekte", art: "liste", werte: AUS_AN },
   "FXBANK.Sel":  { text: "Gewählte Taste", art: "liste", werte: ["A", "B", "C"] },
-  "FXBANK.Typ1": { text: "Effekt auf Taste A, Typnummer", art: "zahl", min: 0, max: 27 },
-  "FXBANK.Typ2": { text: "Effekt auf Taste B, Typnummer", art: "zahl", min: 0, max: 27 },
-  "FXBANK.Typ3": { text: "Effekt auf Taste C, Typnummer", art: "zahl", min: 0, max: 27 },
+  "FXBANK.Typ1": { text: "Effekt Taste A", art: "liste", werte: FX_TYPEN },
+  "FXBANK.Typ2": { text: "Effekt Taste B", art: "liste", werte: FX_TYPEN },
+  "FXBANK.Typ3": { text: "Effekt Taste C", art: "liste", werte: FX_TYPEN },
   "FXBANK.MltSw":   { text: "Effekte im Multi-Betrieb", art: "liste", werte: AUS_AN },
-  "FXBANK.MltTyp1": { text: "Multi, Taste A, Typnummer", art: "zahl", min: 0, max: 27 },
-  "FXBANK.MltTyp2": { text: "Multi, Taste B, Typnummer", art: "zahl", min: 0, max: 27 },
-  "FXBANK.MltTyp3": { text: "Multi, Taste C, Typnummer", art: "zahl", min: 0, max: 27 },
+  "FXBANK.MltTyp1": { text: "Multi, Effekt Taste A", art: "liste", werte: FX_TYPEN },
+  "FXBANK.MltTyp2": { text: "Multi, Effekt Taste B", art: "liste", werte: FX_TYPEN },
+  "FXBANK.MltTyp3": { text: "Multi, Effekt Taste C", art: "liste", werte: FX_TYPEN },
 
   // --- Assigns ---
   "ASSIGN.Sw":     { text: "Zuweisung", art: "liste", werte: AUS_AN },
@@ -101,11 +257,14 @@ function grundform(abschnitt) {
   if (/^TRACK[1-5]$/.test(abschnitt)) return "TRACK";
   if (/^ASSIGN\d+$/.test(abschnitt)) return "ASSIGN";
   if (abschnitt === "INPUT_FX" || abschnitt === "TRACK_FX") return "FXBANK";
+  if (/^(INPUT_FX|TRACK_FX|BEAT_FX)[123]$/.test(abschnitt)) return "FXPARAM";
   return abschnitt;
 }
 
 function feldBeschreibung(abschnitt, feld) {
-  const schluessel = grundform(abschnitt) + "." + feld;
+  const form = grundform(abschnitt);
+  if (form === "FXPARAM") return FX_FELDER[feld] || null;
+  const schluessel = form + "." + feld;
   if (FELDER[schluessel]) return FELDER[schluessel];
   if (NUR_ANZEIGE[schluessel]) return { text: NUR_ANZEIGE[schluessel], art: "zahl", nurLesen: true };
   return null;

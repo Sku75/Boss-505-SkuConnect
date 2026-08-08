@@ -16,6 +16,10 @@ function erstelleFenster() {
       nodeIntegration: false
     }
   });
+  // MIDI im Fenster zulassen, sonst verweigert Electron den Zugriff.
+  fenster.webContents.session.setPermissionRequestHandler((inhalt, recht, erlauben) => {
+    erlauben(recht === 'midi' || recht === 'midiSysex' || recht === 'media');
+  });
   fenster.loadFile('index.html');
 }
 
@@ -140,7 +144,8 @@ async function speicherplatzLesen(rolandPfad, nummer) {
     'TRACK1', 'TRACK2', 'TRACK3', 'TRACK4', 'TRACK5',
     'INPUT_FX', 'TRACK_FX',
     'INPUT_FX1', 'INPUT_FX2', 'INPUT_FX3',
-    'TRACK_FX1', 'TRACK_FX2', 'TRACK_FX3'];
+    'TRACK_FX1', 'TRACK_FX2', 'TRACK_FX3',
+    'BEAT_FX1', 'BEAT_FX2', 'BEAT_FX3'];
   for (const a of abschnitte) daten[a] = abschnittLesen(inhalt, a, g.start, g.ende) || {};
   for (let i = 1; i <= 16; i++) {
     daten['ASSIGN' + i] = abschnittLesen(inhalt, 'ASSIGN' + i, g.start, g.ende) || {};
@@ -446,6 +451,10 @@ ipcMain.handle('loops-auflisten', sicher(async (p, n) => ({ spuren: await loopsA
 ipcMain.handle('loop-exportieren', sicher(loopExportieren));
 ipcMain.handle('loop-importieren', sicher(loopImportieren));
 ipcMain.handle('git-sichern', sicher(gitSichern));
+ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
+  await fsp.writeFile(ziel, Buffer.from(daten));
+  return { bytes: (await fsp.stat(ziel)).size };
+}));
 ipcMain.handle('datenordner', sicher(async () => ({
   pfad: datenOrdner,
   vorhanden: fs.existsSync(path.join(datenOrdner, 'DATA', 'MEMORY.RC0'))
