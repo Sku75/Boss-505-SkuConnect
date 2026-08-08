@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const fsp = require('fs/promises');
 
 function erstelleFenster() {
   const fenster = new BrowserWindow({
@@ -17,78 +18,125 @@ function erstelleFenster() {
   fenster.loadFile('index.html');
 }
 
-// --- Werkstatt: Station im Speicher-Modus finden, sichern, pruefen ---
+const datenOrdner = path.join(__dirname, 'Stationsdaten', 'ROLAND');
 
-// Sucht auf allen Laufwerken nach dem ROLAND-Ordner der Station.
+// --- Station finden ---
+
 function findeStation() {
   const buchstaben = 'DEFGHIJKLMNOPQRSTUVWXYZ';
   for (const b of buchstaben) {
-    const wurzel = b + ':\\';
     try {
-      const rolandPfad = path.join(wurzel, 'ROLAND');
-      if (fs.existsSync(rolandPfad) && fs.statSync(rolandPfad).isDirectory()) {
-        return { gefunden: true, laufwerk: wurzel, rolandPfad };
+      const rolandPfad = path.join(b + ':\\', 'ROLAND');
+      if (fs.existsSync(path.join(rolandPfad, 'DATA', 'MEMORY.RC0'))) {
+        return { gefunden: true, laufwerk: b, rolandPfad };
       }
-    } catch { /* Laufwerk nicht lesbar, weiter */ }
+    } catch { /* Laufwerk nicht lesbar */ }
   }
   return { gefunden: false };
 }
 
-// Liest die Kenndaten aus dem Datenbestand (Formatversion der Speicherdatei).
-function leseKenndaten(rolandPfad) {
-  const ergebnis = { ordner: [], speicherDatei: null, revision: null, geraeteName: null };
-  ergebnis.ordner = fs.readdirSync(rolandPfad);
-  const dataPfad = path.join(rolandPfad, 'DATA');
-  if (fs.existsSync(dataPfad)) {
-    const dateien = fs.readdirSync(dataPfad).filter(d => /^MEMORY.*\.RC0$/i.test(d));
-    if (dateien.length > 0) {
-      const datei = path.join(dataPfad, dateien[0]);
-      ergebnis.speicherDatei = dateien[0];
-      const kopf = fs.readFileSync(datei, { encoding: 'utf8' }).slice(0, 500);
-      const nameTreffer = kopf.match(/name="([^"]+)"/);
-      const revisionTreffer = kopf.match(/revision="([^"]+)"/);
-      if (nameTreffer) ergebnis.geraeteName = nameTreffer[1];
-      if (revisionTreffer) ergebnis.revision = revisionTreffer[1];
-    }
+// --- Einlesen. Alles asynchron, damit die Oberflaeche nie einfriert. ---
+
+// Die beiden Einstellungsdateien, zusammen rund 1,7 MB. Geht sofort.
+async function einstellungenEinlesen(rolandPfad) {
+  const ziel = path.join(datenOrdner, 'DATA');
+  await fsp.mkdir(ziel, { recursive: true });
+  let gesamt = 0;
+  for (const datei of ['MEMORY.RC0', 'SYSTEM.RC0']) {
+    const quelle = path.join(rolandPfad, 'DATA', datei);
+    await fsp.copyFile(quelle, path.join(ziel, datei));
+    gesamt += (await fsp.stat(quelle)).size;
   }
-  return ergebnis;
+  return { dateien: 2, bytes: gesamt };
 }
 
-// Liest den kompletten ROLAND-Ordner in den festen Projektordner Stationsdaten ein.
-// Versionierung uebernimmt Git: jeder eingelesene Stand wird committet, die
-// Historie ist das Backup (Nutzerentscheidung, keine eigenen Sicherungskopien).
-function erstelleBackup(rolandPfad) {
-  const ziel = path.join(__dirname, 'Stationsdaten', 'ROLAND');
-  fs.rmSync(ziel, { recursive: true, force: true });
-  fs.cpSync(rolandPfad, ziel, { recursive: true });
-  // Kurz pruefen: Anzahl Dateien in Quelle und Ziel vergleichen.
-  const zaehle = (p) => {
+// Die Loop-Aufnahmen, hier 182 MB. Dauert, laeuft aber im Hintergrund weiter.
+async function loopsEinlesen(rolandPfad) {
+  const quelle = path.join(rolandPfad, 'WAVE');
+  const ziel = path.join(datenOrdner, 'WAVE');
+  await fsp.rm(ziel, { recursive: true, force: true });
+  await fsp.cp(quelle, ziel, { recursive: true });
+  const zaehle = async (p) => {
     let n = 0;
-    for (const e of fs.readdirSync(p, { withFileTypes: true })) {
-      if (e.isDirectory()) n += zaehle(path.join(p, e.name));
+    for (const e of await fsp.readdir(p, { withFileTypes: true })) {
+      if (e.isDirectory()) n += await zaehle(path.join(p, e.name));
       else n += 1;
     }
     return n;
   };
-  const quelle = zaehle(rolandPfad);
-  const kopie = zaehle(ziel);
-  return { ziel, quelle, kopie, vollstaendig: quelle === kopie };
+  const a = await zaehle(quelle);
+  const b = await zaehle(ziel);
+  return { quelle: a, kopie: b, vollstaendig: a === b };
 }
 
-ipcMain.handle('station-suchen', () => {
-  try { return findeStation(); }
-  catch (fehler) { return { gefunden: false, fehler: String(fehler) }; }
-});
+// --- Speicherplaetze auswerten ---
 
-ipcMain.handle('kenndaten-lesen', (ereignis, rolandPfad) => {
-  try { return { ok: true, ...leseKenndaten(rolandPfad) }; }
-  catch (fehler) { return { ok: false, fehler: String(fehler) }; }
-});
+function feldLesen(block, abschnitt, feld) {
+  const a = new RegExp(`<${abschnitt}>([\\s\\S]*?)</${abschnitt}>`).exec(block);
+  if (!a) return null;
+  const f = new RegExp(`<${feld}>([\\s\\S]*?)</${feld}>`).exec(a[1]);
+  return f ? f[1] : null;
+}
 
-ipcMain.handle('backup-erstellen', (ereignis, rolandPfad) => {
-  try { return { ok: true, ...erstelleBackup(rolandPfad) }; }
-  catch (fehler) { return { ok: false, fehler: String(fehler) }; }
-});
+async function speicherplaetzeLesen(rolandPfad) {
+  const datei = path.join(rolandPfad, 'DATA', 'MEMORY.RC0');
+  const inhalt = (await fsp.readFile(datei, 'utf8')).replace(/\0/g, '');
+  const teile = inhalt.split(/<mem id="(\d+)">/);
+  const plaetze = [];
+  for (let i = 1; i < teile.length - 1; i += 2) {
+    const nummer = parseInt(teile[i], 10) + 1;
+    const block = teile[i + 1];
+
+    const namensBlock = /<NAME>([\s\S]*?)<\/NAME>/.exec(block);
+    let name = '';
+    if (namensBlock) {
+      for (const t of namensBlock[1].matchAll(/<C\d+>(\d+)<\/C\d+>/g)) {
+        name += String.fromCharCode(parseInt(t[1], 10));
+      }
+    }
+
+    let spuren = 0;
+    for (let s = 1; s <= 5; s++) {
+      if ((feldLesen(block, 'TRACK' + s, 'WavStat') || '0') !== '0') spuren++;
+    }
+
+    const lpLen = parseInt(feldLesen(block, 'PLAY_OPTION', 'LpLen') || '0', 10);
+    const tempo = parseInt(feldLesen(block, 'MASTER', 'Tmp') || '0', 10) / 10;
+
+    plaetze.push({ nummer, name: name.trim(), spuren, lpLen, tempo });
+  }
+  return plaetze;
+}
+
+// --- Kenndaten ---
+
+async function kenndatenLesen(rolandPfad) {
+  const datei = path.join(rolandPfad, 'DATA', 'MEMORY.RC0');
+  const griff = await fsp.open(datei, 'r');
+  const puffer = Buffer.alloc(300);
+  await griff.read(puffer, 0, 300, 0);
+  await griff.close();
+  const kopf = puffer.toString('utf8');
+  const name = /name="([^"]+)"/.exec(kopf);
+  const revision = /revision="([^"]+)"/.exec(kopf);
+  return { geraet: name ? name[1] : null, revision: revision ? revision[1] : null };
+}
+
+// --- Verbindung zur Oberflaeche ---
+
+function sicher(fn) {
+  return async (ereignis, ...rest) => {
+    try { return { ok: true, ...(await fn(...rest)) }; }
+    catch (fehler) { return { ok: false, fehler: String(fehler.message || fehler) }; }
+  };
+}
+
+ipcMain.handle('station-suchen', sicher(async () => findeStation()));
+ipcMain.handle('einstellungen-einlesen', sicher(einstellungenEinlesen));
+ipcMain.handle('loops-einlesen', sicher(loopsEinlesen));
+ipcMain.handle('kenndaten-lesen', sicher(kenndatenLesen));
+ipcMain.handle('speicherplaetze-lesen', sicher(async (p) => ({ plaetze: await speicherplaetzeLesen(p) })));
+ipcMain.handle('datenordner', sicher(async () => ({ pfad: datenOrdner, vorhanden: fs.existsSync(path.join(datenOrdner, 'DATA', 'MEMORY.RC0')) })));
 
 app.whenReady().then(() => {
   erstelleFenster();

@@ -1,5 +1,12 @@
 Sku505 Patchnotes
 
+Version 0.04, 08.08.2026
+Wichtige Fehlerbehebung: Das Einlesen blockierte das ganze Programm, weil die 182 MB Loop-Aufnahmen am Stück und blockierend kopiert wurden. Alle Dateiarbeiten laufen jetzt im Hintergrund, das Menü bleibt jederzeit bedienbar.
+Einlesen aufgeteilt: Einstellungen einlesen (nur die beiden Einstellungsdateien, rund 1,7 MB, sofort fertig) und Loop-Aufnahmen einlesen (die 182 MB Audio, dauert, blockiert aber nichts mehr). Beide liegen unter Werkstatt, Einlesen.
+Neu: Speicherplätze. Lädt alle 99 Plätze und zeigt je Zeile Nummer, Name, Loop-Länge und belegte Spuren. Zeilen bewusst kurz für die 40-Zeichen-Braillezeile. Am Ende der Liste steht Liste neu laden.
+Firmware und Datenstand prüfen sagt jetzt Gerät, Firmware-Version und Datenstand an.
+Wird keine Station gefunden, greifen die Funktionen auf den zuletzt eingelesenen Datenbestand zurück.
+
 Version 0.03, 08.08.2026
 Neue Hauptstruktur: Werkstatt, Live-Studio, Optionen, unten Sku505 beenden. Probe-Bereich und Über Sku505 liegen jetzt unter Optionen.
 Werkstatt-Grundfunktionen: Station suchen (findet das Laufwerk mit dem ROLAND-Ordner), Stationsdaten einlesen (kompletter ROLAND-Ordner in den Projektordner Stationsdaten, Versionierung über Git statt eigener Sicherungskopien, mit Vollständigkeits-Prüfung), Firmware und Datenstand prüfen (liest Gerätename und Format-Revision aus der Speicherdatei).
