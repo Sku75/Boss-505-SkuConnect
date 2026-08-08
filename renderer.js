@@ -916,15 +916,36 @@ function zustandText(z) {
   return "Station nicht verbunden";
 }
 
+// Das Gerät, auf dem die Sprachausgabe und der Systemton bleiben sollen.
+// Windows greift sich beim Erscheinen der Station gern die Wiedergabe. Für
+// einen blinden Nutzer ist das gefährlich, weil der Ton dann unbemerkt
+// woanders landet. Darum holt Sku505 die Wiedergabe bei jedem Wechsel zurück.
+const HOERGERAET = "G733";
+
+async function wiedergabeSichern() {
+  const e = await window.sku505.audioGeraete("setze", HOERGERAET, "wiedergabe");
+  if (!e.ok || e.problem) return null;
+  return e.gesetzt;
+}
+
 async function zustandPruefen(ansagen) {
   const z = await zustandLesen();
   if (z !== letzterZustand) {
+    const vorher = letzterZustand;
     letzterZustand = z;
     // Bei jedem Wechsel die Erkennung zurücksetzen, damit Sku505 nicht mit
     // einem veralteten Pfad weiterarbeitet.
     stationsPfad = null;
     schreibbar = false;
-    if (ansagen) sage(zustandText(z));
+
+    // Erscheint die Station als Audiogerät, sichert Windows sich meist die
+    // Wiedergabe. Das wird sofort rückgängig gemacht.
+    let zusatz = "";
+    if (z === "buehne") {
+      const geraet = await wiedergabeSichern();
+      if (geraet) zusatz = ", Ton bleibt auf dem Headset";
+    }
+    if (ansagen && vorher !== null) sage(zustandText(z) + zusatz);
   }
   return z;
 }
@@ -1170,7 +1191,8 @@ const menue = [
   ]},
   { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
   { typ: "ordner", text: "Profile", kinder: [
-    { typ: "aktion", id: "audio-ansagen", text: "Audiogeräte ansagen" }
+    { typ: "aktion", id: "audio-ansagen", text: "Audiogeräte ansagen" },
+    { typ: "aktion", id: "ton-zurueck", text: "Ton zurück auf das Headset" }
   ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
@@ -1196,13 +1218,20 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.24"); return;
+    case "ueber": sage("Sku505 Version 0.25"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "einst-einlesen": await einstellungenEinlesen(li); return;
     case "loops-einlesen": await loopsEinlesen(li); return;
     case "audio-ansagen": await audioAnsagen(li); return;
+    case "ton-zurueck": {
+      const geraet = await wiedergabeSichern();
+      if (geraet) ergebnis(li, "Ton auf " + geraet, ["Wiedergabe zurückgeholt", geraet]);
+      else ergebnis(li, "Headset nicht gefunden", ["Das Gerät " + HOERGERAET + " ist gerade nicht da",
+        "Steckt der Dongle?"]);
+      return;
+    }
     case "art-ansagen": await betriebsartAnsagen(li); return;
     case "art-buehne": await betriebsartWechseln(li, "buehne"); return;
     case "art-werkstatt": await betriebsartWechseln(li, "werkstatt"); return;

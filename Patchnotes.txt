@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.25, 09.08.2026
+Der Ton bleibt jetzt zuverlässig auf dem Headset. Bisher setzte ein Profil die Wiedergabe zwar richtig, aber Windows griff sie sich beim nächsten Erscheinen der Station wieder. Für einen blinden Nutzer ist das gefährlich, weil der Ton dann unbemerkt woanders landet.
+Sku505 hält das jetzt nach: Sobald die Station als Audiogerät auftaucht, holt es die Wiedergabe sofort zurück auf das Headset und sagt es mit an, also zum Beispiel Bühne Audio und MIDI, Ton bleibt auf dem Headset.
+Neuer Punkt unter Profile: Ton zurück auf das Headset. Damit lässt sich die Wiedergabe jederzeit von Hand zurückholen, falls doch einmal etwas verrutscht.
+Findet Sku505 das Headset nicht, sagt es das ehrlich und weist auf den Dongle hin, statt still zu scheitern.
+
 Version 0.24, 08.08.2026, Profile
 Neuer Hauptmenüpunkt Profile. Ein Profil stellt in einem Zug die Station und die Audiogeräte von Windows so ein, wie es für eine bestimmte Arbeitsweise passt.
 Üben, allein spielen: Station im Bühnen-Modus, USB-Audio nur zur Box, Windows bleibt auf dem Headset.
