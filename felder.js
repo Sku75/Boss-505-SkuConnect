@@ -44,22 +44,28 @@ const FX_TYPEN = [
 const R = (text) => ({ text, art: "zahl", min: 0, max: 100 });
 const NUR = (text) => ({ text, art: "zahl", nurLesen: true });
 
+// Manche Effekt-Parameter gehen über 100 hinaus. Die Geschwindigkeiten nehmen
+// oberhalb von 100 Notenwerte an, die Zeiten sind Millisekunden. Die Grenzen
+// hier stammen aus den echten Daten der Station, nicht aus einer Vermutung.
+const RATE = (text) => ({ text, art: "zahl", min: 0, max: 115 });
+const ZEIT = (text) => ({ text, art: "zahl", min: 0, max: 1010 });
+
 const FX_FELDER = {
   // Filter
   FilTyp:    { text: "Filter, Art", art: "liste", werte: ["Tiefpass", "Bandpass", "Hochpass"] },
-  FilRat:    R("Filter, Geschwindigkeit"),
+  FilRat:    RATE("Filter, Geschwindigkeit"),
   FilDep:    R("Filter, Tiefe"),
   FilReso:   R("Filter, Resonanz"),
   FilCut:    R("Filter, Grenzfrequenz"),
   FilStpRat: NUR("Filter, Schritttempo"),
   // Phaser
-  PhRat:    R("Phaser, Geschwindigkeit"),
+  PhRat:    RATE("Phaser, Geschwindigkeit"),
   PhDep:    R("Phaser, Tiefe"),
   PhReso:   R("Phaser, Resonanz"),
   PhStpRat: NUR("Phaser, Schritttempo"),
   PhLvl:    R("Phaser, Pegel"),
   // Flanger
-  FlRat:    R("Flanger, Geschwindigkeit"),
+  FlRat:    RATE("Flanger, Geschwindigkeit"),
   FlDep:    R("Flanger, Tiefe"),
   FlReso:   R("Flanger, Resonanz"),
   FlStpRat: NUR("Flanger, Schritttempo"),
@@ -109,7 +115,7 @@ const FX_FELDER = {
   EqLvl:  R("Equalizer, Pegel"),
   // Isolator
   IsoBnd:    NUR("Isolator, Bereich"),
-  IsoRat:    R("Isolator, Geschwindigkeit"),
+  IsoRat:    RATE("Isolator, Geschwindigkeit"),
   IsoDep:    R("Isolator, Tiefe"),
   IsoStpRat: NUR("Isolator, Schritttempo"),
   IsoLvl:    R("Isolator, Absenkung"),
@@ -118,28 +124,28 @@ const FX_FELDER = {
   OctLvl: R("Oktave, Pegel"),
   // Panorama
   PanTyp:    NUR("Panorama, Art"),
-  PanRat:    R("Panorama, Geschwindigkeit"),
+  PanRat:    RATE("Panorama, Geschwindigkeit"),
   PanDep:    R("Panorama, Tiefe"),
   PanStpRat: NUR("Panorama, Schritttempo"),
   PanPos:    R("Panorama, Position"),
   // Tremolo
-  TrRat: R("Tremolo, Geschwindigkeit"),
+  TrRat: RATE("Tremolo, Geschwindigkeit"),
   TrDep: R("Tremolo, Tiefe"),
   TrLvl: R("Tremolo, Pegel"),
   // Slicer
   SlPat: NUR("Slicer, Muster"),
-  SlRat: R("Slicer, Geschwindigkeit"),
+  SlRat: RATE("Slicer, Geschwindigkeit"),
   SlDep: R("Slicer, Tiefe"),
   // Delay
-  DlyTim: R("Delay, Zeit"),
+  DlyTim: ZEIT("Delay, Zeit"),
   DlyFb:  R("Delay, Wiederholungen"),
   DlyLvl: R("Delay, Pegel"),
   // Panning Delay
-  PanDlyTim: R("Panning Delay, Zeit"),
+  PanDlyTim: ZEIT("Panning Delay, Zeit"),
   PanDlyFb:  R("Panning Delay, Wiederholungen"),
   PanDlyLvl: R("Panning Delay, Pegel"),
   // Tape Echo
-  EchRat: R("Tape Echo, Geschwindigkeit"),
+  EchRat: RATE("Tape Echo, Geschwindigkeit"),
   EchInt: R("Tape Echo, Intensität"),
   EchLvl: R("Tape Echo, Pegel"),
   // Granular Delay
@@ -147,12 +153,12 @@ const FX_FELDER = {
   GraFb:  R("Granular Delay, Wiederholungen"),
   GraLvl: R("Granular Delay, Pegel"),
   // Roll
-  RllTim: R("Roll, Zeit"),
+  RllTim: ZEIT("Roll, Zeit"),
   RllMod: NUR("Roll, Art"),
   RllFb:  R("Roll, Wiederholungen"),
   RllLvl: R("Roll, Pegel"),
   // Chorus
-  ChoRat: R("Chorus, Geschwindigkeit"),
+  ChoRat: RATE("Chorus, Geschwindigkeit"),
   ChoDep: R("Chorus, Tiefe"),
   ChoLvl: R("Chorus, Pegel"),
   // Reverb

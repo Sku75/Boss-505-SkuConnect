@@ -82,16 +82,16 @@
   </style>
 </head>
 <body>
-  <h1 id="titel">Sku505</h1>
+  <h1 id="titel" aria-hidden="true">Sku505</h1>
   <!-- Menue und Tooltip liegen im selben Anwendungsbereich. So wechselt die
        Sprachausgabe beim Oeffnen des Tooltips weder den Modus noch meldet sie
        einen neuen Bereich. -->
-  <div id="anwendung" role="application" aria-label="Sku505">
+  <div id="anwendung" role="application">
     <ul id="baum" role="presentation"></ul>
     <ul id="tooltip" role="presentation" hidden></ul>
   </div>
   <input id="eingabefeld" type="text" hidden aria-label="Eingabe, Enter bestätigt, Escape bricht ab">
-  <div id="statuszeile" role="status" aria-live="polite"></div>
+  <div id="statuszeile" role="status" aria-live="assertive" aria-atomic="true"></div>
   <script src="felder.js"></script>
   <script src="live.js"></script>
   <script src="renderer.js"></script>

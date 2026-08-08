@@ -1,5 +1,14 @@
 Sku505 Patchnotes
 
+Version 0.13, 08.08.2026
+Beim Start wird nur noch das Nötige gesagt: Sku505 bereit, danach der Menüpunkt. Der Programmname, die Überschrift, das Wort Anwendung und das Wort Schalter fallen weg. Dafür tragen die Menüzeilen weder eine Rolle noch einen eigenen Namen mehr, die Ansage macht jetzt das Programm selbst über die Statuszeile. Damit steht der Wortlaut vollständig unter unserer Kontrolle.
+Escape geht eine Ebene zurück, genau wie die Rücktaste. Steht man in einer Werteauswahl, kehrt Escape ohne Änderung zurück.
+Bild ab und Bild auf springen zehn Zeilen weiter oder zurück.
+Der Tooltip nennt bei Werten nur noch den eingestellten Zustand, zum Beispiel Eingestellt 50. Die wählbaren Werte stehen im Untermenü und blähen den Tooltip nicht mehr auf.
+Wertebereiche berichtigt. Einige Effekt-Parameter gehen über 100 hinaus: Geschwindigkeiten bis 115, weil oberhalb von 100 Notenwerte folgen, und die Zeiten von Delay, Panning Delay und Roll bis 1010. Die Grenzen stammen aus den echten Daten der Station. Der bisherige Deckel von 100 war falsch, dadurch ließ sich eine Delay-Zeit von 200 nicht wiederherstellen.
+Neu in jeder Zahlen-Auswahl: Genauen Wert eingeben. Damit lässt sich jeder Wert direkt tippen, statt ihn zu erwandern. Werte außerhalb des bekannten Bereichs werden abgelehnt und nichts geschrieben.
+Bei großen Bereichen zeigt die Liste Zehnerschritte, der gerade eingestellte Wert steht aber immer mit drin, damit er sich zurückstellen lässt.
+
 Version 0.12, 08.08.2026
 Beim Öffnen des Tooltips wird nicht mehr Anwendung angesagt. Menü und Tooltip liegen jetzt im selben Anwendungsbereich, statt zwei getrennte zu sein. Damit überschreitet der Fokus beim Öffnen keine Bereichsgrenze mehr, die Sprachausgabe meldet also weder einen Moduswechsel noch einen neuen Bereich und liest sofort die erste Zeile vor.
 

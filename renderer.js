@@ -26,9 +26,13 @@ let schreibbar = false;    // nur wahr, wenn die echte Station verbunden ist
 
 // Kurz und bühnentauglich. Die Einzelheiten stehen im Tooltip.
 // Die Statuszeile meldet nur Änderungen, darum wird sie erst geleert.
+// Ein wechselndes Leerzeichen am Ende sorgt dafür, dass die Statuszeile sich
+// auch dann ändert, wenn derselbe Text noch einmal kommt. Sonst bliebe die
+// Sprachausgabe stumm. Hörbar ist der Unterschied nicht.
+let ansageWechsel = false;
 function sage(text) {
-  statuszeile.textContent = "";
-  window.setTimeout(() => { statuszeile.textContent = text; }, 40);
+  ansageWechsel = !ansageWechsel;
+  statuszeile.textContent = ansageWechsel ? text + " " : text;
 }
 
 function ergebnis(li, ansage, zeilen) {
@@ -123,7 +127,23 @@ function auswahlBauen(art, beschreibung) {
   } else {
     const min = b.min !== undefined ? b.min : 0;
     const max = b.max !== undefined ? b.max : 100;
-    for (let z = min; z <= max; z++) liste.push({ wert: z, text: String(z) });
+    // Bei großen Bereichen in Schritten, sonst wäre die Liste nicht zu
+    // durchwandern. Der genaue Wert lässt sich immer eingeben.
+    const schritt = (max - min) > 300 ? 10 : 1;
+    for (let z = min; z <= max; z += schritt) liste.push({ wert: z, text: String(z) });
+    if (liste.length && liste[liste.length - 1].wert !== max) liste.push({ wert: max, text: String(max) });
+  }
+  return liste;
+}
+
+// Stellt sicher, dass der gerade gültige Wert in der Liste steht, auch wenn er
+// außerhalb des bekannten Bereichs liegt. Sonst ließe er sich nicht wiederherstellen.
+function auswahlMitJetzt(art, beschreibung, jetzt) {
+  const liste = auswahlBauen(art, beschreibung);
+  const zahl = parseInt(jetzt, 10);
+  if (!isNaN(zahl) && !liste.some(o => String(o.wert) === String(zahl))) {
+    liste.push({ wert: zahl, text: String(zahl) });
+    liste.sort((a, b2) => a.wert - b2.wert);
   }
   return liste;
 }
@@ -135,7 +155,6 @@ function auswahlBauen(art, beschreibung) {
 function neuerEintrag(eintrag) {
   const li = document.createElement("li");
   li.className = "eintrag";
-  li.setAttribute("role", "button");
   li.dataset.typ = eintrag.typ;
   if (eintrag.id) li.dataset.id = eintrag.id;
   li.tabIndex = -1;
@@ -189,9 +208,7 @@ function aktualisiereZeile(li) {
     text = li.dataset.text + ": " + wertText(li.dataset.art, li.dataset.rohwert, li._beschreibung);
   }
   zeile.textContent = text;
-  // Der Name für die Sprachausgabe steht am Eintrag selbst, damit NVDA genau
-  // diesen Text liest und nichts hinzufügt.
-  li.setAttribute("aria-label", text);
+  li.dataset.ansage = text;
 }
 
 // =====================================================================
@@ -205,11 +222,14 @@ function ebenenEintraege(li) {
     .filter(e => e.classList.contains("eintrag") && e.style.display !== "none");
 }
 
-function fokussiere(li) {
+function fokussiere(li, stumm) {
   if (!li) return;
   baumElement.querySelectorAll(".eintrag").forEach(e => e.tabIndex = -1);
   li.tabIndex = 0;
   li.focus();
+  // Die Zeilen tragen bewusst keine Rolle und keinen Namen. Dadurch sagt die
+  // Sprachausgabe von sich aus nichts, und wir bestimmen den Wortlaut genau.
+  if (!stumm) sage(li.dataset.ansage || li.dataset.text || "");
 }
 
 function hatUnterebene(li) {
@@ -372,14 +392,10 @@ function tooltipZeilen(li) {
   if (li.dataset.typ === "wert") {
     const b = li._beschreibung || {};
     const jetzt = wertText(li.dataset.art, li.dataset.rohwert, b);
-    const zeilen = [jetzt + " eingestellt"];
-    if (b.nurLesen) {
-      zeilen.push("Lässt sich hier nicht ändern");
-    } else {
-      for (const o of auswahlBauen(li.dataset.art, b)) {
-        if (String(o.wert) !== String(li.dataset.rohwert)) zeilen.push(o.text);
-      }
-    }
+    // Bewusst nur der eingestellte Zustand. Die wählbaren Werte stehen im
+    // Untermenü und würden den Tooltip nur aufblähen.
+    const zeilen = ["Eingestellt " + jetzt];
+    if (b.nurLesen) zeilen.push("Lässt sich hier nicht ändern");
     return zeilen;
   }
   if (li._ergebnis) return li._ergebnis;
@@ -395,9 +411,8 @@ function oeffneTooltip(li) {
   tooltip.innerHTML = "";
   for (const z of zeilen) {
     const zeile = document.createElement("li");
-    zeile.setAttribute("role", "button");
-    zeile.setAttribute("aria-label", z);
     zeile.textContent = z;
+    zeile.dataset.ansage = z;
     zeile.tabIndex = -1;
     tooltip.appendChild(zeile);
   }
@@ -406,6 +421,7 @@ function oeffneTooltip(li) {
   tooltipRueckkehr = li;
   klang("tooltipAuf");
   tooltip.children[0].focus();
+  sage(zeilen[0]);
 }
 
 function tooltipWeiter(richtung) {
@@ -414,6 +430,7 @@ function tooltipWeiter(richtung) {
   const ziel = jetzt + richtung;
   if (ziel < 0 || ziel >= zeilen.length) { spieleAnschlag(); return; }
   zeilen[ziel].focus();
+  sage(zeilen[ziel].dataset.ansage || zeilen[ziel].textContent);
 }
 
 function schliesseTooltip() {
@@ -421,7 +438,7 @@ function schliesseTooltip() {
   tooltip.hidden = true;
   tooltipOffen = false;
   klang("tooltipZu");
-  if (tooltipRueckkehr) fokussiere(tooltipRueckkehr);
+  if (tooltipRueckkehr) fokussiere(tooltipRueckkehr, true);
   tooltipRueckkehr = null;
 }
 
@@ -482,9 +499,13 @@ async function laden(li) {
   }
 
   if (art === "wertoptionen") {
-    const liste = auswahlBauen(li.dataset.art, li._beschreibung);
+    const liste = auswahlMitJetzt(li.dataset.art, li._beschreibung, li.dataset.rohwert);
     const jetzt = String(li.dataset.rohwert);
-    setzeKinder(li, liste.map(o => ({ typ: "option", text: o.text, ziel: o.wert })));
+    const eintraege = liste.map(o => ({ typ: "option", text: o.text, ziel: o.wert }));
+    if (li.dataset.art !== "liste") {
+      eintraege.unshift({ typ: "option", id: "wert-eingeben", text: "Genauen Wert eingeben" });
+    }
+    setzeKinder(li, eintraege);
     const gruppe = li.querySelector(":scope > ul");
     const treffer = Array.from(gruppe.children).find(k => k.dataset.ziel === jetzt);
     if (treffer) { oeffne(li); fokussiere(treffer); return "fokussiert"; }
@@ -676,7 +697,26 @@ async function speicherplaetzeLaden(li) {
 async function wertSetzen(optionLi) {
   const wertLi = elternVon(optionLi);
   if (!schreibbar) { sage("Nur Lesen, Station nicht verbunden"); return; }
-  const neu = optionLi.dataset.ziel;
+
+  let neu = optionLi.dataset.ziel;
+  if (optionLi.dataset.id === "wert-eingeben") {
+    const b = wertLi._beschreibung || {};
+    const grenzen = "von " + (b.min !== undefined ? b.min : 0) + " bis " + (b.max !== undefined ? b.max : 100);
+    const eingabe = await frageText(wertLi.dataset.text + ", Zahl " + grenzen, String(wertLi.dataset.rohwert));
+    fokussiere(wertLi, true);
+    if (eingabe === null) { sage("Abgebrochen"); return; }
+    const zahl = parseInt(String(eingabe).trim(), 10);
+    if (isNaN(zahl)) { sage("Das war keine Zahl"); return; }
+    const kleinste = b.min !== undefined ? b.min : 0;
+    const groesste = b.max !== undefined ? b.max : 100;
+    if (zahl < kleinste || zahl > groesste) {
+      ergebnis(wertLi, "Wert liegt außerhalb, " + grenzen,
+        ["Eingegeben: " + zahl, "Erlaubt ist " + grenzen, "Nichts geschrieben"]);
+      return;
+    }
+    neu = String(zahl);
+    optionLi = { dataset: { text: String(zahl), ziel: neu } };
+  }
   const auftrag = {
     datei: wertLi.dataset.datei,
     nummer: parseInt(wertLi.dataset.nummer, 10),
@@ -704,7 +744,7 @@ async function wertSetzen(optionLi) {
   }
   schliesse(wertLi);
   wertLi.dataset.geladen = "";
-  fokussiere(wertLi);
+  fokussiere(wertLi, true);
   klang("ebeneZurueck");
 }
 
@@ -852,7 +892,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.12"); return;
+    case "ueber": sage("Sku505 Version 0.13"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
@@ -927,8 +967,23 @@ baumElement.addEventListener("keydown", async (ereignis) => {
       return;
     case "Escape":
       ereignis.preventDefault();
-      filterAufheben(false);
+      // Wie die Rücktaste: eine Ebene zurück, ohne etwas zu ändern.
+      ebeneZurueck(aktiv);
       return;
+    case "PageDown": {
+      ereignis.preventDefault();
+      const ziel = Math.min(index + 10, ebene.length - 1);
+      if (ziel === index) spieleAnschlag();
+      fokussiere(ebene[ziel]);
+      return;
+    }
+    case "PageUp": {
+      ereignis.preventDefault();
+      const ziel = Math.max(index - 10, 0);
+      if (ziel === index) spieleAnschlag();
+      fokussiere(ebene[ziel]);
+      return;
+    }
   }
 
   filterTaste(ereignis, aktiv);
