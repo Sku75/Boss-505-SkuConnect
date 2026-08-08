@@ -992,7 +992,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>4</LpLen>
+	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
