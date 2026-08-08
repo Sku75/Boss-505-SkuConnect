@@ -1067,12 +1067,18 @@ const PROFILE = [
     ]
   },
   {
-    id: "profil-werkstatt", text: "Werkstatt, Einstellungen ändern",
-    station: { "USB.Mod": "0", "USB.AuRouting": "0" },
-    wiedergabe: "G733", aufnahme: "G733",
+    // Ohne Eintrag bei station bleibt die Station unangetastet. Das Rode ist
+    // ein USB-Mikrofon und hängt am Rechner, nicht an der Station.
+    id: "profil-rode", text: "Rode-Mikrofon aufnehmen oder senden",
+    station: {},
+    wiedergabe: "G733", aufnahme: "RODE",
     hinweise: [
-      "Station kommt beim nächsten Einschalten als Laufwerk zurück",
-      "Erst dann sind alle Einstellungen erreichbar"
+      "Windows nimmt jetzt mit dem Rode NT-USB auf",
+      "Gut für Audacity und für Discord ohne Loops",
+      "Die Station bleibt unverändert",
+      "Zum Loopen des Rode: Kabel vom Kopfhörerausgang des Rode",
+      "in die kleine AUX-Buchse der Station, dann ohne Verzögerung",
+      "Steckt das Rode nicht, meldet Sku505 das und ändert nichts"
     ]
   }
 ];
@@ -1082,9 +1088,12 @@ async function profilSetzen(li, profil) {
   const zeilen = [];
   let kurz = profil.text + " gesetzt";
 
-  // 1. Die Station, sofern sie als Laufwerk erreichbar ist.
-  const z = await zustandLesen();
-  if (z === "werkstatt") {
+  // 1. Die Station, sofern das Profil überhaupt Werte für sie hat.
+  const hatStationswerte = Object.keys(profil.station).length > 0;
+  const z = hatStationswerte ? await zustandLesen() : null;
+  if (!hatStationswerte) {
+    zeilen.push("Dieses Profil ändert nur den Rechner, die Station bleibt unverändert");
+  } else if (z === "werkstatt") {
     const pfad = await quelleSichern();
     for (const schluessel of Object.keys(profil.station)) {
       const teile = schluessel.split(".");
@@ -1251,7 +1260,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.26"); return;
+    case "ueber": sage("Sku505 Version 0.27"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;

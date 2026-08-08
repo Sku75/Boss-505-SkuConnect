@@ -1,5 +1,12 @@
 Sku505 Patchnotes
 
+Version 0.27, 09.08.2026
+Das Rode NT-USB ist eingebunden. Neues Profil: Rode-Mikrofon aufnehmen oder senden. Es stellt die Aufnahme von Windows auf das Rode und lässt die Wiedergabe auf dem Headset. Gut für Audacity und für Discord ohne Loops.
+Dieses Profil lässt die Station bewusst unangetastet, denn das Rode hängt am Rechner, nicht an der Station. Sku505 sagt das beim Setzen auch an.
+Steckt das Rode gerade nicht, meldet Sku505 das und ändert nur die Wiedergabe. Der Ton geht dabei nicht verloren.
+Zum Loopen des Rode gibt es den Hinweis im Profil: ein Klinkenkabel vom Kopfhörerausgang des Rode in die kleine AUX-Buchse der Station. Damit kommt das Mikrofonsignal ohne Verzögerung in den Looper, und das Rode bleibt gleichzeitig als USB-Mikrofon am Rechner nutzbar.
+Das Profil Werkstatt ist entfallen. Es hat verwirrt und konnte fast nichts tun: Im Bühnen-Modus fehlt das Laufwerk, also liess sich die Betriebsart gar nicht schreiben, und im Werkstatt-Modus stand sie ohnehin schon richtig. Den Moduswechsel macht der eigene Punkt Betriebsart und USB, samt Tastenfolge.
+
 Version 0.26, 09.08.2026
 Nottaster: Strg und F12 stellt den Ton wieder her, und zwar im ganzen System, auch wenn Sku505 gar nicht im Vordergrund ist. Gedacht für den Fall, dass der Ton verschwindet und der Rechner dadurch nicht mehr bedienbar wäre.
 Der Nottaster setzt Wiedergabe und Aufnahme zurück auf das Headset, holt das Sku505-Fenster nach vorn, damit die Sprachausgabe die Meldung auch vorliest, und spielt zur Bestätigung einen Zweiklang.
