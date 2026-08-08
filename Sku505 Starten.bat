@@ -1,3 +1,2 @@
 @echo off
-cd /d "%~dp0"
-start "" "node_modules\.bin\electron.cmd" .
+start "" "%~dp0node_modules\electron\dist\electron.exe" "%~dp0."

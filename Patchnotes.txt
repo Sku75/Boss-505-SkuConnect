@@ -1,5 +1,12 @@
 Sku505 Patchnotes
 
+Version 0.03, 08.08.2026
+Neue Hauptstruktur: Werkstatt, Live-Studio, Optionen, unten Sku505 beenden. Probe-Bereich und Über Sku505 liegen jetzt unter Optionen.
+Werkstatt-Grundfunktionen: Station suchen (findet das Laufwerk mit dem ROLAND-Ordner), Stationsdaten einlesen (kompletter ROLAND-Ordner in den Projektordner Stationsdaten, Versionierung über Git statt eigener Sicherungskopien, mit Vollständigkeits-Prüfung), Firmware und Datenstand prüfen (liest Gerätename und Format-Revision aus der Speicherdatei).
+Anschlagton wird jetzt erzeugt statt aus einer Datei geladen (220 Hertz, 400 Millisekunden, wie in Skularis definiert) und kann nicht mehr ausfallen.
+Die Rücktaste geht zusätzlich zu Pfeil links eine Ebene zurück.
+Start-Datei ruft Electron jetzt direkt auf, das schwarze Konsolenfenster blitzt nur noch kurz auf.
+
 Version 0.02, 08.08.2026
 Navigation strikt ebenenweise: Pfeil hoch und runter bewegen nur noch innerhalb der aktuellen Ebene, nie ebenenübergreifend. Zurück zur höheren Ebene ausschließlich mit Pfeil links.
 Anschlagton aus Skularis übernommen: erklingt am oberen und unteren Rand einer Ebene, auf der Hauptebene bei Pfeil links und auf Aktionen bei Pfeil rechts.

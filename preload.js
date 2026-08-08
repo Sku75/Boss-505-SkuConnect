@@ -1,2 +1,8 @@
 // Preload: Bruecke zwischen Oberflaeche und System.
-// In Version 0.01 noch leer, wird ab dem Werkstatt-Modus gefuellt (Dateizugriff auf die Station).
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('sku505', {
+  stationSuchen: () => ipcRenderer.invoke('station-suchen'),
+  kenndatenLesen: (rolandPfad) => ipcRenderer.invoke('kenndaten-lesen', rolandPfad),
+  datenEinlesen: (rolandPfad) => ipcRenderer.invoke('backup-erstellen', rolandPfad)
+});

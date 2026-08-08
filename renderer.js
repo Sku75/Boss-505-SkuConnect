@@ -1,45 +1,64 @@
-// Sku505 Version 0.01, Bediengerüst.
-// Baummenü nach Anforderungsprofil: Pfeil hoch/runter wandern, Pfeil rechts hinein,
-// Pfeil links heraus, Enter aktiviert. Werte-Zeilen öffnen mit Pfeil rechts ihre
-// Auswahl, Enter stellt den Wert um.
+// Sku505 Version 0.03.
+// Baummenü nach Anforderungsprofil: Pfeil hoch/runter wandern in der Ebene,
+// Pfeil rechts hinein, Pfeil links (auch Rücktaste und Entfernen) heraus,
+// Enter aktiviert. Werte-Zeilen öffnen mit Pfeil rechts ihre Auswahl.
 
-// Menü-Definition. Typen:
-// ordner  = Untermenü mit Kindern
-// aktion  = mit Enter ausführbar
-// wert    = umschaltbarer Wert; auswahl = Liste der möglichen Werte
 const menue = [
   {
     id: "werkstatt", text: "Werkstatt", typ: "ordner", kinder: [
-      { id: "verbindung", text: "Verbindung zur Station prüfen", typ: "aktion" },
-      { id: "backup", text: "Backup erstellen", typ: "aktion" },
+      { id: "station-suchen", text: "Station suchen", typ: "aktion" },
+      { id: "daten-einlesen", text: "Stationsdaten einlesen", typ: "aktion" },
+      { id: "firmware", text: "Firmware und Datenstand prüfen", typ: "aktion" },
       { id: "speicherplaetze", text: "Speicherplätze", typ: "ordner", kinder: [
-        { id: "platz-info", text: "Noch keine Station verbunden", typ: "aktion" }
+        { id: "platz-info", text: "Erst Stationsdaten einlesen", typ: "aktion" }
       ]}
     ]
   },
   {
-    id: "probe", text: "Probe-Bereich für die Abnahme", typ: "ordner", kinder: [
-      { id: "test-schalter", text: "Testschalter", typ: "wert", wert: "Aus", auswahl: ["An", "Aus"] },
-      { id: "test-effekt", text: "Test-Effekt", typ: "wert", wert: "Kein", auswahl: ["Kein", "Filter", "Phaser", "Flanger", "Delay", "Reverb"] },
-      { id: "test-aktion", text: "Test-Aktion mit Ansage", typ: "aktion" }
+    id: "livestudio", text: "Live-Studio", typ: "ordner", kinder: [
+      { id: "live-info", text: "Wird in einer späteren Stufe gebaut", typ: "aktion" }
     ]
   },
   {
-    id: "system", text: "System", typ: "ordner", kinder: [
-      { id: "ueber", text: "Über Sku505", typ: "aktion" },
-      { id: "beenden", text: "Sku505 beenden", typ: "aktion" }
+    id: "optionen", text: "Optionen", typ: "ordner", kinder: [
+      { id: "probe", text: "Probe-Bereich für die Abnahme", typ: "ordner", kinder: [
+        { id: "test-schalter", text: "Testschalter", typ: "wert", wert: "Aus", auswahl: ["An", "Aus"] },
+        { id: "test-effekt", text: "Test-Effekt", typ: "wert", wert: "Kein", auswahl: ["Kein", "Filter", "Phaser", "Flanger", "Delay", "Reverb"] },
+        { id: "test-aktion", text: "Test-Aktion mit Ansage", typ: "aktion" }
+      ]},
+      { id: "ueber", text: "Über Sku505", typ: "aktion" }
     ]
-  }
+  },
+  { id: "beenden", text: "Sku505 beenden", typ: "aktion" }
 ];
 
 const baumElement = document.getElementById("baum");
 const statuszeile = document.getElementById("statuszeile");
 
+// Merkt sich die zuletzt gefundene Station für die Werkstatt-Aktionen.
+let stationsPfad = null;
+
 function sage(text) {
   statuszeile.textContent = text;
 }
 
-// Baut eine Menüebene als Liste. Werte-Zeilen bekommen ihre Auswahl als Kinder.
+// Anschlagton wie in Skularis definiert: erzeugter Ton, 220 Hertz, 400 ms.
+// Kein Dateizugriff, kann darum nicht ausfallen.
+let audioKontext = null;
+function spieleAnschlag() {
+  if (!audioKontext) audioKontext = new (window.AudioContext || window.webkitAudioContext)();
+  const oszillator = audioKontext.createOscillator();
+  const pegel = audioKontext.createGain();
+  oszillator.frequency.value = 220;
+  oszillator.connect(pegel);
+  pegel.connect(audioKontext.destination);
+  const jetzt = audioKontext.currentTime;
+  pegel.gain.setValueAtTime(0.3, jetzt);
+  pegel.gain.exponentialRampToValueAtTime(0.001, jetzt + 0.4);
+  oszillator.start(jetzt);
+  oszillator.stop(jetzt + 0.4);
+}
+
 function baueEbene(eintraege, elternListe, ebene) {
   for (const eintrag of eintraege) {
     const li = document.createElement("li");
@@ -89,8 +108,6 @@ function baueEbene(eintraege, elternListe, ebene) {
   }
 }
 
-// Schreibt den sichtbaren und vorgelesenen Text einer Zeile.
-// Werte-Zeilen zeigen ihren aktuellen Wert mit an, Beispiel: Testschalter: Aus.
 function aktualisiereZeile(li, basisText) {
   const zeile = li.querySelector(":scope > .zeile");
   if (basisText) li.dataset.text = basisText;
@@ -102,17 +119,7 @@ function aktualisiereZeile(li, basisText) {
   }
 }
 
-// Anschlagton (aus Skularis übernommen): erklingt am oberen und unteren
-// Rand einer Ebene, statt darüber hinauszuwandern.
-const anschlagTon = new Audio("assets/sounds/anschlag.wav");
-anschlagTon.volume = 0.3;
-function spieleAnschlag() {
-  anschlagTon.currentTime = 0;
-  anschlagTon.play();
-}
-
-// Liefert nur die Geschwister der aktuellen Ebene. Pfeil hoch/runter bewegt
-// sich strikt in dieser Ebene, nie ebenenübergreifend.
+// Nur die Geschwister der aktuellen Ebene. Bewegung bleibt strikt in der Ebene.
 function ebenenEintraege(li) {
   return Array.from(li.parentElement.children)
     .filter(e => e.getAttribute("role") === "treeitem");
@@ -149,11 +156,66 @@ function elternVon(li) {
   return null;
 }
 
+function ebeneZurueck(aktiv) {
+  if (aktiv.getAttribute("aria-expanded") === "true") {
+    schliesse(aktiv);
+    return;
+  }
+  const eltern = elternVon(aktiv);
+  if (eltern) {
+    schliesse(eltern);
+    fokussiere(eltern);
+  } else {
+    spieleAnschlag();
+  }
+}
+
+// --- Werkstatt-Aktionen ---
+
+async function stationSuchen() {
+  sage("Suche die Station als Laufwerk...");
+  const ergebnis = await window.sku505.stationSuchen();
+  if (ergebnis.gefunden) {
+    stationsPfad = ergebnis.rolandPfad;
+    sage("Station gefunden auf Laufwerk " + ergebnis.laufwerk);
+  } else {
+    stationsPfad = null;
+    sage("Keine Station gefunden. Sie muss im Speicher-Modus angeschlossen sein, USB Mode STORAGE.");
+  }
+}
+
+async function datenEinlesen() {
+  if (!stationsPfad) { await stationSuchen(); if (!stationsPfad) return; }
+  sage("Lese Stationsdaten ein, bitte warten...");
+  const ergebnis = await window.sku505.datenEinlesen(stationsPfad);
+  if (ergebnis.ok && ergebnis.vollstaendig) {
+    sage("Stationsdaten eingelesen, " + ergebnis.kopie + " Dateien, vollständig.");
+  } else if (ergebnis.ok) {
+    sage("Achtung: Einlesen unvollständig. Quelle " + ergebnis.quelle + " Dateien, Kopie " + ergebnis.kopie + ".");
+  } else {
+    sage("Fehler beim Einlesen: " + ergebnis.fehler);
+  }
+}
+
+async function firmwarePruefen() {
+  if (!stationsPfad) { await stationSuchen(); if (!stationsPfad) return; }
+  const ergebnis = await window.sku505.kenndatenLesen(stationsPfad);
+  if (!ergebnis.ok) {
+    sage("Fehler beim Lesen: " + ergebnis.fehler);
+    return;
+  }
+  let meldung = "";
+  if (ergebnis.geraeteName) meldung += "Gerät " + ergebnis.geraeteName + ". ";
+  if (ergebnis.revision) meldung += "Datenformat Revision " + ergebnis.revision + ". ";
+  if (ergebnis.speicherDatei) meldung += "Speicherdatei " + ergebnis.speicherDatei + ".";
+  if (!meldung) meldung = "Keine Speicherdatei gefunden. Ordner: " + ergebnis.ordner.join(", ");
+  sage(meldung);
+}
+
 function aktiviere(li) {
   const typ = li.dataset.typ;
 
   if (typ === "ordner" || typ === "wert") {
-    // Enter auf Ordner oder Wert wirkt wie Pfeil rechts: hinein.
     if (oeffne(li)) {
       const erstesKind = li.querySelector(':scope > ul[role="group"] > li');
       fokussiere(erstesKind);
@@ -162,7 +224,6 @@ function aktiviere(li) {
   }
 
   if (typ === "option") {
-    // Enter auf einer Auswahl-Option: Wert übernehmen, zuklappen, zurück zur Wert-Zeile.
     const wertZeile = elternVon(li);
     wertZeile.dataset.wert = li.dataset.option;
     aktualisiereZeile(wertZeile);
@@ -172,20 +233,16 @@ function aktiviere(li) {
     return;
   }
 
-  // Aktionen der Version 0.01
   const id = li.dataset.id;
-  if (id === "beenden") {
-    window.close();
-    return;
-  }
+  if (id === "beenden") { window.close(); return; }
   if (id === "ueber") {
-    sage("Sku505 Version 0.02. Bediengerüst zur Abnahme mit NVDA und Braille.");
+    sage("Sku505 Version 0.03. Werkstatt-Grundfunktionen: suchen, einlesen, prüfen.");
     return;
   }
-  if (id === "test-aktion") {
-    sage("Test-Aktion ausgeführt. Ansagen funktionieren.");
-    return;
-  }
+  if (id === "test-aktion") { sage("Test-Aktion ausgeführt. Ansagen funktionieren."); return; }
+  if (id === "station-suchen") { stationSuchen(); return; }
+  if (id === "daten-einlesen") { datenEinlesen(); return; }
+  if (id === "firmware") { firmwarePruefen(); return; }
   sage(li.dataset.text + ": diese Funktion wird in einer späteren Version gebaut.");
 }
 
@@ -198,19 +255,13 @@ baumElement.addEventListener("keydown", (ereignis) => {
   switch (ereignis.key) {
     case "ArrowDown":
       ereignis.preventDefault();
-      if (index >= ebene.length - 1) {
-        spieleAnschlag();
-      } else {
-        fokussiere(ebene[index + 1]);
-      }
+      if (index >= ebene.length - 1) spieleAnschlag();
+      else fokussiere(ebene[index + 1]);
       break;
     case "ArrowUp":
       ereignis.preventDefault();
-      if (index <= 0) {
-        spieleAnschlag();
-      } else {
-        fokussiere(ebene[index - 1]);
-      }
+      if (index <= 0) spieleAnschlag();
+      else fokussiere(ebene[index - 1]);
       break;
     case "Home":
       ereignis.preventDefault();
@@ -222,34 +273,20 @@ baumElement.addEventListener("keydown", (ereignis) => {
       if (index === ebene.length - 1) spieleAnschlag();
       fokussiere(ebene[ebene.length - 1]);
       break;
-    case "ArrowRight": {
+    case "ArrowRight":
       ereignis.preventDefault();
       if (aktiv.hasAttribute("aria-expanded")) {
         oeffne(aktiv);
-        const erstesKind = aktiv.querySelector(':scope > ul[role="group"] > li');
-        fokussiere(erstesKind);
+        fokussiere(aktiv.querySelector(':scope > ul[role="group"] > li'));
       } else {
-        // Aktion ohne Unterebene: hier geht es nicht tiefer.
         spieleAnschlag();
       }
       break;
-    }
-    case "ArrowLeft": {
+    case "ArrowLeft":
+    case "Backspace":
       ereignis.preventDefault();
-      if (aktiv.getAttribute("aria-expanded") === "true") {
-        schliesse(aktiv);
-      } else {
-        const eltern = elternVon(aktiv);
-        if (eltern) {
-          schliesse(eltern);
-          fokussiere(eltern);
-        } else {
-          // Hauptebene: weiter zurück geht nicht.
-          spieleAnschlag();
-        }
-      }
+      ebeneZurueck(aktiv);
       break;
-    }
     case "Enter":
       ereignis.preventDefault();
       aktiviere(aktiv);
@@ -258,6 +295,5 @@ baumElement.addEventListener("keydown", (ereignis) => {
 });
 
 baueEbene(menue, baumElement, 1);
-const erster = baumElement.querySelector('li[role="treeitem"]');
-fokussiere(erster);
-sage("Sku505 bereit. Pfeiltasten und Enter bedienen das Menü.");
+fokussiere(baumElement.querySelector('li[role="treeitem"]'));
+sage("Sku505 bereit.");
