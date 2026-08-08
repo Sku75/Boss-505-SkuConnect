@@ -1,5 +1,8 @@
 Sku505 Patchnotes
 
+Version 0.12, 08.08.2026
+Beim Öffnen des Tooltips wird nicht mehr Anwendung angesagt. Menü und Tooltip liegen jetzt im selben Anwendungsbereich, statt zwei getrennte zu sein. Damit überschreitet der Fokus beim Öffnen keine Bereichsgrenze mehr, die Sprachausgabe meldet also weder einen Moduswechsel noch einen neuen Bereich und liest sofort die erste Zeile vor.
+
 Version 0.11, 08.08.2026
 Der Tooltip spricht wieder. In Version 0.10 war zu viel entfernt worden: Ohne Rolle las die Sprachausgabe die Zeilen im Anwendungsbereich nicht mehr vor. Die Zeilen tragen jetzt dieselbe Rolle wie die Menüzeilen.
 Die Überschrift im Tooltip ist weg. Er beginnt sofort mit der ersten Sachzeile, also zum Beispiel Station gefunden, dann Laufwerk D.
