@@ -387,7 +387,7 @@ function gitSichern(text) {
         if (fehler && /nothing to commit/.test(String(aus))) {
           fertig({ neu: false, meldung: 'Kein neuer Stand, nichts zu sichern.' });
         } else if (fehler) {
-          fertig({ neu: false, meldung: 'Git meldet: ' + String(fehler.message).split('\n')[0] });
+          fertig({ neu: false, meldung: 'Git meldet: ' + String(fehler.message).split(String.fromCharCode(10))[0] });
         } else {
           fertig({ neu: true, meldung: 'Stand in Git gesichert.' });
         }
@@ -450,6 +450,29 @@ ipcMain.handle('platz-tauschen', sicher(platzTauschen));
 ipcMain.handle('loops-auflisten', sicher(async (p, n) => ({ spuren: await loopsAuflisten(p, n) })));
 ipcMain.handle('loop-exportieren', sicher(loopExportieren));
 ipcMain.handle('loop-importieren', sicher(loopImportieren));
+// Startet die Station am USB neu, statt das Kabel zu ziehen.
+function usbNeuLaden() {
+  return new Promise((fertig) => {
+    const skript = path.join(__dirname, 'werkzeug', 'usb-neu-laden.ps1');
+    execFile('powershell.exe',
+      ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', skript],
+      { windowsHide: true, timeout: 90000 },
+      (fehler, aus) => {
+        const text = String(aus || '');
+        const lies = (schluessel) => {
+          const treffer = new RegExp('^' + schluessel + '=(.*)$', 'm').exec(text);
+          return treffer ? treffer[1].trim() : null;
+        };
+        fertig({
+          geraet: lies('GEFUNDEN'),
+          zustand: lies('ZUSTAND'),
+          problem: lies('FEHLER') || (fehler ? String(fehler.message) : null)
+        });
+      });
+  });
+}
+
+ipcMain.handle('usb-neu-laden', sicher(usbNeuLaden));
 ipcMain.handle('git-sichern', sicher(gitSichern));
 ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
   await fsp.writeFile(ziel, Buffer.from(daten));

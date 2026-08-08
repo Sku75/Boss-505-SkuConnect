@@ -1,5 +1,12 @@
 Sku505 Patchnotes
 
+Version 0.15, 08.08.2026
+Neuer Hauptmenüpunkt USB neu laden, an dritter Stelle unter Live-Studio.
+Er ersetzt das Ziehen und Stecken des USB-Kabels. Die Betriebsart selbst stellst du weiterhin am Gerät um, Sku505 baut danach nur die Verbindung neu auf. Das schont den Stecker.
+Ablauf: Sku505 sucht die Station am USB, leert vorher die Schreibpuffer aller Wechseldatenträger, damit nichts halb geschrieben zurückbleibt, startet das Gerät neu und meldet danach, in welcher Betriebsart es zurückkommt, also Speicher-Modus oder Audio und MIDI.
+Die Station meldet sich in den beiden Betriebsarten mit verschiedenen Kennungen, PID 0170 als Speicher und PID 0171 als Audio und MIDI. Daran erkennt Sku505 den Zustand nach dem Neustart zuverlässig.
+Windows verlangt für den Geräteneustart erhöhte Rechte. Läuft Sku505 ohne, fragt Windows einmal nach und die Nachfrage muss bestätigt werden.
+
 Version 0.14, 08.08.2026, Abschluss der Werkstatt
 Das Feld Genauen Wert eingeben ist wieder weg. Es war überflüssig, weil der Menüfilter das schon kann: In der Auswahl die Zahl tippen, Pfeil runter, Enter.
 Deshalb stehen in den Auswahllisten jetzt wieder alle Werte einzeln, auch bei großen Bereichen. Über den Filter ist jeder Wert in Sekunden erreichbar.
