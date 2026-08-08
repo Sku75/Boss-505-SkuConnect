@@ -1,0 +1,4 @@
+# Die Dateien der Station verwenden reine LF-Zeilenenden. Git wuerde sie unter
+# Windows sonst auf CRLF umschreiben, die Datei waere rund 85 Kilobyte groesser
+# und die Station koennte sie ablehnen. Darum unangetastet lassen.
+*.RC0 -text
