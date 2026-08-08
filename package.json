@@ -1,0 +1,14 @@
+{
+  "name": "sku505",
+  "version": "0.01.0",
+  "description": "Sku505 - barrierefreier Editor und Begleiter fuer die Boss RC-505 MK1 Loopstation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Kai",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}

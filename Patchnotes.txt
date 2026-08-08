@@ -1,0 +1,10 @@
+Sku505 Patchnotes
+
+Version 0.01, 08.08.2026
+Erste Version, Bediengerüst zur Abnahme.
+Baummenü nach Anforderungsprofil: Pfeil hoch und runter wandern, Pfeil rechts hinein, Pfeil links heraus, Enter aktiviert.
+Werte-Zeilen zeigen ihren aktuellen Wert mit an und öffnen mit Pfeil rechts ihre Auswahl, Enter stellt um.
+Optik schwarz mit weißer Schrift, Zeilendesign, Fokuszeile invertiert.
+Statuszeile unten mit Ansagen über NVDA (Live-Region).
+Probe-Bereich mit Testschalter, Test-Effekt-Auswahl und Test-Aktion für die Abnahme mit NVDA und Braille.
+Noch keine Gerätefunktionen. Werkstatt-Einträge sind Platzhalter.

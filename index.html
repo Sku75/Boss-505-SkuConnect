@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Sku505</title>
+  <style>
+    :root {
+      --hintergrund: #000000;
+      --schrift: #ffffff;
+      --fokus-hintergrund: #ffffff;
+      --fokus-schrift: #000000;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--hintergrund);
+      color: var(--schrift);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 22px;
+      padding: 12px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: normal;
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--schrift);
+      margin-bottom: 8px;
+    }
+    ul[role="tree"], ul[role="group"] {
+      list-style: none;
+    }
+    ul[role="group"] {
+      padding-left: 28px;
+    }
+    li[role="treeitem"] > .zeile {
+      display: block;
+      padding: 6px 8px;
+      cursor: default;
+      white-space: nowrap;
+    }
+    li[role="treeitem"]:focus {
+      outline: none;
+    }
+    li[role="treeitem"]:focus > .zeile {
+      background: var(--fokus-hintergrund);
+      color: var(--fokus-schrift);
+    }
+    #statuszeile {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 8px;
+      padding: 6px 8px;
+      border-top: 1px solid var(--schrift);
+      font-size: 20px;
+      min-height: 34px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="titel">Sku505</h1>
+  <ul id="baum" role="tree" aria-label="Hauptmenü"></ul>
+  <div id="statuszeile" role="status" aria-live="polite"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>
