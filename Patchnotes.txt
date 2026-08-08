@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.19, 08.08.2026
+Der Wechsel der Betriebsart ist jetzt erprobt und die Anleitung im Programm berichtigt.
+Entscheidende Erkenntnis: Die Station liest die USB-Betriebsart nur beim Einschalten, nicht bei jedem Verbinden. Ein Ändern der Einstellung wirkt darum erst, wenn die Station einmal aus und wieder eingeschaltet wird. Der bisherige Hinweis, USB kurz zu trennen, war falsch und ist ersetzt.
+Ebenfalls berichtigt: Dreimal SYSTEM führt am Gerät nicht zur USB-Betriebsart. Belegt durch einen Fehlversuch, bei dem der Reglerschritt stattdessen die Display-Helligkeit verstellt hat. Verlässlich ist: Taste 1.3 ein Mal, dann Taste 1.2 acht Mal, dann Regler, dann Taste 2.2. Am Gerät geändert wirkt sofort.
+Alle Tastenhinweise nennen die Tasten jetzt einheitlich mit Koordinaten: 1.1 Pfeil links, 1.2 Pfeil rechts, 1.3 SYSTEM, 2.1 WRITE, 2.2 EXIT, 2.3 MEMORY.
+
 Version 0.18, 08.08.2026, Betriebsart
 Sku505 überwacht ab jetzt laufend, in welchem Zustand die Station ist, und meldet jede Änderung von selbst: Werkstatt Datenmodus, Bühne Audio und MIDI, oder Station nicht verbunden. Damit ist auch ohne Display jederzeit klar, woran man ist.
 Neuer Menüpunkt Betriebsart und USB mit fünf Einträgen: Betriebsart ansagen, Auf Bühne umstellen, Auf Werkstatt umstellen, Trennung vorbereiten und Verbindung erneuern.

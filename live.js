@@ -61,7 +61,7 @@ async function midiVerbinden(li) {
     ergebnis(li, "Keine Station am MIDI", [
       "Keine RC-505 am MIDI gefunden",
       "Die Station muss in der Betriebsart AUDIO/MIDI angeschlossen sein",
-      "Am Gerät: SYSTEM drei Mal, Regler auf AUDIO/MIDI, EXIT, Kabel neu stecken"
+      "Am Gerät: 1.3 ein Mal, 1.2 acht Mal, Regler auf Audio und MIDI, 2.2"
     ].concat(namen.length ? namen : ["Keine MIDI-Anschlüsse vorhanden"]));
   }
 }

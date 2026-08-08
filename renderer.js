@@ -648,7 +648,7 @@ async function stationSuchen(li) {
   stationsPfad = null; schreibbar = false;
   ergebnis(li, "Keine Station gefunden", [
     "Keine Station gefunden", "Sie muss im Speicher-Modus angeschlossen sein",
-    "Am Gerät: SYSTEM drei Mal, Regler auf STORAGE, EXIT, Kabel neu stecken"
+    "Am Gerät: 1.3 ein Mal, 1.2 acht Mal, Regler auf Speicher, 2.2, dann Station aus und ein"
   ]);
 }
 
@@ -903,10 +903,13 @@ async function betriebsartWechseln(li, ziel) {
         ["Der Wert wurde nicht bestätigt", "Gelesen: " + e.gelesen]);
       return;
     }
-    ergebnis(li, "Eingestellt, jetzt USB kurz aus und wieder an", [
-      "Betriebsart auf " + zustandText(ziel) + " gesetzt",
-      "Die Station übernimmt das beim nächsten Verbinden",
-      "Jetzt USB kurz trennen und wieder verbinden",
+    ergebnis(li, "Eingestellt, jetzt Station aus und wieder ein", [
+      "Betriebsart auf " + zustandText(ziel) + " gesetzt und geprüft",
+      "Wichtig: Die Station liest diese Einstellung nur beim Einschalten",
+      "Ein bloßes Trennen der USB-Verbindung genügt nicht",
+      "Schritt 1: Netzknopf drücken und halten, bis die Station aus ist",
+      "Schritt 2: Netzknopf wieder drücken, ein paar Sekunden warten",
+      "Schritt 3: USB verbinden",
       "Sku505 sagt von selbst an, was danach da ist"
     ]);
     return;
@@ -915,14 +918,17 @@ async function betriebsartWechseln(li, ziel) {
   // In der Bühne gibt es kein Laufwerk. Dafür reagiert dort das Bedienfeld,
   // also geht es am Gerät. Der Regler-Schritt ist der entscheidende, er wird
   // am häufigsten vergessen.
-  ergebnis(li, "Am Gerät umstellen, Regler nicht vergessen", [
+  ergebnis(li, "Am Gerät umstellen, Schritt für Schritt", [
     "Im Bühnen-Modus gibt es kein Laufwerk, Sku505 kann nichts schreiben",
     "Dafür reagiert jetzt das Bedienfeld der Station",
-    "Schritt 1: Taste 1.3, SYSTEM, drei Mal drücken",
-    "Schritt 2: den Regler MEMORY VALUE eine Raste drehen, das ist der wichtige Schritt",
-    "Schritt 3: Taste 2.2, EXIT, einmal drücken",
-    "Danach USB kurz aus und wieder an",
-    "Sku505 sagt von selbst an, was danach da ist"
+    "Schritt 1: Taste 2.2, EXIT, drei Mal drücken, damit du sicher im Spielbildschirm bist",
+    "Schritt 2: Taste 1.3, SYSTEM, genau ein Mal drücken",
+    "Schritt 3: Taste 1.2, Pfeil rechts, genau acht Mal drücken",
+    "Damit stehst du auf der USB-Betriebsart",
+    "Schritt 4: den Regler MEMORY VALUE eine Raste drehen, es gibt nur zwei Werte",
+    "Schritt 5: Taste 2.2, EXIT, einmal drücken",
+    "Am Gerät geändert wirkt sofort, kein Aus- und Einschalten nötig",
+    "Danach USB verbinden, Sku505 sagt an, was da ist"
   ]);
 }
 
@@ -936,11 +942,10 @@ async function usbVorbereiten(li) {
 
   ergebnis(li, "Bereit, jetzt am Gerät EXIT drücken", [
     "Die Schreibpuffer sind geleert, es kann nichts verloren gehen",
-    "Schritt 1: am Gerät EXIT drücken, mittlere Spalte, vordere Reihe",
-    "Schritt 2: im Display steht Disconnect OK, mit WRITE bestätigen",
-    "WRITE ist die linke Taste der vorderen Reihe",
+    "Schritt 1: am Gerät Taste 2.2, EXIT, drücken",
+    "Schritt 2: im Display steht Disconnect OK, mit Taste 2.1, WRITE, bestätigen",
     "Danach reagiert das Bedienfeld wieder",
-    "Betriebsart umstellen: SYSTEM drei Mal, Regler eine Raste, EXIT",
+    "Betriebsart umstellen: 1.3 ein Mal, dann 1.2 acht Mal, Regler eine Raste, 2.2",
     "Meldet sich die Station nicht von selbst, hier Verbindung erneuern wählen"
   ]);
 }
@@ -1011,7 +1016,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.18"); return;
+    case "ueber": sage("Sku505 Version 0.19"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
