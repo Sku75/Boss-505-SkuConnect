@@ -127,11 +127,7 @@ function auswahlBauen(art, beschreibung) {
   } else {
     const min = b.min !== undefined ? b.min : 0;
     const max = b.max !== undefined ? b.max : 100;
-    // Bei großen Bereichen in Schritten, sonst wäre die Liste nicht zu
-    // durchwandern. Der genaue Wert lässt sich immer eingeben.
-    const schritt = (max - min) > 300 ? 10 : 1;
-    for (let z = min; z <= max; z += schritt) liste.push({ wert: z, text: String(z) });
-    if (liste.length && liste[liste.length - 1].wert !== max) liste.push({ wert: max, text: String(max) });
+    for (let z = min; z <= max; z++) liste.push({ wert: z, text: String(z) });
   }
   return liste;
 }
@@ -501,11 +497,7 @@ async function laden(li) {
   if (art === "wertoptionen") {
     const liste = auswahlMitJetzt(li.dataset.art, li._beschreibung, li.dataset.rohwert);
     const jetzt = String(li.dataset.rohwert);
-    const eintraege = liste.map(o => ({ typ: "option", text: o.text, ziel: o.wert }));
-    if (li.dataset.art !== "liste") {
-      eintraege.unshift({ typ: "option", id: "wert-eingeben", text: "Genauen Wert eingeben" });
-    }
-    setzeKinder(li, eintraege);
+    setzeKinder(li, liste.map(o => ({ typ: "option", text: o.text, ziel: o.wert })));
     const gruppe = li.querySelector(":scope > ul");
     const treffer = Array.from(gruppe.children).find(k => k.dataset.ziel === jetzt);
     if (treffer) { oeffne(li); fokussiere(treffer); return "fokussiert"; }
@@ -698,32 +690,7 @@ async function wertSetzen(optionLi) {
   const wertLi = elternVon(optionLi);
   if (!schreibbar) { sage("Nur Lesen, Station nicht verbunden"); return; }
 
-  let neu = optionLi.dataset.ziel;
-  if (optionLi.dataset.id === "wert-eingeben") {
-    const b = wertLi._beschreibung || {};
-    const grenzen = "von " + (b.min !== undefined ? b.min : 0) + " bis " + (b.max !== undefined ? b.max : 100);
-    const eingabe = await frageText(wertLi.dataset.text + ", Zahl " + grenzen, String(wertLi.dataset.rohwert));
-    fokussiere(wertLi, true);
-    if (eingabe === null) { sage("Abgebrochen"); return; }
-    const zahl = parseInt(String(eingabe).trim(), 10);
-    if (isNaN(zahl)) { sage("Das war keine Zahl"); return; }
-    const kleinste = b.min !== undefined ? b.min : 0;
-    const groesste = b.max !== undefined ? b.max : 100;
-    if (zahl < kleinste || zahl > groesste) {
-      ergebnis(wertLi, "Wert liegt außerhalb, " + grenzen,
-        ["Eingegeben: " + zahl, "Erlaubt ist " + grenzen, "Nichts geschrieben"]);
-      return;
-    }
-    neu = String(zahl);
-    optionLi = { dataset: { text: String(zahl), ziel: neu } };
-  }
-  const auftrag = {
-    datei: wertLi.dataset.datei,
-    nummer: parseInt(wertLi.dataset.nummer, 10),
-    abschnitt: wertLi.dataset.abschnitt,
-    feld: wertLi.dataset.feld,
-    wert: neu
-  };
+  const neu = optionLi.dataset.ziel;
   const alterText = wertText(wertLi.dataset.art, wertLi.dataset.rohwert, wertLi._beschreibung);
   const e = await window.sku505.wertSchreiben(stationsPfad, auftrag);
   if (!e.ok) { ergebnis(wertLi, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
@@ -892,7 +859,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.13"); return;
+    case "ueber": sage("Sku505 Version 0.14"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;

@@ -175,6 +175,9 @@ const FX_FELDER = {
   Flick:    NUR("Vinyl Flick, Stärke")
 };
 
+const MIDI_KANAELE = [];
+for (let k = 1; k <= 16; k++) MIDI_KANAELE.push("Kanal " + k);
+
 const FELDER = {
   // --- Speicherplatz gesamt ---
   "MASTER.Lvl":   { text: "Speicher-Pegel", art: "zahl", min: 0, max: 100 },
@@ -231,7 +234,26 @@ const FELDER = {
   "SETUP.LcdContrast": { text: "Display-Helligkeit", art: "zahl", min: 1, max: 16 },
   "SETUP.PhantomPwr":  { text: "Phantomspeisung", art: "liste", werte: AUS_AN },
   "SETUP.AutoOff":     { text: "Automatisch ausschalten", art: "liste", werte: AUS_AN },
-  "INPUT_OUTPUT.LineOutLvl": { text: "Ausgangspegel Line Out", art: "zahl", min: 0, max: 100 }
+  "SETUP.IndMod":      { text: "Loop-Anzeige", art: "liste", werte: ["Status", "Loop-Position", "Pegel"] },
+
+  "INPUT_OUTPUT.LineOutLvl": { text: "Ausgangspegel Line Out", art: "zahl", min: 0, max: 100 },
+  "INPUT_OUTPUT.InLineOut":  { text: "Eingang auf Line Out", art: "liste", werte: AUS_AN },
+  "INPUT_OUTPUT.OutLvlSel":  { text: "Output-Regler wirkt auf", art: "liste", werte: ["Line und Kopfhörer", "Nur Kopfhörer"] },
+
+  // Die USB-Betriebsart lässt sich hier umstellen. Sie greift, sobald die
+  // Station vom Rechner getrennt wird. Damit erspart man sich den Weg über
+  // das Gerätemenü.
+  "USB.Mod":       { text: "USB-Betriebsart", art: "liste", werte: ["Speicher-Modus", "Audio und MIDI"] },
+  "USB.AuRouting": { text: "USB-Audio geht nach", art: "liste", werte: ["Line Out", "Sub Mix", "Loop In"] },
+  "USB.InLvl":     { text: "USB-Eingangspegel", art: "zahl", min: 0, max: 100 },
+  "USB.OutLvl":    { text: "USB-Ausgangspegel", art: "zahl", min: 0, max: 100 },
+
+  "MIDI.RxCh":  { text: "MIDI-Empfangskanal", art: "liste", werte: MIDI_KANAELE },
+  "MIDI.TxCh":  { text: "MIDI-Sendekanal", art: "liste", werte: MIDI_KANAELE.concat(["Wie Empfang"]) },
+  "MIDI.Omni":  { text: "Auf allen Kanälen empfangen", art: "liste", werte: AUS_AN },
+  "MIDI.Sync":  { text: "Tempo-Kopplung", art: "liste", werte: ["Automatisch", "Intern"] },
+  "MIDI.InSel": { text: "Tempo-Quelle", art: "liste", werte: ["USB", "MIDI-Buchse"] },
+  "MIDI.PcOut": { text: "Speicherplatz per MIDI melden", art: "liste", werte: AUS_AN }
 };
 
 // Lesbare Namen für Felder, die wir anzeigen, aber nicht ändern.
@@ -254,7 +276,14 @@ const NUR_ANZEIGE = {
   "FXBANK.MltMod": "Multi-Betriebsart, Rohwert",
   "ASSIGN.Src": "Quelle, Rohwert",
   "ASSIGN.SrcMod": "Quellart, Rohwert",
-  "ASSIGN.Tgt": "Ziel, Rohwert"
+  "ASSIGN.Tgt": "Ziel, Rohwert",
+  "SETUP.MemNum": "Zuletzt gewählter Speicherplatz",
+  "SETUP.DispMod": "Anzeigeart des Startbildschirms, Rohwert",
+  "SETUP.AllClr": "Alles löschen, Rohwert",
+  "SETUP.QuickClr": "Schnelles Löschen, Rohwert",
+  "SETUP.KnobMod": "Reglerverhalten, Rohwert",
+  "INPUT_OUTPUT.InNsThrs": "Rauschunterdrückung, Rohwert",
+  "INPUT_OUTPUT.InSrc": "Eingangsquelle, Rohwert"
 };
 
 // Liefert die Beschreibung eines Feldes. Abschnitte mit Nummer werden auf

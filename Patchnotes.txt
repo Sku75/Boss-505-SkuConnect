@@ -1,5 +1,14 @@
 Sku505 Patchnotes
 
+Version 0.14, 08.08.2026, Abschluss der Werkstatt
+Das Feld Genauen Wert eingeben ist wieder weg. Es war überflüssig, weil der Menüfilter das schon kann: In der Auswahl die Zahl tippen, Pfeil runter, Enter.
+Deshalb stehen in den Auswahllisten jetzt wieder alle Werte einzeln, auch bei großen Bereichen. Über den Filter ist jeder Wert in Sekunden erreichbar.
+Intensivprüfung aller Wertebereiche gegen die echten Daten der Station: Alle 99 Speicherplätze und die Systemdatei wurden Feld für Feld gegen die hinterlegten Bereiche geprüft. Kein Bereich ist zu eng, jeder vorhandene Wert lässt sich auswählen und wiederherstellen.
+Dabei kam eine Lücke heraus: 20 Systemeinstellungen hatten noch gar keine Beschreibung und waren nur als Rohwerte sichtbar. Sie sind jetzt benannt und, wo der Bereich sicher ist, auch änderbar:
+USB-Betriebsart (Speicher-Modus oder Audio und MIDI), USB-Audio-Ziel, USB-Ein- und Ausgangspegel, MIDI-Empfangskanal, MIDI-Sendekanal, Empfang auf allen Kanälen, Tempo-Kopplung, Tempo-Quelle, Speicherplatz per MIDI melden, Loop-Anzeige, Eingang auf Line Out und die Wirkung des Output-Reglers.
+Besonders nützlich: Die USB-Betriebsart lässt sich damit vom Rechner aus umstellen, statt am Gerät SYSTEM dreimal zu drücken. Sie greift beim Trennen der Verbindung.
+Sechs Systemfelder bleiben Rohwerte, weil ihr Wertebereich nicht gesichert ist. Sie werden lesbar benannt angezeigt, aber nicht geschrieben.
+
 Version 0.13, 08.08.2026
 Beim Start wird nur noch das Nötige gesagt: Sku505 bereit, danach der Menüpunkt. Der Programmname, die Überschrift, das Wort Anwendung und das Wort Schalter fallen weg. Dafür tragen die Menüzeilen weder eine Rolle noch einen eigenen Namen mehr, die Ansage macht jetzt das Programm selbst über die Statuszeile. Damit steht der Wortlaut vollständig unter unserer Kontrolle.
 Escape geht eine Ebene zurück, genau wie die Rücktaste. Steht man in einer Werteauswahl, kehrt Escape ohne Änderung zurück.
