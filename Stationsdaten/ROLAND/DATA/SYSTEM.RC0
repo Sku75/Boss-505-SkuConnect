@@ -2,7 +2,7 @@
 <database name="RC-505" revision="2">
 <sys>
 <SETUP>
-	<MemNum>96</MemNum>
+	<MemNum>97</MemNum>
 	<LcdContrast>15</LcdContrast>
 	<PhantomPwr>1</PhantomPwr>
 	<DispMod>6</DispMod>
@@ -20,7 +20,7 @@
 	<OutLvlSel>0</OutLvlSel>
 </INPUT_OUTPUT>
 <USB>
-	<Mod>0</Mod>
+	<Mod>1</Mod>
 	<AuRouting>0</AuRouting>
 	<InLvl>50</InLvl>
 	<OutLvl>50</OutLvl>
