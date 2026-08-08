@@ -1,4 +1,4 @@
-// Sku505 Version 0.04.
+// Sku505 Version 0.05.
 // Baummenü nach Anforderungsprofil: Pfeil hoch/runter wandern in der Ebene,
 // Pfeil rechts hinein, Pfeil links (auch Rücktaste) heraus, Enter aktiviert.
 
@@ -118,6 +118,17 @@ function setzeKinder(li, eintraege) {
   const ebene = parseInt(li.getAttribute("aria-level"), 10) + 1;
   baueEbene(eintraege, gruppe, ebene);
   li.appendChild(gruppe);
+}
+
+// Grundregel für die ganze Software: Wenn eine Aktion eine Liste erzeugt,
+// bleibt ihr Ladeknopf an erster Stelle stehen und behält den Fokus. Die
+// Ergebnisse hängen darunter, Pfeil runter führt also auf das erste Ergebnis.
+// So springt der Fokus nie unerwartet mitten in eine frische Liste.
+function zeigeErgebnisse(ordner, ladeId, ladeText, ergebnisse) {
+  const eintraege = [{ id: ladeId, text: ladeText, typ: "aktion" }].concat(ergebnisse);
+  setzeKinder(ordner, eintraege);
+  oeffne(ordner);
+  fokussiere(ordner.querySelector(':scope > ul[role="group"] > li'));
 }
 
 function aktualisiereZeile(li, basisText) {
@@ -254,12 +265,10 @@ async function speicherplaetzeLaden(li) {
       typ: "aktion"
     };
   });
-  // Am Ende ein Eintrag zum erneuten Laden, damit die Liste nach
-  // Aenderungen aktualisiert werden kann.
-  eintraege.push({ id: "platz-laden", text: "Liste neu laden", typ: "aktion" });
-  setzeKinder(ordner, eintraege);
-  oeffne(ordner);
-  fokussiere(ordner.querySelector(':scope > ul[role="group"] > li'));
+  // Grundregel für die ganze Software: Der Ladeknopf bleibt an seiner Stelle
+  // stehen, der Fokus bleibt darauf, und die Ergebnisse erscheinen darunter.
+  // Pfeil runter führt also vom Knopf auf das erste Ergebnis.
+  zeigeErgebnisse(ordner, "platz-laden", "Speicherplätze laden", eintraege);
   const belegt = e.plaetze.filter(x => x.spuren > 0).length;
   sage(e.plaetze.length + " Speicherplätze geladen, " + belegt + " davon belegt.");
 }
@@ -284,7 +293,7 @@ function aktiviere(li) {
 
   const id = li.dataset.id;
   if (id === "beenden") { window.close(); return; }
-  if (id === "ueber") { sage("Sku505 Version 0.04."); return; }
+  if (id === "ueber") { sage("Sku505 Version 0.05."); return; }
   if (id === "test-aktion") { sage("Test-Aktion ausgeführt. Ansagen funktionieren."); return; }
   if (id === "station-suchen") { stationSuchen(); return; }
   if (id === "firmware") { firmwarePruefen(); return; }

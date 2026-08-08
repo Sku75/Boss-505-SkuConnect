@@ -1,5 +1,9 @@
 Sku505 Patchnotes
 
+Version 0.05, 08.08.2026
+Neue Grundregel für die ganze Software: Erzeugt eine Aktion eine Liste, bleibt ihr Ladeknopf an erster Stelle stehen und behält den Fokus. Die Ergebnisse hängen darunter, Pfeil runter führt also vom Knopf auf das erste Ergebnis. Vorher sprang der Fokus mitten in die frische Liste, man landete direkt auf Platz 2.
+Umgesetzt bei Speicherplätze laden, gilt ab jetzt für alle künftigen Listen.
+
 Version 0.04, 08.08.2026
 Wichtige Fehlerbehebung: Das Einlesen blockierte das ganze Programm, weil die 182 MB Loop-Aufnahmen am Stück und blockierend kopiert wurden. Alle Dateiarbeiten laufen jetzt im Hintergrund, das Menü bleibt jederzeit bedienbar.
 Einlesen aufgeteilt: Einstellungen einlesen (nur die beiden Einstellungsdateien, rund 1,7 MB, sofort fertig) und Loop-Aufnahmen einlesen (die 182 MB Audio, dauert, blockiert aber nichts mehr). Beide liegen unter Werkstatt, Einlesen.
