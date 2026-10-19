@@ -1,5 +1,11 @@
 Sku505 Patchnotes
 
+Version 0.30, 19.10.2026
+Sku505 ist jetzt wirklich portabel. Das Modul AudioDeviceCmdlets, das die Audiogeräte von Windows umstellt, liegt mitgeliefert im Programmordner unter werkzeug, Module. Vorher lag es nur im Benutzerprofil, dadurch hätten auf einem fremden Rechner alle Profile und der Nottaster ins Leere gegriffen.
+Das Skript lädt zuerst die mitgelieferte Kopie und nur dann ein installiertes Modul, wenn die eigene Kopie fehlt.
+Damit genügt es, den Ordner Sku505 auf einen Stick zu kopieren. Es wird nichts installiert und es werden keine Adminrechte gebraucht.
+Zwei Punkte bleiben bewusst wie sie sind: Der Headset-Name G733 steht weiter fest im Code, und die Sicherung vor dem Schreiben braucht ein installiertes Git.
+
 Version 0.29, 09.08.2026
 Der Nottaster liegt jetzt auf Strg und Punkt statt auf Strg und F12. Grund: Strg F11 und Strg F12 sind auf diesem Rechner bereits von einem anderen Programm belegt. Strg Punkt und Strg Komma benutzt üblicherweise niemand und beide lassen sich systemweit abgreifen.
 Sku505 prüft beim Start, ob die Taste wirklich angemeldet werden konnte. Ist sie von einem anderen Programm belegt, sagt Sku505 das beim Start an. Auf einen Nottaster, den es gar nicht gibt, darf man sich nicht verlassen.

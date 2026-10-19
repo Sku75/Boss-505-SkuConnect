@@ -19,10 +19,18 @@ param(
 
 $ErrorActionPreference = 'Continue'
 
+# Das Modul liegt mitgeliefert im Programmordner, damit Sku505 auch von einem
+# Stick auf einem fremden Rechner die Audiogeraete setzen kann. Nur wenn die
+# eigene Kopie fehlt, wird auf ein installiertes Modul zurueckgegriffen.
+$eigenes = Join-Path $PSScriptRoot 'Module\AudioDeviceCmdlets\AudioDeviceCmdlets.psd1'
 try {
-    Import-Module AudioDeviceCmdlets -ErrorAction Stop
+    if (Test-Path $eigenes) {
+        Import-Module $eigenes -ErrorAction Stop
+    } else {
+        Import-Module AudioDeviceCmdlets -ErrorAction Stop
+    }
 } catch {
-    Write-Output "FEHLER=Das Modul AudioDeviceCmdlets fehlt"
+    Write-Output "FEHLER=Das Modul AudioDeviceCmdlets liess sich nicht laden"
     exit
 }
 
