@@ -1,7 +1,7 @@
-Sku505, Sammelliste vor Baubeginn
+Boss 505 SkuConnect, Sammelliste vor Baubeginn
 Was zusammenkommen muss, damit wir sicher und konstant entwickeln können. Reihenfolge ist Empfehlung.
 
-1. Anforderungsprofil vom Nutzer (Datei 03). Was soll Sku505 können, was ist wichtig, was ist egal. Dazu Bedienwünsche: Tastatur-Layout, Ansage-Stil, Menüstruktur.
+1. Anforderungsprofil vom Nutzer (Datei 03). Was soll Boss 505 SkuConnect können, was ist wichtig, was ist egal. Dazu Bedienwünsche: Tastatur-Layout, Ansage-Stil, Menüstruktur.
 
 2. Firmware-Version der Station feststellen. Ziel ist 2.0 oder 2.01. Prüfweg: Station anstecken, Claude liest die USB-Gerätedaten aus, ersatzweise verrät der Datenbestand im Speicher-Modus die Formatversion. Falls älter als 2.0: Update-Entscheidung treffen.
 

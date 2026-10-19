@@ -1,32 +1,32 @@
-Sku505 Patchnotes
+Boss 505 SkuConnect Patchnotes
 
 Version 0.30, 19.10.2026
-Sku505 ist jetzt wirklich portabel. Das Modul AudioDeviceCmdlets, das die Audiogeräte von Windows umstellt, liegt mitgeliefert im Programmordner unter werkzeug, Module. Vorher lag es nur im Benutzerprofil, dadurch hätten auf einem fremden Rechner alle Profile und der Nottaster ins Leere gegriffen.
+Boss 505 SkuConnect ist jetzt wirklich portabel. Das Modul AudioDeviceCmdlets, das die Audiogeräte von Windows umstellt, liegt mitgeliefert im Programmordner unter werkzeug, Module. Vorher lag es nur im Benutzerprofil, dadurch hätten auf einem fremden Rechner alle Profile und der Nottaster ins Leere gegriffen.
 Das Skript lädt zuerst die mitgelieferte Kopie und nur dann ein installiertes Modul, wenn die eigene Kopie fehlt.
-Damit genügt es, den Ordner Sku505 auf einen Stick zu kopieren. Es wird nichts installiert und es werden keine Adminrechte gebraucht.
+Damit genügt es, den Ordner Boss 505 SkuConnect auf einen Stick zu kopieren. Es wird nichts installiert und es werden keine Adminrechte gebraucht.
 Zwei Punkte bleiben bewusst wie sie sind: Der Headset-Name G733 steht weiter fest im Code, und die Sicherung vor dem Schreiben braucht ein installiertes Git.
 
 Version 0.29, 09.08.2026
 Der Nottaster liegt jetzt auf Strg und Punkt statt auf Strg und F12. Grund: Strg F11 und Strg F12 sind auf diesem Rechner bereits von einem anderen Programm belegt. Strg Punkt und Strg Komma benutzt üblicherweise niemand und beide lassen sich systemweit abgreifen.
-Sku505 prüft beim Start, ob die Taste wirklich angemeldet werden konnte. Ist sie von einem anderen Programm belegt, sagt Sku505 das beim Start an. Auf einen Nottaster, den es gar nicht gibt, darf man sich nicht verlassen.
+Boss 505 SkuConnect prüft beim Start, ob die Taste wirklich angemeldet werden konnte. Ist sie von einem anderen Programm belegt, sagt Boss 505 SkuConnect das beim Start an. Auf einen Nottaster, den es gar nicht gibt, darf man sich nicht verlassen.
 Der Menüpunkt heißt jetzt "Alles auf Standard zurück, Strg Punkt" und hat einen erklärenden Tooltip bekommen.
 Strg und Komma bleibt für den geplanten Umschalter reserviert, der Discords Eingabegerät zwischen Headset-Mikrofon und Station wechselt.
 
 Version 0.28, 09.08.2026
-Die Profile haben jetzt einen erklärenden Tooltip. Steht man auf einem Profil und öffnet den Tooltip, sagt Sku505 Zeile für Zeile, was nach dem Ausführen eingestellt ist: was die Station macht, was Windows hört, was Windows aufnimmt und was Discord davon hört. Vorher stand dort nur "Bitte ausführen".
+Die Profile haben jetzt einen erklärenden Tooltip. Steht man auf einem Profil und öffnet den Tooltip, sagt Boss 505 SkuConnect Zeile für Zeile, was nach dem Ausführen eingestellt ist: was die Station macht, was Windows hört, was Windows aufnimmt und was Discord davon hört. Vorher stand dort nur "Bitte ausführen".
 Auch die Meldung nach dem Ausführen ist umformuliert. Sie beginnt jetzt mit "Eingestellt:" und beschreibt den Zustand, statt nur die Handlung zu wiederholen.
 Aktionen können dafür allgemein eine Vorschau mitbringen. Der Tooltip zeigt sie, solange die Aktion noch nicht gelaufen ist, und danach das Ergebnis.
 
 Version 0.27, 09.08.2026
 Das Rode NT-USB ist eingebunden. Neues Profil: Rode-Mikrofon aufnehmen oder senden. Es stellt die Aufnahme von Windows auf das Rode und lässt die Wiedergabe auf dem Headset. Gut für Audacity und für Discord ohne Loops.
-Dieses Profil lässt die Station bewusst unangetastet, denn das Rode hängt am Rechner, nicht an der Station. Sku505 sagt das beim Setzen auch an.
-Steckt das Rode gerade nicht, meldet Sku505 das und ändert nur die Wiedergabe. Der Ton geht dabei nicht verloren.
+Dieses Profil lässt die Station bewusst unangetastet, denn das Rode hängt am Rechner, nicht an der Station. Boss 505 SkuConnect sagt das beim Setzen auch an.
+Steckt das Rode gerade nicht, meldet Boss 505 SkuConnect das und ändert nur die Wiedergabe. Der Ton geht dabei nicht verloren.
 Zum Loopen des Rode gibt es den Hinweis im Profil: ein Klinkenkabel vom Kopfhörerausgang des Rode in die kleine AUX-Buchse der Station. Damit kommt das Mikrofonsignal ohne Verzögerung in den Looper, und das Rode bleibt gleichzeitig als USB-Mikrofon am Rechner nutzbar.
 Das Profil Werkstatt ist entfallen. Es hat verwirrt und konnte fast nichts tun: Im Bühnen-Modus fehlt das Laufwerk, also liess sich die Betriebsart gar nicht schreiben, und im Werkstatt-Modus stand sie ohnehin schon richtig. Den Moduswechsel macht der eigene Punkt Betriebsart und USB, samt Tastenfolge.
 
 Version 0.26, 09.08.2026
-Nottaster: Strg und F12 stellt den Ton wieder her, und zwar im ganzen System, auch wenn Sku505 gar nicht im Vordergrund ist. Gedacht für den Fall, dass der Ton verschwindet und der Rechner dadurch nicht mehr bedienbar wäre.
-Der Nottaster setzt Wiedergabe und Aufnahme zurück auf das Headset, holt das Sku505-Fenster nach vorn, damit die Sprachausgabe die Meldung auch vorliest, und spielt zur Bestätigung einen Zweiklang.
+Nottaster: Strg und F12 stellt den Ton wieder her, und zwar im ganzen System, auch wenn Boss 505 SkuConnect gar nicht im Vordergrund ist. Gedacht für den Fall, dass der Ton verschwindet und der Rechner dadurch nicht mehr bedienbar wäre.
+Der Nottaster setzt Wiedergabe und Aufnahme zurück auf das Headset, holt das Boss 505 SkuConnect-Fenster nach vorn, damit die Sprachausgabe die Meldung auch vorliest, und spielt zur Bestätigung einen Zweiklang.
 Der Zweiklang ist wichtiger als die gesprochene Meldung: Er kommt über das gerade gesetzte Gerät und ist damit der Beweis, dass der Ton wirklich wieder da ist.
 Die Station selbst wird dabei nicht angefasst.
 Derselbe Vorgang steht auch als Menüpunkt unter Profile: Alles auf Standard zurück, Strg F12.
@@ -34,9 +34,9 @@ Die Anleitung für den Weg vom Bühnen-Modus zurück in die Werkstatt nennt jetz
 
 Version 0.25, 09.08.2026
 Der Ton bleibt jetzt zuverlässig auf dem Headset. Bisher setzte ein Profil die Wiedergabe zwar richtig, aber Windows griff sie sich beim nächsten Erscheinen der Station wieder. Für einen blinden Nutzer ist das gefährlich, weil der Ton dann unbemerkt woanders landet.
-Sku505 hält das jetzt nach: Sobald die Station als Audiogerät auftaucht, holt es die Wiedergabe sofort zurück auf das Headset und sagt es mit an, also zum Beispiel Bühne Audio und MIDI, Ton bleibt auf dem Headset.
+Boss 505 SkuConnect hält das jetzt nach: Sobald die Station als Audiogerät auftaucht, holt es die Wiedergabe sofort zurück auf das Headset und sagt es mit an, also zum Beispiel Bühne Audio und MIDI, Ton bleibt auf dem Headset.
 Neuer Punkt unter Profile: Ton zurück auf das Headset. Damit lässt sich die Wiedergabe jederzeit von Hand zurückholen, falls doch einmal etwas verrutscht.
-Findet Sku505 das Headset nicht, sagt es das ehrlich und weist auf den Dongle hin, statt still zu scheitern.
+Findet Boss 505 SkuConnect das Headset nicht, sagt es das ehrlich und weist auf den Dongle hin, statt still zu scheitern.
 
 Version 0.24, 08.08.2026, Profile
 Neuer Hauptmenüpunkt Profile. Ein Profil stellt in einem Zug die Station und die Audiogeräte von Windows so ein, wie es für eine bestimmte Arbeitsweise passt.
@@ -45,7 +45,7 @@ Discord, Stimme und Loops senden: Windows nimmt den Mix der Station auf, hört a
 Audacity, Datei in die Station spielen: USB-Audio geht in den Looper, damit sich eine Datei auf eine Spur aufnehmen lässt. Windows bleibt auf dem Headset, damit kein Systemton in der Schleife landet.
 Werkstatt, Einstellungen ändern: Station zurück in den Datenmodus.
 Dazu der Punkt Audiogeräte ansagen, der die aktuellen Standardgeräte nennt.
-Die Werte der Station lassen sich nur im Werkstatt-Modus schreiben, die Windows-Geräte dagegen immer. Sku505 macht darum so viel wie möglich und sagt im Tooltip genau, was gesetzt wurde und was noch fehlt.
+Die Werte der Station lassen sich nur im Werkstatt-Modus schreiben, die Windows-Geräte dagegen immer. Boss 505 SkuConnect macht darum so viel wie möglich und sagt im Tooltip genau, was gesetzt wurde und was noch fehlt.
 Die Kommunikations-Rolle wird mitgesetzt, damit Programme wie Discord folgen, sofern sie auf Standard eingestellt sind.
 
 Version 0.23, 08.08.2026
@@ -54,12 +54,12 @@ Drei Ursachen sind abgestellt:
 Das Fenster wird jetzt erst angezeigt, wenn es fertig geladen ist. Vorher tauchte es dreimal auf, einmal leer, einmal beim Laden und einmal fertig, und jedes Mal meldete die Sprachausgabe es neu.
 Der Fenstertitel wird festgehalten. Ein Wechsel des Titels während des Ladens löste eine weitere Ansage aus.
 Die Menüleiste ist ganz entfernt. Sie hing nur im Baum der Sprachausgabe herum, ohne je gebraucht zu werden.
-Beim Start gibt es jetzt genau eine Ansage: Sku505 bereit, gefolgt vom ersten Menüpunkt. Der erste Eintrag wird still fokussiert, damit er nicht zusätzlich gemeldet wird.
+Beim Start gibt es jetzt genau eine Ansage: Boss 505 SkuConnect bereit, gefolgt vom ersten Menüpunkt. Der erste Eintrag wird still fokussiert, damit er nicht zusätzlich gemeldet wird.
 
 Version 0.22, 08.08.2026
 Im Gerätemenü ist der zuletzt gewählte Speicherplatz nicht mehr aufgeführt. Er steht zwar in der Datei, ist aber kein Menüpunkt der Station, sondern wird im Spielbildschirm mit dem Regler gewählt. Er hatte die ganze Nummerierung um eins verschoben.
 Die Liste beginnt jetzt mit 01 Display-Helligkeit, also genau dem, was erscheint, wenn man am Gerät ein Mal Taste 1.3 drückt.
-Damit stimmt die Nummer in Sku505 mit der Position am Gerät überein. Der Anker Eingang auf Line Out steht auf 12, die USB-Betriebsart auf 14.
+Damit stimmt die Nummer in Boss 505 SkuConnect mit der Position am Gerät überein. Der Anker Eingang auf Line Out steht auf 12, die USB-Betriebsart auf 14.
 
 Version 0.21, 08.08.2026
 Neuer Menüpunkt in der Werkstatt: Gerätemenü, gleiche Reihenfolge wie an der Station.
@@ -68,10 +68,10 @@ Dass die Reihenfolge stimmt, ist belegt: Eingang auf Line Out steht zwei Plätze
 Eingang auf Line Out ist in der Liste eigens als Anker gekennzeichnet, weil es der einzige Systemwert ist, dessen Änderung man hören kann. Steht er auf Aus, verschwindet das Mikrofon aus dem Lautsprecher. Damit lässt sich am Gerät zweifelsfrei feststellen, wo man steht.
 
 Version 0.20, 08.08.2026
-Das Umschalten des Speicherplatzes im Live-Studio meldet jetzt zurück, ob die Station den Befehl wirklich angenommen hat. Bisher sagte Sku505 nur, was es gesendet hatte.
-So funktioniert es: Die Station meldet einen Speicherplatzwechsel von sich aus über MIDI. Sku505 wartet nach dem Senden kurz auf diese Meldung. Kommt sie, lautet die Ansage von der Station bestätigt. Kommt sie nicht, sagt Sku505 das ehrlich und nennt den Grund, nämlich dass am Gerät die Einstellung Speicherplatz per MIDI melden auf An stehen muss.
+Das Umschalten des Speicherplatzes im Live-Studio meldet jetzt zurück, ob die Station den Befehl wirklich angenommen hat. Bisher sagte Boss 505 SkuConnect nur, was es gesendet hatte.
+So funktioniert es: Die Station meldet einen Speicherplatzwechsel von sich aus über MIDI. Boss 505 SkuConnect wartet nach dem Senden kurz auf diese Meldung. Kommt sie, lautet die Ansage von der Station bestätigt. Kommt sie nicht, sagt Boss 505 SkuConnect das ehrlich und nennt den Grund, nämlich dass am Gerät die Einstellung Speicherplatz per MIDI melden auf An stehen muss.
 Speicherplätze werden jetzt mit Namen und Inhalt angesagt, also zum Beispiel Platz 95, Count One, 5 Spuren, statt nur Platz 95. Die Namen stammen aus dem zuletzt eingelesenen Stand im Programmordner, denn im Bühnen-Modus gibt es kein Laufwerk.
-Das gilt auch für den Ansager: Schaltest du am Gerät um, nennt Sku505 Nummer, Namen und Inhalt.
+Das gilt auch für den Ansager: Schaltest du am Gerät um, nennt Boss 505 SkuConnect Nummer, Namen und Inhalt.
 
 Version 0.19, 08.08.2026
 Der Wechsel der Betriebsart ist jetzt erprobt und die Anleitung im Programm berichtigt.
@@ -80,10 +80,10 @@ Ebenfalls berichtigt: Dreimal SYSTEM führt am Gerät nicht zur USB-Betriebsart.
 Alle Tastenhinweise nennen die Tasten jetzt einheitlich mit Koordinaten: 1.1 Pfeil links, 1.2 Pfeil rechts, 1.3 SYSTEM, 2.1 WRITE, 2.2 EXIT, 2.3 MEMORY.
 
 Version 0.18, 08.08.2026, Betriebsart
-Sku505 überwacht ab jetzt laufend, in welchem Zustand die Station ist, und meldet jede Änderung von selbst: Werkstatt Datenmodus, Bühne Audio und MIDI, oder Station nicht verbunden. Damit ist auch ohne Display jederzeit klar, woran man ist.
+Boss 505 SkuConnect überwacht ab jetzt laufend, in welchem Zustand die Station ist, und meldet jede Änderung von selbst: Werkstatt Datenmodus, Bühne Audio und MIDI, oder Station nicht verbunden. Damit ist auch ohne Display jederzeit klar, woran man ist.
 Neuer Menüpunkt Betriebsart und USB mit fünf Einträgen: Betriebsart ansagen, Auf Bühne umstellen, Auf Werkstatt umstellen, Trennung vorbereiten und Verbindung erneuern.
-Der Wechsel auf Bühne geht aus der Werkstatt heraus per Knopfdruck, weil Sku505 dort an die Systemeinstellung herankommt. Danach genügt USB kurz aus und wieder an.
-Der Wechsel zurück auf Werkstatt geht nur am Gerät, weil es im Bühnen-Modus kein Laufwerk gibt. Dafür ist dort das Bedienfeld frei. Sku505 sagt die Tastenfolge an und betont dabei den Reglerschritt, der am häufigsten vergessen wird und ohne den sich nichts ändert.
+Der Wechsel auf Bühne geht aus der Werkstatt heraus per Knopfdruck, weil Boss 505 SkuConnect dort an die Systemeinstellung herankommt. Danach genügt USB kurz aus und wieder an.
+Der Wechsel zurück auf Werkstatt geht nur am Gerät, weil es im Bühnen-Modus kein Laufwerk gibt. Dafür ist dort das Bedienfeld frei. Boss 505 SkuConnect sagt die Tastenfolge an und betont dabei den Reglerschritt, der am häufigsten vergessen wird und ohne den sich nichts ändert.
 Die Zustandserkennung nutzt zwei billige Wege: den Blick, ob ein Laufwerk da ist, und die MIDI-Anmeldung. MIDI wird beim Start still im Hintergrund verbunden, ohne Ansage, damit Änderungen sofort auffallen.
 
 Version 0.17, 08.08.2026
@@ -98,14 +98,14 @@ Version 0.16, 08.08.2026
 Aus USB neu laden wird der Menüpunkt USB-Verbindung mit drei Einträgen: USB trennen, USB verbinden und USB neu laden.
 Hintergrund: Solange die Station als Laufwerk verbunden ist, steht im Display Idling und das Bedienfeld ist gesperrt. Die Tasten am Gerät reagieren dann nicht, die Betriebsart lässt sich also gar nicht umstellen. Genau deshalb blieb die Tastenfolge am Gerät wirkungslos.
 Der Ablauf ist jetzt: USB trennen, dann am Gerät die Betriebsart umstellen, dann USB verbinden. Das Kabel bleibt dabei stecken.
-Nach dem Trennen sagt Sku505 die Tastenfolge für das Gerät gleich mit an.
+Nach dem Trennen sagt Boss 505 SkuConnect die Tastenfolge für das Gerät gleich mit an.
 
 Version 0.15, 08.08.2026
 Neuer Hauptmenüpunkt USB neu laden, an dritter Stelle unter Live-Studio.
-Er ersetzt das Ziehen und Stecken des USB-Kabels. Die Betriebsart selbst stellst du weiterhin am Gerät um, Sku505 baut danach nur die Verbindung neu auf. Das schont den Stecker.
-Ablauf: Sku505 sucht die Station am USB, leert vorher die Schreibpuffer aller Wechseldatenträger, damit nichts halb geschrieben zurückbleibt, startet das Gerät neu und meldet danach, in welcher Betriebsart es zurückkommt, also Speicher-Modus oder Audio und MIDI.
-Die Station meldet sich in den beiden Betriebsarten mit verschiedenen Kennungen, PID 0170 als Speicher und PID 0171 als Audio und MIDI. Daran erkennt Sku505 den Zustand nach dem Neustart zuverlässig.
-Windows verlangt für den Geräteneustart erhöhte Rechte. Läuft Sku505 ohne, fragt Windows einmal nach und die Nachfrage muss bestätigt werden.
+Er ersetzt das Ziehen und Stecken des USB-Kabels. Die Betriebsart selbst stellst du weiterhin am Gerät um, Boss 505 SkuConnect baut danach nur die Verbindung neu auf. Das schont den Stecker.
+Ablauf: Boss 505 SkuConnect sucht die Station am USB, leert vorher die Schreibpuffer aller Wechseldatenträger, damit nichts halb geschrieben zurückbleibt, startet das Gerät neu und meldet danach, in welcher Betriebsart es zurückkommt, also Speicher-Modus oder Audio und MIDI.
+Die Station meldet sich in den beiden Betriebsarten mit verschiedenen Kennungen, PID 0170 als Speicher und PID 0171 als Audio und MIDI. Daran erkennt Boss 505 SkuConnect den Zustand nach dem Neustart zuverlässig.
+Windows verlangt für den Geräteneustart erhöhte Rechte. Läuft Boss 505 SkuConnect ohne, fragt Windows einmal nach und die Nachfrage muss bestätigt werden.
 
 Version 0.14, 08.08.2026, Abschluss der Werkstatt
 Das Feld Genauen Wert eingeben ist wieder weg. Es war überflüssig, weil der Menüfilter das schon kann: In der Auswahl die Zahl tippen, Pfeil runter, Enter.
@@ -117,7 +117,7 @@ Besonders nützlich: Die USB-Betriebsart lässt sich damit vom Rechner aus umste
 Sechs Systemfelder bleiben Rohwerte, weil ihr Wertebereich nicht gesichert ist. Sie werden lesbar benannt angezeigt, aber nicht geschrieben.
 
 Version 0.13, 08.08.2026
-Beim Start wird nur noch das Nötige gesagt: Sku505 bereit, danach der Menüpunkt. Der Programmname, die Überschrift, das Wort Anwendung und das Wort Schalter fallen weg. Dafür tragen die Menüzeilen weder eine Rolle noch einen eigenen Namen mehr, die Ansage macht jetzt das Programm selbst über die Statuszeile. Damit steht der Wortlaut vollständig unter unserer Kontrolle.
+Beim Start wird nur noch das Nötige gesagt: Boss 505 SkuConnect bereit, danach der Menüpunkt. Der Programmname, die Überschrift, das Wort Anwendung und das Wort Schalter fallen weg. Dafür tragen die Menüzeilen weder eine Rolle noch einen eigenen Namen mehr, die Ansage macht jetzt das Programm selbst über die Statuszeile. Damit steht der Wortlaut vollständig unter unserer Kontrolle.
 Escape geht eine Ebene zurück, genau wie die Rücktaste. Steht man in einer Werteauswahl, kehrt Escape ohne Änderung zurück.
 Bild ab und Bild auf springen zehn Zeilen weiter oder zurück.
 Der Tooltip nennt bei Werten nur noch den eingestellten Zustand, zum Beispiel Eingestellt 50. Die wählbaren Werte stehen im Untermenü und blähen den Tooltip nicht mehr auf.
@@ -161,19 +161,19 @@ Steuerbefehl senden für die Zuweisungen: CC 1 bis 31 und 64 bis 95, je mit Ausl
 MIDI-Kanal einstellbar von 1 bis 16.
 Aufnahme über USB-Audio: schneidet das Ausgangssignal der Station mit und speichert es als WAV-Datei.
 
-Start ohne schwarzes Konsolenfenster über Sku505 Starten.vbs.
+Start ohne schwarzes Konsolenfenster über Boss 505 SkuConnect Starten.vbs.
 
 Version 0.06, 08.08.2026, die vollständige Werkstatt
 Speicherplatz öffnen: Jeder der 99 Plätze lässt sich öffnen und zeigt alle Werte. Bereiche: Wiedergabe, Aufnahme, Speicherplatz gesamt, Rhythmus, Spur 1 bis 5, Input FX, Track FX mit den Parametern der Tasten A, B und C, sowie alle 16 Zuweisungen.
 Werte ändern: Auf einem Wert öffnet Pfeil rechts die Auswahl, der Fokus steht sofort auf dem gerade gültigen Wert. Enter schreibt. Geändert wird direkt in der Station.
-Sicherheit beim Schreiben: Vor jeder Änderung wird der Stand der Station in den Projektordner kopiert und in Git festgeschrieben. Nach jeder Änderung liest Sku505 zurück und prüft. Nur wenn Wert und Dateilänge stimmen, meldet es Erfolg.
+Sicherheit beim Schreiben: Vor jeder Änderung wird der Stand der Station in den Projektordner kopiert und in Git festgeschrieben. Nach jeder Änderung liest Boss 505 SkuConnect zurück und prüft. Nur wenn Wert und Dateilänge stimmen, meldet es Erfolg.
 Geschrieben wird ausschließlich in Felder mit bekanntem Wertebereich. Alle übrigen Werte werden ehrlich angezeigt, aber nicht verändert. Damit kann nie ein unerlaubter Wert in die Station gelangen.
 Name ändern: Enter auf der Namenszeile öffnet ein Eingabefeld, Enter bestätigt, Escape bricht ab. Zwölf Zeichen.
 Einstellungen kopieren auf einen anderen Platz und tauschen mit einem anderen Platz, jeweils mit Kontrolle. Die Loop-Aufnahmen bleiben dabei liegen, darauf weist die Ansage hin.
 Loop-Aufnahmen je Platz: Länge in Sekunden je Spur, Export als WAV-Datei, Einspielen einer WAV-Datei mit Formatprüfung auf 44100 Hertz, 16 Bit, Stereo.
 Systemeinstellungen der Station lesen und, wo der Bereich bekannt ist, ändern.
 Stand in Git sichern als eigener Menüpunkt.
-Ist keine Station verbunden, arbeitet Sku505 mit dem zuletzt eingelesenen Stand und sagt klar, dass nur Lesen möglich ist.
+Ist keine Station verbunden, arbeitet Boss 505 SkuConnect mit dem zuletzt eingelesenen Stand und sagt klar, dass nur Lesen möglich ist.
 Große Listen werden erst beim Öffnen aufgebaut, damit nichts hakt.
 
 Version 0.05, 08.08.2026
@@ -188,7 +188,7 @@ Firmware und Datenstand prüfen sagt jetzt Gerät, Firmware-Version und Datensta
 Wird keine Station gefunden, greifen die Funktionen auf den zuletzt eingelesenen Datenbestand zurück.
 
 Version 0.03, 08.08.2026
-Neue Hauptstruktur: Werkstatt, Live-Studio, Optionen, unten Sku505 beenden. Probe-Bereich und Über Sku505 liegen jetzt unter Optionen.
+Neue Hauptstruktur: Werkstatt, Live-Studio, Optionen, unten Boss 505 SkuConnect beenden. Probe-Bereich und Über Boss 505 SkuConnect liegen jetzt unter Optionen.
 Werkstatt-Grundfunktionen: Station suchen (findet das Laufwerk mit dem ROLAND-Ordner), Stationsdaten einlesen (kompletter ROLAND-Ordner in den Projektordner Stationsdaten, Versionierung über Git statt eigener Sicherungskopien, mit Vollständigkeits-Prüfung), Firmware und Datenstand prüfen (liest Gerätename und Format-Revision aus der Speicherdatei).
 Anschlagton wird jetzt erzeugt statt aus einer Datei geladen (220 Hertz, 400 Millisekunden, wie in Skularis definiert) und kann nicht mehr ausfallen.
 Die Rücktaste geht zusätzlich zu Pfeil links eine Ebene zurück.

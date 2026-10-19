@@ -1,4 +1,4 @@
-// Sku505 Version 0.09, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.09, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -466,9 +466,9 @@ document.addEventListener("keyup", (e) => {
 
 async function quelleSichern() {
   if (stationsPfad) return stationsPfad;
-  const gefunden = await window.sku505.stationSuchen();
+  const gefunden = await window.skuConnect.stationSuchen();
   if (gefunden.gefunden) { stationsPfad = gefunden.rolandPfad; schreibbar = true; return stationsPfad; }
-  const eigen = await window.sku505.datenordner();
+  const eigen = await window.skuConnect.datenordner();
   if (eigen.ok && eigen.vorhanden) { stationsPfad = eigen.pfad; schreibbar = false; return stationsPfad; }
   return null;
 }
@@ -490,7 +490,7 @@ async function laden(li) {
   if (!pfad) { sage("Keine Daten, erst Station suchen"); return false; }
 
   if (art === "platz") {
-    const e = await window.sku505.speicherplatzLesen(pfad, parseInt(li.dataset.nummer, 10));
+    const e = await window.skuConnect.speicherplatzLesen(pfad, parseInt(li.dataset.nummer, 10));
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
     setzeKinder(li, platzEintraege(e.daten));
     return true;
@@ -507,7 +507,7 @@ async function laden(li) {
   }
 
   if (art === "loops") {
-    const e = await window.sku505.loopsAuflisten(pfad, parseInt(li.dataset.nummer, 10));
+    const e = await window.skuConnect.loopsAuflisten(pfad, parseInt(li.dataset.nummer, 10));
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
     setzeKinder(li, e.spuren.map(s => ({
       typ: "ordner",
@@ -529,7 +529,7 @@ async function laden(li) {
   // Line Out zwei Plätze vor der USB-Betriebsart, und genau dieser Abstand
   // hat sich am Gerät bestätigt.
   if (art === "geraetemenu") {
-    const e = await window.sku505.systemLesen(pfad);
+    const e = await window.skuConnect.systemLesen(pfad);
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
     const eintraege = [];
     let nummer = 0;
@@ -565,7 +565,7 @@ async function laden(li) {
   }
 
   if (art === "system") {
-    const e = await window.sku505.systemLesen(pfad);
+    const e = await window.skuConnect.systemLesen(pfad);
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
     const eintraege = [];
     for (const abschnitt of Object.keys(e.daten)) {
@@ -676,14 +676,14 @@ function platzEintraege(daten) {
 // =====================================================================
 
 async function stationSuchen(li) {
-  const e = await window.sku505.stationSuchen();
+  const e = await window.skuConnect.stationSuchen();
   if (e.gefunden) {
     stationsPfad = e.rolandPfad; schreibbar = true;
     ergebnis(li, "Station gefunden, Laufwerk " + e.laufwerk,
       ["Station gefunden", "Laufwerk " + e.laufwerk, "Ändern möglich"]);
     return;
   }
-  const eigen = await window.sku505.datenordner();
+  const eigen = await window.skuConnect.datenordner();
   if (eigen.ok && eigen.vorhanden) {
     stationsPfad = eigen.pfad; schreibbar = false;
     ergebnis(li, "Keine Station, nur Lesen",
@@ -700,7 +700,7 @@ async function stationSuchen(li) {
 async function firmwarePruefen(li) {
   const p = await quelleSichern();
   if (!p) { ergebnis(li, "Keine Daten vorhanden", null); return; }
-  const e = await window.sku505.kenndatenLesen(p);
+  const e = await window.skuConnect.kenndatenLesen(p);
   if (!e.ok) { ergebnis(li, "Fehler beim Lesen", ["Fehler", e.fehler]); return; }
   const fw = e.revision === "2" ? "Firmware 2.0" : "Firmware unbekannt";
   ergebnis(li, e.geraet + ", " + fw,
@@ -710,7 +710,7 @@ async function firmwarePruefen(li) {
 async function speicherplaetzeLaden(li) {
   const p = await quelleSichern();
   if (!p) { sage("Keine Daten, erst Station suchen"); return; }
-  const e = await window.sku505.speicherplaetzeLesen(p);
+  const e = await window.skuConnect.speicherplaetzeLesen(p);
   if (!e.ok) { sage("Fehler: " + e.fehler); return; }
 
   const ordner = elternVon(li);
@@ -737,7 +737,7 @@ async function wertSetzen(optionLi) {
 
   const neu = optionLi.dataset.ziel;
   const alterText = wertText(wertLi.dataset.art, wertLi.dataset.rohwert, wertLi._beschreibung);
-  const e = await window.sku505.wertSchreiben(stationsPfad, auftrag);
+  const e = await window.skuConnect.wertSchreiben(stationsPfad, auftrag);
   if (!e.ok) { ergebnis(wertLi, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
 
   if (!e.geaendert) {
@@ -788,7 +788,7 @@ async function nameAendern(li) {
   const neu = await frageText("Neuer Name, höchstens 12 Zeichen", alt);
   fokussiere(li);
   if (neu === null) { sage("Abgebrochen"); return; }
-  const e = await window.sku505.nameSchreiben(stationsPfad, parseInt(li.dataset.nummer, 10), neu);
+  const e = await window.skuConnect.nameSchreiben(stationsPfad, parseInt(li.dataset.nummer, 10), neu);
   if (!e.ok) { ergebnis(li, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
   li.dataset.text = "Name: " + e.name;
   aktualisiereZeile(li);
@@ -802,8 +802,8 @@ async function platzUebertragen(optionLi, tauschen) {
   const nach = parseInt(optionLi.dataset.ziel, 10);
   if (von === nach) { sage("Quelle und Ziel sind gleich"); return; }
   const e = tauschen
-    ? await window.sku505.platzTauschen(stationsPfad, von, nach)
-    : await window.sku505.platzKopieren(stationsPfad, von, nach);
+    ? await window.skuConnect.platzTauschen(stationsPfad, von, nach)
+    : await window.skuConnect.platzKopieren(stationsPfad, von, nach);
   if (!e.ok) { ergebnis(optionLi, "Fehler", ["Fehler", e.fehler]); return; }
   if (e.bestaetigt) {
     ergebnis(optionLi, (tauschen ? "Getauscht mit Platz " : "Kopiert auf Platz ") + nach, [
@@ -820,9 +820,9 @@ async function loopExportieren(li) {
   const p = await quelleSichern();
   if (!p) { sage("Keine Daten vorhanden"); return; }
   const vorschlag = "Platz" + String(li.dataset.nummer).padStart(2, "0") + "_Spur" + li.dataset.spur + ".wav";
-  const wahl = await window.sku505.dateiWaehlen(true, vorschlag);
+  const wahl = await window.skuConnect.dateiWaehlen(true, vorschlag);
   if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen"); return; }
-  const e = await window.sku505.loopExportieren(p, parseInt(li.dataset.nummer, 10), parseInt(li.dataset.spur, 10), wahl.pfad);
+  const e = await window.skuConnect.loopExportieren(p, parseInt(li.dataset.nummer, 10), parseInt(li.dataset.spur, 10), wahl.pfad);
   if (!e.ok) { ergebnis(li, "Fehler beim Export", ["Fehler", e.fehler]); return; }
   ergebnis(li, "Exportiert, " + Math.round(e.bytes / 1024) + " Kilobyte",
     ["Export fertig", Math.round(e.bytes / 1024) + " Kilobyte", "Datei: " + wahl.pfad]);
@@ -830,9 +830,9 @@ async function loopExportieren(li) {
 
 async function loopImportieren(li) {
   if (!schreibbar) { sage("Nur Lesen, Station nicht verbunden"); return; }
-  const wahl = await window.sku505.dateiWaehlen(false);
+  const wahl = await window.skuConnect.dateiWaehlen(false);
   if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen"); return; }
-  const e = await window.sku505.loopImportieren(stationsPfad, parseInt(li.dataset.nummer, 10), parseInt(li.dataset.spur, 10), wahl.pfad);
+  const e = await window.skuConnect.loopImportieren(stationsPfad, parseInt(li.dataset.nummer, 10), parseInt(li.dataset.spur, 10), wahl.pfad);
   if (!e.ok) { ergebnis(li, "Einspielen nicht möglich", ["Fehler", e.fehler]); return; }
   ergebnis(li, "Eingespielt auf Spur " + li.dataset.spur,
     ["Eingespielt", "Spur " + li.dataset.spur, "Datei: " + e.datei]);
@@ -841,7 +841,7 @@ async function loopImportieren(li) {
 async function einstellungenEinlesen(li) {
   const p = await quelleSichern();
   if (!p) { sage("Keine Station gefunden"); return; }
-  const e = await window.sku505.einstellungenEinlesen(p);
+  const e = await window.skuConnect.einstellungenEinlesen(p);
   if (!e.ok) { ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]); return; }
   ergebnis(li, "Einstellungen eingelesen",
     ["Einstellungen eingelesen", Math.round(e.bytes / 1024) + " Kilobyte", "2 Dateien"]);
@@ -851,7 +851,7 @@ async function loopsEinlesen(li) {
   const p = await quelleSichern();
   if (!p) { sage("Keine Station gefunden"); return; }
   sage("Lese Loop-Aufnahmen ein");
-  const e = await window.sku505.loopsEinlesen(p);
+  const e = await window.skuConnect.loopsEinlesen(p);
   if (!e.ok) { ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]); return; }
   if (e.vollstaendig) {
     ergebnis(li, "Loops eingelesen, " + e.kopie + " Dateien",
@@ -877,7 +877,7 @@ async function loopsEinlesen(li) {
 // (Werkstatt) oder als Audio- und MIDI-Gerät (Bühne). Was sie beim
 // Verbinden wird, steht in ihrer Systemeinstellung USB-Betriebsart.
 //
-// Weil das Display nicht lesbar ist, überwacht Sku505 den Zustand laufend
+// Weil das Display nicht lesbar ist, überwacht Boss 505 SkuConnect den Zustand laufend
 // und meldet jede Änderung von selbst. So ist immer klar, woran man ist.
 // =====================================================================
 
@@ -885,13 +885,13 @@ let letzterZustand = null;
 
 // Die Namen der Speicherplätze aus dem zuletzt eingelesenen Stand. Im
 // Bühnen-Modus gibt es kein Laufwerk, darum stammen sie aus der Kopie im
-// Programmordner. So kann Sku505 auch live sagen, wie ein Platz heißt.
+// Programmordner. So kann Boss 505 SkuConnect auch live sagen, wie ein Platz heißt.
 let platzListe = null;
 
 async function platzListeLaden() {
-  const eigen = await window.sku505.datenordner();
+  const eigen = await window.skuConnect.datenordner();
   if (!eigen.ok || !eigen.vorhanden) return;
-  const e = await window.sku505.speicherplaetzeLesen(eigen.pfad);
+  const e = await window.skuConnect.speicherplaetzeLesen(eigen.pfad);
   if (e.ok) platzListe = e.plaetze;
 }
 
@@ -906,7 +906,7 @@ function platzBeschreibung(nummer) {
 }
 
 async function zustandLesen() {
-  const l = await window.sku505.laufwerkDa();
+  const l = await window.skuConnect.laufwerkDa();
   if (l.ok && l.gefunden) return "werkstatt";
   if (typeof midiHatStation === "function" && midiHatStation()) return "buehne";
   return "getrennt";
@@ -921,11 +921,11 @@ function zustandText(z) {
 // Das Gerät, auf dem die Sprachausgabe und der Systemton bleiben sollen.
 // Windows greift sich beim Erscheinen der Station gern die Wiedergabe. Für
 // einen blinden Nutzer ist das gefährlich, weil der Ton dann unbemerkt
-// woanders landet. Darum holt Sku505 die Wiedergabe bei jedem Wechsel zurück.
+// woanders landet. Darum holt Boss 505 SkuConnect die Wiedergabe bei jedem Wechsel zurück.
 const HOERGERAET = "G733";
 
 async function wiedergabeSichern() {
-  const e = await window.sku505.audioGeraete("setze", HOERGERAET, "wiedergabe");
+  const e = await window.skuConnect.audioGeraete("setze", HOERGERAET, "wiedergabe");
   if (!e.ok || e.problem) return null;
   return e.gesetzt;
 }
@@ -935,7 +935,7 @@ async function zustandPruefen(ansagen) {
   if (z !== letzterZustand) {
     const vorher = letzterZustand;
     letzterZustand = z;
-    // Bei jedem Wechsel die Erkennung zurücksetzen, damit Sku505 nicht mit
+    // Bei jedem Wechsel die Erkennung zurücksetzen, damit Boss 505 SkuConnect nicht mit
     // einem veralteten Pfad weiterarbeitet.
     stationsPfad = null;
     schreibbar = false;
@@ -981,7 +981,7 @@ async function betriebsartWechseln(li, ziel) {
   if (z === "werkstatt") {
     const pfad = await quelleSichern();
     if (!pfad || !schreibbar) { sage("Station nicht erreichbar"); return; }
-    const e = await window.sku505.wertSchreiben(pfad, {
+    const e = await window.skuConnect.wertSchreiben(pfad, {
       datei: "SYSTEM", nummer: 0, abschnitt: "USB", feld: "Mod",
       wert: ziel === "buehne" ? "1" : "0"
     });
@@ -998,7 +998,7 @@ async function betriebsartWechseln(li, ziel) {
       "Schritt 1: Netzknopf drücken und halten, bis die Station aus ist",
       "Schritt 2: Netzknopf wieder drücken, ein paar Sekunden warten",
       "Schritt 3: USB verbinden",
-      "Sku505 sagt von selbst an, was danach da ist"
+      "Boss 505 SkuConnect sagt von selbst an, was danach da ist"
     ]);
     return;
   }
@@ -1007,7 +1007,7 @@ async function betriebsartWechseln(li, ziel) {
   // also geht es am Gerät. Der Regler-Schritt ist der entscheidende, er wird
   // am häufigsten vergessen.
   ergebnis(li, "Am Gerät umstellen, Schritt für Schritt", [
-    "Im Bühnen-Modus gibt es kein Laufwerk, Sku505 kann nichts schreiben",
+    "Im Bühnen-Modus gibt es kein Laufwerk, Boss 505 SkuConnect kann nichts schreiben",
     "Dafür reagiert jetzt das Bedienfeld der Station",
     "Schritt 1: Taste 2.2, EXIT, drei Mal drücken, damit du sicher im Spielbildschirm bist",
     "Schritt 2: Taste 1.3, SYSTEM, genau ein Mal drücken. Du stehst auf Wert 01",
@@ -1031,7 +1031,7 @@ async function betriebsartWechseln(li, ziel) {
 // Zusammensuchen einzelner Einstellungen.
 //
 // Die Werte der Station lassen sich nur im Werkstatt-Modus schreiben, die
-// Windows-Geräte dagegen immer. Sku505 macht darum so viel wie möglich und
+// Windows-Geräte dagegen immer. Boss 505 SkuConnect macht darum so viel wie möglich und
 // sagt ehrlich, was noch fehlt.
 // =====================================================================
 
@@ -1112,7 +1112,7 @@ const PROFILE = [
       "Audacity nimmt mit dem Rode auf",
       "Die Station wird nicht angefasst und bleibt, wie sie steht",
       "Steckt das Rode nicht, bleibt die Wiedergabe sicher auf dem Headset",
-      "und Sku505 sagt, dass die Aufnahme nicht gesetzt wurde"
+      "und Boss 505 SkuConnect sagt, dass die Aufnahme nicht gesetzt wurde"
     ],
     hinweise: [
       "Eingestellt: Windows nimmt mit dem Rode NT-USB auf",
@@ -1137,7 +1137,7 @@ async function profilSetzen(li, profil) {
     for (const schluessel of Object.keys(profil.station)) {
       const teile = schluessel.split(".");
       const wert = profil.station[schluessel];
-      const e = await window.sku505.wertSchreiben(pfad, {
+      const e = await window.skuConnect.wertSchreiben(pfad, {
         datei: "SYSTEM", nummer: 0, abschnitt: teile[0], feld: teile[1], wert
       });
       const b = feldBeschreibung(teile[0], teile[1]);
@@ -1157,7 +1157,7 @@ async function profilSetzen(li, profil) {
 
   // 2. Die Audiogeräte von Windows, das geht immer.
   for (const paar of [["wiedergabe", profil.wiedergabe], ["aufnahme", profil.aufnahme]]) {
-    const e = await window.sku505.audioGeraete("setze", paar[1], paar[0]);
+    const e = await window.skuConnect.audioGeraete("setze", paar[1], paar[0]);
     const wort = paar[0] === "wiedergabe" ? "Wiedergabe" : "Aufnahme";
     if (!e.ok || e.problem) {
       zeilen.push(wort + ": nicht gesetzt, " + ((e && e.problem) || e.fehler));
@@ -1178,11 +1178,11 @@ async function allesZurueck(li) {
   const zeilen = [];
   let gut = 0;
 
-  const w = await window.sku505.audioGeraete("setze", HOERGERAET, "wiedergabe");
+  const w = await window.skuConnect.audioGeraete("setze", HOERGERAET, "wiedergabe");
   if (w.ok && !w.problem) { zeilen.push("Wiedergabe: " + w.gesetzt); gut++; }
   else zeilen.push("Wiedergabe nicht gesetzt: " + ((w && w.problem) || w.fehler));
 
-  const a = await window.sku505.audioGeraete("setze", HOERGERAET, "aufnahme");
+  const a = await window.skuConnect.audioGeraete("setze", HOERGERAET, "aufnahme");
   if (a.ok && !a.problem) { zeilen.push("Aufnahme: " + a.gesetzt); gut++; }
   else zeilen.push("Aufnahme nicht gesetzt: " + ((a && a.problem) || a.fehler));
 
@@ -1196,12 +1196,12 @@ async function allesZurueck(li) {
 
   // Hörbare Bestätigung. Sie kommt über das gerade gesetzte Gerät, ist also
   // zugleich der Beweis, dass der Ton wieder da ist. Das ist wichtiger als
-  // die gesprochene Meldung, denn die hört man nur, wenn Sku505 vorn ist.
+  // die gesprochene Meldung, denn die hört man nur, wenn Boss 505 SkuConnect vorn ist.
   if (gut > 0) window.setTimeout(spieleHauptmenue, 250);
 }
 
 async function audioAnsagen(li) {
-  const e = await window.sku505.audioGeraete("liste");
+  const e = await window.skuConnect.audioGeraete("liste");
   if (!e.ok || e.problem) { ergebnis(li, "Konnte die Geräte nicht lesen", ["Fehler", (e && e.problem) || e.fehler]); return; }
   const standard = e.geraete.filter(g => g.standard);
   const zeilen = e.geraete.map(g => g.art + ": " + g.name + (g.standard ? ", Standard" : ""));
@@ -1213,7 +1213,7 @@ async function usbVorbereiten(li) {
   sage("Bereite Trennung vor");
   stationsPfad = null;
   schreibbar = false;
-  const e = await window.sku505.usbSteuern("vorbereiten");
+  const e = await window.skuConnect.usbSteuern("vorbereiten");
   if (!e.ok) { ergebnis(li, "Fehler", ["Fehler", e.fehler]); return; }
   if (e.problem) { ergebnis(li, "Hat nicht geklappt", ["Fehler", e.problem]); return; }
 
@@ -1231,7 +1231,7 @@ async function usbErneuern(li) {
   sage("Erneuere Verbindung");
   stationsPfad = null;
   schreibbar = false;
-  const e = await window.sku505.usbSteuern("erneuern");
+  const e = await window.skuConnect.usbSteuern("erneuern");
   if (!e.ok) { ergebnis(li, "Fehler", ["Fehler", e.fehler]); return; }
   if (e.problem) { ergebnis(li, "Hat nicht geklappt", ["Fehler", e.problem]); return; }
   const zustand = e.zustand === "SPEICHER" ? "Speicher-Modus"
@@ -1245,7 +1245,7 @@ async function usbErneuern(li) {
 }
 
 async function inGitSichern(li) {
-  const e = await window.sku505.gitSichern("Stationsdaten gesichert");
+  const e = await window.skuConnect.gitSichern("Stationsdaten gesichert");
   if (!e.ok) { ergebnis(li, "Fehler beim Sichern", ["Fehler", e.fehler]); return; }
   ergebnis(li, e.neu ? "In Git gesichert" : "Nichts Neues zu sichern", [e.meldung]);
 }
@@ -1281,7 +1281,7 @@ const menue = [
         "Die Station wird nicht angefasst",
         "Zur Bestätigung erklingt ein Zweiklang über das gesetzte Gerät",
         "Dieselbe Taste wirkt im ganzen System: Strg und Punkt",
-        "auch wenn Sku505 gar nicht im Vordergrund ist"
+        "auch wenn Boss 505 SkuConnect gar nicht im Vordergrund ist"
       ] }
   ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text, vorschau: p.vorschau }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
@@ -1292,9 +1292,9 @@ const menue = [
     { typ: "aktion", id: "usb-erneuern", text: "Verbindung erneuern" }
   ]},
   { typ: "ordner", text: "Optionen", kinder: [
-    { typ: "aktion", id: "ueber", text: "Über Sku505" }
+    { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" }
   ]},
-  { typ: "aktion", id: "beenden", text: "Sku505 beenden" }
+  { typ: "aktion", id: "beenden", text: "Boss 505 SkuConnect beenden" }
 ];
 
 // =====================================================================
@@ -1308,7 +1308,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Sku505 Version 0.30"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.30"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
@@ -1432,7 +1432,7 @@ baueEbene(menue, baumElement);
 fokussiere(baumElement.querySelector(".eintrag"), true);
 window.setTimeout(() => {
   const erster = baumElement.querySelector(".eintrag");
-  sage("Sku505 bereit, " + (erster ? erster.dataset.ansage : ""));
+  sage("Boss 505 SkuConnect bereit, " + (erster ? erster.dataset.ansage : ""));
 }, 700);
 
 // MIDI still im Hintergrund verbinden und den Zustand ab jetzt überwachen.
@@ -1450,14 +1450,14 @@ window.setTimeout(() => {
   window.setInterval(() => zustandPruefen(true), 2000);
 
   // Nottaster aus dem Programmkern entgegennehmen.
-  if (window.sku505.beiNottaster) {
-    window.sku505.beiNottaster(() => { allesZurueck(null); });
+  if (window.skuConnect.beiNottaster) {
+    window.skuConnect.beiNottaster(() => { allesZurueck(null); });
   }
   // Und nachfragen, ob die Taste wirklich liegt. Belegt ein anderes Programm
   // sie schon, muss das gesagt werden, sonst verlässt man sich im Notfall auf
   // etwas, das gar nicht da ist.
-  if (window.sku505.nottasterLiegt) {
-    const liegt = await window.sku505.nottasterLiegt();
+  if (window.skuConnect.nottasterLiegt) {
+    const liegt = await window.skuConnect.nottasterLiegt();
     if (!liegt) sage("Achtung, Strg und Punkt ist von einem anderen Programm belegt, der Nottaster wirkt nur im Menü");
   }
 })();

@@ -1,8 +1,8 @@
-Sku505, Auswertung Boss Tone Studio for RC (Version 1.5.0)
+Boss 505 SkuConnect, Auswertung Boss Tone Studio for RC (Version 1.5.0)
 Stand 08.08.2026. Grundlage: offizielle Boss-Seiten, Roland-Blog, Tone-Central-Katalog.
 
 Was Tone Studio für die RC-505 MK1 tatsächlich ist:
-Ein Datei-Verwalter. Es arbeitet ausschließlich im STORAGE-Modus, also auf derselben Ebene, auf der auch Sku505 arbeiten wird. Es ist kein Live-Werkzeug und kein vollwertiger Einstellungs-Editor für die MK1.
+Ein Datei-Verwalter. Es arbeitet ausschließlich im STORAGE-Modus, also auf derselben Ebene, auf der auch Boss 505 SkuConnect arbeiten wird. Es ist kein Live-Werkzeug und kein vollwertiger Einstellungs-Editor für die MK1.
 
 Funktionsliste Tone Studio:
 1. Audio-Import auf Speicherplatz und Spur: WAV (16, 24, 32 Bit Float, 44,1 kHz, Stereo und Mono), außerdem MP3 und AAC, mit automatischer Umwandlung ins Geräteformat.
@@ -14,16 +14,16 @@ Was Tone Studio für die MK1 NICHT bietet:
 Kein Bearbeiten der Speicherplatz-Einstellungen (Loop Length, Effekte, Assigns, Single/Multi). Keine Ansagen, keine Barrierefreiheit. Die Menü-Baustelle des Nutzers löst Tone Studio also gar nicht.
 
 Antwort auf die Frage, ob wir Sounds entnehmen können:
-Ja, aber nicht aus dem Programm, sondern aus der Quelle. Die Sounds sind normale Loop-Dateien von der Webseite bosstonecentral.com (Track-Sets für die RC-Serie, kostenlos). Sku505 braucht dafür nur seine ohnehin geplante Import-Funktion: Datei wählen, Speicherplatz und Spur wählen, einspielen. Damit ist die Inhalte-Funktion von Tone Studio abgedeckt, ohne dass wir irgendetwas aus dem Programm ausbauen müssen. Die heruntergeladenen Sets landen sinnvollerweise in der eigenen Sound-Bibliothek des Nutzers.
+Ja, aber nicht aus dem Programm, sondern aus der Quelle. Die Sounds sind normale Loop-Dateien von der Webseite bosstonecentral.com (Track-Sets für die RC-Serie, kostenlos). Boss 505 SkuConnect braucht dafür nur seine ohnehin geplante Import-Funktion: Datei wählen, Speicherplatz und Spur wählen, einspielen. Damit ist die Inhalte-Funktion von Tone Studio abgedeckt, ohne dass wir irgendetwas aus dem Programm ausbauen müssen. Die heruntergeladenen Sets landen sinnvollerweise in der eigenen Sound-Bibliothek des Nutzers.
 
-Messlatte für Sku505 (nicht weniger als Tone Studio):
+Messlatte für Boss 505 SkuConnect (nicht weniger als Tone Studio):
 1. Import WAV, MP3, AAC mit automatischer Umwandlung auf 44,1 kHz 16 Bit Stereo: übernehmen.
 2. Export der Loops: übernehmen.
 3. Platzierung auf Speicherplatz und Spur: übernehmen.
 4. Inhalte: Import-Funktion plus Hinweis auf bosstonecentral.com deckt es ab. Optional später ein eigener Bibliotheks-Bereich.
 5. Vorschau: statt Videos eine echte Audio-Vorschau der Loop-Datei vor dem Einspielen (Abspielen am PC), das ist für einen blinden Nutzer sogar nützlicher.
 
-Darüber hinaus bietet Sku505, was Tone Studio nie hatte:
+Darüber hinaus bietet Boss 505 SkuConnect, was Tone Studio nie hatte:
 Einstellungs-Editor für alle 99 Speicherplätze (Loop Length zuerst), Assign-Verwaltung, Pflicht-Backups, komplette Screenreader-Tauglichkeit, Baummenü nach Nutzer-Anforderungsprofil.
 
-Fazit: Tone Studio setzt die Messlatte niedrig. Volle Abdeckung ist mit der geplanten Import/Export-Funktion erreicht, alles Weitere von Sku505 ist Mehrwert. Tone Studio kann nach Fertigstellung von Stufe 2 deinstalliert werden.
+Fazit: Tone Studio setzt die Messlatte niedrig. Volle Abdeckung ist mit der geplanten Import/Export-Funktion erreicht, alles Weitere von Boss 505 SkuConnect ist Mehrwert. Tone Studio kann nach Fertigstellung von Stufe 2 deinstalliert werden.

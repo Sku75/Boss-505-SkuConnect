@@ -1,7 +1,7 @@
 // Beschreibung aller Felder der Station: Klartextname, Art und Wertebereich.
 //
 // Grundsatz: Nur Felder, die hier beschrieben sind, lassen sich ändern.
-// Alles andere wird angezeigt, aber nicht geschrieben. So kann Sku505 nie
+// Alles andere wird angezeigt, aber nicht geschrieben. So kann Boss 505 SkuConnect nie
 // einen Wert in ein Feld schreiben, dessen erlaubten Bereich wir nicht kennen.
 //
 // Art:

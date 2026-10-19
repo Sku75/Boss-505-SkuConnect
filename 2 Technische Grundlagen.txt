@@ -1,4 +1,4 @@
-Sku505, technische Grundlagen zur Boss RC-505 MK1
+Boss 505 SkuConnect, technische Grundlagen zur Boss RC-505 MK1
 Gesicherte Fakten aus Handbuch und drei Internet-Tiefenrecherchen, Stand 08.08.2026.
 
 USB-Betriebsarten (Systemmenü Sys:USB Mode, nur eine zur Zeit):

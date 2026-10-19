@@ -1,8 +1,8 @@
-Sku505 - Testplan für den nächsten Morgen
+Boss 505 SkuConnect - Testplan für den nächsten Morgen
 
 Stand am Abend des 09.08.2026, Version 0.29.
 Der zugehörige Council liegt im Posteingang:
-"Sku505 - Council Zwei Mikrofone und Discord.txt"
+"Boss 505 SkuConnect - Council Zwei Mikrofone und Discord.txt"
 
 
 Teil A: Der entscheidende Test, etwa fünf Minuten
@@ -13,7 +13,7 @@ Führt der USB-Ausgang der Station das Live-Eingangssignal mit, oder gibt sie
 
 Schritt 1
 
-In Sku505 das Profil "Discord, Stimme und Loops senden" ausführen.
+In Boss 505 SkuConnect das Profil "Discord, Stimme und Loops senden" ausführen.
 
 Schritt 2
 
@@ -38,12 +38,12 @@ Alternativen.
 
 Teil B: Die Tasten prüfen
 
-Sku505 neu starten und darauf achten, ob beim Start eine Warnung kommt.
+Boss 505 SkuConnect neu starten und darauf achten, ob beim Start eine Warnung kommt.
 
-Sagt Sku505 beim Start "Achtung, Strg und Punkt ist von einem anderen Programm
+Sagt Boss 505 SkuConnect beim Start "Achtung, Strg und Punkt ist von einem anderen Programm
 belegt", dann liegt der Nottaster nicht und wir brauchen eine andere Taste.
 
-Kommt keine Warnung: Strg und Punkt irgendwo außerhalb von Sku505 drücken. Es
+Kommt keine Warnung: Strg und Punkt irgendwo außerhalb von Boss 505 SkuConnect drücken. Es
 muss der Zweiklang kommen und das Fenster nach vorn springen.
 
 
@@ -96,7 +96,7 @@ Was heute fertig geworden ist
       was nach dem Ausführen eingestellt ist.
 
 0.29  Der Nottaster liegt jetzt auf Strg und Punkt, weil Strg F11 und Strg F12
-      schon von einem anderen Programm belegt sind. Sku505 warnt beim Start,
+      schon von einem anderen Programm belegt sind. Boss 505 SkuConnect warnt beim Start,
       falls auch Strg Punkt nicht anzumelden war.
 
 

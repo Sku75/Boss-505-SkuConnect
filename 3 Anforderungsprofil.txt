@@ -1,4 +1,4 @@
-Sku505, Anforderungsprofil des Nutzers
+Boss 505 SkuConnect, Anforderungsprofil des Nutzers
 Original vom 08.08.2026, wörtlich übernommen und leicht gegliedert.
 
 Basis:
@@ -22,4 +22,4 @@ Versionierung:
 Git-Repository erstellen. Jeder Entwicklungsabschnitt bekommt Patchnotes und eine Versionsänderung plus 0.01.
 
 Prüfauftrag vor Baubeginn:
-Boss Tone Studio betrachten. Können wir dort Sounds und Ähnliches entnehmen und bei Sku505 einfügen? Was macht Tone Studio, was bietet es? Sku505 soll nicht weniger bieten als Tone Studio. Auswertung vor Baubeginn.
+Boss Tone Studio betrachten. Können wir dort Sounds und Ähnliches entnehmen und bei Boss 505 SkuConnect einfügen? Was macht Tone Studio, was bietet es? Boss 505 SkuConnect soll nicht weniger bieten als Tone Studio. Auswertung vor Baubeginn.

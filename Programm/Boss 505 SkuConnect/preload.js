@@ -1,7 +1,7 @@
 // Preload: Bruecke zwischen Oberflaeche und System.
 const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('sku505', {
+contextBridge.exposeInMainWorld('skuConnect', {
   beiNottaster:          (fn)      => ipcRenderer.on('nottaster', () => fn()),
   nottasterLiegt:        ()        => ipcRenderer.invoke('nottaster-liegt'),
   laufwerkDa:            ()        => ipcRenderer.invoke('laufwerk-da'),

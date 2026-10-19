@@ -1,5 +1,5 @@
 Datenformat der RC-505 MK1 im Speicher-Modus
-Selbst ausgewertet an den echten Daten des Nutzers am 08.08.2026. Das ist die Bau-Grundlage für Sku505.
+Selbst ausgewertet an den echten Daten des Nutzers am 08.08.2026. Das ist die Bau-Grundlage für Boss 505 SkuConnect.
 
 Laufwerk und Aufbau
 
@@ -74,9 +74,9 @@ Erklärung des ursprünglichen Aufnahme-Problems
 Der Nutzer berichtete, die Aufnahme werde nach wenigen Sekunden automatisch abgeschnitten, laufe als Schleife weiter und gehe von selbst in Overdub.
 Ursache: Auf Platz 1 steht LpLen gleich 1, also feste Loop-Länge von einem Takt, bei Tempo 108,6. Ein Takt dauert dort 2,2 Sekunden. Genau das beschreibt der Nutzer.
 Lösung ohne jedes Menü: einen leeren Speicherplatz verwenden, zum Beispiel Platz 2. Dort steht LpLen auf 0, also AUTO, und die Länge bestimmt der zweite Tastendruck.
-Dauerhafte Lösung über Sku505: LpLen auf Platz 1 auf 0 setzen und die belegten Spuren löschen.
+Dauerhafte Lösung über Boss 505 SkuConnect: LpLen auf Platz 1 auf 0 setzen und die belegten Spuren löschen.
 
 Folgerung für den Bau
 
-Sku505 kann alle Einstellungen als XML lesen und schreiben. Der geplante Editor ist damit gesichert machbar. Nächster Schritt ist das Anzeigen der Speicherplätze mit Name, Loop-Länge und belegten Spuren, danach das Schreiben von LpLen.
+Boss 505 SkuConnect kann alle Einstellungen als XML lesen und schreiben. Der geplante Editor ist damit gesichert machbar. Nächster Schritt ist das Anzeigen der Speicherplätze mit Name, Loop-Länge und belegten Spuren, danach das Schreiben von LpLen.
 Regel beim Schreiben: nur den Zielwert ändern, Datei sonst unverändert lassen, danach zurücklesen und vergleichen.

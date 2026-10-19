@@ -1,4 +1,4 @@
-Sku505, Technik-Entscheidung: Sprache und Oberfläche
+Boss 505 SkuConnect, Technik-Entscheidung: Sprache und Oberfläche
 Recherche plus Council, Stand 08.08.2026.
 
 Rechercheergebnis, Kandidaten für ein NVDA-taugliches Windows-Programm:
@@ -14,7 +14,7 @@ Rechercheergebnis, Kandidaten für ein NVDA-taugliches Windows-Programm:
 Council:
 
 Der Konträre: Electron wegen Wiederverwendung zu wählen ist bequem, nicht zwingend richtig. Die Anforderung heißt performant und ohne Lags, und genau da ist Electron am schwächsten. Wenn die Skularis-Muster in Wahrheit gar nicht eins zu eins passen (anderes Programm, anderer Zweck), fällt das Hauptargument weg.
-Antwort der Abwägung: Der Einwand ist ernst zu nehmen, aber messbar: Sku505 ist ein Datei-Editor mit Baummenü, keine Echtzeit-Anwendung. Die Lag-Gefahr liegt bei schlecht gebauten Oberflächen, nicht an Electron als solchem. Skularis läuft auf genau diesem Laptop nachweislich flüssig.
+Antwort der Abwägung: Der Einwand ist ernst zu nehmen, aber messbar: Boss 505 SkuConnect ist ein Datei-Editor mit Baummenü, keine Echtzeit-Anwendung. Die Lag-Gefahr liegt bei schlecht gebauten Oberflächen, nicht an Electron als solchem. Skularis läuft auf genau diesem Laptop nachweislich flüssig.
 
 Der Denker nach ersten Prinzipien: Die eigentliche Anforderung ist nicht Technik, sondern: hundert Prozent der Bedienung über Pfeiltasten und Enter, hundert Prozent Vorlesbarkeit, Zeilen die auf 40 Braillezeichen funktionieren. Das erfüllt jede der drei ernsthaften Optionen, WENN diszipliniert gebaut wird. Also entscheidet nicht die Technik, sondern wo die Disziplin schon eingeübt ist.
 

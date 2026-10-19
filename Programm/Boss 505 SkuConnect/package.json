@@ -1,0 +1,15 @@
+{
+  "name": "boss-505-skuconnect",
+  "version": "0.30.0",
+  "description": "Boss 505 SkuConnect - barrierefreier Editor und Begleiter fuer die Boss RC-505 MK1 Loopstation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Kai",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0"
+  },
+  "productName": "Boss 505 SkuConnect"
+}

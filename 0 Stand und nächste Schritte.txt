@@ -1,8 +1,8 @@
-Thema 7 - Sku505 Loopstation, Stand und nächste Schritte
-Projekt: barrierefreies Programm Sku505 für die Boss RC-505 MK1. Zuerst lesen, dann die nummerierten Dateien.
+Thema 7 - Boss 505 SkuConnect Loopstation, Stand und nächste Schritte
+Projekt: barrierefreies Programm Boss 505 SkuConnect für die Boss RC-505 MK1. Zuerst lesen, dann die nummerierten Dateien.
 
 Ablage-Regeln:
-Alles zur Loopstation (Texte, Recherchen, Konzepte, Programmcode) gehört in diesen Themenordner. Das Programm samt Git liegt im Unterordner Programm, Sku505, Start über Sku505 Starten.bat. Fertige Deliverables zusätzlich in den Posteingang.
+Alles zur Loopstation (Texte, Recherchen, Konzepte, Programmcode) gehört in diesen Themenordner. Das Programm samt Git liegt im Unterordner Programm, Boss 505 SkuConnect, Start über Boss 505 SkuConnect Starten.bat. Fertige Deliverables zusätzlich in den Posteingang.
 Hinweis: Am 08.08.2026 aus der Datenbank (Studio) ins Büroregal verschoben, auf Wunsch des Nutzers.
 Hinweis: Am 19.10.2026 aus dem Büroregal hierher verschoben, auf Wunsch des Nutzers.
 Neuer Ort: Laufwerk C, Users, Anwender, OneDrive, Desktop, Boss, Boss 505 Skuconnect Ordner.
@@ -18,10 +18,10 @@ Offen: Firmware-Version der Station feststellen (Ziel 2.0), USB-Mode-Tastfolge v
 08.08.2026, später:
 Anforderungsprofil des Nutzers erhalten und als Datei 03 abgelegt (Baummenü nur mit Pfeiltasten und Enter, Optik wie Skularis schwarz-weiß, screenreadertauglich, performant, Git mit Patchnotes und Versionsschritt 0,01).
 Firmware-Auslesen über USB-Kennung versucht: Feld leer (REV 0000), Klärung erfolgt beim ersten Storage-Backup. Station war im AUDIO/MIDI-Modus angesteckt und wurde sauber erkannt.
-Zukunftsplan des Nutzers (weit hinten, nichts zu tun): Laptop plus kompakte Papenmeier-USB-Tastatur mit 40-Zeichen-Braillemodul. NVDA gibt auf Braille aus, damit ist lautloses Live-Spielen mit Pfeiltasten und Braille-Lesen möglich. Design-Folge für Sku505 schon jetzt: Zeilen kurz halten, wichtigste Information an den Zeilenanfang (40 Zeichen Braille als Richtmaß).
+Zukunftsplan des Nutzers (weit hinten, nichts zu tun): Laptop plus kompakte Papenmeier-USB-Tastatur mit 40-Zeichen-Braillemodul. NVDA gibt auf Braille aus, damit ist lautloses Live-Spielen mit Pfeiltasten und Braille-Lesen möglich. Design-Folge für Boss 505 SkuConnect schon jetzt: Zeilen kurz halten, wichtigste Information an den Zeilenanfang (40 Zeichen Braille als Richtmaß).
 Technik-Entscheidung (Datei 06) nach Recherche und Council: Electron auf Basis der Skularis-Muster, Plan B WinForms falls die Baummenü-Abnahme scheitert. Nutzer hat zugestimmt.
-Version 0.01 gebaut: Programmordner Programm\Sku505, Electron-Gerüst mit Baummenü nach Anforderungsprofil (Pfeiltasten und Enter, Werte-Zeilen mit Auswahl), Statuszeile mit Live-Ansagen, Probe-Bereich. Git-Repository angelegt, erster Commit, Patchnotes.txt begonnen. Start über Sku505 Starten.bat. Kurztest bestanden, Abnahme-Testliste liegt im Posteingang.
-Tone Studio ausgewertet, Datei 05: Für die MK1 nur Datei-Verwalter im Storage-Modus (Audio-Import/Export, Tone-Central-Inhalte). Kein Einstellungs-Editor, keine Barrierefreiheit. Messlatte niedrig, Sku505 deckt alles über die geplante Import/Export-Funktion ab. Sounds kommen als freie Track-Sets von bosstonecentral.com, nicht aus dem Programm.
+Version 0.01 gebaut: Programmordner Programm\Boss 505 SkuConnect, Electron-Gerüst mit Baummenü nach Anforderungsprofil (Pfeiltasten und Enter, Werte-Zeilen mit Auswahl), Statuszeile mit Live-Ansagen, Probe-Bereich. Git-Repository angelegt, erster Commit, Patchnotes.txt begonnen. Start über Boss 505 SkuConnect Starten.bat. Kurztest bestanden, Abnahme-Testliste liegt im Posteingang.
+Tone Studio ausgewertet, Datei 05: Für die MK1 nur Datei-Verwalter im Storage-Modus (Audio-Import/Export, Tone-Central-Inhalte). Kein Einstellungs-Editor, keine Barrierefreiheit. Messlatte niedrig, Boss 505 SkuConnect deckt alles über die geplante Import/Export-Funktion ab. Sounds kommen als freie Track-Sets von bosstonecentral.com, nicht aus dem Programm.
 
 08.08.2026, Abend:
 USB-Modus erfolgreich auf STORAGE umgestellt. Tastenkarte und Ablauf in Datei 07, aus den Original-Abbildungen des Handbuchs ausgewertet und am Gerät bestätigt: SYSTEM-Taste drei Mal, MEMORY/VALUE eine Raste, EXIT, Kabel neu stecken.
@@ -45,7 +45,7 @@ Nächster Schritt: Abnahme durch den Nutzer, Testliste im Posteingang. Danach di
 Version 0.07: Tooltip nach Skularis-Vorbild (Shift halten und Pfeil runter, Zeilen abwanderbar, Loslassen schließt), kurze bühnentaugliche Ansagen, und ein echter Fehler behoben: Die Statuszeile meldete nur Änderungen, darum blieb die Sprachausgabe bei zweimal demselben Text stumm. Deshalb gab Firmware prüfen beim zweiten Druck nichts aus.
 Version 0.08: Effekttypen im Klartext. Die Reihenfolge ist doppelt belegt, einmal aus dem Zusatzhandbuch zur Firmware 2.0 und einmal aus der Reihenfolge der Parameterfelder in der Gerätedatei, beide stimmen überein. Alle Effekt-Parameter benannt und einstellbar; nur Felder mit unbekanntem Wertebereich bleiben gesperrt (Lo-Fi Bit-Tiefe, Slicer Muster, Schritttempi und ähnliche).
 Live-Studio gebaut: MIDI verbinden, Ansager für Platzwechsel und Start/Stopp, Platz und Tempo ansagen (Tempo aus der MIDI-Uhr), Speicherplatz umschalten über Programmwechsel, Steuerbefehle CC 1-31 und 64-95 für die Zuweisungen, MIDI-Kanal 1-16, und Aufnahme des USB-Audiosignals als WAV-Datei.
-Start ohne Konsolenfenster über Sku505 Starten.vbs, Desktop-Verknüpfung angelegt.
+Start ohne Konsolenfenster über Boss 505 SkuConnect Starten.vbs, Desktop-Verknüpfung angelegt.
 Alle Quelldateien syntaktisch geprüft, Programm mehrfach fehlerfrei gestartet, Schreib-Logik vorab an einer Kopie der echten Daten verifiziert.
 Nächster Schritt: Abnahme durch den Nutzer, Testliste im Posteingang (Werkstatt im Speicher-Modus, Live-Studio im Audio-Modus). Offen bleiben: Wertebereiche der gesperrten Felder, Rhythmus-Muster als Klartext, Assign-Ziele als Klartext.
 
@@ -63,7 +63,7 @@ Die Station kann immer nur eines: Laufwerk (Werkstatt) oder Audio und MIDI (Büh
 ENTSCHEIDEND: Die Station liest diese Einstellung nur beim EINSCHALTEN, nicht bei jedem USB-Verbinden. Ein Ändern der Datei allein bewirkt nichts, solange die Station durchläuft. Erst Aus- und Einschalten übernimmt den neuen Wert. Am Gerät geändert wirkt es dagegen sofort, weil es dort im Arbeitsspeicher steht.
 
 Der erprobte Weg von Werkstatt nach Bühne:
-1. In Sku505 die Betriebsart auf Bühne setzen (schreibt USB.Mod auf 1, geprüft und bestätigt).
+1. In Boss 505 SkuConnect die Betriebsart auf Bühne setzen (schreibt USB.Mod auf 1, geprüft und bestätigt).
 2. Station aus und wieder einschalten.
 3. USB verbinden. Sie kommt als Audio und MIDI, PID 0171 statt 0170.
 
@@ -78,19 +78,19 @@ Nebenbefund: Windows macht die Station im Bühnen-Modus zum Standard-Ausgabeger�
 09.08.2026, Abend, Feierabend:
 0.27 Rode NT-USB eingebunden: neues Profil "Rode-Mikrofon aufnehmen oder senden", Windows-Aufnahme auf das Rode, Wiedergabe bleibt auf dem Headset, Station wird bewusst nicht angefasst. Das Profil "Werkstatt" ist entfallen, es hat verwirrt und konnte fast nichts tun.
 0.28 Alle Profile haben einen erklärenden Tooltip, der Zeile für Zeile sagt, was nach dem Ausführen eingestellt ist. Aktionen können dafür allgemein eine Vorschau mitbringen.
-0.29 Nottaster von Strg F12 auf Strg Punkt verlegt, weil Strg F11 und Strg F12 auf diesem Rechner schon von einem anderen Programm belegt sind. Sku505 prüft beim Start, ob die Taste wirklich anzumelden war, und warnt sonst. Strg Komma ist für den geplanten Umschalter reserviert.
+0.29 Nottaster von Strg F12 auf Strg Punkt verlegt, weil Strg F11 und Strg F12 auf diesem Rechner schon von einem anderen Programm belegt sind. Boss 505 SkuConnect prüft beim Start, ob die Taste wirklich anzumelden war, und warnt sonst. Strg Komma ist für den geplanten Umschalter reserviert.
 
 Council zur Frage "zwei Mikrofone und Discord" durchgeführt, liegt im Posteingang. Ergebnis: keinen Mischer bauen, sondern einen Schalter. Discord nimmt nur ein Eingabegerät, und der Ablauf des Nutzers ist ohnehin nacheinander, nicht gleichzeitig. Strg Komma soll zwischen Headset-Mikrofon und RC-505 umschalten. VoiceMeeter wurde bewusst verworfen: ein weiterer Audiotreiber zwischen Nutzer und Ton ist für einen blinden Nutzer das größere Risiko.
 
 Nächster Morgen: Testplan in Datei 10 abarbeiten. Teil A ist der entscheidende Test, ob der USB-Ausgang der Station das Live-Eingangssignal mitführt. Erst danach baue ich Strg Komma.
 
 19.10.2026:
-0.30 Sku505 ist portabel gemacht. Das Modul AudioDeviceCmdlets liegt jetzt mitgeliefert
-unter Programm, Sku505, werkzeug, Module. Das Skript lädt zuerst diese Kopie und nur dann
+0.30 Boss 505 SkuConnect ist portabel gemacht. Das Modul AudioDeviceCmdlets liegt jetzt mitgeliefert
+unter Programm, Boss 505 SkuConnect, werkzeug, Module. Das Skript lädt zuerst diese Kopie und nur dann
 ein installiertes Modul, wenn die eigene fehlt. Das Original im Benutzerprofil wurde
 bewusst nicht gelöscht, damit nichts anderes bricht.
 Geprüft: keine absoluten Pfade im Code, beide Starter arbeiten relativ, electron.exe liegt
-im Ordner. Der Ordner Sku505 läuft damit von einem Stick auf einem fremden Windows-Rechner,
+im Ordner. Der Ordner Boss 505 SkuConnect läuft damit von einem Stick auf einem fremden Windows-Rechner,
 ohne Installation und ohne Adminrechte. Ordnergröße 280 MB, davon 276 MB node_modules.
 Bewusst nicht geändert: Der Headset-Name G733 steht fest im Code, auf einem fremden Rechner
 greift der Nottaster daher ins Leere. Die Sicherung vor dem Schreiben braucht ein
@@ -99,5 +99,5 @@ Gesamtes Projekt an den neuen Ort verschoben. Die Git-Historie ist mitgewandert 
 Die Desktop-Verknüpfung wurde auf den neuen Pfad gesetzt und der Start von dort geprüft.
 Offen und dem Nutzer gesagt: Git hat kein Remote. Die Historie liegt nur lokal im Ordner,
 ein Backup auf einem anderen Rechner ist das nicht. Git versioniert außerdem nur den
-Programmordner Sku505, nicht diese Projekttexte. Der neue Ort liegt in OneDrive, die
+Programmordner Boss 505 SkuConnect, nicht diese Projekttexte. Der neue Ort liegt in OneDrive, die
 280 MB laufen damit durch die Cloud-Synchronisierung.

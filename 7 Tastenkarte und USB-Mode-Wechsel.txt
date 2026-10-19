@@ -58,4 +58,4 @@ Zurück in den Spielbetrieb: USB-Kabel abziehen, dann ist die Station sofort wie
 
 Zurück auf AUDIO/MIDI (erst für Stufe 3, das Live-Studio, nötig): gleiche Schritte, nur in Schritt 2 auf AUDIO/MIDI drehen.
 
-Prüfung ohne Display: Sku505 sagt an, ob die Station als Laufwerk gefunden wurde. Werkstatt, Station suchen. Meldet Sku505 einen Fund, war die Umstellung erfolgreich.
+Prüfung ohne Display: Boss 505 SkuConnect sagt an, ob die Station als Laufwerk gefunden wurde. Werkstatt, Station suchen. Meldet Boss 505 SkuConnect einen Fund, war die Umstellung erfolgreich.

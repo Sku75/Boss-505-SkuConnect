@@ -1,9 +1,9 @@
-Zielbild Sku505, die vollständige Software
+Zielbild Boss 505 SkuConnect, die vollständige Software
 Stand 08.08.2026. Grundlage: eigene Auswertung der echten Stationsdaten, Handbuch, Anforderungsprofil des Nutzers.
 
-TEIL A: Was Sku505 am Ende können soll
+TEIL A: Was Boss 505 SkuConnect am Ende können soll
 
-Sku505 ist ein barrierefreies Windows-Programm für die Boss RC-505 MK1. Es ersetzt Tone Studio vollständig und geht weit darüber hinaus, weil es alles zugänglich macht, was am Gerät nur über das Display erreichbar ist.
+Boss 505 SkuConnect ist ein barrierefreies Windows-Programm für die Boss RC-505 MK1. Es ersetzt Tone Studio vollständig und geht weit darüber hinaus, weil es alles zugänglich macht, was am Gerät nur über das Display erreichbar ist.
 
 Es hat zwei Betriebsarten, entsprechend den zwei USB-Modi der Station.
 
@@ -48,7 +48,7 @@ Sagt den gewählten Speicherplatz mit Nummer und Namen an, sobald am Gerät umge
 Speicherplatz umschalten. Auslösen aller Funktionen, die vorher über die Assigns auf MIDI-Befehle gelegt wurden, zum Beispiel Aufnahme, Overdub, Undo, Rhythmus, Pegel, Effekt an/aus, alles starten oder stoppen. Jede Funktion als beschrifteter Menüpunkt.
 
 13. Aufnahme
-Mitschnitt des Ausgangssignals über USB-Audio, entweder direkt in Sku505 oder als Anleitung für Audacity. Zuspielen vom PC in die Station, auf Wunsch direkt in eine Loop-Spur.
+Mitschnitt des Ausgangssignals über USB-Audio, entweder direkt in Boss 505 SkuConnect oder als Anleitung für Audacity. Zuspielen vom PC in die Station, auf Wunsch direkt in eine Loop-Spur.
 
 A3 Durchgängig
 
@@ -71,7 +71,7 @@ Weg dorthin, in dieser Reihenfolge:
 1. Ableitung aus der Reihenfolge der Effektliste im Handbuch, Seite 20 und 21.
 2. Gegenprobe an den fünf Werks-Demos, deren Effekte im Handbuch beschrieben sind.
 3. Empirische Prüfung: An einem leeren Testplatz einen Wert setzen, zurückschreiben, am Gerät hören und bestätigen lassen.
-Erst wenn eine Zuordnung bestätigt ist, wird sie im Programm mit Klartextnamen angeboten. Bis dahin zeigt Sku505 ehrlich die Zahl.
+Erst wenn eine Zuordnung bestätigt ist, wird sie im Programm mit Klartextnamen angeboten. Bis dahin zeigt Boss 505 SkuConnect ehrlich die Zahl.
 
 Das gleiche Verfahren gilt für die Zahlenwerte der Assign-Quellen und Assign-Ziele und für die 85 Rhythmus-Muster.
 

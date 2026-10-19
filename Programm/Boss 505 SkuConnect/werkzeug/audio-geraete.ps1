@@ -19,7 +19,7 @@ param(
 
 $ErrorActionPreference = 'Continue'
 
-# Das Modul liegt mitgeliefert im Programmordner, damit Sku505 auch von einem
+# Das Modul liegt mitgeliefert im Programmordner, damit Boss 505 SkuConnect auch von einem
 # Stick auf einem fremden Rechner die Audiogeraete setzen kann. Nur wenn die
 # eigene Kopie fehlt, wird auf ein installiertes Modul zurueckgegriffen.
 $eigenes = Join-Path $PSScriptRoot 'Module\AudioDeviceCmdlets\AudioDeviceCmdlets.psd1'

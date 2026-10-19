@@ -1,4 +1,4 @@
-// Sku505, Live-Studio.
+// Boss 505 SkuConnect, Live-Studio.
 //
 // Arbeitet mit der Station in der Betriebsart AUDIO/MIDI. Zwei Dinge sind
 // technisch möglich und werden hier genutzt:
@@ -6,7 +6,7 @@
 //  1. Zuhören. Die Station meldet über MIDI, welcher Speicherplatz gewählt
 //     wurde, und sendet den Takt. Mehr sendet sie nicht, ein sprechender
 //     Spiegel des Displays ist darum nicht baubar.
-//  2. Steuern. Sku505 kann den Speicherplatz umschalten und Steuerbefehle
+//  2. Steuern. Boss 505 SkuConnect kann den Speicherplatz umschalten und Steuerbefehle
 //     senden, die in den Zuweisungen des Speicherplatzes hinterlegt sind.
 //
 // Dazu kommt die Aufnahme: Das Ausgangssignal der Station kommt als
@@ -66,7 +66,7 @@ async function midiVerbinden(li) {
   }
 }
 
-// Verbindet MIDI leise im Hintergrund, ohne Ansage. Dadurch weiß Sku505
+// Verbindet MIDI leise im Hintergrund, ohne Ansage. Dadurch weiß Boss 505 SkuConnect
 // jederzeit, ob die Station im Audio-Modus da ist, und meldet Änderungen
 // sofort statt erst beim nächsten Blick.
 async function midiStillVerbinden() {
@@ -310,11 +310,11 @@ async function aufnahmeStoppen(li) {
   if (!anzahl) { ergebnis(li, "Nichts aufgenommen", null); return; }
 
   const sekunden = anzahl / aufnahmeRate;
-  const wahl = await window.sku505.dateiWaehlen(true, "Sku505 Aufnahme.wav");
+  const wahl = await window.skuConnect.dateiWaehlen(true, "Boss 505 SkuConnect Aufnahme.wav");
   if (!wahl.ok || wahl.abgebrochen) { sage("Abgebrochen"); return; }
 
   const daten = wavBauen(aufnahmeBloecke, anzahl, aufnahmeRate);
-  const e = await window.sku505.wavSchreiben(wahl.pfad, daten);
+  const e = await window.skuConnect.wavSchreiben(wahl.pfad, daten);
   aufnahmeBloecke = [];
   if (!e.ok) { ergebnis(li, "Speichern fehlgeschlagen", ["Fehler", e.fehler]); return; }
   ergebnis(li, "Aufnahme gespeichert, " + Math.round(sekunden) + " Sekunden", [

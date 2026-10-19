@@ -16,7 +16,7 @@ function erstelleFenster() {
     // Erst zeigen, wenn alles geladen ist. Sonst meldet die Sprachausgabe
     // das Fenster mehrfach: einmal leer, einmal beim Laden, einmal fertig.
     show: false,
-    title: 'Sku505',
+    title: 'Boss 505 SkuConnect',
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -538,7 +538,7 @@ ipcMain.handle('datei-waehlen', sicher(async (speichern, vorschlag) => {
 app.whenReady().then(() => {
   erstelleFenster();
 
-  // Nottaster: Strg und Punkt wirkt im ganzen System, auch wenn Sku505 nicht
+  // Nottaster: Strg und Punkt wirkt im ganzen System, auch wenn Boss 505 SkuConnect nicht
   // im Vordergrund ist. Gedacht fuer den Fall, dass der Ton verschwindet und
   // der Rechner dadurch nicht mehr bedienbar waere.
   const angemeldet = globalShortcut.register('Control+.', () => {
