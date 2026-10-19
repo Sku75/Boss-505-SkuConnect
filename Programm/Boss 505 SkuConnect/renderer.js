@@ -1294,7 +1294,7 @@ const menue = [
   { typ: "ordner", text: "Optionen", kinder: [
     { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" }
   ]},
-  { typ: "aktion", id: "beenden", text: "Boss 505 SkuConnect beenden" }
+  { typ: "aktion", id: "beenden", text: "Beenden" }
 ];
 
 // =====================================================================
@@ -1308,7 +1308,7 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Boss 505 SkuConnect Version 0.30"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.31"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;

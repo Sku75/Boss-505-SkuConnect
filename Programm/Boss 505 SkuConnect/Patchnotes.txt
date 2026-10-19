@@ -1,5 +1,10 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.31, 19.10.2026
+Die letzte Zeile im Hauptmenü heißt jetzt nur noch Beenden, vorher stand dort der
+ganze Programmname davor. Den Namen hört man beim Start schon, im Menü ist er
+überflüssige Länge.
+
 Version 0.30, 19.10.2026
 Boss 505 SkuConnect ist jetzt wirklich portabel. Das Modul AudioDeviceCmdlets, das die Audiogeräte von Windows umstellt, liegt mitgeliefert im Programmordner unter werkzeug, Module. Vorher lag es nur im Benutzerprofil, dadurch hätten auf einem fremden Rechner alle Profile und der Nottaster ins Leere gegriffen.
 Das Skript lädt zuerst die mitgelieferte Kopie und nur dann ein installiertes Modul, wenn die eigene Kopie fehlt.
