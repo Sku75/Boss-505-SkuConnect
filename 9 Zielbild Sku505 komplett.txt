@@ -1,0 +1,109 @@
+Zielbild Sku505, die vollständige Software
+Stand 08.08.2026. Grundlage: eigene Auswertung der echten Stationsdaten, Handbuch, Anforderungsprofil des Nutzers.
+
+TEIL A: Was Sku505 am Ende können soll
+
+Sku505 ist ein barrierefreies Windows-Programm für die Boss RC-505 MK1. Es ersetzt Tone Studio vollständig und geht weit darüber hinaus, weil es alles zugänglich macht, was am Gerät nur über das Display erreichbar ist.
+
+Es hat zwei Betriebsarten, entsprechend den zwei USB-Modi der Station.
+
+A1 Werkstatt (Station im Speicher-Modus)
+
+1. Verbindung
+Station suchen und melden. Firmware und Datenstand ansagen. Einstellungen einlesen. Loop-Aufnahmen einlesen. Änderungen zurückschreiben mit Rücklesen und Vergleich.
+
+2. Speicherplätze, alle 99
+Liste mit Nummer, Name, Loop-Länge und belegten Spuren. Platz öffnen und bearbeiten. Platz umbenennen (12 Zeichen). Platz kopieren, tauschen, löschen. Vorlage aus einem Platz auf andere übertragen.
+
+3. Einstellungen je Speicherplatz
+Loop-Länge (AUTO oder feste Taktzahl), Loop Quantize, Tempo, Master-Pegel, Kompressor, Hall, Overdub-Modus, Rec Action, Single Play Change, All Start, All Stop, Fade Time, Zielspur.
+
+4. Einstellungen je Spur, für alle fünf
+Reverse, Wiedergabepegel, Panorama, One-Shot, Track FX an/aus, Play Mode Single oder Multi, Start Mode, Stop Mode, Takt-Modus und Taktzahl, Loop Sync, Tempo Sync, Aufnahmetempo. Dazu die Anzeige, ob und wie lang eine Aufnahme auf der Spur liegt.
+
+5. Rhythmus
+An/aus, Pegel, Muster aus 85 Rhythmen, Taktart, eigener Kopfhörer-Ausgang, Einzähler für Aufnahme und Wiedergabe, Stopp-Verhalten.
+
+6. Effekte, Input FX und Track FX
+Je drei Tasten A, B und C, je Taste ein Effekttyp aus der Liste des Geräts, dazu die zugehörigen Parameter. Getrennt für Einzel- und Multi-Betrieb. Auswahl über das Baummenü mit Klartextnamen statt Zahlen, also zum Beispiel Filter, Phaser, Flanger, Synth, Lo-Fi, Ring Modulator, Guitar to Bass, Slow Gear, Transpose, Equalizer, Isolator, Oktave, Panorama, Slicer, Delay und die weiteren.
+
+7. Assigns, alle 16
+An/aus, Quelle, Quellmodus, Ziel, Minimalwert, Maximalwert. Damit lässt sich am PC alles einrichten, was die Station live über MIDI oder Fußschalter steuerbar macht. Vorlagen für gängige Belegungen.
+
+8. Systemeinstellungen der Station
+Display-Helligkeit, Phantomspeisung, Anzeigeart, Loop-Anzeige, Auto-Aus, Ausgangspegel, Eingang auf Line Out, Wirkung des Output-Level-Reglers, USB-Modus, USB-Routing, USB-Pegel, alle MIDI-Einstellungen.
+
+9. Loop-Dateien
+Ansagen, welche Spur belegt ist und wie lang. Vorhören am PC. Exportieren zur Sicherung oder Bearbeitung. Importieren auf Platz und Spur, mit automatischer Umwandlung aus WAV, MP3 und AAC. Damit ist die Tone-Central-Bibliothek nutzbar.
+
+10. Sicherheit
+Vor jedem Schreiben ein Stand in Git. Nach jedem Schreiben Rücklesen und Vergleich. Schreiben immer erst nach Bestätigung, mit klarer Ansage, was sich ändert.
+
+A2 Live-Studio (Station im Audio/MIDI-Modus)
+
+11. Ansager
+Sagt den gewählten Speicherplatz mit Nummer und Namen an, sobald am Gerät umgeschaltet wird. Sagt das Tempo an. Das sind die einzigen Zustände, die die Station nach außen meldet, mehr ist technisch nicht möglich.
+
+12. Fernbedienung
+Speicherplatz umschalten. Auslösen aller Funktionen, die vorher über die Assigns auf MIDI-Befehle gelegt wurden, zum Beispiel Aufnahme, Overdub, Undo, Rhythmus, Pegel, Effekt an/aus, alles starten oder stoppen. Jede Funktion als beschrifteter Menüpunkt.
+
+13. Aufnahme
+Mitschnitt des Ausgangssignals über USB-Audio, entweder direkt in Sku505 oder als Anleitung für Audacity. Zuspielen vom PC in die Station, auf Wunsch direkt in eine Loop-Spur.
+
+A3 Durchgängig
+
+Bedienung ausschließlich mit Pfeiltasten und Enter, Rücktaste zurück, Pos 1 und Ende an den Rand. Anschlagton am Ebenenrand. Alles wird vorgelesen. Zeilen kurz, wichtigste Information vorn, tauglich für 40 Zeichen Braille. Optik schwarz mit weißer Schrift im Zeilendesign. Jede Version mit Patchnotes und Versionsschritt 0,01 im Git.
+
+TEIL B: Was technisch gesichert ist
+
+Die Einstellungsdateien MEMORY.RC0 und SYSTEM.RC0 sind reines, unverschlüsseltes XML. Alle oben genannten Werte stehen dort als benannte Felder. Sie sind lesbar und schreibbar. Das ist an den echten Daten des Nutzers geprüft, nicht angenommen.
+
+Bekannte Feldstruktur je Speicherplatz:
+TRACK1 bis TRACK5, RHYTHM, NAME, MASTER, REC_OPTION, PLAY_OPTION, ASSIGN1 bis ASSIGN16, INPUT_FX, TRACK_FX, BEAT_FX1 bis 3, INPUT_FX1 bis 3, TRACK_FX1 bis 3.
+
+Die Effekt-Blöcke INPUT_FX und TRACK_FX enthalten Mod, MltMod, Sw, Sel, Typ1 bis Typ3 sowie die Multi-Varianten. Die Parameterblöcke INPUT_FX1 bis 3 und TRACK_FX1 bis 3 enthalten die Parameter aller Effekttypen gleichzeitig, mit sprechenden Kürzeln, zum Beispiel FilCut für die Filter-Grenzfrequenz oder PhRat für die Phaser-Geschwindigkeit.
+
+TEIL C: Die einzige echte Unbekannte
+
+Die Effekttypen stehen in der Datei als Zahlen, zum Beispiel Typ1 gleich 0, Typ2 gleich 3, Typ3 gleich 8, bei Track FX bis 27. Welche Zahl welchem Effektnamen entspricht, ist nicht dokumentiert. Das muss zugeordnet werden.
+
+Weg dorthin, in dieser Reihenfolge:
+1. Ableitung aus der Reihenfolge der Effektliste im Handbuch, Seite 20 und 21.
+2. Gegenprobe an den fünf Werks-Demos, deren Effekte im Handbuch beschrieben sind.
+3. Empirische Prüfung: An einem leeren Testplatz einen Wert setzen, zurückschreiben, am Gerät hören und bestätigen lassen.
+Erst wenn eine Zuordnung bestätigt ist, wird sie im Programm mit Klartextnamen angeboten. Bis dahin zeigt Sku505 ehrlich die Zahl.
+
+Das gleiche Verfahren gilt für die Zahlenwerte der Assign-Quellen und Assign-Ziele und für die 85 Rhythmus-Muster.
+
+TEIL D: Bauplan in Stufen
+
+Fertig:
+0.01 bis 0.05, Bediengerüst, Baummenü, Werkstatt-Grundfunktionen, Speicherplatz-Liste.
+
+Stufe 1, Lesen vollständig (0.06 bis 0.10)
+Speicherplatz öffnen und alle Werte anzeigen: Spuren, Rhythmus, Effekte, Assigns. Systemeinstellungen anzeigen. Loop-Dateien anzeigen. Noch nichts schreiben. Ergebnis: Du kannst zum ersten Mal alles hören, was in deiner Station steht.
+
+Stufe 2, Schreiben mit Sicherheitsnetz (0.11 bis 0.15)
+Erst Loop-Länge, an einem leeren Testplatz. Rücklesen und Vergleich. Dann Schritt für Schritt die übrigen Werte. Regel: nur das geänderte Feld anfassen, Datei sonst unverändert.
+
+Stufe 3, Verwaltung (0.16 bis 0.20)
+Umbenennen, kopieren, tauschen, löschen, Vorlagen. Loop-Export und Loop-Import mit Umwandlung. Damit ist Tone Studio überflüssig.
+
+Stufe 4, Klartext statt Zahlen (0.21 bis 0.25)
+Zuordnung der Effekttypen, Assign-Ziele und Rhythmus-Muster, jeweils geprüft. Danach überall Klartextnamen.
+
+Stufe 5, Live-Studio (0.26 bis 0.30)
+Ansager, Fernbedienung, Aufnahme. Setzt voraus, dass die Assigns aus Stufe 3 gesetzt sind.
+
+Stufe 6, Fertigstellung (0.31 bis 1.00)
+Verpackung als eigenständiges Programm ohne Konsolenfenster, Startverknüpfung, Hilfe im Programm, Gesamttest, Version 1.00.
+
+TEIL E: Ehrliche Einschätzung
+
+Was ich allein bauen kann: die gesamte Werkstatt, also Lesen, Schreiben, Verwaltung, Oberfläche, Sicherheitsnetz. Das Datenformat ist verstanden, es ist reine Fleißarbeit in Stufen.
+
+Wo ich dich brauche: bei jeder Abnahme, weil nur du hörst, ob die Bedienung stimmt. Und bei der Bestätigung der Zahlen-Zuordnungen, weil nur die Station selbst beweisen kann, ob eine Zuordnung stimmt. Ein Umstecken der Station zwischen Speicher-Modus und Audio-Modus musst du am Gerät machen.
+
+Was ich nicht kann: die Firmware der Station verändern, dem Gerät Sprachausgabe beibringen, oder Zustände auslesen, die die Station nicht sendet. Ein sprechender Spiegel des Displays im Live-Betrieb bleibt unmöglich, das ist eine Grenze der Hardware, keine des Programms.
+
+Aufwand realistisch: Die Werkstatt in brauchbarem Zustand ist in wenigen Arbeitssitzungen erreichbar. Die vollständige Software mit allen Effekten, Klartextnamen und Live-Studio braucht deutlich länger, vor allem wegen der Prüfzyklen am Gerät.

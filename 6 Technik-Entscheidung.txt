@@ -1,0 +1,28 @@
+Sku505, Technik-Entscheidung: Sprache und Oberfläche
+Recherche plus Council, Stand 08.08.2026.
+
+Rechercheergebnis, Kandidaten für ein NVDA-taugliches Windows-Programm:
+
+1. Electron (wie Skularis). Oberfläche aus Web-Technik, Barrierefreiheit über ARIA-Auszeichnung. Nachweislich screenreadertauglich, wenn sauber gebaut (bekanntestes Beispiel: VS Code, bei blinden Entwicklern verbreitet). Entscheidender Punkt hier: Skularis ist Electron, und damit existieren bereits erprobte, vom Nutzer selbst getestete Muster für schwarz-weißes Zeilendesign, Menüführung und Ansagen. MIDI ist in Electron eingebaut (WebMIDI), Audio-Vorschau trivial, Dateiarbeit über Node problemlos. Schwäche: höherer Speicherverbrauch, Sorgfalt bei ARIA nötig.
+
+2. WinForms mit C Sharp. Echte Windows-Bedienelemente, von NVDA über die klassische Schnittstelle solide gelesen, sehr leichtgewichtig und schnell. Der Nutzer hat C-Sharp-Erfahrung im Umfeld (Skularis-Updater). Schwäche: Skularis-Optik und Bedienmuster müssten von Grund auf neu gebaut werden, MIDI und Audio brauchen Zusatzbibliotheken.
+
+3. WPF mit C Sharp. Modernste Zugänglichkeits-Schnittstelle (UIA nativ), robuste Standard-Elemente. Gleiche Schwächen wie WinForms bezüglich Neuaufbau, dazu mehr Einarbeitung.
+
+4. wxPython. Fällt durch: Die Recherche zeigt dokumentierte, teils ungelöste NVDA-Probleme bei eingebetteten Inhalten und schwer korrigierbare Bedienelemente.
+
+Council:
+
+Der Konträre: Electron wegen Wiederverwendung zu wählen ist bequem, nicht zwingend richtig. Die Anforderung heißt performant und ohne Lags, und genau da ist Electron am schwächsten. Wenn die Skularis-Muster in Wahrheit gar nicht eins zu eins passen (anderes Programm, anderer Zweck), fällt das Hauptargument weg.
+Antwort der Abwägung: Der Einwand ist ernst zu nehmen, aber messbar: Sku505 ist ein Datei-Editor mit Baummenü, keine Echtzeit-Anwendung. Die Lag-Gefahr liegt bei schlecht gebauten Oberflächen, nicht an Electron als solchem. Skularis läuft auf genau diesem Laptop nachweislich flüssig.
+
+Der Denker nach ersten Prinzipien: Die eigentliche Anforderung ist nicht Technik, sondern: hundert Prozent der Bedienung über Pfeiltasten und Enter, hundert Prozent Vorlesbarkeit, Zeilen die auf 40 Braillezeichen funktionieren. Das erfüllt jede der drei ernsthaften Optionen, WENN diszipliniert gebaut wird. Also entscheidet nicht die Technik, sondern wo die Disziplin schon eingeübt ist.
+
+Der Expansionist: Electron bringt zwei Gratis-Chancen mit: WebMIDI für Stufe 3 ohne Zusatzaufwand, und die Audio-Vorschau der Loops direkt im Programm. Außerdem könnte langfristig Skularis-Nähe entstehen (gemeinsame Bausteine, gleiches Bedien-Gefühl über beide Programme).
+
+Der Außenstehende: Der Nutzer besitzt bereits ein Programm, dessen Bedienung er blind beherrscht und dessen Optik er ausdrücklich als Vorbild nennt. Es wäre seltsam, ihm ein zweites Bedien-Gefühl anzutrainieren, wenn er das erste ausdrücklich bestellt hat.
+
+Der Umsetzer: Nächster Schritt bei Electron: Grundgerüst aus den Skularis-Mustern ableiten, Baummenü als erste Komponente bauen, mit NVDA und Braillezeile abnehmen, erst danach Gerätefunktionen anschließen. Bei C Sharp: gleiches Vorgehen, aber mit Neuaufbau aller Muster, geschätzt deutlich längerer Weg bis zur ersten abnehmbaren Oberfläche.
+
+Urteil: Electron auf Basis der Skularis-Muster. Ausschlaggebend: Die Barrierefreiheits-Disziplin und das gewünschte Bedien-Gefühl existieren dort schon und sind von genau diesem Nutzer abgenommen. Die Performance-Sorge ist bei einem Datei-Editor beherrschbar und wird durch eine Abnahme-Regel abgesichert: Das Baummenü wird als Allererstes gebaut und muss sich auf diesem Laptop verzögerungsfrei anfühlen (Test mit NVDA und Braille), bevor irgendeine Gerätefunktion dazukommt. Scheitert diese Abnahme, ist WinForms mit C Sharp der festgelegte Plan B, ohne neue Diskussion.
+Unsicherheit ehrlich benannt: Ob jede einzelne Skularis-Komponente passt, zeigt erst der Bau. Das Urteil stützt sich auf die erprobten Muster, nicht auf ungeprüfte Übernahme ganzer Teile.

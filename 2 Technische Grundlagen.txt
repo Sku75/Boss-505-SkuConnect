@@ -1,0 +1,32 @@
+Sku505, technische Grundlagen zur Boss RC-505 MK1
+Gesicherte Fakten aus Handbuch und drei Internet-Tiefenrecherchen, Stand 08.08.2026.
+
+USB-Betriebsarten (Systemmenü Sys:USB Mode, nur eine zur Zeit):
+AUDIO/MIDI: Station ist Audiokarte plus MIDI-Gerät, spielbar während der Verbindung.
+STORAGE: Station ist USB-Laufwerk, Display zeigt Idling, nicht spielbar während der Verbindung. Verbinden nur gestoppt und ohne ungespeicherte Phrase.
+
+MIDI-Fähigkeiten der MK1 (wichtig, oft missverstanden):
+Kein SysEx. Menüwerte sind über MIDI weder lesbar noch schreibbar. Das betrifft auch Loop Length. Ein Editor über MIDI ist bei der MK1 unmöglich (erst der Nachfolger mkII kann das).
+Was MIDI kann: Program Change 1 bis 99 senden und empfangen (Speicherplatzwahl, Senden nur bei MIDI PC Out ON), Control Change empfangen für Ziele, die im Assign-System des Speicherplatzes zugewiesen sind (bis zu acht Assigns), MIDI-Clock, Start und Stopp.
+Merksatz zur Verwirrung vom 07.08.: Loop Length über USB geht NICHT über den MIDI-Weg, aber JA über den Speicher-Weg (Datei bearbeiten im Storage-Modus).
+
+Speicher-Modus, Datenlage:
+Auf dem Laufwerk liegt ein ROLAND-Ordner mit allen Einstellungen und den Loop-WAVs (44,1 kHz, 16 Bit, Stereo, pro Spur eine Datei). Das Dateiformat ist durch das Open-Source-Projekt rc505-editor entschlüsselt: github.com/westlicht/rc505-editor (GPL v3, C++, liest und schreibt Speicherplatz- und Systemeinstellungen und Loops). Voraussetzung Firmware 2.0. Vor jedem Schreiben Komplett-Backup des ROLAND-Ordners, das Projekt warnt selbst vor Datenverlust.
+
+Firmware:
+Letzter Stand für die MK1 ist 2.01. Offizielles Update per USB-Updater-Modus (TAP TEMPO plus START/STOP beim Einschalten halten, Laufwerk RC505_UPD erscheint, Dateien draufkopieren, WRITE drücken). Stromausfall beim Schreiben kann das Gerät zerstören, also nur mit sicherer Stromversorgung.
+Firmware-Modding ist weltweit undokumentiert, Image mit Prüfsumme gesichert, vermutlich verschlüsselt, Brick-Risiko ohne Rettungsweg. Entscheidung: Station bleibt unangetastet, keine eigenen Firmware-Experimente.
+
+Audio im AUDIO/MIDI-Modus:
+USB OUT liefert das Ausgangssignal der Station an den PC (Aufnahme in Audacity), der OUTPUT-LEVEL-Regler wirkt nicht auf USB.
+USB IN vom PC in die Station, Routing wählbar: LINEOUT, SUB MIX oder LOOP IN. Mit LOOP IN ist PC-Audio direkt in eine Loop-Spur aufnehmbar.
+Pegel über Sys:USB IN Level und Sys:USB OUT Level (Standard je 100).
+
+Barrierefreiheit, Rechercheergebnis:
+Es gibt weltweit kein sprechendes Zubehör und keinen dokumentierten Blind-Workflow für die RC-505. Die Station sendet ihren Zustand nicht aus, ein sprechender Display-Spiegel ist prinzipiell unmöglich. Blinde Musiker verlagern das Loopen sonst auf iOS mit VoiceOver (Loopy HD, Loopy Pro). Zukunft: MIDI-Standard Assistive Text in MIDI (MASSIG) in Arbeit, Roland Barrierefreiheits-Konzept V-STAGE mit Jason Dasent, beides noch keine Produkte.
+
+Wichtige Quellen:
+Handbuch MK1: static.roland.com/assets/media/pdf/RC-505_e02_W.pdf
+V2-Zusatzhandbuch: static.roland.com/assets/media/pdf/RC-505_V2_e02_W.pdf
+Editor-Projekt: github.com/westlicht/rc505-editor
+Boss Downloads MK1: boss.info/us/support/by_product/rc-505/updates_drivers/

@@ -1,0 +1,86 @@
+Sku505 Konzepte Studio-Aufbau
+Zwei Varianten für die barrierefreie Arbeit mit der Boss RC-505 MK1, je mit Council-Beratung und Überarbeitung.
+Stand 08.08.2026. Quellen: RC-505 Handbuch Seiten 23 bis 28, Open-Source-Projekt rc505-editor (GitHub westlicht), MIDI-Recherche aus drei Tiefenanalysen.
+
+Wichtigste technische Grundlage vorweg
+
+Die Station hat zwei USB-Betriebsarten, einstellbar im Systemmenü unter Sys:USB Mode. Beide gleichzeitig gehen nicht.
+
+AUDIO/MIDI: Die Station ist Audiokarte und MIDI-Gerät. Spielen ist möglich, während sie verbunden ist.
+
+STORAGE: Die Station ist ein USB-Laufwerk. Das Display zeigt Idling, das Gerät ist während der Verbindung NICHT spielbar. Verbindung nur im gestoppten Zustand und ohne ungespeicherte Phrase möglich.
+
+Außerdem entscheidend: Die MK1 hat kein SysEx. Über MIDI sind Menüwerte weder lesbar noch schreibbar. Die Station sendet nur den Speicherplatzwechsel (Program Change), zugewiesene Regler (CC über Assign) und das Tempo (Clock) nach außen.
+
+
+Variante 1: Live-Studio (USB-Modus AUDIO/MIDI)
+
+Aufbau: Loopstation per USB am Laptop, USB Mode auf AUDIO/MIDI. Kopfhörer oder Anlage an der Station. Sku505 läuft am Laptop, NVDA liest.
+
+Was du damit exakt tun kannst:
+
+1. Aufnehmen in Audacity. Die Station liefert ihr Ausgangssignal als USB-Audio an den PC. In Audacity wählst du die RC-505 als Aufnahmegerät und schneidest dein Live-Spiel mit. Der OUTPUT-LEVEL-Regler der Station wirkt dabei nicht auf das USB-Signal, die Aufnahme ist also pegelstabil.
+
+2. Zuspielen vom PC. Audio vom PC kann in die Station laufen. Routing wählbar: LINEOUT (nur durchhören), SUB MIX oder LOOP IN. Bei LOOP IN kannst du PC-Audio direkt in eine Loop-Spur aufnehmen, etwa ein Playback oder Sample vom Rechner.
+
+3. Sku505 als sprechender Ansager. Die Station meldet jeden Speicherplatzwechsel per Program Change (Einstellung MIDI PC Out auf ON). Sku505 sagt dann an: Speicherplatz 12. Ebenso kann Sku505 das laufende Tempo aus der MIDI-Clock errechnen und ansagen.
+
+4. Sku505 als sprechende Fernbedienung, mit Grenze. Sku505 kann Befehle an die Station senden: Speicherplatz umschalten (Program Change 1 bis 99) und alle Aktionen auslösen, die vorher im Assign-System der Station einem CC-Befehl zugewiesen wurden. Zuweisbar sind pro Speicherplatz bis zu acht Ziele, zum Beispiel Spur-Pegel, Overdub, Undo/Redo, Rhythmus Start/Stopp, Tempo, Effekt ein/aus, All Start/Stopp. In Sku505 wird daraus je ein beschrifteter, von NVDA vorgelesener Knopf oder Schieberegler.
+
+Grenzen der Variante 1:
+Menüwerte bleiben unsichtbar. Loop Length, Single/Multi, Effekt-Typ wählen, Speichern-Dialog: all das sendet die Station nicht aus und nimmt es auch nicht entgegen. Die Assign-Zuweisungen selbst müssen einmal eingerichtet werden, und genau das geht über MIDI nicht.
+
+Council zu Variante 1 (Kurzfassung der fünf Stimmen):
+Der Konträre: Die Fernbedienung hängt komplett an den Assigns, und die kann Variante 1 selbst nicht einrichten. Ohne fremde Hilfe oder einen zweiten Weg bleibt das Konzept unvollständig.
+Der Denker nach ersten Prinzipien: Das eigentliche Problem ist nicht Fernsteuerung, sondern fehlende Rückmeldung. Variante 1 liefert Rückmeldung nur für Speicherplatz und Tempo. Alles andere bleibt blind.
+Der Expansionist: Übersehene Chance: Der PC hört das Audiosignal. Sku505 könnte daraus eigene Rückmeldungen bauen, zum Beispiel Pegelansage oder akustische Bestätigung, wenn eine Spur klingt. Außerdem: Mit LOOP IN kann Sku505 der Station gezielt Töne zuspielen, etwa Ansagen direkt auf die Anlage.
+Der Außenstehende: Warum die Einstellungen live ändern wollen? Beim Auftritt drückt man Tasten, die man fühlen kann. Die unsicheren Menüsachen macht man doch vorher in Ruhe.
+Der Umsetzer: Erster Schritt wäre ein Mini-Ansager für Program Change plus zwei, drei fest verdrahtete CC-Knöpfe, das ist in einem Nachmittag gebaut und sofort testbar.
+Urteil: Variante 1 ist stark fürs Livespiel und die Aufnahme, aber sie kann sich nicht selbst einrichten und liest keine Menüwerte. Sie braucht Variante 2 als Fundament.
+
+Variante 1 überarbeitet:
+Kern bleibt Ansager plus Fernbedienung plus Audacity-Aufnahme. Neu aufgenommen: Pegel-Rückmeldung aus dem USB-Audiosignal als optionale Ansage. Die Einrichtung der Assigns wird bewusst NICHT in Variante 1 gelöst, sondern an Variante 2 delegiert.
+
+
+Variante 2: Verwaltungs-Studio (USB-Modus STORAGE)
+
+Aufbau: Loopstation gestoppt, alles gespeichert, USB Mode auf STORAGE, dann verbinden. Die Station erscheint als Laufwerk. Während der Verbindung ist sie nicht spielbar (Idling). Sku505 arbeitet auf den Dateien, danach trennen und normal weiterspielen.
+
+Was Sku505 damit exakt tun kann:
+
+1. Alle Einstellungen aller 99 Speicherplätze lesen und schreiben. Das Dateiformat im ROLAND-Ordner der Station ist durch das Open-Source-Projekt rc505-editor entschlüsselt (Voraussetzung: Firmware 2.0, die letzte für die MK1). Damit sind zugänglich: Loop Length, Play Mode Single/Multi, One-Shot, Tempo, Rhythmus, Effekt-Typen und deren Parameter für Input FX und Track FX, Spurpegel, Pan, Speicherplatz-Namen, und die Assign-Zuweisungen. Genau die Dinge, die du am Display heute nur unsicher triffst, werden zu klaren, von NVDA lesbaren Feldern.
+
+2. Die Assigns für Variante 1 setzen. Sku505 schreibt die CC-Zuweisungen in die Speicherplätze. Damit richtet Variante 2 die Fernbedienung von Variante 1 ein, ohne dass du je das Gerätemenü brauchst.
+
+3. Loops sichern und einspielen. Die WAV-Dateien jeder Spur jedes Speicherplatzes liegen als normale Dateien vor (44,1 kHz, 16 Bit, Stereo). Sku505 kann sie exportieren (Sicherung, Weiterbearbeitung in Audacity) und importieren (vorbereitete Loops vom PC auf eine Spur legen).
+
+4. Komplett-Backup und Wiederherstellung. Der ganze ROLAND-Ordner ist kopierbar. Vor jeder Änderung legt Sku505 automatisch eine Sicherung an.
+
+Grenzen der Variante 2:
+Nichts davon geht während des Spielens. Es ist der Werkstatt-Modus: anschließen, einstellen, trennen, spielen. Änderungen wirken erst nach dem Trennen.
+
+Council zu Variante 2 (Kurzfassung der fünf Stimmen):
+Der Konträre: Größtes Risiko ist Datenverlust durch fehlerhaftes Schreiben. Ein Fehler im Dateiformat kann Speicherplätze zerschießen. Ohne Pflicht-Backup und behutsames Schreiben ist das Konzept fahrlässig. Außerdem: Firmware 2.0 muss drauf sein, das ist vorher zu prüfen.
+Der Denker nach ersten Prinzipien: Das Kernproblem des Nutzers ist das unlesbare Display bei Menüarbeit. Genau das löst Variante 2 vollständig. Sie ist damit die eigentliche Antwort auf die Ausgangsfrage.
+Der Expansionist: Chancen: Speicherplatz-Verwaltung wie eine Bibliothek (Sets benennen, kopieren, sortieren), Vorlagen (ein fertig eingestellter Muster-Speicherplatz wird auf andere kopiert), und Loop-Archivierung mit Datum.
+Der Außenstehende: Das Gerät kann währenddessen nicht spielen? Dann ist das kein Studio-Aufbau, sondern ein Wartungs-Aufbau. Das sollte man ehrlich so nennen und dem Nutzer klar sagen: erst Werkstatt, dann Bühne, nie beides gleichzeitig.
+Der Umsetzer: Erster Schritt: Firmware-Version prüfen, dann Backup-Funktion bauen, dann genau EINEN Parameter (Loop Length) lesbar und schreibbar machen und am Gerät verifizieren. Erst danach die Fläche verbreitern.
+Urteil: Variante 2 ist der Schlüssel zum eigentlichen Problem und zugleich Voraussetzung für die volle Kraft von Variante 1. Pflicht: automatische Backups, Firmware-Prüfung, schrittweiser Ausbau.
+
+Variante 2 überarbeitet:
+Kern bleibt der komplette Einstellungs-Editor. Neu aufgenommen: Pflicht-Backup vor jedem Schreiben, Firmware-2.0-Prüfung beim Start, Vorlagen-Funktion, und die klare Benennung als Werkstatt-Modus.
+
+
+Gesamtempfehlung nach beiden Councils
+
+Die zwei Varianten sind keine Konkurrenten, sondern zwei Betriebsarten desselben Programms. Der Umschalter ist die USB-Mode-Einstellung der Station.
+
+Empfohlene Baureihenfolge:
+Stufe 1: Werkstatt-Modus (Variante 2) mit Backup, Firmware-Prüfung und Loop Length als erstem Parameter. Das löst dein akutes Problem (Loop Length auf AUTO) sofort und ersetzt Tone Studio.
+Stufe 2: Werkstatt-Modus ausbauen: Effekte, Single/Multi, Namen, Assigns, WAV-Import/Export, Vorlagen.
+Stufe 3: Bühnen-Modus (Variante 1): Ansager für Speicherplatz und Tempo, sprechende Fernbedienung auf Basis der in Stufe 2 gesetzten Assigns, dazu die Audacity-Aufnahmekette.
+
+Offene Punkte vor Baubeginn:
+1. Firmware-Version deiner Station feststellen (Anzeige beim Einschalten oder im Systemmenü, notfalls einmal sehende Hilfe oder Foto).
+2. Einmalige Umstellung des USB Mode am Gerät auf die jeweils gewünschte Betriebsart. Der Menüpunkt liegt im Systemmenü. Für den Wechsel bauen wir dir eine feste Tastfolge-Anleitung, das ist eine wiederholbare Bedienfolge ohne Display-Lesen, sobald sie einmal verifiziert ist.
+3. Klären, ob deine Station schon Firmware 2.0 hat. Falls nicht, Update-Entscheidung (offizielles Boss-Update, letzter Stand 2.01).

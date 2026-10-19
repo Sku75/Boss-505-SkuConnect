@@ -1,0 +1,103 @@
+Thema 7 - Sku505 Loopstation, Stand und nächste Schritte
+Projekt: barrierefreies Programm Sku505 für die Boss RC-505 MK1. Zuerst lesen, dann die nummerierten Dateien.
+
+Ablage-Regeln:
+Alles zur Loopstation (Texte, Recherchen, Konzepte, Programmcode) gehört in diesen Themenordner. Das Programm samt Git liegt im Unterordner Programm, Sku505, Start über Sku505 Starten.bat. Fertige Deliverables zusätzlich in den Posteingang.
+Hinweis: Am 08.08.2026 aus der Datenbank (Studio) ins Büroregal verschoben, auf Wunsch des Nutzers.
+Hinweis: Am 19.10.2026 aus dem Büroregal hierher verschoben, auf Wunsch des Nutzers.
+Neuer Ort: Laufwerk C, Users, Anwender, OneDrive, Desktop, Boss, Boss 505 Skuconnect Ordner.
+Start über die Desktop-Verknüpfung Boss 505 Skuconnect Start.
+
+08.08.2026
+Projekt angelegt. Konzepte für die zwei Betriebsarten (Werkstatt-Modus über USB-Speicher, Bühnen-Modus über USB-Audio/MIDI) erstellt, je mit Council beraten und überarbeitet, siehe Datei 01. Nutzer hat der Baureihenfolge zugestimmt: erst Werkstatt-Modus mit Backup und Loop Length, dann Ausbau, dann Bühnen-Modus.
+Technische Grundlagen aus drei Tiefenrecherchen in Datei 02 gesichert.
+Nutzer schreibt das Anforderungsprofil, Ablage als Datei 03.
+Sammelliste vor Baubeginn in Datei 04.
+Offen: Firmware-Version der Station feststellen (Ziel 2.0), USB-Mode-Tastfolge verifizieren.
+
+08.08.2026, später:
+Anforderungsprofil des Nutzers erhalten und als Datei 03 abgelegt (Baummenü nur mit Pfeiltasten und Enter, Optik wie Skularis schwarz-weiß, screenreadertauglich, performant, Git mit Patchnotes und Versionsschritt 0,01).
+Firmware-Auslesen über USB-Kennung versucht: Feld leer (REV 0000), Klärung erfolgt beim ersten Storage-Backup. Station war im AUDIO/MIDI-Modus angesteckt und wurde sauber erkannt.
+Zukunftsplan des Nutzers (weit hinten, nichts zu tun): Laptop plus kompakte Papenmeier-USB-Tastatur mit 40-Zeichen-Braillemodul. NVDA gibt auf Braille aus, damit ist lautloses Live-Spielen mit Pfeiltasten und Braille-Lesen möglich. Design-Folge für Sku505 schon jetzt: Zeilen kurz halten, wichtigste Information an den Zeilenanfang (40 Zeichen Braille als Richtmaß).
+Technik-Entscheidung (Datei 06) nach Recherche und Council: Electron auf Basis der Skularis-Muster, Plan B WinForms falls die Baummenü-Abnahme scheitert. Nutzer hat zugestimmt.
+Version 0.01 gebaut: Programmordner Programm\Sku505, Electron-Gerüst mit Baummenü nach Anforderungsprofil (Pfeiltasten und Enter, Werte-Zeilen mit Auswahl), Statuszeile mit Live-Ansagen, Probe-Bereich. Git-Repository angelegt, erster Commit, Patchnotes.txt begonnen. Start über Sku505 Starten.bat. Kurztest bestanden, Abnahme-Testliste liegt im Posteingang.
+Tone Studio ausgewertet, Datei 05: Für die MK1 nur Datei-Verwalter im Storage-Modus (Audio-Import/Export, Tone-Central-Inhalte). Kein Einstellungs-Editor, keine Barrierefreiheit. Messlatte niedrig, Sku505 deckt alles über die geplante Import/Export-Funktion ab. Sounds kommen als freie Track-Sets von bosstonecentral.com, nicht aus dem Programm.
+
+08.08.2026, Abend:
+USB-Modus erfolgreich auf STORAGE umgestellt. Tastenkarte und Ablauf in Datei 07, aus den Original-Abbildungen des Handbuchs ausgewertet und am Gerät bestätigt: SYSTEM-Taste drei Mal, MEMORY/VALUE eine Raste, EXIT, Kabel neu stecken.
+Station meldet sich als Laufwerk BOSS_RC-505.
+FIRMWARE GEKLÄRT: Die Datendateien tragen revision="2", das entspricht Firmware 2.0. Voraussetzung erfüllt, kein Update nötig.
+DATENFORMAT GEKLÄRT: MEMORY.RC0 und SYSTEM.RC0 sind reines lesbares XML, nicht verschlüsselt. Vollständige Feldliste in Datei 08. Der Editor ist damit gesichert machbar.
+URSACHE DES AUFNAHME-PROBLEMS GEFUNDEN: Auf Platz 1 steht die Loop-Länge fest auf einen Takt (LpLen gleich 1) bei Tempo 108,6, das sind 2,2 Sekunden. Deshalb schnitt die Aufnahme ab und ging in Overdub. Sofortlösung: leeren Speicherplatz nehmen, dort steht AUTO.
+Git-Regel ergänzt: Einstellungsdateien werden versioniert, der 182 MB grosse WAVE-Ordner nicht.
+Version 0.03 abgenommen bis auf einen Fehler: Das Einlesen blockierte das Programm (182 MB Loops wurden blockierend kopiert). In 0.04 behoben.
+Version 0.04 gebaut: Dateiarbeit läuft im Hintergrund, Einlesen aufgeteilt in Einstellungen (1,7 MB, sofort) und Loop-Aufnahmen (182 MB, dauert), neue Speicherplatz-Liste mit Nummer, Name, Loop-Länge und Spuren.
+Sicherheit: .gitattributes markiert die RC0-Dateien als Binärdaten. Ohne das hätte Git unter Windows die Zeilenenden umgeschrieben, die Datei wäre 85 KB größer und für die Station womöglich unbrauchbar. Geprüft: die Fassung in Git ist Byte für Byte identisch mit dem Original.
+Version 0.04 abgenommen, Speicherplätze werden vorgelesen. Ein Wunsch daraus in 0.05 umgesetzt: Ladeknopf bleibt stehen und behält den Fokus, Ergebnisse hängen darunter. Das gilt ab jetzt als Grundregel für alle Listen der Software.
+Zielbild erstellt, Datei 09, auch im Posteingang: die vollständige Software mit allen Funktionen, Effekten, Assigns, Rhythmus, Live-Studio, dazu Bauplan in sechs Stufen bis Version 1.00.
+Einzige echte Unbekannte: Effekttypen, Assign-Ziele und Rhythmus-Muster stehen als Zahlen in der Datei, die Zuordnung zu Klartextnamen muss erarbeitet und am Gerät bestätigt werden.
+Version 0.06 gebaut: die vollständige Werkstatt. Alle 99 Speicherplätze öffnen und sämtliche Werte lesen (Wiedergabe, Aufnahme, Master, Rhythmus, Spur 1 bis 5, Input FX und Track FX samt Parametern der Tasten A bis C, alle 16 Zuweisungen). Werte ändern mit Auswahlliste, die sofort auf dem gültigen Wert steht. Name ändern. Plätze kopieren und tauschen. Loop-Aufnahmen anzeigen, exportieren und einspielen. Systemeinstellungen der Station. Sicherung in Git als Menüpunkt.
+Sicherheitskonzept beim Schreiben: vor jeder Änderung Stand kopieren und in Git festschreiben, minimaler Eingriff in die Datei (nur der Zielwert wird ersetzt), danach Rücklesen mit Vergleich von Wert und Dateilänge. Geschrieben wird ausschließlich in Felder mit bekanntem Wertebereich, alles andere ist angezeigt aber gesperrt.
+Die Schreib-Logik wurde vor dem ersten Einsatz an einer Kopie der echten Stationsdaten geprüft: Wert korrekt gesetzt und zurückgelesen, die anderen 98 Speicherplätze byte-gleich, Name korrekt geschrieben, XML-Struktur mit 99 Blöcken intakt.
+Nächster Schritt: Abnahme durch den Nutzer, Testliste im Posteingang. Danach die Zuordnung der Effekttypen, Assign-Ziele und Rhythmus-Muster von Zahl zu Klartext, gemeinsam am Gerät bestätigt. Erst danach fällt die Sperre für die Effekt-Parameter.
+
+08.08.2026, Abschluss der Bauphase:
+Version 0.07: Tooltip nach Skularis-Vorbild (Shift halten und Pfeil runter, Zeilen abwanderbar, Loslassen schließt), kurze bühnentaugliche Ansagen, und ein echter Fehler behoben: Die Statuszeile meldete nur Änderungen, darum blieb die Sprachausgabe bei zweimal demselben Text stumm. Deshalb gab Firmware prüfen beim zweiten Druck nichts aus.
+Version 0.08: Effekttypen im Klartext. Die Reihenfolge ist doppelt belegt, einmal aus dem Zusatzhandbuch zur Firmware 2.0 und einmal aus der Reihenfolge der Parameterfelder in der Gerätedatei, beide stimmen überein. Alle Effekt-Parameter benannt und einstellbar; nur Felder mit unbekanntem Wertebereich bleiben gesperrt (Lo-Fi Bit-Tiefe, Slicer Muster, Schritttempi und ähnliche).
+Live-Studio gebaut: MIDI verbinden, Ansager für Platzwechsel und Start/Stopp, Platz und Tempo ansagen (Tempo aus der MIDI-Uhr), Speicherplatz umschalten über Programmwechsel, Steuerbefehle CC 1-31 und 64-95 für die Zuweisungen, MIDI-Kanal 1-16, und Aufnahme des USB-Audiosignals als WAV-Datei.
+Start ohne Konsolenfenster über Sku505 Starten.vbs, Desktop-Verknüpfung angelegt.
+Alle Quelldateien syntaktisch geprüft, Programm mehrfach fehlerfrei gestartet, Schreib-Logik vorab an einer Kopie der echten Daten verifiziert.
+Nächster Schritt: Abnahme durch den Nutzer, Testliste im Posteingang (Werkstatt im Speicher-Modus, Live-Studio im Audio-Modus). Offen bleiben: Wertebereiche der gesperrten Felder, Rhythmus-Muster als Klartext, Assign-Ziele als Klartext.
+
+Offener Wunsch für die nächste Version (nicht umgesetzt, Nutzer testet gerade):
+Tasten in allen Ansagen mit Koordinaten benennen, Zeile Punkt Spalte, damit sofort klar ist, welche Taste gemeint ist.
+1.1 Pfeil links, 1.2 Pfeil rechts, 1.3 SYSTEM
+2.1 WRITE, 2.2 EXIT, 2.3 MEMORY
+Beispiel für eine Ansage: Taste 2.2, EXIT drücken.
+Betrifft die Ansagen und Tooltips im USB-Bereich sowie die Tastenkarte in Datei 07.
+
+08.08.2026, Betriebsart geklärt (wichtig, hart erarbeitet):
+
+Die Station kann immer nur eines: Laufwerk (Werkstatt) oder Audio und MIDI (Bühne). Was sie wird, steht in SYSTEM.RC0 im Feld USB.Mod, 0 gleich Speicher, 1 gleich Audio und MIDI.
+
+ENTSCHEIDEND: Die Station liest diese Einstellung nur beim EINSCHALTEN, nicht bei jedem USB-Verbinden. Ein Ändern der Datei allein bewirkt nichts, solange die Station durchläuft. Erst Aus- und Einschalten übernimmt den neuen Wert. Am Gerät geändert wirkt es dagegen sofort, weil es dort im Arbeitsspeicher steht.
+
+Der erprobte Weg von Werkstatt nach Bühne:
+1. In Sku505 die Betriebsart auf Bühne setzen (schreibt USB.Mod auf 1, geprüft und bestätigt).
+2. Station aus und wieder einschalten.
+3. USB verbinden. Sie kommt als Audio und MIDI, PID 0171 statt 0170.
+
+Bestätigt am 08.08.2026, funktioniert.
+
+Im Speicher-Modus ist das Bedienfeld gesperrt (Display zeigt Idling). Trennen ohne Kabel geht über den geräteeigenen Weg: erst Schreibpuffer leeren, dann am Gerät 2.2 (EXIT), dann 2.1 (WRITE) auf die Rückfrage Disconnect OK. Danach reagiert das Bedienfeld wieder.
+
+KORREKTUR einer falschen Anleitung: Dreimal SYSTEM führt NICHT zur USB-Betriebsart. Belegt durch einen Fehlversuch, bei dem der Reglerschritt die Display-Helligkeit von 7 auf 15 verstellt hat, also stand der Fokus auf LCD Contrast. Verlässlich ist stattdessen: 1.3 einmal drücken, dann 1.2 (Pfeil rechts) acht Mal, das führt Wert für Wert bis zur USB-Betriebsart.
+
+Nebenbefund: Windows macht die Station im Bühnen-Modus zum Standard-Ausgabegerät, der PC-Ton läuft dann über die Station. Vom Nutzer erwünscht. NVDA ist fest auf das G733 gepinnt und wandert nicht mit.
+
+09.08.2026, Abend, Feierabend:
+0.27 Rode NT-USB eingebunden: neues Profil "Rode-Mikrofon aufnehmen oder senden", Windows-Aufnahme auf das Rode, Wiedergabe bleibt auf dem Headset, Station wird bewusst nicht angefasst. Das Profil "Werkstatt" ist entfallen, es hat verwirrt und konnte fast nichts tun.
+0.28 Alle Profile haben einen erklärenden Tooltip, der Zeile für Zeile sagt, was nach dem Ausführen eingestellt ist. Aktionen können dafür allgemein eine Vorschau mitbringen.
+0.29 Nottaster von Strg F12 auf Strg Punkt verlegt, weil Strg F11 und Strg F12 auf diesem Rechner schon von einem anderen Programm belegt sind. Sku505 prüft beim Start, ob die Taste wirklich anzumelden war, und warnt sonst. Strg Komma ist für den geplanten Umschalter reserviert.
+
+Council zur Frage "zwei Mikrofone und Discord" durchgeführt, liegt im Posteingang. Ergebnis: keinen Mischer bauen, sondern einen Schalter. Discord nimmt nur ein Eingabegerät, und der Ablauf des Nutzers ist ohnehin nacheinander, nicht gleichzeitig. Strg Komma soll zwischen Headset-Mikrofon und RC-505 umschalten. VoiceMeeter wurde bewusst verworfen: ein weiterer Audiotreiber zwischen Nutzer und Ton ist für einen blinden Nutzer das größere Risiko.
+
+Nächster Morgen: Testplan in Datei 10 abarbeiten. Teil A ist der entscheidende Test, ob der USB-Ausgang der Station das Live-Eingangssignal mitführt. Erst danach baue ich Strg Komma.
+
+19.10.2026:
+0.30 Sku505 ist portabel gemacht. Das Modul AudioDeviceCmdlets liegt jetzt mitgeliefert
+unter Programm, Sku505, werkzeug, Module. Das Skript lädt zuerst diese Kopie und nur dann
+ein installiertes Modul, wenn die eigene fehlt. Das Original im Benutzerprofil wurde
+bewusst nicht gelöscht, damit nichts anderes bricht.
+Geprüft: keine absoluten Pfade im Code, beide Starter arbeiten relativ, electron.exe liegt
+im Ordner. Der Ordner Sku505 läuft damit von einem Stick auf einem fremden Windows-Rechner,
+ohne Installation und ohne Adminrechte. Ordnergröße 280 MB, davon 276 MB node_modules.
+Bewusst nicht geändert: Der Headset-Name G733 steht fest im Code, auf einem fremden Rechner
+greift der Nottaster daher ins Leere. Die Sicherung vor dem Schreiben braucht ein
+installiertes Git.
+Gesamtes Projekt an den neuen Ort verschoben. Die Git-Historie ist mitgewandert und sauber.
+Die Desktop-Verknüpfung wurde auf den neuen Pfad gesetzt und der Start von dort geprüft.
+Offen und dem Nutzer gesagt: Git hat kein Remote. Die Historie liegt nur lokal im Ordner,
+ein Backup auf einem anderen Rechner ist das nicht. Git versioniert außerdem nur den
+Programmordner Sku505, nicht diese Projekttexte. Der neue Ort liegt in OneDrive, die
+280 MB laufen damit durch die Cloud-Synchronisierung.

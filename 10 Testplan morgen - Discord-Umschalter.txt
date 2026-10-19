@@ -1,0 +1,106 @@
+Sku505 - Testplan für den nächsten Morgen
+
+Stand am Abend des 09.08.2026, Version 0.29.
+Der zugehörige Council liegt im Posteingang:
+"Sku505 - Council Zwei Mikrofone und Discord.txt"
+
+
+Teil A: Der entscheidende Test, etwa fünf Minuten
+
+Die ganze geplante Lösung hängt an einer einzigen ungeprüften Annahme:
+Führt der USB-Ausgang der Station das Live-Eingangssignal mit, oder gibt sie
+über USB nur die Schleifen aus?
+
+Schritt 1
+
+In Sku505 das Profil "Discord, Stimme und Loops senden" ausführen.
+
+Schritt 2
+
+Audacity öffnen und als Aufnahmegerät IN RC-505 wählen.
+
+Schritt 3
+
+Aufnahme starten. Ohne jede Schleife, ohne irgendetwas abzuspielen, einfach nur
+ins Mikrofon an der Station sprechen. Dann Aufnahme stoppen.
+
+Schritt 4
+
+Die Aufnahme abhören.
+
+Ist die Stimme darauf, trägt die Konstruktion. Weiter mit Teil B.
+
+Ist die Aufnahme still, gibt die Station über USB nur Schleifen aus. Dann ist
+der Weg über die Station für Discord wertlos und wir denken neu. In dem Fall
+bitte melden, dann prüfe ich die Einstellung "Eingang auf Line Out" und die
+Alternativen.
+
+
+Teil B: Die Tasten prüfen
+
+Sku505 neu starten und darauf achten, ob beim Start eine Warnung kommt.
+
+Sagt Sku505 beim Start "Achtung, Strg und Punkt ist von einem anderen Programm
+belegt", dann liegt der Nottaster nicht und wir brauchen eine andere Taste.
+
+Kommt keine Warnung: Strg und Punkt irgendwo außerhalb von Sku505 drücken. Es
+muss der Zweiklang kommen und das Fenster nach vorn springen.
+
+
+Teil C: Was ich danach baue
+
+Strg und Komma als Umschalter für Discords Eingabegerät.
+
+Stellung 1, Gespräch: Headset-Mikrofon G733.
+Stellung 2, Bühne: RC-505, also alles, was die Station ausgibt.
+
+Bei jedem Druck ein eigener Ton und eine kurze Ansage, welche Stellung jetzt
+aktiv ist. Ohne hörbare Rückmeldung weiß man nicht, was Discord gerade hört,
+und spricht im Zweifel ins Leere.
+
+Dazu ein Menüpunkt mit demselben Verhalten und ein Tooltip, der beide
+Stellungen erklärt.
+
+
+Teil D: Die Verkabelung für das Rode
+
+Noch ungeprüft und erst nach Teil A sinnvoll.
+
+Ziel: Das Rode geht per Kabel vom Kopfhörerausgang in die Station, läuft durch
+den Effektteil und mit hinaus in den USB-Ausgang.
+
+Erster Versuch, der billige: Kabel mit 3,5 Millimeter Klinke an beiden Enden,
+vom Kopfhörerausgang des Rode in die kleine AUX-Buchse der Station.
+Dann prüfen, ob der Effektteil der Station auf dieses Signal wirkt.
+
+Wirken die Effekte auf AUX nicht, zweiter Versuch: Kabel von 3,5 Millimeter auf
+6,3 Millimeter in den INST-Eingang. Dort wirken die Effekte sicher.
+
+Wichtig am Rode: Der Mischregler muss ganz auf die Mikrofonseite stehen. Sonst
+schickt das Rode auch den Rechnerton in die Station und die Discord-Stimmen der
+anderen kommen als Echo zurück.
+
+Voraussetzung in Discord: Das Eingabegerät muss auf "Standardgerät" stehen,
+sonst folgt Discord dem Umschalten nicht.
+
+Zum Mithören: Steht Discord auf der Station, hörst du dich selbst über die Box
+im Raum, nicht über das Headset.
+
+
+Was heute fertig geworden ist
+
+0.27  Das Rode NT-USB ist als Profil eingebunden. Das verwirrende Profil
+      "Werkstatt" ist entfallen.
+
+0.28  Alle Profile haben einen erklärenden Tooltip, der Zeile für Zeile sagt,
+      was nach dem Ausführen eingestellt ist.
+
+0.29  Der Nottaster liegt jetzt auf Strg und Punkt, weil Strg F11 und Strg F12
+      schon von einem anderen Programm belegt sind. Sku505 warnt beim Start,
+      falls auch Strg Punkt nicht anzumelden war.
+
+
+Noch offen, unabhängig davon
+
+Ob ein Wechsel der USB-Betriebsart am Gerät selbst ohne Aus- und Einschalten
+wirkt. Bisher gilt: Die Station liest die Betriebsart nur beim Einschalten.

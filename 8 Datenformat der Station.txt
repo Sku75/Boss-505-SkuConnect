@@ -1,0 +1,82 @@
+Datenformat der RC-505 MK1 im Speicher-Modus
+Selbst ausgewertet an den echten Daten des Nutzers am 08.08.2026. Das ist die Bau-Grundlage für Sku505.
+
+Laufwerk und Aufbau
+
+Die Station meldet sich als Laufwerk BOSS_RC-505, FAT32, 3,63 GB.
+Aufbau:
+ROLAND\DATA\MEMORY.RC0   alle 99 Speicherplätze, rund 1,6 MB
+ROLAND\DATA\SYSTEM.RC0   die Systemeinstellungen, rund 17 KB
+ROLAND\WAVE\             die Loop-Aufnahmen, hier 182 MB in 30 Dateien
+                         Ordnerbenennung: Platz_Spur, also 001_1 bis 099_5
+
+Die wichtigste Nachricht: Beide RC0-Dateien sind reines, lesbares XML. Keine Verschlüsselung, kein Binärformat. Sie lassen sich direkt lesen und schreiben.
+
+Kopfzeile beider Dateien:
+<database name="RC-505" revision="2">
+
+Firmware
+
+Die Revision 2 entspricht der Firmware 2.0. Damit ist die Voraussetzung erfüllt, die auch das Open-Source-Projekt rc505-editor verlangt. Die Firmware-Frage ist beantwortet, ein Update ist nicht nötig.
+
+Aufbau eines Speicherplatzes
+
+Jeder Platz steht in einem Block <mem id="0"> bis <mem id="98">, also id gleich Platznummer minus 1.
+Abschnitte je Platz:
+TRACK1 bis TRACK5, RHYTHM, NAME, MASTER, REC_OPTION, PLAY_OPTION,
+ASSIGN1 bis ASSIGN16, INPUT_FX, TRACK_FX, BEAT_FX1 bis 3, INPUT_FX1 bis 3, TRACK_FX1 bis 3.
+
+Wichtig: Es sind 16 Assigns, nicht 8. Frühere Annahme korrigiert.
+
+Wichtige Felder
+
+PLAY_OPTION:
+SinglePlyChg, LpQtz (Loop Quantize), LpMod, LpLen (Loop Length),
+AllStrt, AllStp, FadeTim, TgtTr
+
+LpLen ist die Loop-Länge. Wert 0 bedeutet AUTO, jeder andere Wert ist die feste Anzahl Takte.
+Beleg: Alle 92 leeren Speicherplätze haben 0, und AUTO ist laut Handbuch die Werkseinstellung. Nur die 7 belegten Plätze haben feste Werte.
+
+TRACK1 bis TRACK5:
+Rev (Reverse), PlyLvl (Pegel), Pan, One (One-Shot), TrkFx, PlyMod (Single/Multi),
+StrtMod, StpMod, MeasMod, MeasLen, MeasBtLp, LpSync (Loop Sync), TmpSync,
+RecTmp (Aufnahmetempo), WavStat (0 gleich leer, sonst belegt)
+
+MASTER:
+Lvl, Tmp (Tempo mal 10, also 1086 gleich 108,6), Cs, Rv, PhOut, PhOutTr
+
+NAME:
+C01 bis C12, jeweils der ASCII-Code eines Zeichens. Beispiel 73 78 73 84 ergibt INIT.
+
+ASSIGN1 bis ASSIGN16:
+Sw (an/aus), Src (Quelle), SrcMod, Tgt (Ziel), TgtMin, TgtMax
+
+SYSTEM.RC0, Abschnitt SETUP:
+MemNum (zuletzt gewählter Platz), LcdContrast, PhantomPwr, DispMod, IndMod,
+AutoOff, AllClr, QuickClr, KnobMod
+Abschnitt INPUT_OUTPUT: InNsThrs, LineOutLvl, InSrc und weitere
+
+Belegung der Station am 08.08.2026
+
+Platz | LpMod | LpLen | belegte Spuren | Tempo | Name
+1     | 0     | 1     | 4              | 108,6 | INIT MEMORY
+15    | 0     | 2     | 1              | 80,4  | INIT MEMORY
+95    | 1     | 4     | 5              | 135,0 | Count One
+96    | 0     | 4     | 5              | 122,0 | InTheNight
+97    | 1     | 4     | 5              | 108,0 | PartyLove
+98    | 0     | 2     | 5              | 140,0 | Sky Relax
+99    | 1     | 4     | 5              | 125,0 | TimeMachine
+
+Die Plätze 95 bis 99 sind die Demo-Daten ab Werk. Platz 1 und 15 sind die eigenen Aufnahmeversuche des Nutzers.
+
+Erklärung des ursprünglichen Aufnahme-Problems
+
+Der Nutzer berichtete, die Aufnahme werde nach wenigen Sekunden automatisch abgeschnitten, laufe als Schleife weiter und gehe von selbst in Overdub.
+Ursache: Auf Platz 1 steht LpLen gleich 1, also feste Loop-Länge von einem Takt, bei Tempo 108,6. Ein Takt dauert dort 2,2 Sekunden. Genau das beschreibt der Nutzer.
+Lösung ohne jedes Menü: einen leeren Speicherplatz verwenden, zum Beispiel Platz 2. Dort steht LpLen auf 0, also AUTO, und die Länge bestimmt der zweite Tastendruck.
+Dauerhafte Lösung über Sku505: LpLen auf Platz 1 auf 0 setzen und die belegten Spuren löschen.
+
+Folgerung für den Bau
+
+Sku505 kann alle Einstellungen als XML lesen und schreiben. Der geplante Editor ist damit gesichert machbar. Nächster Schritt ist das Anzeigen der Speicherplätze mit Name, Loop-Länge und belegten Spuren, danach das Schreiben von LpLen.
+Regel beim Schreiben: nur den Zielwert ändern, Datei sonst unverändert lassen, danach zurücklesen und vergleichen.

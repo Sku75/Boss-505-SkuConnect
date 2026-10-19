@@ -1,0 +1,25 @@
+Sku505, Anforderungsprofil des Nutzers
+Original vom 08.08.2026, wörtlich übernommen und leicht gegliedert.
+
+Basis:
+Performant, ohne Lags, also die richtige Grundstruktur wählen.
+
+Optik:
+Wie Skularis, schwarz mit weißer Schrift, Zeilendesign.
+
+Bedienung, Menü:
+Das Menü hat eine Baumstruktur. Mit Pfeil hoch und runter wandere ich die Optionen (Menüs) ab, mit Pfeil rechts gehe ich hinein, mit Pfeil links wieder raus. Mit Enter aktiviere ich etwas.
+Schalter: Auf dem umzuschaltenden Wert oder der Auswahl kann man Pfeil rechts drücken, dort ist an oder aus, USB an oder aus, oder alle Effekte oder alle Optionen zum Auswählen. Enter darauf stellt den Wert dann um.
+Ziel: Nur Pfeiltasten und Enter genügen, um sich im ganzen Menü zu bewegen.
+
+Screenreader:
+Screenreadertauglich, alles wird ausgegeben.
+
+Struktur:
+Einfache Struktur, verständlich und logisch.
+
+Versionierung:
+Git-Repository erstellen. Jeder Entwicklungsabschnitt bekommt Patchnotes und eine Versionsänderung plus 0.01.
+
+Prüfauftrag vor Baubeginn:
+Boss Tone Studio betrachten. Können wir dort Sounds und Ähnliches entnehmen und bei Sku505 einfügen? Was macht Tone Studio, was bietet es? Sku505 soll nicht weniger bieten als Tone Studio. Auswertung vor Baubeginn.

@@ -1,0 +1,61 @@
+Tastenkarte RC-505 MK1 und Umschalten des USB-Modus
+Aus dem Original-Handbuch (Seite 5, 22, 23, 26) und den Panel-Abbildungen ausgewertet. Stand 08.08.2026.
+
+TEIL 1: Die Tastenkarte rechts vom Display
+
+Ausrichtung: Die fünf großen Spurtaster zeigen zu dir (Vorderkante), die Buchsen von dir weg (Rückseite).
+
+Links im oberen Bedienfeld liegt das Display, ein breites Rechteck.
+Direkt rechts daneben sitzt der Drehregler MEMORY/VALUE.
+Rechts vom Drehregler folgt das Tastenfeld mit sechs Tasten in drei Spalten und zwei Reihen.
+
+Reihe 1 (die hintere, weiter von dir weg):
+Spalte 1 links: Pfeil links, also Cursor nach links
+Spalte 2 Mitte: Pfeil rechts, also Cursor nach rechts
+Spalte 3 rechts: SYSTEM
+
+Reihe 2 (die vordere, näher bei dir):
+Spalte 1 links: WRITE, direkt unter dem Pfeil links
+Spalte 2 Mitte: EXIT, direkt unter dem Pfeil rechts
+Spalte 3 rechts: MEMORY, direkt unter SYSTEM
+
+Merksatz für die Spalten:
+Linke Spalte: oben Pfeil links, unten WRITE
+Mittlere Spalte: oben Pfeil rechts, unten EXIT
+Rechte Spalte: oben SYSTEM, unten MEMORY
+
+Darunter (die vom Nutzer als Reihe 3 ertastete Einzeltaste):
+Unter WRITE liegt die kleine Taste RHYTHM EDIT. Links daneben, deutlich größer und rund, die Taste RHYTHM START/STOP. Ganz links außen, unter dem Display, der große runde Taster TAP TEMPO.
+
+Weiter rechts außen: ein großer Drehregler, darunter die Beschriftung TRACK FX und drei runde Tasten A, B und C.
+
+TEIL 2: Reihenfolge der SYSTEM-Taste
+
+Die SYSTEM-Taste springt bei jedem Druck zur nächsten Hauptstelle der Systemeinstellungen. Im Handbuch sind diese Stellen mit einem Stern markiert. Die Reihenfolge lautet:
+
+1 mal drücken: Sys:LCD Contrast (Display-Helligkeit)
+2 mal drücken: Sys:LineOutLevel (Ausgangspegel)
+3 mal drücken: Sys:USB Mode  <-- unser Ziel
+4 mal drücken: Sys:MIDI Rx Ch (MIDI-Empfangskanal)
+5 mal drücken: Factory Reset (Werkseinstellungen)
+
+Bestätigung aus dem Handbuch, Seite 23, wörtlich sinngemäß: der Wert LineOutLevel erscheint, wenn man vom Wiedergabe-Bildschirm aus die SYSTEM-Taste zwei mal drückt. Der Stern steht bei LCD Contrast, LineOutLevel, USB Mode, MIDI Rx Ch und Factory Reset.
+
+WARNUNG: Fünf mal drücken landet auf Factory Reset. Dort würde ein Druck auf WRITE die Werkseinstellungen auslösen und alle Speicherplätze löschen. Also nie über drei Mal hinaus drücken, und im Zweifel EXIT drücken und neu beginnen. WRITE liegt genau unter dem Pfeil links, es darf im Systemmenü nicht versehentlich gedrückt werden.
+
+TEIL 3: USB-Modus auf STORAGE stellen
+
+Voraussetzung: Wiedergabe gestoppt, keine ungespeicherte Phrase. Sonst verweigert das Gerät die USB-Verbindung.
+
+Schritt 1: SYSTEM drei mal drücken. Im Display steht dann Sys:USB Mode.
+Schritt 2: Am Drehregler MEMORY/VALUE drehen, bis STORAGE eingestellt ist. Es gibt nur zwei Werte, STORAGE und AUDIO/MIDI. Ein Schritt in eine Richtung genügt.
+Schritt 3: EXIT drücken (mittlere Spalte, untere Reihe).
+Schritt 4: USB-Kabel abziehen und wieder einstecken.
+
+Danach meldet sich die Station als Laufwerk mit dem Namen BOSS_RC-505, im Display steht Idling. Während dieser Verbindung ist die Station nicht spielbar. Auf dem Laufwerk liegt der Ordner ROLAND mit allen Daten.
+
+Zurück in den Spielbetrieb: USB-Kabel abziehen, dann ist die Station sofort wieder normal spielbar. Die Einstellung STORAGE bleibt gespeichert und stört ohne Kabel nicht.
+
+Zurück auf AUDIO/MIDI (erst für Stufe 3, das Live-Studio, nötig): gleiche Schritte, nur in Schritt 2 auf AUDIO/MIDI drehen.
+
+Prüfung ohne Display: Sku505 sagt an, ob die Station als Laufwerk gefunden wurde. Werkstatt, Station suchen. Meldet Sku505 einen Fund, war die Umstellung erfolgreich.

@@ -1,0 +1,20 @@
+Sku505, Sammelliste vor Baubeginn
+Was zusammenkommen muss, damit wir sicher und konstant entwickeln können. Reihenfolge ist Empfehlung.
+
+1. Anforderungsprofil vom Nutzer (Datei 03). Was soll Sku505 können, was ist wichtig, was ist egal. Dazu Bedienwünsche: Tastatur-Layout, Ansage-Stil, Menüstruktur.
+
+2. Firmware-Version der Station feststellen. Ziel ist 2.0 oder 2.01. Prüfweg: Station anstecken, Claude liest die USB-Gerätedaten aus, ersatzweise verrät der Datenbestand im Speicher-Modus die Formatversion. Falls älter als 2.0: Update-Entscheidung treffen.
+
+3. Erstes Komplett-Backup des ROLAND-Ordners im Speicher-Modus. Dient doppelt: Sicherung und unser Referenzmaterial, um das Dateiformat an deinen echten Daten zu verstehen, ohne am Gerät zu experimentieren.
+
+4. Referenzmaterial lokal ablegen: Quellcode des rc505-editor (Dateiformat-Wissen), Handbuch-PDF, V2-Zusatzhandbuch. Kommt in einen Unterordner Referenz.
+
+5. USB-Mode-Tastfolge erarbeiten und einmal verifizieren: die feste Bedienfolge am Gerät, mit der du blind zwischen STORAGE und AUDIO/MIDI wechselst. Einmal bestätigt, immer wiederholbar.
+
+6. Technik-Entscheidung für das Programm: Sprache und Oberfläche mit sauberer NVDA-Unterstützung. Wird per Internet-Recherche geklärt und dem Council vorgelegt, nicht geraten. Kandidaten müssen echte Standard-Bedienelemente liefern, die NVDA nativ liest.
+
+7. Sicherheitsregeln festschreiben: nie schreiben ohne frisches Backup, immer erst lesen und anzeigen, Schreiben nur nach Bestätigung, nach jedem Schreiben Rücklesen und vergleichen, Änderungen zuerst an einem Opfer-Speicherplatz testen, nie an deinen echten Sets.
+
+8. Testablauf festlegen: nach jeder Änderung eine feine Testliste (eine Aktion pro Zeile), Verifikation am Gerät per Ohr.
+
+9. Ablage- und Versionsstruktur: Programmcode-Ordner, Versionierung, ob GitHub-Repository gewünscht ist.
