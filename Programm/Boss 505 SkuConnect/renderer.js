@@ -1292,7 +1292,13 @@ const menue = [
     { typ: "aktion", id: "usb-erneuern", text: "Verbindung erneuern" }
   ]},
   { typ: "ordner", text: "Optionen", kinder: [
-    { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" }
+    { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" },
+    { typ: "aktion", id: "ausgabeordner", text: "Ausgabeordner ansagen",
+      vorschau: [
+        "Nennt den Ordner, in dem alle Ausgaben landen",
+        "Dorthin gehen exportierte Loops und eigene Aufnahmen",
+        "Der Ordner wird angelegt, falls er fehlt"
+      ] }
   ]},
   { typ: "aktion", id: "beenden", text: "Beenden" }
 ];
@@ -1308,7 +1314,13 @@ async function aktiviere(li) {
 
   switch (li.dataset.id) {
     case "beenden": window.close(); return;
-    case "ueber": sage("Boss 505 SkuConnect Version 0.31"); return;
+    case "ausgabeordner": {
+      const e = await window.skuConnect.ausgabeordner();
+      if (e.ok) ergebnis(li, "Ausgaben liegen in " + e.pfad.split("\\").pop(), ["Vollständiger Pfad", e.pfad]);
+      else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
+      return;
+    }
+    case "ueber": sage("Boss 505 SkuConnect Version 0.32"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;

@@ -23,6 +23,7 @@ contextBridge.exposeInMainWorld('skuConnect', {
   usbSteuern:            (a)       => ipcRenderer.invoke('usb-steuern', a),
   gitSichern:            (t)       => ipcRenderer.invoke('git-sichern', t),
   wavSchreiben:          (z, d)    => ipcRenderer.invoke('wav-schreiben', z, d),
+  ausgabeordner:         ()        => ipcRenderer.invoke('ausgabeordner'),
   datenordner:           ()        => ipcRenderer.invoke('datenordner'),
   dateiWaehlen:          (s, v)    => ipcRenderer.invoke('datei-waehlen', s, v)
 });

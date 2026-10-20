@@ -1,5 +1,20 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.32, 20.10.2026
+Alles, was das Programm herausgibt, landet jetzt in einem festen Ordner namens Ausgaben.
+Er liegt im Projektordner, also neben dem Ordner Programm. Dorthin gehen exportierte
+Loops und eigene Aufnahmen.
+Vorher stand im Speichern-Dialog nur ein Dateiname. Windows hat die Datei deshalb dort
+abgelegt, wo das Programm gerade stand, naemlich mitten im Projektordner.
+Beide Dialoge starten nun in diesem Ordner, auch der zum Einspielen. Fehlt der Ordner,
+legt das Programm ihn an.
+Wird nur der Programmordner weitergegeben, etwa auf einen Stick, entsteht der Ordner
+Ausgaben neben dem Programm selbst. Die Portabilitaet bleibt also erhalten.
+Neuer Punkt unter Optionen: Ausgabeordner ansagen. Er nennt den Ordner und zeigt im
+Tooltip den vollstaendigen Pfad.
+Der Ordner ist von der Versionsverwaltung ausgenommen, damit grosse Audiodateien nicht
+ins Repository wandern.
+
 Version 0.31, 19.10.2026
 Die letzte Zeile im Hauptmenü heißt jetzt nur noch Beenden, vorher stand dort der
 ganze Programmname davor. Den Namen hört man beim Start schon, im Menü ist er

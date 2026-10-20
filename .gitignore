@@ -5,3 +5,7 @@ dist/
 # Wuerden das Repository bei jedem Einlesen aufblaehen. Die Einstellungsdateien
 # (MEMORY.RC0, SYSTEM.RC0) werden dagegen versioniert, sie sind klein und lesbar.
 Programm/Boss 505 SkuConnect/Stationsdaten/ROLAND/WAVE/
+
+# Eigene Ausgaben: exportierte Loops und Aufnahmen. Das sind grosse
+# Audiodateien, die nicht ins Repository gehoeren.
+Ausgaben/

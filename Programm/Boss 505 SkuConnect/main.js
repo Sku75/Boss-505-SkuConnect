@@ -36,6 +36,27 @@ function erstelleFenster() {
 
 const datenOrdner = path.join(__dirname, 'Stationsdaten', 'ROLAND');
 
+// Der Standardordner fuer alles, was das Programm herausgibt: exportierte
+// Loops und eigene Aufnahmen. Er liegt im Projektordner, also zwei Ebenen
+// ueber dem Programm, und heisst Ausgaben.
+//
+// Wird nur der Programmordner weitergegeben, etwa auf einen Stick, fehlt
+// diese Umgebung. Darum wird geprueft, ob die erwartete Struktur da ist, und
+// sonst ein Ausgaben-Ordner neben dem Programm selbst benutzt.
+function ausgabeOrdner() {
+  const projekt = path.join(__dirname, '..', '..');
+  const erwartet = fs.existsSync(path.join(projekt, 'Programm'));
+  return path.join(erwartet ? projekt : __dirname, 'Ausgaben');
+}
+
+// Legt den Ordner an, falls er fehlt, und gibt ihn zurueck. Loescht der
+// Nutzer ihn zwischendurch, entsteht er beim naechsten Mal neu.
+async function ausgabeOrdnerBereit() {
+  const ordner = ausgabeOrdner();
+  await fsp.mkdir(ordner, { recursive: true });
+  return ordner;
+}
+
 // =====================================================================
 // Station finden
 // =====================================================================
@@ -522,15 +543,24 @@ ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
   await fsp.writeFile(ziel, Buffer.from(daten));
   return { bytes: (await fsp.stat(ziel)).size };
 }));
+ipcMain.handle('ausgabeordner', sicher(async () => ({ pfad: await ausgabeOrdnerBereit() })));
 ipcMain.handle('datenordner', sicher(async () => ({
   pfad: datenOrdner,
   vorhanden: fs.existsSync(path.join(datenOrdner, 'DATA', 'MEMORY.RC0'))
 })));
 
 ipcMain.handle('datei-waehlen', sicher(async (speichern, vorschlag) => {
+  // Beide Dialoge starten im Ausgabeordner. Beim Speichern steht der
+  // Dateiname schon drin, beim Oeffnen sieht man gleich die eigenen Ausgaben.
+  const ordner = await ausgabeOrdnerBereit();
   const e = speichern
-    ? await dialog.showSaveDialog({ defaultPath: vorschlag, filters: [{ name: 'WAV', extensions: ['wav'] }] })
-    : await dialog.showOpenDialog({ properties: ['openFile'], filters: [{ name: 'WAV', extensions: ['wav'] }] });
+    ? await dialog.showSaveDialog({
+        defaultPath: path.join(ordner, vorschlag || 'Ausgabe.wav'),
+        filters: [{ name: 'WAV', extensions: ['wav'] }] })
+    : await dialog.showOpenDialog({
+        defaultPath: ordner,
+        properties: ['openFile'],
+        filters: [{ name: 'WAV', extensions: ['wav'] }] });
   if (e.canceled) return { abgebrochen: true };
   return { abgebrochen: false, pfad: speichern ? e.filePath : e.filePaths[0] };
 }));
