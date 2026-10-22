@@ -36,6 +36,55 @@ function erstelleFenster() {
 
 const datenOrdner = path.join(__dirname, 'Stationsdaten', 'ROLAND');
 
+// Zaehlt die Spuren, die eine Aufnahme enthalten.
+async function spurenMitAufnahme(rolandPfad) {
+  const inhalt = await fsp.readFile(path.join(rolandPfad, 'DATA', 'MEMORY.RC0'), 'latin1');
+  let n = 0;
+  for (const t of inhalt.matchAll(/<WavStat>(\d+)<\/WavStat>/g)) if (t[1] !== '0') n++;
+  return n;
+}
+
+async function dateienZaehlen(ordner) {
+  let anzahl = 0, bytes = 0;
+  for (const e of await fsp.readdir(ordner, { withFileTypes: true })) {
+    const voll = path.join(ordner, e.name);
+    if (e.isDirectory()) {
+      const u = await dateienZaehlen(voll);
+      anzahl += u.anzahl; bytes += u.bytes;
+    } else {
+      anzahl += 1; bytes += (await fsp.stat(voll)).size;
+    }
+  }
+  return { anzahl, bytes };
+}
+
+// Legt eine Sicherung in einem eigenen, durchnummerierten Ordner an.
+// Der Name traegt laufende Nummer, Datum und die Zahl der bespielten Spuren.
+async function sicherungAnlegen(rolandPfad, mitLoops) {
+  const basis = await ausgabeOrdnerBereit();
+  const vorhandene = (await fsp.readdir(basis, { withFileTypes: true }))
+    .filter(e => e.isDirectory() && /^\d{3} /.test(e.name))
+    .map(e => parseInt(e.name.slice(0, 3), 10));
+  const nummer = (vorhandene.length ? Math.max(...vorhandene) : 0) + 1;
+  const d = new Date();
+  const datum = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0')
+    + '-' + String(d.getDate()).padStart(2, '0');
+  const spuren = await spurenMitAufnahme(rolandPfad);
+  const name = String(nummer).padStart(3, '0') + ' ' + datum + ', ' + spuren + ' Spuren, '
+    + (mitLoops ? 'mit Loops' : 'nur Einstellungen');
+  const ziel = path.join(basis, name);
+
+  await fsp.mkdir(path.join(ziel, 'DATA'), { recursive: true });
+  for (const datei of ['MEMORY.RC0', 'SYSTEM.RC0']) {
+    await fsp.copyFile(path.join(rolandPfad, 'DATA', datei), path.join(ziel, 'DATA', datei));
+  }
+  if (mitLoops) {
+    await fsp.cp(path.join(rolandPfad, 'WAVE'), path.join(ziel, 'WAVE'), { recursive: true });
+  }
+  const u = await dateienZaehlen(ziel);
+  return { ordner: name, pfad: ziel, dateien: u.anzahl, bytes: u.bytes, spuren };
+}
+
 // Der Standardordner fuer alles, was das Programm herausgibt: exportierte
 // Loops und eigene Aufnahmen. Er liegt im Projektordner, also zwei Ebenen
 // ueber dem Programm, und heisst Ausgaben.
@@ -44,9 +93,12 @@ const datenOrdner = path.join(__dirname, 'Stationsdaten', 'ROLAND');
 // diese Umgebung. Darum wird geprueft, ob die erwartete Struktur da ist, und
 // sonst ein Ausgaben-Ordner neben dem Programm selbst benutzt.
 function ausgabeOrdner() {
+  // Erwartete Lage: <Boss>/<Projektordner>/Programm/<Programmordner>
+  // Die Ausgaben liegen neben dem Projektordner, also drei Ebenen hoeher.
   const projekt = path.join(__dirname, '..', '..');
   const erwartet = fs.existsSync(path.join(projekt, 'Programm'));
-  return path.join(erwartet ? projekt : __dirname, 'Ausgaben');
+  const basis = erwartet ? path.join(projekt, '..') : __dirname;
+  return path.join(basis, 'Ausgaben und Sicherungen');
 }
 
 // Legt den Ordner an, falls er fehlt, und gibt ihn zurueck. Loescht der
@@ -543,6 +595,7 @@ ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
   await fsp.writeFile(ziel, Buffer.from(daten));
   return { bytes: (await fsp.stat(ziel)).size };
 }));
+ipcMain.handle('sicherung-anlegen', sicher(sicherungAnlegen));
 ipcMain.handle('ausgabeordner', sicher(async () => ({ pfad: await ausgabeOrdnerBereit() })));
 ipcMain.handle('datenordner', sicher(async () => ({
   pfad: datenOrdner,

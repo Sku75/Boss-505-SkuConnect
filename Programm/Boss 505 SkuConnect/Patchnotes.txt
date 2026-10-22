@@ -1,5 +1,26 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.37, 22.10.2026, Werkstatt nach dem Vorbild der Station
+Die Werkstatt hat jetzt sechs Punkte: Station suchen, Speicherplatz Auswahl,
+Track menü, Memory menü, System menü, Write menü.
+Die beiden alten Punkte Systemeinstellungen der Station und Gerätemenü sind weg.
+Sie überschnitten sich. Übrig bleibt ein System menü in der Reihenfolge des Geräts.
+Das Track menü enthält das Rhythmus menü und die fünf Spur-Edits, jeweils in der
+Reihenfolge des Handbuchs.
+Das Memory menü bildet das Menü der MEMORY-Taste ab, mit den Zuweisungen und den
+Effektbänken am Ende. Die Einträge aus Firmware 2.0 sind eingeordnet, ihre genaue
+Position im Gerät ist nicht beschrieben.
+Das Write menü ersetzt den früheren Punkt Einlesen und sichern. Darin: Einstellungen
+kopieren und tauschen, die Loop-Aufnahmen der Spuren, zwei Sicherungen und Git.
+Einstellungen einlesen entfällt als Menüpunkt. Das Programm frischt die Rücklage
+jetzt beim Verbinden automatisch auf, also direkt bei Station suchen.
+Der Ausgabeordner ist eine Ebene höher gewandert und heißt Ausgaben und Sicherungen.
+Er liegt damit neben dem Projektordner, im Ordner Boss.
+Jede Sicherung legt einen eigenen Ordner an, benannt mit laufender Nummer, Datum,
+Zahl der bespielten Spuren und dem Umfang.
+Aufgeräumt: die nicht mehr erreichbare Ladeart für den Speicherplatz sowie die
+beiden alten Einlese-Funktionen.
+
 Version 0.36, 22.10.2026, Umbau der Werkstatt
 Der Punkt Firmware und Datenstand prüfen ist entfernt, samt Aktion und Funktion.
 Ein Speicherplatz wird jetzt mit Enter gewählt statt geöffnet. Danach nennt der

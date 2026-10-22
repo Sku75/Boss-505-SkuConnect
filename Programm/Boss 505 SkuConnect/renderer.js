@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.36, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.37, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -490,10 +490,17 @@ async function laden(li) {
   const pfad = await quelleSichern();
   if (!pfad) { sage("Keine Daten, erst Station suchen"); return false; }
 
-  if (art === "platz") {
-    const e = await window.skuConnect.speicherplatzLesen(pfad, parseInt(li.dataset.nummer, 10));
+  // Alle Menues, die sich auf einen Speicherplatz beziehen, holen ihre
+  // Nummer aus der Auswahl. So zeigen sie immer den gewählten Platz.
+  if (["trackmenu", "memorymenu", "zielplatz", "loops"].includes(art)) {
+    if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return false; }
+    li.dataset.nummer = String(gewaehlterPlatz);
+  }
+
+  if (art === "trackmenu" || art === "memorymenu") {
+    const e = await window.skuConnect.speicherplatzLesen(pfad, gewaehlterPlatz);
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
-    setzeKinder(li, platzEintraege(e.daten));
+    setzeKinder(li, art === "trackmenu" ? trackEintraege(e.daten) : memoryEintraege(e.daten));
     return true;
   }
 
@@ -529,7 +536,7 @@ async function laden(li) {
   // Dass die Reihenfolge stimmt, ist belegt: In der Datei liegt Eingang auf
   // Line Out zwei Plätze vor der USB-Betriebsart, und genau dieser Abstand
   // hat sich am Gerät bestätigt.
-  if (art === "geraetemenu") {
+  if (art === "systemmenu") {
     const e = await window.skuConnect.systemLesen(pfad);
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
     const eintraege = [];
@@ -623,21 +630,68 @@ function felderZuEintraegen(datei, nummer, abschnitt, werte) {
   return eintraege;
 }
 
-function platzEintraege(daten) {
+// Ein einzelnes Feld als Menuezeile. Damit lassen sich Menues in einer
+// selbst bestimmten Reihenfolge bauen, auch quer ueber die Abschnitte der
+// Datei hinweg. Das ist noetig, weil die Station ihre Menues anders ordnet
+// als die Datei ihre Abschnitte.
+function feldEintrag(nummer, abschnitt, feld, wert) {
+  const b = feldBeschreibung(abschnitt, feld);
+  if (!b) return { typ: "aktion", id: "nur-lesen", text: feld + ": " + wert };
+  return {
+    typ: "wert", text: b.text, art: b.art || "zahl",
+    datei: "MEMORY", nummer, abschnitt, feld, rohwert: wert,
+    beschreibung: b, laden: b.nurLesen ? undefined : "wertoptionen",
+    id: b.nurLesen ? "nur-lesen" : "wert"
+  };
+}
+
+// Die Reihenfolge des Memory-Menues der Station, Handbuch Seite 15 und 16.
+// Die Eintraege aus Firmware 2.0 sind eingeordnet, ihre genaue Position ist
+// dort nicht beschrieben.
+const MEMORY_MENUE = [
+  ["MASTER", "Lvl"], ["MASTER", "Tmp"], ["MASTER", "Cs"], ["MASTER", "Rv"],
+  ["INPUT_FX", "Mod"], ["TRACK_FX", "Mod"],
+  ["MASTER", "PhOut"], ["MASTER", "PhOutTr"],
+  ["REC_OPTION", "DubMod"], ["REC_OPTION", "RecAct"], ["REC_OPTION", "RecQtz"],
+  ["PLAY_OPTION", "SinglePlyChg"], ["PLAY_OPTION", "LpQtz"], ["PLAY_OPTION", "LpLen"],
+  ["PLAY_OPTION", "AllStrt"], ["PLAY_OPTION", "AllStp"], ["PLAY_OPTION", "FadeTim"],
+  ["PLAY_OPTION", "TgtTr"]
+];
+
+// Die Reihenfolge des Rhythmus-Menues, Handbuch Seite 19.
+// Sw ist der Ein-Aus-Zustand der Rhythmus-Taste, kein Menuepunkt.
+const RHYTHMUS_MENUE = ["Lvl", "Ptn", "Bt", "LineOut", "RecCnt", "PlyCnt", "Stp"];
+
+// Die Reihenfolge eines Spur-Menues, Handbuch Seite 12 bis 14.
+// RecTmp, WavStat und WavLen sind Angaben zur Aufnahme, keine Menuepunkte.
+const SPUR_MENUE = ["Rev", "PlyLvl", "Pan", "One", "TrkFx", "PlyMod",
+                    "StrtMod", "StpMod", "MeasMod", "MeasLen", "MeasBtLp",
+                    "LpSync", "TmpSync"];
+
+function memoryEintraege(daten) {
   const n = daten.nummer;
-  const eintraege = [];
+  // Input Fx Mode und Track Fx Mode teilen sich im Dateiformat eine
+  // Beschreibung. Im Menü brauchen sie eigene Namen, sonst stehen dort
+  // zwei gleich lautende Zeilen.
+  const eigeneNamen = { "INPUT_FX.Mod": "Input Fx Mode, Rohwert",
+                        "TRACK_FX.Mod": "Track Fx Mode, Rohwert" };
+  const eintraege = MEMORY_MENUE
+    .filter(([a, f]) => daten[a] && daten[a][f] !== undefined)
+    .map(([a, f]) => {
+      const e = feldEintrag(n, a, f, daten[a][f]);
+      const name = eigeneNamen[a + "." + f];
+      if (name) e.text = name;
+      return e;
+    });
 
   eintraege.push({ typ: "aktion", id: "name-aendern", text: "Name: " + daten.name.trim(), nummer: n });
 
-  for (const a of ["PLAY_OPTION", "REC_OPTION", "MASTER", "RHYTHM"]) {
-    eintraege.push({ typ: "ordner", text: abschnittName(a),
-      kinder: felderZuEintraegen("MEMORY", n, a, daten[a]) });
+  const zuweisungen = [];
+  for (let i = 1; i <= 16; i++) {
+    zuweisungen.push({ typ: "ordner", text: abschnittName("ASSIGN" + i),
+      kinder: felderZuEintraegen("MEMORY", n, "ASSIGN" + i, daten["ASSIGN" + i]) });
   }
-
-  for (let s = 1; s <= 5; s++) {
-    eintraege.push({ typ: "ordner", text: abschnittName("TRACK" + s),
-      kinder: felderZuEintraegen("MEMORY", n, "TRACK" + s, daten["TRACK" + s]) });
-  }
+  eintraege.push({ typ: "ordner", text: "Zuweisungen, 16 Stück", kinder: zuweisungen });
 
   for (const bank of ["INPUT_FX", "TRACK_FX"]) {
     const kinder = felderZuEintraegen("MEMORY", n, bank, daten[bank]);
@@ -657,18 +711,22 @@ function platzEintraege(daten) {
     }
     eintraege.push({ typ: "ordner", text: abschnittName(bank), kinder });
   }
+  return eintraege;
+}
 
-  const zuweisungen = [];
-  for (let i = 1; i <= 16; i++) {
-    zuweisungen.push({ typ: "ordner", text: abschnittName("ASSIGN" + i),
-      kinder: felderZuEintraegen("MEMORY", n, "ASSIGN" + i, daten["ASSIGN" + i]) });
+function trackEintraege(daten) {
+  const n = daten.nummer;
+  const eintraege = [{ typ: "ordner", text: "Rhythmus menü",
+    kinder: RHYTHMUS_MENUE
+      .filter(f => daten.RHYTHM && daten.RHYTHM[f] !== undefined)
+      .map(f => feldEintrag(n, "RHYTHM", f, daten.RHYTHM[f])) }];
+  for (let s = 1; s <= 5; s++) {
+    const ab = "TRACK" + s;
+    eintraege.push({ typ: "ordner", text: "Spur " + s + " Edit",
+      kinder: SPUR_MENUE
+        .filter(f => daten[ab] && daten[ab][f] !== undefined)
+        .map(f => feldEintrag(n, ab, f, daten[ab][f])) });
   }
-  eintraege.push({ typ: "ordner", text: "Zuweisungen, 16 Stück", kinder: zuweisungen });
-
-  eintraege.push({ typ: "ordner", text: "Loop-Aufnahmen", nummer: n, laden: "loops" });
-  eintraege.push({ typ: "ordner", text: "Einstellungen kopieren auf", nummer: n, laden: "zielplatz", id: "kopieren-nach" });
-  eintraege.push({ typ: "ordner", text: "Einstellungen tauschen mit", nummer: n, laden: "zielplatz", id: "tauschen-mit" });
-
   return eintraege;
 }
 
@@ -680,8 +738,14 @@ async function stationSuchen(li) {
   const e = await window.skuConnect.stationSuchen();
   if (e.gefunden) {
     stationsPfad = e.rolandPfad; schreibbar = true;
-    ergebnis(li, "Station gefunden, Laufwerk " + e.laufwerk,
-      ["Station gefunden", "Laufwerk " + e.laufwerk, "Ändern möglich"]);
+    gewaehlterPlatz = null;
+    // Die Rücklage im Programm wird beim Verbinden auf den Stand der
+    // Station gebracht. Ein eigener Menüpunkt dafür ist dadurch unnötig.
+    const r = await window.skuConnect.einstellungenEinlesen(e.rolandPfad);
+    ergebnis(li, "Station gefunden, Laufwerk " + e.laufwerk, [
+      "Station gefunden", "Laufwerk " + e.laufwerk, "Ändern möglich",
+      r.ok ? "Rücklage im Programm aufgefrischt" : "Rücklage nicht aufgefrischt",
+      "Jetzt einen Speicherplatz wählen"]);
     return;
   }
   const eigen = await window.skuConnect.datenordner();
@@ -705,6 +769,19 @@ async function stationSuchen(li) {
 // Enter auf einem Platz wählt ihn aus. Der Name des Ordners darüber nennt
 // danach den gewählten Platz, damit beim nächsten Besuch sofort klar ist,
 // womit gearbeitet wird.
+// Legt eine Sicherung im Ordner Ausgaben und Sicherungen an.
+async function sicherungAnlegen(li, mitLoops) {
+  const pfad = await quelleSichern();
+  if (!pfad) { sage("Keine Daten, erst Station suchen"); return; }
+  sage(mitLoops ? "Sichere Einstellungen und Loops, bitte warten" : "Sichere Einstellungen");
+  const e = await window.skuConnect.sicherungAnlegen(pfad, mitLoops);
+  if (!e.ok) { ergebnis(li, "Sicherung fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  const mb = (e.bytes / 1048576).toFixed(1).replace(".", ",");
+  ergebnis(li, "Gesichert, " + e.dateien + " Dateien", [
+    "Ordner " + e.ordner, e.dateien + " Dateien", mb + " MB",
+    e.spuren + " Spuren mit Aufnahme", "Liegt in " + e.pfad]);
+}
+
 function platzWaehlen(li) {
   gewaehlterPlatz = parseInt(li.dataset.nummer, 10);
   const ordner = elternVon(li);
@@ -847,29 +924,7 @@ async function loopImportieren(li) {
     ["Eingespielt", "Spur " + li.dataset.spur, "Datei: " + e.datei]);
 }
 
-async function einstellungenEinlesen(li) {
-  const p = await quelleSichern();
-  if (!p) { sage("Keine Station gefunden"); return; }
-  const e = await window.skuConnect.einstellungenEinlesen(p);
-  if (!e.ok) { ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]); return; }
-  ergebnis(li, "Einstellungen eingelesen",
-    ["Einstellungen eingelesen", Math.round(e.bytes / 1024) + " Kilobyte", "2 Dateien"]);
-}
 
-async function loopsEinlesen(li) {
-  const p = await quelleSichern();
-  if (!p) { sage("Keine Station gefunden"); return; }
-  sage("Lese Loop-Aufnahmen ein");
-  const e = await window.skuConnect.loopsEinlesen(p);
-  if (!e.ok) { ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]); return; }
-  if (e.vollstaendig) {
-    ergebnis(li, "Loops eingelesen, " + e.kopie + " Dateien",
-      ["Loop-Aufnahmen eingelesen", e.kopie + " Dateien", "Vollständig"]);
-  } else {
-    ergebnis(li, "Achtung, unvollständig",
-      ["Unvollständig eingelesen", "Quelle " + e.quelle + " Dateien", "Kopie " + e.kopie + " Dateien"]);
-  }
-}
 
 // Trennen und Wiederverbinden der USB-Verbindung, ohne das Kabel anzufassen.
 //
@@ -1266,14 +1321,18 @@ async function inGitSichern(li) {
 const menue = [
   { typ: "ordner", text: "Werkstatt", kinder: [
     { typ: "aktion", id: "station-suchen", text: "Station suchen" },
-    { typ: "ordner", text: "Speicherplätze", kinder: [
+    { typ: "ordner", text: "Speicherplatz Auswahl", kinder: [
       { typ: "aktion", id: "platz-laden", text: "Speicherplätze laden" }
     ]},
-    { typ: "ordner", text: "Systemeinstellungen der Station", laden: "system" },
-    { typ: "ordner", text: "Gerätemenü, gleiche Reihenfolge wie an der Station", laden: "geraetemenu" },
-    { typ: "ordner", text: "Einlesen und sichern", kinder: [
-      { typ: "aktion", id: "einst-einlesen", text: "Einstellungen einlesen, schnell" },
-      { typ: "aktion", id: "loops-einlesen", text: "Loop-Aufnahmen einlesen, dauert lange" },
+    { typ: "ordner", text: "Track menü", laden: "trackmenu" },
+    { typ: "ordner", text: "Memory menü", laden: "memorymenu" },
+    { typ: "ordner", text: "System menü", laden: "systemmenu" },
+    { typ: "ordner", text: "Write menü", kinder: [
+      { typ: "ordner", text: "Einstellungen kopieren auf", laden: "zielplatz", id: "kopieren-nach" },
+      { typ: "ordner", text: "Einstellungen tauschen mit", laden: "zielplatz", id: "tauschen-mit" },
+      { typ: "ordner", text: "Loop-Aufnahmen der Spuren", laden: "loops" },
+      { typ: "aktion", id: "sicherung-klein", text: "Sicherung anlegen, nur Einstellungen" },
+      { typ: "aktion", id: "sicherung-gross", text: "Sicherung anlegen, mit Loops, dauert lange" },
       { typ: "aktion", id: "git-sichern", text: "Stand in Git sichern" }
     ]}
   ]},
@@ -1328,12 +1387,12 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.36"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.37"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
+    case "sicherung-klein": await sicherungAnlegen(li, false); return;
+    case "sicherung-gross": await sicherungAnlegen(li, true); return;
     case "platz-waehlen": platzWaehlen(li); return;
-    case "einst-einlesen": await einstellungenEinlesen(li); return;
-    case "loops-einlesen": await loopsEinlesen(li); return;
     case "audio-ansagen": await audioAnsagen(li); return;
     case "alles-zurueck": await allesZurueck(li); return;
     case "ton-zurueck": {

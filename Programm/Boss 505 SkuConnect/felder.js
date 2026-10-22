@@ -310,7 +310,7 @@ const NUR_ANZEIGE = {
   "PLAY_OPTION.FadeTim": "Ein- und Ausblendzeit, Zählweise nicht belegt",
   "TRACK.MeasMod": "Takt-Modus, Zuordnung der Werte nicht belegt",
   "TRACK.MeasLen": "Taktzahl, hängt am Takt-Modus",
-  "TRACK.MeasBtLp": "Takt-Schleife, Rohwert",
+  "TRACK.MeasBtLp": "Takt-Schleife, hängt am Takt-Modus",
   "FXBANK.Mod": "Betriebsart, Rohwert",
   "FXBANK.MltMod": "Multi-Betriebsart, Rohwert",
   "ASSIGN.Src": "Quelle, nur die ersten drei Werte belegt",
