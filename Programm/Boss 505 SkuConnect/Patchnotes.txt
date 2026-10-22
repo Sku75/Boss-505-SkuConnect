@@ -1,5 +1,14 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.35, 22.10.2026
+Reparatur. Der Menüpunkt Ausgabeordner ansagen aus Version 0.32 fehlte in der
+Oberfläche. Der Unterbau war da, der Eintrag selbst nicht. Beim Prüfen des
+Werkstatt-Bereichs ist es aufgefallen.
+Ebenfalls berichtigt: Die angesagte Versionsnummer stand noch auf 0.31 und die
+Kopfzeile der Oberflächendatei sogar noch auf 0.09. Beide sagen jetzt 0.35.
+Geprüft wurde außerdem, ob jeder Menüpunkt eine Aktion hat und jede Aktion einen
+Menüpunkt. Bis auf diese eine Lücke war alles vollständig.
+
 Version 0.34, 22.10.2026
 Berichtigung beim Wertebereich der Display-Helligkeit. Dort stand 1 bis 16, das ist
 der Bereich aus dem Handbuch. Die Datei der Station zählt aber ab null, richtig ist
