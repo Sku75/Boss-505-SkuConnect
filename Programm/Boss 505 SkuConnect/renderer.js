@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.38, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.39, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -741,6 +741,25 @@ function memoryEintraege(daten) {
   }
   eintraege.push({ typ: "ordner", text: "Zuweisungen, 16 Stück", kinder: zuweisungen });
 
+  return eintraege;
+}
+
+function trackEintraege(daten) {
+  const n = daten.nummer;
+  const eintraege = [{ typ: "ordner", text: "Rhythmus menü",
+    kinder: RHYTHMUS_MENUE
+      .filter(f => daten.RHYTHM && daten.RHYTHM[f] !== undefined)
+      .map(f => feldEintrag(n, "RHYTHM", f, daten.RHYTHM[f])) }];
+  for (let s = 1; s <= 5; s++) {
+    const ab = "TRACK" + s;
+    eintraege.push({ typ: "ordner", text: "Spur " + s + " Edit",
+      kinder: SPUR_MENUE
+        .filter(f => daten[ab] && daten[ab][f] !== undefined)
+        .map(f => feldEintrag(n, ab, f, daten[ab][f])) });
+  }
+
+  // Input FX und Track FX gehoeren zum Speicherplatz, nicht zu einer
+  // einzelnen Spur. Sie stehen deshalb hier, im Anschluss an die Spuren.
   for (const bank of ["INPUT_FX", "TRACK_FX"]) {
     const kinder = felderZuEintraegen("MEMORY", n, bank, daten[bank]);
     for (let i = 1; i <= 3; i++) {
@@ -758,22 +777,6 @@ function memoryEintraege(daten) {
       }
     }
     eintraege.push({ typ: "ordner", text: abschnittName(bank), kinder });
-  }
-  return eintraege;
-}
-
-function trackEintraege(daten) {
-  const n = daten.nummer;
-  const eintraege = [{ typ: "ordner", text: "Rhythmus menü",
-    kinder: RHYTHMUS_MENUE
-      .filter(f => daten.RHYTHM && daten.RHYTHM[f] !== undefined)
-      .map(f => feldEintrag(n, "RHYTHM", f, daten.RHYTHM[f])) }];
-  for (let s = 1; s <= 5; s++) {
-    const ab = "TRACK" + s;
-    eintraege.push({ typ: "ordner", text: "Spur " + s + " Edit",
-      kinder: SPUR_MENUE
-        .filter(f => daten[ab] && daten[ab][f] !== undefined)
-        .map(f => feldEintrag(n, ab, f, daten[ab][f])) });
   }
   return eintraege;
 }
@@ -1468,7 +1471,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.38"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.39"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "init-abbrechen": sage("Abgebrochen, nichts geändert"); return;

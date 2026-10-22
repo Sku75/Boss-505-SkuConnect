@@ -1,5 +1,14 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.39, 22.10.2026
+Input FX und Track FX sind vom Memory menü ins Track menü gewandert, dort stehen
+sie im Anschluss an die fünf Spuren.
+Grund: Beide werden je Speicherplatz gespeichert, genau wie der Rhythmus und die
+Spuren. Das Track menü zeigt damit alles, was zum gewählten Speicherplatz gehört.
+Das Track menü hat jetzt acht Punkte: Rhythmus menü, Spur 1 bis 5 Edit, Input FX,
+Track FX.
+Die Zuweisungen bleiben im Memory menü, weil sie auch am Gerät dort liegen.
+
 Version 0.38, 22.10.2026, Write menü nach dem Vorbild der Station
 Das Write menü bildet jetzt das Menü der WRITE-Taste ab und enthält nur noch
 dessen Punkte: Write to, Exchange, Initialize und Copy Track.
