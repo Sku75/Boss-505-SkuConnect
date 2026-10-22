@@ -1,5 +1,19 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.38, 22.10.2026, Write menü nach dem Vorbild der Station
+Das Write menü bildet jetzt das Menü der WRITE-Taste ab und enthält nur noch
+dessen Punkte: Write to, Exchange, Initialize und Copy Track.
+Initialize ist neu. Es setzt den gewählten Platz auf den Werkszustand zurück und
+löscht seine Aufnahmen. Der Vorgang fragt vorher nach, weil er nicht umkehrbar ist.
+Die Vorlage für den Werkszustand holt das Programm aus einem unbespielten Platz der
+Station selbst. So kann sie nicht von der Station abweichen.
+Copy Track ist neu. In drei Schritten wählt man Quellplatz, Quellspur und Zielspur.
+Die Aufnahme wird mitkopiert, nicht nur die Werte.
+Beide Vorgänge sichern vorher automatisch in Git.
+Unsere eigenen Punkte sind aus dem Write menü heraus und liegen jetzt unter
+Optionen: Loop-Aufnahmen der Spuren, die beiden Sicherungen und Git.
+Damit enthält das Write menü ausschließlich, was auch die Station dort hat.
+
 Version 0.37, 22.10.2026, Werkstatt nach dem Vorbild der Station
 Die Werkstatt hat jetzt sechs Punkte: Station suchen, Speicherplatz Auswahl,
 Track menü, Memory menü, System menü, Write menü.

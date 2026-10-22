@@ -34,6 +34,101 @@ function erstelleFenster() {
   fenster.loadFile('index.html');
 }
 
+// Sucht einen unbespielten Platz mit dem Namen INIT MEMORY und gibt dessen
+// Inhalt als Vorlage zurueck. Daraus wird beim Initialisieren der Werkszustand
+// hergestellt. Eine eigene Vorlagedatei waere eine zweite Wahrheit, die
+// irgendwann von der Station abweicht.
+function initVorlage(inhalt) {
+  for (let id = 0; id < 99; id++) {
+    const g = blockGrenzen(inhalt, id);
+    if (!g) break;
+    const block = inhalt.slice(g.start, g.ende);
+    if (nameAusBlock(inhalt, g.start, g.ende).trim() !== 'INIT MEMORY') continue;
+    const bespielt = [...block.matchAll(/<WavStat>(\d+)<\/WavStat>/g)].some(m => m[1] !== '0');
+    if (bespielt) continue;
+    return block.slice(`<mem id="${id}">`.length);
+  }
+  return null;
+}
+
+// Loescht die Aufnahmen eines Platzes von der Karte.
+async function wavOrdnerLoeschen(rolandPfad, nummer) {
+  let geloescht = 0;
+  for (let spur = 1; spur <= 5; spur++) {
+    const ordner = wavOrdner(rolandPfad, nummer, spur);
+    try {
+      await fsp.rm(ordner, { recursive: true, force: true });
+      geloescht++;
+    } catch { /* war nicht da */ }
+  }
+  return geloescht;
+}
+
+// Initialize: setzt einen Platz auf den Werkszustand und loescht seine
+// Aufnahmen. Nicht umkehrbar, darum sichert die Funktion vorher.
+async function platzInitialisieren(rolandPfad, nummer) {
+  await standSichern(rolandPfad);
+  const pfad = dateiPfad(rolandPfad, 'MEMORY');
+  const inhalt = await fsp.readFile(pfad, 'latin1');
+  const vorlage = initVorlage(inhalt);
+  if (!vorlage) throw new Error('Keine Vorlage gefunden, es gibt keinen unbespielten Platz mit dem Namen INIT MEMORY');
+  const z = blockGrenzen(inhalt, nummer - 1);
+  if (!z) throw new Error('Speicherplatz nicht gefunden');
+
+  const kopf = `<mem id="${nummer - 1}">`;
+  const neuerBlock = kopf + vorlage;
+  const neuerInhalt = inhalt.slice(0, z.start) + neuerBlock + inhalt.slice(z.ende);
+  await fsp.writeFile(pfad, neuerInhalt, 'latin1');
+
+  const kontrolle = await fsp.readFile(pfad, 'latin1');
+  const kz = blockGrenzen(kontrolle, nummer - 1);
+  const bestaetigt = kontrolle.slice(kz.start, kz.ende) === neuerBlock;
+  const ordner = await wavOrdnerLoeschen(rolandPfad, nummer);
+  return { bestaetigt, ordner };
+}
+
+// Copy Track: holt eine Spur aus einem anderen Platz, samt Aufnahme.
+async function spurKopieren(rolandPfad, vonNummer, vonSpur, nachNummer, nachSpur) {
+  if (vonNummer === nachNummer && vonSpur === nachSpur) throw new Error('Quelle und Ziel sind gleich');
+  await standSichern(rolandPfad);
+  const pfad = dateiPfad(rolandPfad, 'MEMORY');
+  const inhalt = await fsp.readFile(pfad, 'latin1');
+  const q = blockGrenzen(inhalt, vonNummer - 1);
+  const z = blockGrenzen(inhalt, nachNummer - 1);
+  if (!q || !z) throw new Error('Speicherplatz nicht gefunden');
+
+  const qg = abschnittGrenzen(inhalt, 'TRACK' + vonSpur, q.start, q.ende);
+  const zg = abschnittGrenzen(inhalt, 'TRACK' + nachSpur, z.start, z.ende);
+  if (!qg || !zg) throw new Error('Spur nicht gefunden');
+  const quellWerte = inhalt.slice(qg.start, qg.ende);
+
+  const neuerInhalt = inhalt.slice(0, zg.start) + quellWerte + inhalt.slice(zg.ende);
+  await fsp.writeFile(pfad, neuerInhalt, 'latin1');
+
+  const kontrolle = await fsp.readFile(pfad, 'latin1');
+  const kz = blockGrenzen(kontrolle, nachNummer - 1);
+  const kg = abschnittGrenzen(kontrolle, 'TRACK' + nachSpur, kz.start, kz.ende);
+  const bestaetigt = kontrolle.slice(kg.start, kg.ende) === quellWerte;
+
+  // Die Aufnahme mitnehmen. Ohne sie waeren die Werte Schall und Rauch.
+  const quellOrdner = wavOrdner(rolandPfad, vonNummer, vonSpur);
+  const zielOrdner = wavOrdner(rolandPfad, nachNummer, nachSpur);
+  let dateien = 0;
+  try {
+    const liste = (await fsp.readdir(quellOrdner)).filter(d => /\.wav$/i.test(d));
+    await fsp.rm(zielOrdner, { recursive: true, force: true });
+    if (liste.length) {
+      await fsp.mkdir(zielOrdner, { recursive: true });
+      for (const d of liste) {
+        await fsp.copyFile(path.join(quellOrdner, d), path.join(zielOrdner, d));
+        dateien++;
+      }
+    }
+  } catch { /* Quelle hat keine Aufnahme, dann bleibt das Ziel leer */ }
+
+  return { bestaetigt, dateien };
+}
+
 const datenOrdner = path.join(__dirname, 'Stationsdaten', 'ROLAND');
 
 // Zaehlt die Spuren, die eine Aufnahme enthalten.
@@ -595,6 +690,8 @@ ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
   await fsp.writeFile(ziel, Buffer.from(daten));
   return { bytes: (await fsp.stat(ziel)).size };
 }));
+ipcMain.handle('platz-initialisieren', sicher(platzInitialisieren));
+ipcMain.handle('spur-kopieren', sicher(spurKopieren));
 ipcMain.handle('sicherung-anlegen', sicher(sicherungAnlegen));
 ipcMain.handle('ausgabeordner', sicher(async () => ({ pfad: await ausgabeOrdnerBereit() })));
 ipcMain.handle('datenordner', sicher(async () => ({

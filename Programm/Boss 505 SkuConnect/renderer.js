@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.37, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.38, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -160,7 +160,8 @@ function neuerEintrag(eintrag) {
   zeile.className = "zeile";
   li.appendChild(zeile);
 
-  for (const schluessel of ["datei", "nummer", "abschnitt", "feld", "rohwert", "art", "spur", "laden", "ziel"]) {
+  for (const schluessel of ["datei", "nummer", "abschnitt", "feld", "rohwert", "art",
+                            "spur", "laden", "ziel", "quelle", "quellspur", "zielspur"]) {
     if (eintrag[schluessel] !== undefined) li.dataset[schluessel] = eintrag[schluessel];
   }
   if (eintrag.beschreibung) li._beschreibung = eintrag.beschreibung;
@@ -497,6 +498,53 @@ async function laden(li) {
     li.dataset.nummer = String(gewaehlterPlatz);
   }
 
+  // Initialize fragt bewusst nach. Der Vorgang loescht Aufnahmen und laesst
+  // sich am Geraet nicht rueckgaengig machen.
+  if (art === "initfrage") {
+    if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return false; }
+    setzeKinder(li, [
+      { typ: "aktion", id: "init-abbrechen", text: "Abbrechen, nichts ändern" },
+      { typ: "aktion", id: "init-ausfuehren", nummer: gewaehlterPlatz,
+        text: "Ja, Platz " + String(gewaehlterPlatz).padStart(2, "0") + " löschen und zurücksetzen" }
+    ]);
+    return true;
+  }
+
+  // Copy Track in drei Schritten: Quellplatz, Quellspur, Zielspur.
+  if (art === "ct-quelle") {
+    if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return false; }
+    const e = await window.skuConnect.speicherplaetzeLesen(pfad);
+    if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
+    setzeKinder(li, e.plaetze.filter(pl => pl.spuren > 0).map(pl => ({
+      typ: "ordner", laden: "ct-spur", quelle: pl.nummer,
+      text: String(pl.nummer).padStart(2, "0") + " " + pl.name.trim() + ", " + pl.spuren + " Spuren"
+    })));
+    return true;
+  }
+
+  if (art === "ct-spur") {
+    const quelle = parseInt(li.dataset.quelle, 10);
+    const e = await window.skuConnect.loopsAuflisten(pfad, quelle);
+    if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
+    setzeKinder(li, e.spuren.map(s => ({
+      typ: "ordner", laden: "ct-ziel", quelle, quellspur: s.spur,
+      text: "Spur " + s.spur + ", " + (s.datei ? s.sekunden.toFixed(1).replace(".", ",") + " Sekunden" : "leer")
+    })));
+    return true;
+  }
+
+  if (art === "ct-ziel") {
+    const quelle = parseInt(li.dataset.quelle, 10);
+    const quellspur = parseInt(li.dataset.quellspur, 10);
+    const ziele = [];
+    for (let s = 1; s <= 5; s++) {
+      ziele.push({ typ: "aktion", id: "ct-ausfuehren", quelle, quellspur, zielspur: s,
+        text: "Auf Spur " + s + " von Platz " + String(gewaehlterPlatz).padStart(2, "0") });
+    }
+    setzeKinder(li, ziele);
+    return true;
+  }
+
   if (art === "trackmenu" || art === "memorymenu") {
     const e = await window.skuConnect.speicherplatzLesen(pfad, gewaehlterPlatz);
     if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
@@ -769,6 +817,37 @@ async function stationSuchen(li) {
 // Enter auf einem Platz wählt ihn aus. Der Name des Ordners darüber nennt
 // danach den gewählten Platz, damit beim nächsten Besuch sofort klar ist,
 // womit gearbeitet wird.
+// Initialize: setzt den gewählten Platz auf den Werkszustand zurück.
+async function platzInitialisieren(li) {
+  const pfad = await quelleSichern();
+  if (!pfad || !schreibbar) { sage("Nur mit angeschlossener Station möglich"); return; }
+  const nummer = parseInt(li.dataset.nummer, 10);
+  sage("Setze Platz " + nummer + " zurück");
+  const e = await window.skuConnect.platzInitialisieren(pfad, nummer);
+  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(li, e.bestaetigt ? "Platz " + nummer + " zurückgesetzt" : "Achtung, nicht bestätigt", [
+    "Platz " + nummer + " steht wieder auf Werkszustand",
+    "Die Aufnahmen dieses Platzes sind gelöscht",
+    "Der Stand davor liegt in Git"]);
+}
+
+// Copy Track: holt eine Spur aus einem anderen Platz, samt Aufnahme.
+async function spurKopieren(li) {
+  const pfad = await quelleSichern();
+  if (!pfad || !schreibbar) { sage("Nur mit angeschlossener Station möglich"); return; }
+  const quelle = parseInt(li.dataset.quelle, 10);
+  const quellspur = parseInt(li.dataset.quellspur, 10);
+  const zielspur = parseInt(li.dataset.zielspur, 10);
+  sage("Kopiere Spur");
+  const e = await window.skuConnect.spurKopieren(pfad, quelle, quellspur, gewaehlterPlatz, zielspur);
+  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(li, e.bestaetigt ? "Spur kopiert" : "Achtung, nicht bestätigt", [
+    "Von Platz " + quelle + ", Spur " + quellspur,
+    "Auf Platz " + gewaehlterPlatz + ", Spur " + zielspur,
+    e.dateien ? e.dateien + " Aufnahme übernommen" : "Die Quellspur war leer",
+    "Der Stand davor liegt in Git"]);
+}
+
 // Legt eine Sicherung im Ordner Ausgaben und Sicherungen an.
 async function sicherungAnlegen(li, mitLoops) {
   const pfad = await quelleSichern();
@@ -1328,12 +1407,10 @@ const menue = [
     { typ: "ordner", text: "Memory menü", laden: "memorymenu" },
     { typ: "ordner", text: "System menü", laden: "systemmenu" },
     { typ: "ordner", text: "Write menü", kinder: [
-      { typ: "ordner", text: "Einstellungen kopieren auf", laden: "zielplatz", id: "kopieren-nach" },
-      { typ: "ordner", text: "Einstellungen tauschen mit", laden: "zielplatz", id: "tauschen-mit" },
-      { typ: "ordner", text: "Loop-Aufnahmen der Spuren", laden: "loops" },
-      { typ: "aktion", id: "sicherung-klein", text: "Sicherung anlegen, nur Einstellungen" },
-      { typ: "aktion", id: "sicherung-gross", text: "Sicherung anlegen, mit Loops, dauert lange" },
-      { typ: "aktion", id: "git-sichern", text: "Stand in Git sichern" }
+      { typ: "ordner", text: "Write to, auf einen anderen Platz schreiben", laden: "zielplatz", id: "kopieren-nach" },
+      { typ: "ordner", text: "Exchange, mit einem anderen Platz tauschen", laden: "zielplatz", id: "tauschen-mit" },
+      { typ: "ordner", text: "Initialize, Platz löschen und zurücksetzen", laden: "initfrage" },
+      { typ: "ordner", text: "Copy Track, Spur aus einem anderen Platz holen", laden: "ct-quelle" }
     ]}
   ]},
   { typ: "ordner", text: "Live-Studio", kinder: liveMenue() },
@@ -1360,6 +1437,10 @@ const menue = [
   ]},
   { typ: "ordner", text: "Optionen", kinder: [
     { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" },
+    { typ: "ordner", text: "Loop-Aufnahmen der Spuren", laden: "loops" },
+    { typ: "aktion", id: "sicherung-klein", text: "Sicherung anlegen, nur Einstellungen" },
+    { typ: "aktion", id: "sicherung-gross", text: "Sicherung anlegen, mit Loops, dauert lange" },
+    { typ: "aktion", id: "git-sichern", text: "Stand in Git sichern" },
     { typ: "aktion", id: "ausgabeordner", text: "Ausgabeordner ansagen",
       vorschau: [
         "Nennt den Ordner, in dem alle Ausgaben landen",
@@ -1387,9 +1468,12 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.37"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.38"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
+    case "init-abbrechen": sage("Abgebrochen, nichts geändert"); return;
+    case "init-ausfuehren": await platzInitialisieren(li); return;
+    case "ct-ausfuehren": await spurKopieren(li); return;
     case "sicherung-klein": await sicherungAnlegen(li, false); return;
     case "sicherung-gross": await sicherungAnlegen(li, true); return;
     case "platz-waehlen": platzWaehlen(li); return;
