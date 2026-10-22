@@ -279,7 +279,7 @@ const FELDER = {
   "ASSIGN.SrcMod": { text: "Fußtaster arbeitet", art: "liste", werte: ["Tastend", "Umschaltend"] },
 
   // --- Systemeinstellungen der Station ---
-  "SETUP.LcdContrast": { text: "Display-Helligkeit", art: "zahl", min: 1, max: 16 },
+  "SETUP.LcdContrast": { text: "Display-Helligkeit, Gerät zeigt eins mehr", art: "zahl", min: 0, max: 15 },
   "SETUP.PhantomPwr":  { text: "Phantomspeisung", art: "liste", werte: AUS_AN },
   "SETUP.AutoOff":     { text: "Automatisch ausschalten", art: "liste", werte: AUS_AN },
   "SETUP.IndMod":      { text: "Loop-Anzeige", art: "liste", werte: ["Status", "Loop-Position", "Pegel"] },

@@ -1,5 +1,14 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.34, 22.10.2026
+Berichtigung beim Wertebereich der Display-Helligkeit. Dort stand 1 bis 16, das ist
+der Bereich aus dem Handbuch. Die Datei der Station zählt aber ab null, richtig ist
+also 0 bis 15.
+Aufgefallen ist es, weil in der Station der Wert 0 stand, den das Programm nach der
+alten Festlegung gar nicht hätte geben dürfen.
+Das Feld heißt jetzt Display-Helligkeit, Gerät zeigt eins mehr. Der Dateiwert 7 ist
+also die 8 im Display.
+
 Version 0.33, 22.10.2026
 Zehn bisher gesperrte Felder lassen sich jetzt ändern. Ihre Werte sind durch das
 Handbuch, die Zusatzanleitung zur Version 2.0 und die Daten der Station belegt.
