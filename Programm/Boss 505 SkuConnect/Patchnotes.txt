@@ -1,5 +1,25 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.33, 22.10.2026
+Zehn bisher gesperrte Felder lassen sich jetzt ändern. Ihre Werte sind durch das
+Handbuch, die Zusatzanleitung zur Version 2.0 und die Daten der Station belegt.
+Neu änderbar je Spur: Startart und Stoppart.
+Neu änderbar je Speicherplatz: Loop Quantize, Kopfhörer-Ausgang, Kopfhörer-Spuren,
+sowie welche Spuren ALL START startet und welche ALL STOP stoppt.
+Neu änderbar beim Rhythmus: Taktart mit allen siebzehn Werten und das Stopp-Verhalten.
+Neu änderbar bei Assign: das Verhalten des Fußtasters, tastend oder umschaltend.
+Die Felder, die mehrere Spuren auf einmal meinen, standen bisher als Bitmuster da.
+Sie werden jetzt im Klartext angesagt, also zum Beispiel alle fünf Spuren oder
+Spuren 1 und 3.
+Bei den Pegeln steht jetzt dabei, dass das Gerät den doppelten Wert anzeigt. Das war
+an vier Stellen nachweisbar: Speicher-Pegel, Wiedergabepegel und Rhythmus-Pegel
+stehen in der Datei auf 50, das Handbuch zeigt 100. Der Wertebereich bleibt
+unverändert bei 0 bis 100, weil nur der gesichert ist.
+Gesperrt bleiben Takt-Modus, Taktzahl, Takt-Schleife, Ein- und Ausblendzeit,
+Loop-Modus sowie Quelle und Ziel bei Assign. Dort ist die Zuordnung der Zahlen zu
+den Werten nicht belegt. Die Felder nennen den Grund jetzt im Klartext, statt nur
+Rohwert zu melden.
+
 Version 0.32, 20.10.2026
 Alles, was das Programm herausgibt, landet jetzt in einem festen Ordner namens Ausgaben.
 Er liegt im Projektordner, also neben dem Ordner Programm. Dorthin gehen exportierte

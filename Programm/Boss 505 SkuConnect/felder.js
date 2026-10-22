@@ -178,9 +178,22 @@ const FX_FELDER = {
 const MIDI_KANAELE = [];
 for (let k = 1; k <= 16; k++) MIDI_KANAELE.push("Kanal " + k);
 
+// Die Felder, die mehrere Spuren auf einmal meinen, stehen als Bitmuster in
+// der Datei. Bit 1 ist Spur 1, der Wert 31 heisst also alle fuenf. Damit das
+// vorlesbar wird, bekommt jede der 32 Möglichkeiten einen Klartext.
+const SPUR_MUSTER = [];
+for (let m = 0; m < 32; m++) {
+  const dabei = [1, 2, 3, 4, 5].filter(s => m & (1 << (s - 1)));
+  SPUR_MUSTER.push(
+    dabei.length === 5 ? "alle fünf Spuren" :
+    dabei.length === 0 ? "keine Spur" :
+    (dabei.length === 1 ? "nur Spur " : "Spuren ") + dabei.join(" und ")
+  );
+}
+
 const FELDER = {
   // --- Speicherplatz gesamt ---
-  "MASTER.Lvl":   { text: "Speicher-Pegel", art: "zahl", min: 0, max: 100 },
+  "MASTER.Lvl":   { text: "Speicher-Pegel, Gerät zeigt das Doppelte", art: "zahl", min: 0, max: 100 },
   "MASTER.Tmp":   { text: "Tempo", art: "tempo" },
   "MASTER.Cs":    { text: "Kompressor", art: "zahl", min: 0, max: 100 },
   "MASTER.Rv":    { text: "Hall", art: "zahl", min: 0, max: 100 },
@@ -195,7 +208,7 @@ const FELDER = {
 
   // --- Je Spur, gilt für Spur 1 bis 5 ---
   "TRACK.Rev":     { text: "Rückwärts", art: "liste", werte: AUS_AN },
-  "TRACK.PlyLvl":  { text: "Wiedergabepegel", art: "zahl", min: 0, max: 100 },
+  "TRACK.PlyLvl":  { text: "Wiedergabepegel, Gerät zeigt das Doppelte", art: "zahl", min: 0, max: 100 },
   "TRACK.Pan":     { text: "Panorama", art: "zahl", min: 0, max: 100 },
   "TRACK.One":     { text: "One-Shot", art: "liste", werte: AUS_AN },
   "TRACK.TrkFx":   { text: "Track FX anwenden", art: "liste", werte: AUS_AN },
@@ -208,7 +221,7 @@ const FELDER = {
 
   // --- Rhythmus ---
   "RHYTHM.Sw":      { text: "Rhythmus", art: "liste", werte: AUS_AN },
-  "RHYTHM.Lvl":     { text: "Rhythmus-Pegel", art: "zahl", min: 0, max: 100 },
+  "RHYTHM.Lvl":     { text: "Rhythmus-Pegel, Gerät zeigt das Doppelte", art: "zahl", min: 0, max: 100 },
   "RHYTHM.Ptn":     { text: "Muster", art: "zahl", min: 0, max: 84 },
   "RHYTHM.LineOut": { text: "Nur auf Kopfhörer", art: "liste", werte: AUS_AN },
   "RHYTHM.RecCnt":  { text: "Einzähler vor Aufnahme", art: "liste", werte: AUS_AN },
@@ -229,6 +242,41 @@ const FELDER = {
   "ASSIGN.Sw":     { text: "Zuweisung", art: "liste", werte: AUS_AN },
   "ASSIGN.TgtMin": { text: "Kleinster Wert", art: "zahl", min: 0, max: 100 },
   "ASSIGN.TgtMax": { text: "Größter Wert", art: "zahl", min: 0, max: 100 },
+
+
+  // --- Mit Version 0.33 entsperrt ---
+  //
+  // Startart und Stoppart: Handbuch Seite 13.
+  "TRACK.StrtMod": { text: "Startart", art: "liste", werte: ["Sofort", "Einblenden"] },
+  "TRACK.StpMod":  { text: "Stoppart", art: "liste", werte: ["Sofort", "Ausblenden", "Am Loopende"] },
+
+  // Taktart: Handbuch Seite 19. Belegt durch die Gerätedaten, dort steht der
+  // Wert 2 und das Gerät zeigt im Werkszustand 4/4, also beginnt die Zählung
+  // bei 2/4 mit null.
+  "RHYTHM.Bt": { text: "Taktart", art: "liste", werte: [
+    "2/4", "3/4", "4/4", "5/4", "6/4", "7/4", "5/8", "6/8", "7/8",
+    "8/8", "9/8", "10/8", "11/8", "12/8", "13/8", "14/8", "15/8"] },
+
+  // Stopp-Verhalten des Rhythmus: Handbuch Seite 19. Der Werkswert 1
+  // entspricht der dort genannten Voreinstellung LOOPER STOP.
+  "RHYTHM.Stp": { text: "Rhythmus stoppt", art: "liste", werte: [
+    "Nur über die Rhythmus-Taste", "Mit der Stopptaste", "Beim Umschalten auf Overdub oder Wiedergabe"] },
+
+  // Korrektur des Aufnahmeendes: Handbuch Seite 16.
+  "PLAY_OPTION.LpQtz": { text: "Loop Quantize", art: "liste", werte: [
+    "Auf das Aufnahmeende", "Auf den Takt", "Auf den Taktschlag"] },
+
+  // Kopfhörer-Ausgang: Zusatzanleitung 2.0.
+  "MASTER.PhOut": { text: "Kopfhörer gibt aus", art: "liste", werte: ["Abhörsignal", "Hauptsignal"] },
+
+  // Spuren-Auswahl, siehe SPUR_MUSTER.
+  "MASTER.PhOutTr":      { text: "Kopfhörer-Spuren", art: "liste", werte: SPUR_MUSTER },
+  "PLAY_OPTION.AllStrt": { text: "ALL START startet", art: "liste", werte: SPUR_MUSTER },
+  "PLAY_OPTION.AllStp":  { text: "ALL STOP stoppt", art: "liste", werte: SPUR_MUSTER },
+
+  // Fußtaster-Verhalten: Handbuch Seite 17. Die Gerätedaten stützen das,
+  // Assign 1 am Expression-Pedal steht auf 0, Assign 2 am Fußtaster auf 1.
+  "ASSIGN.SrcMod": { text: "Fußtaster arbeitet", art: "liste", werte: ["Tastend", "Umschaltend"] },
 
   // --- Systemeinstellungen der Station ---
   "SETUP.LcdContrast": { text: "Display-Helligkeit", art: "zahl", min: 1, max: 16 },
@@ -258,25 +306,15 @@ const FELDER = {
 
 // Lesbare Namen für Felder, die wir anzeigen, aber nicht ändern.
 const NUR_ANZEIGE = {
-  "MASTER.PhOut": "Kopfhörer-Ausgang",
-  "MASTER.PhOutTr": "Kopfhörer-Spuren, Bitmuster",
-  "PLAY_OPTION.LpQtz": "Loop Quantize, Rohwert",
   "PLAY_OPTION.LpMod": "Loop-Modus, Rohwert",
-  "PLAY_OPTION.AllStrt": "Alle starten, Bitmuster",
-  "PLAY_OPTION.AllStp": "Alle stoppen, Bitmuster",
-  "PLAY_OPTION.FadeTim": "Ein- und Ausblendzeit, Rohwert",
-  "TRACK.StrtMod": "Startart, Rohwert",
-  "TRACK.StpMod": "Stoppart, Rohwert",
-  "TRACK.MeasMod": "Takt-Modus, Rohwert",
-  "TRACK.MeasLen": "Taktzahl",
+  "PLAY_OPTION.FadeTim": "Ein- und Ausblendzeit, Zählweise nicht belegt",
+  "TRACK.MeasMod": "Takt-Modus, Zuordnung der Werte nicht belegt",
+  "TRACK.MeasLen": "Taktzahl, hängt am Takt-Modus",
   "TRACK.MeasBtLp": "Takt-Schleife, Rohwert",
-  "RHYTHM.Bt": "Taktart, Rohwert",
-  "RHYTHM.Stp": "Stopp-Verhalten, Rohwert",
   "FXBANK.Mod": "Betriebsart, Rohwert",
   "FXBANK.MltMod": "Multi-Betriebsart, Rohwert",
-  "ASSIGN.Src": "Quelle, Rohwert",
-  "ASSIGN.SrcMod": "Quellart, Rohwert",
-  "ASSIGN.Tgt": "Ziel, Rohwert",
+  "ASSIGN.Src": "Quelle, nur die ersten drei Werte belegt",
+  "ASSIGN.Tgt": "Ziel, Nummerierung nicht belegt",
   "SETUP.MemNum": "Zuletzt gewählter Speicherplatz",
   "SETUP.DispMod": "Anzeigeart des Startbildschirms, Rohwert",
   "SETUP.AllClr": "Alles löschen, Rohwert",
