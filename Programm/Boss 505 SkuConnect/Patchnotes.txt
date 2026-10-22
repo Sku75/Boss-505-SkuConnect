@@ -1,5 +1,17 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.36, 22.10.2026, Umbau der Werkstatt
+Der Punkt Firmware und Datenstand prüfen ist entfernt, samt Aktion und Funktion.
+Ein Speicherplatz wird jetzt mit Enter gewählt statt geöffnet. Danach nennt der
+Ordner darüber den gewählten Platz, zum Beispiel Speicherplätze, Platz 02 gewählt.
+So ist beim nächsten Besuch sofort klar, womit gearbeitet wird.
+Die Untermenüs eines Speicherplatzes sind nicht gelöscht, nur nicht mehr unter dem
+Platz eingeblendet. Sie werden später an anderer Stelle wieder gezeigt.
+Zwei falsche Tastenhinweise berichtigt. In den Tooltips stand noch die alte
+Tastenfolge mit 1.3 ein Mal und 1.2 acht Mal, die sich am Gerät nie bestätigt hat.
+Jetzt steht dort der geprüfte Weg: SYSTEM ein Mal, Pfeil rechts dreizehn Mal, und
+beim Punkt Station suchen zusätzlich die Probe über das Mikrofon nach elf Mal.
+
 Version 0.35, 22.10.2026
 Reparatur. Der Menüpunkt Ausgabeordner ansagen aus Version 0.32 fehlte in der
 Oberfläche. Der Unterbau war da, der Eintrag selbst nicht. Beim Prüfen des

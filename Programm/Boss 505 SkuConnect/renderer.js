@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.35, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.36, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -18,6 +18,7 @@ const statuszeile = document.getElementById("statuszeile");
 const eingabefeld = document.getElementById("eingabefeld");
 
 let stationsPfad = null;   // Pfad zum ROLAND-Ordner
+let gewaehlterPlatz = null;  // zuletzt mit Enter gewählter Speicherplatz
 let schreibbar = false;    // nur wahr, wenn die echte Station verbunden ist
 
 // =====================================================================
@@ -693,18 +694,26 @@ async function stationSuchen(li) {
   stationsPfad = null; schreibbar = false;
   ergebnis(li, "Keine Station gefunden", [
     "Keine Station gefunden", "Sie muss im Speicher-Modus angeschlossen sein",
-    "Am Gerät: 1.3 ein Mal, 1.2 acht Mal, Regler auf Speicher, 2.2, dann Station aus und ein"
+    "Am Gerät: SYSTEM ein Mal, dann Pfeil rechts dreizehn Mal",
+    "Probe nach elf Mal: Regler eine Raste links, das Mikrofon muss verstummen",
+    "Dann Regler zurück, zwei Mal Pfeil rechts, Regler auf STORAGE, EXIT",
+    "Danach Station aus und wieder ein"
   ]);
 }
 
-async function firmwarePruefen(li) {
-  const p = await quelleSichern();
-  if (!p) { ergebnis(li, "Keine Daten vorhanden", null); return; }
-  const e = await window.skuConnect.kenndatenLesen(p);
-  if (!e.ok) { ergebnis(li, "Fehler beim Lesen", ["Fehler", e.fehler]); return; }
-  const fw = e.revision === "2" ? "Firmware 2.0" : "Firmware unbekannt";
-  ergebnis(li, e.geraet + ", " + fw,
-    ["Gerät " + e.geraet, fw, "Datenstand " + e.revision, schreibbar ? "Ändern möglich" : "Nur Lesen"]);
+
+// Enter auf einem Platz wählt ihn aus. Der Name des Ordners darüber nennt
+// danach den gewählten Platz, damit beim nächsten Besuch sofort klar ist,
+// womit gearbeitet wird.
+function platzWaehlen(li) {
+  gewaehlterPlatz = parseInt(li.dataset.nummer, 10);
+  const ordner = elternVon(li);
+  if (ordner) {
+    ordner.dataset.text = "Speicherplätze, Platz "
+      + String(gewaehlterPlatz).padStart(2, "0") + " gewählt";
+    aktualisiereZeile(ordner);
+  }
+  ergebnis(li, "Platz " + gewaehlterPlatz + " gewählt", ["Gewählt", li.dataset.text]);
 }
 
 async function speicherplaetzeLaden(li) {
@@ -718,9 +727,9 @@ async function speicherplaetzeLaden(li) {
     const laenge = pl.lpLen === 0 ? "AUTO" : pl.lpLen + " Takte";
     const spuren = pl.spuren === 0 ? "leer" : pl.spuren + " Spuren";
     return {
-      typ: "ordner",
+      typ: "aktion", id: "platz-waehlen",
       text: String(pl.nummer).padStart(2, "0") + " " + pl.name.trim() + ", " + laenge + ", " + spuren,
-      nummer: pl.nummer, laden: "platz"
+      nummer: pl.nummer
     };
   });
   zeigeErgebnisse(ordner, { typ: "aktion", id: "platz-laden", text: "Speicherplätze laden" }, eintraege);
@@ -1219,10 +1228,10 @@ async function usbVorbereiten(li) {
 
   ergebnis(li, "Bereit, jetzt am Gerät EXIT drücken", [
     "Die Schreibpuffer sind geleert, es kann nichts verloren gehen",
-    "Schritt 1: am Gerät Taste 2.2, EXIT, drücken",
-    "Schritt 2: im Display steht Disconnect OK, mit Taste 2.1, WRITE, bestätigen",
+    "Schritt 1: am Gerät EXIT drücken",
+    "Schritt 2: im Display steht Disconnect OK, mit WRITE bestätigen",
     "Danach reagiert das Bedienfeld wieder",
-    "Betriebsart umstellen: 1.3 ein Mal, dann 1.2 acht Mal, Regler eine Raste, 2.2",
+    "Betriebsart umstellen: SYSTEM ein Mal, dann Pfeil rechts dreizehn Mal, Regler eine Raste, EXIT",
     "Meldet sich die Station nicht von selbst, hier Verbindung erneuern wählen"
   ]);
 }
@@ -1257,7 +1266,6 @@ async function inGitSichern(li) {
 const menue = [
   { typ: "ordner", text: "Werkstatt", kinder: [
     { typ: "aktion", id: "station-suchen", text: "Station suchen" },
-    { typ: "aktion", id: "firmware", text: "Firmware und Datenstand prüfen" },
     { typ: "ordner", text: "Speicherplätze", kinder: [
       { typ: "aktion", id: "platz-laden", text: "Speicherplätze laden" }
     ]},
@@ -1320,10 +1328,10 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.35"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.36"); return;
     case "station-suchen": await stationSuchen(li); return;
-    case "firmware": await firmwarePruefen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
+    case "platz-waehlen": platzWaehlen(li); return;
     case "einst-einlesen": await einstellungenEinlesen(li); return;
     case "loops-einlesen": await loopsEinlesen(li); return;
     case "audio-ansagen": await audioAnsagen(li); return;
