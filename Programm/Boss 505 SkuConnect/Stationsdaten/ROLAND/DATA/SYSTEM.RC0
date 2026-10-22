@@ -20,7 +20,7 @@
 	<OutLvlSel>0</OutLvlSel>
 </INPUT_OUTPUT>
 <USB>
-	<Mod>0</Mod>
+	<Mod>1</Mod>
 	<AuRouting>0</AuRouting>
 	<InLvl>50</InLvl>
 	<OutLvl>50</OutLvl>
