@@ -889,13 +889,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>850</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>182482</WavLen>
 </TRACK2>
 <TRACK3>
 	<Rev>0</Rev>
@@ -907,13 +907,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>850</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>182482</WavLen>
 </TRACK3>
 <TRACK4>
 	<Rev>0</Rev>
@@ -925,13 +925,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>850</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>182482</WavLen>
 </TRACK4>
 <TRACK5>
 	<Rev>0</Rev>
@@ -943,18 +943,18 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>850</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>182482</WavLen>
 </TRACK5>
 <RHYTHM>
-	<Sw>0</Sw>
+	<Sw>1</Sw>
 	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
+	<Ptn>43</Ptn>
 	<Bt>2</Bt>
 	<LineOut>1</LineOut>
 	<RecCnt>0</RecCnt>
@@ -977,7 +977,7 @@
 </NAME>
 <MASTER>
 	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
+	<Tmp>1070</Tmp>
 	<Cs>0</Cs>
 	<Rv>0</Rv>
 	<PhOut>0</PhOut>
@@ -992,7 +992,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
+	<LpLen>1</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -1129,11 +1129,11 @@
 <INPUT_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>20</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>13</Typ1>
+	<Typ2>2</Typ2>
+	<Typ3>26</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>0</MltTyp1>
 	<MltTyp2>3</MltTyp2>
@@ -1143,10 +1143,10 @@
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
+	<Sel>2</Sel>
+	<Typ1>15</Typ1>
+	<Typ2>17</Typ2>
+	<Typ3>0</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>19</MltTyp1>
 	<MltTyp2>2</MltTyp2>
@@ -1220,7 +1220,7 @@
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>74</VocoBal>
 	<DynmTyp>0</DynmTyp>
 	<DynmDynm>20</DynmDynm>
 	<EqLo>20</EqLo>
@@ -1241,21 +1241,21 @@
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
+	<TrDep>27</TrDep>
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
+	<SlDep>98</SlDep>
 	<DlyTim>50</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>100</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
 	<PanDlyLvl>50</PanDlyLvl>
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
 	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<GraTim>56</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
@@ -1266,7 +1266,7 @@
 	<ChoDep>50</ChoDep>
 	<ChoLvl>50</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>57</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </INPUT_FX1>
 <INPUT_FX2>
@@ -1274,25 +1274,25 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>48</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
 	<PhReso>0</PhReso>
 	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
+	<PhLvl>100</PhLvl>
 	<FlRat>25</FlRat>
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>86</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>100</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -1379,7 +1379,7 @@
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
+	<SynBal>0</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
 	<LoFiBal>50</LoFiBal>
@@ -1400,14 +1400,14 @@
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>86</VocoBal>
 	<DynmTyp>0</DynmTyp>
 	<DynmDynm>20</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
 	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
+	<EqLvl>40</EqLvl>
 	<IsoBnd>0</IsoBnd>
 	<IsoRat>103</IsoRat>
 	<IsoDep>100</IsoDep>
@@ -1431,11 +1431,11 @@
 	<DlyLvl>50</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
+	<PanDlyLvl>74</PanDlyLvl>
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
 	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<GraTim>62</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
@@ -1446,7 +1446,7 @@
 	<ChoDep>50</ChoDep>
 	<ChoLvl>50</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>80</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </INPUT_FX3>
 <TRACK_FX1>
@@ -1454,55 +1454,55 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>48</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
 	<PhReso>0</PhReso>
 	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
+	<PhLvl>0</PhLvl>
 	<FlRat>25</FlRat>
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>82</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
+	<SynBal>82</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<LoFiBal>16</LoFiBal>
+	<RmFreq>0</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>67</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>65</SgRisTim>
 	<SgLvl>50</SgLvl>
 	<Trans>12</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
+	<PbBnd>12</PbBnd>
 	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
+	<RoboGen>17</RoboGen>
+	<DistDist>54</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>53</VocoBal>
 	<DynmTyp>0</DynmTyp>
 	<DynmDynm>20</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
 	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
+	<EqLvl>18</EqLvl>
 	<IsoBnd>0</IsoBnd>
 	<IsoRat>103</IsoRat>
 	<IsoDep>100</IsoDep>
 	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
+	<IsoLvl>0</IsoLvl>
 	<OctMod>0</OctMod>
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
@@ -1544,13 +1544,873 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>48</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>49</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>56</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>57</LoFiBal>
+	<RmFreq>55</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>80</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>44</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>19</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>0</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>0</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>87</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>2</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>38</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>94</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>75</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>48</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX2>
+<TRACK_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>67</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>0</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>44</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>53</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>78</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>24</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>50</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>46</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>44</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>17</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>17</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>0</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>50</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>52</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>53</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>52</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX3>
+</mem>
+<mem id="2">
+<TRACK1>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>1</MeasMod>
+	<MeasLen>7</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1136</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>576107</WavLen>
+</TRACK1>
+<TRACK2>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>1</MeasMod>
+	<MeasLen>7</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1286</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>576107</WavLen>
+</TRACK2>
+<TRACK3>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>1</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK3>
+<TRACK4>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>1</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK4>
+<TRACK5>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>1</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK5>
+<RHYTHM>
+	<Sw>0</Sw>
+	<Lvl>50</Lvl>
+	<Ptn>0</Ptn>
+	<Bt>2</Bt>
+	<LineOut>1</LineOut>
+	<RecCnt>0</RecCnt>
+	<PlyCnt>0</PlyCnt>
+	<Stp>1</Stp>
+</RHYTHM>
+<NAME>
+	<C01>73</C01>
+	<C02>78</C02>
+	<C03>73</C03>
+	<C04>84</C04>
+	<C05>32</C05>
+	<C06>77</C06>
+	<C07>69</C07>
+	<C08>77</C08>
+	<C09>79</C09>
+	<C10>82</C10>
+	<C11>89</C11>
+	<C12>32</C12>
+</NAME>
+<MASTER>
+	<Lvl>50</Lvl>
+	<Tmp>1326</Tmp>
+	<Cs>0</Cs>
+	<Rv>0</Rv>
+	<PhOut>0</PhOut>
+	<PhOutTr>31</PhOutTr>
+</MASTER>
+<REC_OPTION>
+	<DubMod>0</DubMod>
+	<RecAct>0</RecAct>
+	<RecQtz>1</RecQtz>
+</REC_OPTION>
+<PLAY_OPTION>
+	<SinglePlyChg>0</SinglePlyChg>
+	<LpQtz>0</LpQtz>
+	<LpMod>0</LpMod>
+	<LpLen>7</LpLen>
+	<AllStrt>31</AllStrt>
+	<AllStp>31</AllStp>
+	<FadeTim>2</FadeTim>
+	<TgtTr>0</TgtTr>
+</PLAY_OPTION>
+<ASSIGN1>
+	<Sw>1</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>79</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN1>
+<ASSIGN2>
+	<Sw>1</Sw>
+	<Src>1</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>37</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>0</TgtMax>
+</ASSIGN2>
+<ASSIGN3>
+	<Sw>1</Sw>
+	<Src>2</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>38</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>50</TgtMax>
+</ASSIGN3>
+<ASSIGN4>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN4>
+<ASSIGN5>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN5>
+<ASSIGN6>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN6>
+<ASSIGN7>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN7>
+<ASSIGN8>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN8>
+<ASSIGN9>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN9>
+<ASSIGN10>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN10>
+<ASSIGN11>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN11>
+<ASSIGN12>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN12>
+<ASSIGN13>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN13>
+<ASSIGN14>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN14>
+<ASSIGN15>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN15>
+<ASSIGN16>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN16>
+<INPUT_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>16</Typ1>
+	<Typ2>6</Typ2>
+	<Typ3>0</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>0</MltTyp1>
+	<MltTyp2>3</MltTyp2>
+	<MltTyp3>8</MltTyp3>
+</INPUT_FX>
+<TRACK_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>4</Typ1>
+	<Typ2>0</Typ2>
+	<Typ3>19</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>19</MltTyp1>
+	<MltTyp2>2</MltTyp2>
+	<MltTyp3>11</MltTyp3>
+</TRACK_FX>
+<BEAT_FX1>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX1>
+<BEAT_FX2>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX2>
+<BEAT_FX3>
+	<RepTyp>0</RepTyp>
+	<RepLen>1</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>7</Flick>
+</BEAT_FX3>
+<INPUT_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>100</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
 	<PhReso>0</PhReso>
 	<PhStpRat>0</PhStpRat>
 	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>100</LoFiBal>
+	<RmFreq>73</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>72</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>99</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>30</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>41</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>3</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>47</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX1>
+<INPUT_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>100</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>100</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>96</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>16</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>75</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>0</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>25</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>0</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX2>
+<INPUT_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>100</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>32</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>56</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>25</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>77</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>64</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>66</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>100</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX3>
+<TRACK_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>65</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>61</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>56</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>50</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>100</LoFiBal>
+	<RmFreq>39</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>25</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>78</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>1</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>11</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>47</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>0</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>40</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>80</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>71</EchLvl>
+	<GraTim>71</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>3</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>65</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>63</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX1>
+<TRACK_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>0</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>42</PhLvl>
 	<FlRat>25</FlRat>
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
@@ -1695,32 +2555,32 @@
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
+	<SlDep>71</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>61</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
+	<PanDlyLvl>48</PanDlyLvl>
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<EchLvl>15</EchLvl>
+	<GraTim>4</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>0</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
+	<ChoLvl>0</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>2</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </TRACK_FX3>
 </mem>
-<mem id="2">
+<mem id="3">
 <TRACK1>
 	<Rev>0</Rev>
 	<PlyLvl>50</PlyLvl>
@@ -1730,14 +2590,14 @@
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
-	<MeasMod>1</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasMod>0</MeasMod>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1370</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>309020</WavLen>
 </TRACK1>
 <TRACK2>
 	<Rev>0</Rev>
@@ -1748,14 +2608,14 @@
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
-	<MeasMod>1</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasMod>0</MeasMod>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1050</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>309020</WavLen>
 </TRACK2>
 <TRACK3>
 	<Rev>0</Rev>
@@ -1766,14 +2626,14 @@
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
-	<MeasMod>1</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasMod>0</MeasMod>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1370</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>309020</WavLen>
 </TRACK3>
 <TRACK4>
 	<Rev>0</Rev>
@@ -1784,14 +2644,14 @@
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
-	<MeasMod>1</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasMod>0</MeasMod>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1370</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>309020</WavLen>
 </TRACK4>
 <TRACK5>
 	<Rev>0</Rev>
@@ -1802,19 +2662,19 @@
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
-	<MeasMod>1</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasMod>0</MeasMod>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1370</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>309020</WavLen>
 </TRACK5>
 <RHYTHM>
 	<Sw>0</Sw>
 	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
+	<Ptn>16</Ptn>
 	<Bt>2</Bt>
 	<LineOut>1</LineOut>
 	<RecCnt>0</RecCnt>
@@ -1837,7 +2697,7 @@
 </NAME>
 <MASTER>
 	<Lvl>50</Lvl>
-	<Tmp>946</Tmp>
+	<Tmp>1370</Tmp>
 	<Cs>0</Cs>
 	<Rv>0</Rv>
 	<PhOut>0</PhOut>
@@ -1852,7 +2712,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
+	<LpLen>4</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -1991,9 +2851,9 @@
 	<MltMod>0</MltMod>
 	<Sw>1</Sw>
 	<Sel>2</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>6</Typ2>
-	<Typ3>9</Typ3>
+	<Typ1>11</Typ1>
+	<Typ2>7</Typ2>
+	<Typ3>3</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>0</MltTyp1>
 	<MltTyp2>3</MltTyp2>
@@ -2002,7 +2862,1727 @@
 <TRACK_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>2</Typ1>
+	<Typ2>15</Typ2>
+	<Typ3>3</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>19</MltTyp1>
+	<MltTyp2>2</MltTyp2>
+	<MltTyp3>11</MltTyp3>
+</TRACK_FX>
+<BEAT_FX1>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX1>
+<BEAT_FX2>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX2>
+<BEAT_FX3>
+	<RepTyp>0</RepTyp>
+	<RepLen>6</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>5</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>5</ScatLen>
+	<Flick>88</Flick>
+</BEAT_FX3>
+<INPUT_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>91</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX1>
+<INPUT_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>56</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>33</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>100</LoFiBal>
+	<RmFreq>0</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>89</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX2>
+<INPUT_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>53</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>0</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>69</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>77</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX3>
+<TRACK_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>100</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX1>
+<TRACK_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>0</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>11</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>18</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX2>
+<TRACK_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>100</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>68</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>57</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>100</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>67</EchLvl>
+	<GraTim>70</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>3</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>72</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>56</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX3>
+</mem>
+<mem id="4">
+<TRACK1>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1124</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>188326</WavLen>
+</TRACK1>
+<TRACK2>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1900</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>188326</WavLen>
+</TRACK2>
+<TRACK3>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1124</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>188326</WavLen>
+</TRACK3>
+<TRACK4>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK4>
+<TRACK5>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1280</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>188326</WavLen>
+</TRACK5>
+<RHYTHM>
+	<Sw>2</Sw>
+	<Lvl>50</Lvl>
+	<Ptn>20</Ptn>
+	<Bt>2</Bt>
+	<LineOut>1</LineOut>
+	<RecCnt>0</RecCnt>
+	<PlyCnt>0</PlyCnt>
+	<Stp>2</Stp>
+</RHYTHM>
+<NAME>
+	<C01>73</C01>
+	<C02>78</C02>
+	<C03>73</C03>
+	<C04>84</C04>
+	<C05>32</C05>
+	<C06>77</C06>
+	<C07>69</C07>
+	<C08>77</C08>
+	<C09>79</C09>
+	<C10>82</C10>
+	<C11>89</C11>
+	<C12>32</C12>
+</NAME>
+<MASTER>
+	<Lvl>50</Lvl>
+	<Tmp>1334</Tmp>
+	<Cs>0</Cs>
+	<Rv>0</Rv>
+	<PhOut>0</PhOut>
+	<PhOutTr>31</PhOutTr>
+</MASTER>
+<REC_OPTION>
+	<DubMod>0</DubMod>
+	<RecAct>0</RecAct>
+	<RecQtz>1</RecQtz>
+</REC_OPTION>
+<PLAY_OPTION>
+	<SinglePlyChg>0</SinglePlyChg>
+	<LpQtz>0</LpQtz>
+	<LpMod>0</LpMod>
+	<LpLen>2</LpLen>
+	<AllStrt>31</AllStrt>
+	<AllStp>31</AllStp>
+	<FadeTim>2</FadeTim>
+	<TgtTr>0</TgtTr>
+</PLAY_OPTION>
+<ASSIGN1>
+	<Sw>1</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>79</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN1>
+<ASSIGN2>
+	<Sw>1</Sw>
+	<Src>1</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>37</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>0</TgtMax>
+</ASSIGN2>
+<ASSIGN3>
+	<Sw>1</Sw>
+	<Src>2</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>38</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>50</TgtMax>
+</ASSIGN3>
+<ASSIGN4>
 	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN4>
+<ASSIGN5>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN5>
+<ASSIGN6>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN6>
+<ASSIGN7>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN7>
+<ASSIGN8>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN8>
+<ASSIGN9>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN9>
+<ASSIGN10>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN10>
+<ASSIGN11>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN11>
+<ASSIGN12>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN12>
+<ASSIGN13>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN13>
+<ASSIGN14>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN14>
+<ASSIGN15>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN15>
+<ASSIGN16>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN16>
+<INPUT_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>21</Typ1>
+	<Typ2>11</Typ2>
+	<Typ3>17</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>0</MltTyp1>
+	<MltTyp2>3</MltTyp2>
+	<MltTyp3>8</MltTyp3>
+</INPUT_FX>
+<TRACK_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>0</Sel>
+	<Typ1>19</Typ1>
+	<Typ2>6</Typ2>
+	<Typ3>17</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>19</MltTyp1>
+	<MltTyp2>2</MltTyp2>
+	<MltTyp3>11</MltTyp3>
+</TRACK_FX>
+<BEAT_FX1>
+	<RepTyp>0</RepTyp>
+	<RepLen>0</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>0</ScatLen>
+	<Flick>92</Flick>
+</BEAT_FX1>
+<BEAT_FX2>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX2>
+<BEAT_FX3>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>0</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>0</ScatLen>
+	<Flick>33</Flick>
+</BEAT_FX3>
+<INPUT_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>72</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>68</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX1>
+<INPUT_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>73</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>41</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>80</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>44</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>89</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>40</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX2>
+<INPUT_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>84</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>59</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>80</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX3>
+<TRACK_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>0</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>74</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>14</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>18</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>44</LoFiBal>
+	<RmFreq>22</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>0</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>0</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>0</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>72</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>14</RoboGen>
+	<DistDist>0</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>0</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>0</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>25</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>4</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>0</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>120</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>40</EchLvl>
+	<GraTim>31</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>1</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>21</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>14</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX1>
+<TRACK_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>100</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>57</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>56</LoFiBal>
+	<RmFreq>56</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>0</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>55</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>0</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>15</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>5</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>18</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>63</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>94</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>93</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>85</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>0</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX2>
+<TRACK_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>7</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>11</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>9</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>4</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>0</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>66</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>68</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>0</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>100</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>98</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>97</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>93</EchLvl>
+	<GraTim>0</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>3</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>0</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX3>
+</mem>
+<mem id="5">
+<TRACK1>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1230</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>172096</WavLen>
+</TRACK1>
+<TRACK2>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1040</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>203538</WavLen>
+</TRACK2>
+<TRACK3>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK3>
+<TRACK4>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1040</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>203538</WavLen>
+</TRACK4>
+<TRACK5>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>2</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1300</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>162830</WavLen>
+</TRACK5>
+<RHYTHM>
+	<Sw>1</Sw>
+	<Lvl>50</Lvl>
+	<Ptn>47</Ptn>
+	<Bt>2</Bt>
+	<LineOut>1</LineOut>
+	<RecCnt>0</RecCnt>
+	<PlyCnt>0</PlyCnt>
+	<Stp>1</Stp>
+</RHYTHM>
+<NAME>
+	<C01>73</C01>
+	<C02>78</C02>
+	<C03>73</C03>
+	<C04>84</C04>
+	<C05>32</C05>
+	<C06>77</C06>
+	<C07>69</C07>
+	<C08>77</C08>
+	<C09>79</C09>
+	<C10>82</C10>
+	<C11>89</C11>
+	<C12>32</C12>
+</NAME>
+<MASTER>
+	<Lvl>50</Lvl>
+	<Tmp>1340</Tmp>
+	<Cs>0</Cs>
+	<Rv>0</Rv>
+	<PhOut>0</PhOut>
+	<PhOutTr>31</PhOutTr>
+</MASTER>
+<REC_OPTION>
+	<DubMod>0</DubMod>
+	<RecAct>0</RecAct>
+	<RecQtz>1</RecQtz>
+</REC_OPTION>
+<PLAY_OPTION>
+	<SinglePlyChg>0</SinglePlyChg>
+	<LpQtz>0</LpQtz>
+	<LpMod>0</LpMod>
+	<LpLen>2</LpLen>
+	<AllStrt>31</AllStrt>
+	<AllStp>31</AllStp>
+	<FadeTim>2</FadeTim>
+	<TgtTr>0</TgtTr>
+</PLAY_OPTION>
+<ASSIGN1>
+	<Sw>1</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>79</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN1>
+<ASSIGN2>
+	<Sw>1</Sw>
+	<Src>1</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>37</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>0</TgtMax>
+</ASSIGN2>
+<ASSIGN3>
+	<Sw>1</Sw>
+	<Src>2</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>38</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>50</TgtMax>
+</ASSIGN3>
+<ASSIGN4>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN4>
+<ASSIGN5>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN5>
+<ASSIGN6>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN6>
+<ASSIGN7>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN7>
+<ASSIGN8>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN8>
+<ASSIGN9>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN9>
+<ASSIGN10>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN10>
+<ASSIGN11>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN11>
+<ASSIGN12>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN12>
+<ASSIGN13>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN13>
+<ASSIGN14>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN14>
+<ASSIGN15>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN15>
+<ASSIGN16>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN16>
+<INPUT_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>7</Typ1>
+	<Typ2>14</Typ2>
+	<Typ3>4</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>0</MltTyp1>
+	<MltTyp2>3</MltTyp2>
+	<MltTyp3>8</MltTyp3>
+</INPUT_FX>
+<TRACK_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
 	<Sel>2</Sel>
 	<Typ1>2</Typ1>
 	<Typ2>20</Typ2>
@@ -2032,7 +4612,867 @@
 </BEAT_FX2>
 <BEAT_FX3>
 	<RepTyp>0</RepTyp>
-	<RepLen>0</RepLen>
+	<RepLen>1</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>5</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>100</Flick>
+</BEAT_FX3>
+<INPUT_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>76</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>75</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>26</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>62</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX1>
+<INPUT_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>0</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>78</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>97</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>40</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>86</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX2>
+<INPUT_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>98</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>89</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>55</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>100</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>95</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>100</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</INPUT_FX3>
+<TRACK_FX1>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>0</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX1>
+<TRACK_FX2>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>86</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>50</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>2</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>50</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>50</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX2>
+<TRACK_FX3>
+	<FilTyp>0</FilTyp>
+	<FilRat>50</FilRat>
+	<FilDep>55</FilDep>
+	<FilReso>50</FilReso>
+	<FilCut>50</FilCut>
+	<FilStpRat>0</FilStpRat>
+	<PhRat>70</PhRat>
+	<PhDep>50</PhDep>
+	<PhReso>0</PhReso>
+	<PhStpRat>0</PhStpRat>
+	<PhLvl>50</PhLvl>
+	<FlRat>25</FlRat>
+	<FlDep>50</FlDep>
+	<FlReso>70</FlReso>
+	<FlStpRat>0</FlStpRat>
+	<FlLvl>50</FlLvl>
+	<SynFreq>50</SynFreq>
+	<SynReso>50</SynReso>
+	<SynDecay>50</SynDecay>
+	<SynBal>90</SynBal>
+	<LoFiDep>8</LoFiDep>
+	<LoFiSmpl>15</LoFiSmpl>
+	<LoFiBal>50</LoFiBal>
+	<RmFreq>50</RmFreq>
+	<RmBal>100</RmBal>
+	<GToB>50</GToB>
+	<SgSens>40</SgSens>
+	<SgRisTim>50</SgRisTim>
+	<SgLvl>50</SgLvl>
+	<Trans>12</Trans>
+	<PbPit>2</PbPit>
+	<PbBnd>100</PbBnd>
+	<RoboNote>0</RoboNote>
+	<RoboGen>10</RoboGen>
+	<DistDist>50</DistDist>
+	<DistTon>50</DistTon>
+	<DistLvl>50</DistLvl>
+	<VocoCar>0</VocoCar>
+	<VocoSens>50</VocoSens>
+	<VocoAtck>50</VocoAtck>
+	<VocoBal>50</VocoBal>
+	<DynmTyp>0</DynmTyp>
+	<DynmDynm>20</DynmDynm>
+	<EqLo>20</EqLo>
+	<EqLoMd>20</EqLoMd>
+	<EqHiMd>20</EqHiMd>
+	<EqHi>20</EqHi>
+	<EqLvl>20</EqLvl>
+	<IsoBnd>0</IsoBnd>
+	<IsoRat>103</IsoRat>
+	<IsoDep>100</IsoDep>
+	<IsoStpRat>0</IsoStpRat>
+	<IsoLvl>100</IsoLvl>
+	<OctMod>0</OctMod>
+	<OctLvl>50</OctLvl>
+	<PanTyp>0</PanTyp>
+	<PanRat>50</PanRat>
+	<PanDep>50</PanDep>
+	<PanStpRat>0</PanStpRat>
+	<PanPos>50</PanPos>
+	<TrRat>85</TrRat>
+	<TrDep>50</TrDep>
+	<TrLvl>50</TrLvl>
+	<SlPat>0</SlPat>
+	<SlRat>110</SlRat>
+	<SlDep>100</SlDep>
+	<DlyTim>200</DlyTim>
+	<DlyFb>20</DlyFb>
+	<DlyLvl>50</DlyLvl>
+	<PanDlyTim>200</PanDlyTim>
+	<PanDlyFb>20</PanDlyFb>
+	<PanDlyLvl>50</PanDlyLvl>
+	<EchRat>50</EchRat>
+	<EchInt>50</EchInt>
+	<EchLvl>50</EchLvl>
+	<GraTim>86</GraTim>
+	<GraFb>70</GraFb>
+	<GraLvl>50</GraLvl>
+	<RllTim>1008</RllTim>
+	<RllMod>4</RllMod>
+	<RllFb>20</RllFb>
+	<RllLvl>50</RllLvl>
+	<ChoRat>50</ChoRat>
+	<ChoDep>50</ChoDep>
+	<ChoLvl>82</ChoLvl>
+	<RevTim>27</RevTim>
+	<RevLvl>51</RevLvl>
+	<RevDLvl>100</RevDLvl>
+</TRACK_FX3>
+</mem>
+<mem id="6">
+<TRACK1>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>1</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>650</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>162830</WavLen>
+</TRACK1>
+<TRACK2>
+	<Rev>0</Rev>
+	<PlyLvl>28</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>1</MeasLen>
+	<MeasBtLp>2</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>650</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>20353</WavLen>
+</TRACK2>
+<TRACK3>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK3>
+<TRACK4>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK4>
+<TRACK5>
+	<Rev>0</Rev>
+	<PlyLvl>50</PlyLvl>
+	<Pan>50</Pan>
+	<One>0</One>
+	<TrkFx>1</TrkFx>
+	<PlyMod>0</PlyMod>
+	<StrtMod>0</StrtMod>
+	<StpMod>0</StpMod>
+	<MeasMod>0</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
+	<LpSync>1</LpSync>
+	<TmpSync>1</TmpSync>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
+</TRACK5>
+<RHYTHM>
+	<Sw>1</Sw>
+	<Lvl>50</Lvl>
+	<Ptn>46</Ptn>
+	<Bt>2</Bt>
+	<LineOut>1</LineOut>
+	<RecCnt>0</RecCnt>
+	<PlyCnt>0</PlyCnt>
+	<Stp>1</Stp>
+</RHYTHM>
+<NAME>
+	<C01>73</C01>
+	<C02>78</C02>
+	<C03>73</C03>
+	<C04>84</C04>
+	<C05>32</C05>
+	<C06>77</C06>
+	<C07>69</C07>
+	<C08>77</C08>
+	<C09>79</C09>
+	<C10>82</C10>
+	<C11>89</C11>
+	<C12>32</C12>
+</NAME>
+<MASTER>
+	<Lvl>50</Lvl>
+	<Tmp>650</Tmp>
+	<Cs>0</Cs>
+	<Rv>0</Rv>
+	<PhOut>0</PhOut>
+	<PhOutTr>31</PhOutTr>
+</MASTER>
+<REC_OPTION>
+	<DubMod>0</DubMod>
+	<RecAct>0</RecAct>
+	<RecQtz>1</RecQtz>
+</REC_OPTION>
+<PLAY_OPTION>
+	<SinglePlyChg>0</SinglePlyChg>
+	<LpQtz>0</LpQtz>
+	<LpMod>0</LpMod>
+	<LpLen>1</LpLen>
+	<AllStrt>31</AllStrt>
+	<AllStp>31</AllStp>
+	<FadeTim>2</FadeTim>
+	<TgtTr>0</TgtTr>
+</PLAY_OPTION>
+<ASSIGN1>
+	<Sw>1</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>79</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN1>
+<ASSIGN2>
+	<Sw>1</Sw>
+	<Src>1</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>37</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>0</TgtMax>
+</ASSIGN2>
+<ASSIGN3>
+	<Sw>1</Sw>
+	<Src>2</Src>
+	<SrcMod>1</SrcMod>
+	<Tgt>38</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>50</TgtMax>
+</ASSIGN3>
+<ASSIGN4>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN4>
+<ASSIGN5>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN5>
+<ASSIGN6>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN6>
+<ASSIGN7>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN7>
+<ASSIGN8>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN8>
+<ASSIGN9>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN9>
+<ASSIGN10>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN10>
+<ASSIGN11>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN11>
+<ASSIGN12>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN12>
+<ASSIGN13>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN13>
+<ASSIGN14>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN14>
+<ASSIGN15>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN15>
+<ASSIGN16>
+	<Sw>0</Sw>
+	<Src>0</Src>
+	<SrcMod>0</SrcMod>
+	<Tgt>20</Tgt>
+	<TgtMin>0</TgtMin>
+	<TgtMax>100</TgtMax>
+</ASSIGN16>
+<INPUT_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>1</Sw>
+	<Sel>1</Sel>
+	<Typ1>0</Typ1>
+	<Typ2>4</Typ2>
+	<Typ3>5</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>0</MltTyp1>
+	<MltTyp2>3</MltTyp2>
+	<MltTyp3>8</MltTyp3>
+</INPUT_FX>
+<TRACK_FX>
+	<Mod>1</Mod>
+	<MltMod>0</MltMod>
+	<Sw>0</Sw>
+	<Sel>0</Sel>
+	<Typ1>2</Typ1>
+	<Typ2>20</Typ2>
+	<Typ3>27</Typ3>
+	<MltSw>0</MltSw>
+	<MltTyp1>19</MltTyp1>
+	<MltTyp2>2</MltTyp2>
+	<MltTyp3>11</MltTyp3>
+</TRACK_FX>
+<BEAT_FX1>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX1>
+<BEAT_FX2>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
+	<ShftTyp>0</ShftTyp>
+	<ShftShft>3</ShftShft>
+	<ScatTyp>0</ScatTyp>
+	<ScatLen>3</ScatLen>
+	<Flick>50</Flick>
+</BEAT_FX2>
+<BEAT_FX3>
+	<RepTyp>0</RepTyp>
+	<RepLen>5</RepLen>
 	<ShftTyp>0</ShftTyp>
 	<ShftShft>3</ShftShft>
 	<ScatTyp>0</ScatTyp>
@@ -2044,7 +5484,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>22</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -2152,7 +5592,7 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>0</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -2243,7 +5683,7 @@
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
 	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<RmFreq>14</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
 	<SgSens>40</SgSens>
@@ -2251,7 +5691,7 @@
 	<SgLvl>50</SgLvl>
 	<Trans>12</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>66</PbBnd>
+	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
 	<RoboGen>10</RoboGen>
 	<DistDist>50</DistDist>
@@ -2277,7 +5717,7 @@
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>25</PanDep>
+	<PanDep>100</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
@@ -2580,3446 +6020,6 @@
 	<RevDLvl>100</RevDLvl>
 </TRACK_FX3>
 </mem>
-<mem id="3">
-<TRACK1>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK1>
-<TRACK2>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK2>
-<TRACK3>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK3>
-<TRACK4>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK4>
-<TRACK5>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK5>
-<RHYTHM>
-	<Sw>0</Sw>
-	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
-	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
-	<PlyCnt>0</PlyCnt>
-	<Stp>1</Stp>
-</RHYTHM>
-<NAME>
-	<C01>73</C01>
-	<C02>78</C02>
-	<C03>73</C03>
-	<C04>84</C04>
-	<C05>32</C05>
-	<C06>77</C06>
-	<C07>69</C07>
-	<C08>77</C08>
-	<C09>79</C09>
-	<C10>82</C10>
-	<C11>89</C11>
-	<C12>32</C12>
-</NAME>
-<MASTER>
-	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
-	<PhOut>0</PhOut>
-	<PhOutTr>31</PhOutTr>
-</MASTER>
-<REC_OPTION>
-	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
-	<RecQtz>1</RecQtz>
-</REC_OPTION>
-<PLAY_OPTION>
-	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
-	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
-	<AllStrt>31</AllStrt>
-	<AllStp>31</AllStp>
-	<FadeTim>2</FadeTim>
-	<TgtTr>0</TgtTr>
-</PLAY_OPTION>
-<ASSIGN1>
-	<Sw>1</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>79</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN1>
-<ASSIGN2>
-	<Sw>1</Sw>
-	<Src>1</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>37</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>0</TgtMax>
-</ASSIGN2>
-<ASSIGN3>
-	<Sw>1</Sw>
-	<Src>2</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>38</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>50</TgtMax>
-</ASSIGN3>
-<ASSIGN4>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN4>
-<ASSIGN5>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN5>
-<ASSIGN6>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN6>
-<ASSIGN7>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN7>
-<ASSIGN8>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN8>
-<ASSIGN9>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN9>
-<ASSIGN10>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN10>
-<ASSIGN11>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN11>
-<ASSIGN12>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN12>
-<ASSIGN13>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN13>
-<ASSIGN14>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN14>
-<ASSIGN15>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN15>
-<ASSIGN16>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN16>
-<INPUT_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>0</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>0</MltTyp1>
-	<MltTyp2>3</MltTyp2>
-	<MltTyp3>8</MltTyp3>
-</INPUT_FX>
-<TRACK_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>19</MltTyp1>
-	<MltTyp2>2</MltTyp2>
-	<MltTyp3>11</MltTyp3>
-</TRACK_FX>
-<BEAT_FX1>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX1>
-<BEAT_FX2>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX2>
-<BEAT_FX3>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX3>
-<INPUT_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX1>
-<INPUT_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX2>
-<INPUT_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX3>
-<TRACK_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX1>
-<TRACK_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX2>
-<TRACK_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX3>
-</mem>
-<mem id="4">
-<TRACK1>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK1>
-<TRACK2>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK2>
-<TRACK3>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK3>
-<TRACK4>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK4>
-<TRACK5>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK5>
-<RHYTHM>
-	<Sw>0</Sw>
-	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
-	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
-	<PlyCnt>0</PlyCnt>
-	<Stp>1</Stp>
-</RHYTHM>
-<NAME>
-	<C01>73</C01>
-	<C02>78</C02>
-	<C03>73</C03>
-	<C04>84</C04>
-	<C05>32</C05>
-	<C06>77</C06>
-	<C07>69</C07>
-	<C08>77</C08>
-	<C09>79</C09>
-	<C10>82</C10>
-	<C11>89</C11>
-	<C12>32</C12>
-</NAME>
-<MASTER>
-	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
-	<PhOut>0</PhOut>
-	<PhOutTr>31</PhOutTr>
-</MASTER>
-<REC_OPTION>
-	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
-	<RecQtz>1</RecQtz>
-</REC_OPTION>
-<PLAY_OPTION>
-	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
-	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
-	<AllStrt>31</AllStrt>
-	<AllStp>31</AllStp>
-	<FadeTim>2</FadeTim>
-	<TgtTr>0</TgtTr>
-</PLAY_OPTION>
-<ASSIGN1>
-	<Sw>1</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>79</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN1>
-<ASSIGN2>
-	<Sw>1</Sw>
-	<Src>1</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>37</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>0</TgtMax>
-</ASSIGN2>
-<ASSIGN3>
-	<Sw>1</Sw>
-	<Src>2</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>38</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>50</TgtMax>
-</ASSIGN3>
-<ASSIGN4>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN4>
-<ASSIGN5>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN5>
-<ASSIGN6>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN6>
-<ASSIGN7>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN7>
-<ASSIGN8>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN8>
-<ASSIGN9>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN9>
-<ASSIGN10>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN10>
-<ASSIGN11>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN11>
-<ASSIGN12>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN12>
-<ASSIGN13>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN13>
-<ASSIGN14>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN14>
-<ASSIGN15>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN15>
-<ASSIGN16>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN16>
-<INPUT_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>0</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>0</MltTyp1>
-	<MltTyp2>3</MltTyp2>
-	<MltTyp3>8</MltTyp3>
-</INPUT_FX>
-<TRACK_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>19</MltTyp1>
-	<MltTyp2>2</MltTyp2>
-	<MltTyp3>11</MltTyp3>
-</TRACK_FX>
-<BEAT_FX1>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX1>
-<BEAT_FX2>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX2>
-<BEAT_FX3>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX3>
-<INPUT_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX1>
-<INPUT_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX2>
-<INPUT_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX3>
-<TRACK_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX1>
-<TRACK_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX2>
-<TRACK_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX3>
-</mem>
-<mem id="5">
-<TRACK1>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK1>
-<TRACK2>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK2>
-<TRACK3>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK3>
-<TRACK4>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK4>
-<TRACK5>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK5>
-<RHYTHM>
-	<Sw>0</Sw>
-	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
-	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
-	<PlyCnt>0</PlyCnt>
-	<Stp>1</Stp>
-</RHYTHM>
-<NAME>
-	<C01>73</C01>
-	<C02>78</C02>
-	<C03>73</C03>
-	<C04>84</C04>
-	<C05>32</C05>
-	<C06>77</C06>
-	<C07>69</C07>
-	<C08>77</C08>
-	<C09>79</C09>
-	<C10>82</C10>
-	<C11>89</C11>
-	<C12>32</C12>
-</NAME>
-<MASTER>
-	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
-	<PhOut>0</PhOut>
-	<PhOutTr>31</PhOutTr>
-</MASTER>
-<REC_OPTION>
-	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
-	<RecQtz>1</RecQtz>
-</REC_OPTION>
-<PLAY_OPTION>
-	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
-	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
-	<AllStrt>31</AllStrt>
-	<AllStp>31</AllStp>
-	<FadeTim>2</FadeTim>
-	<TgtTr>0</TgtTr>
-</PLAY_OPTION>
-<ASSIGN1>
-	<Sw>1</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>79</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN1>
-<ASSIGN2>
-	<Sw>1</Sw>
-	<Src>1</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>37</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>0</TgtMax>
-</ASSIGN2>
-<ASSIGN3>
-	<Sw>1</Sw>
-	<Src>2</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>38</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>50</TgtMax>
-</ASSIGN3>
-<ASSIGN4>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN4>
-<ASSIGN5>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN5>
-<ASSIGN6>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN6>
-<ASSIGN7>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN7>
-<ASSIGN8>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN8>
-<ASSIGN9>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN9>
-<ASSIGN10>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN10>
-<ASSIGN11>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN11>
-<ASSIGN12>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN12>
-<ASSIGN13>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN13>
-<ASSIGN14>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN14>
-<ASSIGN15>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN15>
-<ASSIGN16>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN16>
-<INPUT_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>0</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>0</MltTyp1>
-	<MltTyp2>3</MltTyp2>
-	<MltTyp3>8</MltTyp3>
-</INPUT_FX>
-<TRACK_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>19</MltTyp1>
-	<MltTyp2>2</MltTyp2>
-	<MltTyp3>11</MltTyp3>
-</TRACK_FX>
-<BEAT_FX1>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX1>
-<BEAT_FX2>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX2>
-<BEAT_FX3>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX3>
-<INPUT_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX1>
-<INPUT_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX2>
-<INPUT_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX3>
-<TRACK_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX1>
-<TRACK_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX2>
-<TRACK_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX3>
-</mem>
-<mem id="6">
-<TRACK1>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK1>
-<TRACK2>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK2>
-<TRACK3>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK3>
-<TRACK4>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK4>
-<TRACK5>
-	<Rev>0</Rev>
-	<PlyLvl>50</PlyLvl>
-	<Pan>50</Pan>
-	<One>0</One>
-	<TrkFx>1</TrkFx>
-	<PlyMod>0</PlyMod>
-	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
-	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
-	<MeasBtLp>0</MeasBtLp>
-	<LpSync>1</LpSync>
-	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
-</TRACK5>
-<RHYTHM>
-	<Sw>0</Sw>
-	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
-	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
-	<PlyCnt>0</PlyCnt>
-	<Stp>1</Stp>
-</RHYTHM>
-<NAME>
-	<C01>73</C01>
-	<C02>78</C02>
-	<C03>73</C03>
-	<C04>84</C04>
-	<C05>32</C05>
-	<C06>77</C06>
-	<C07>69</C07>
-	<C08>77</C08>
-	<C09>79</C09>
-	<C10>82</C10>
-	<C11>89</C11>
-	<C12>32</C12>
-</NAME>
-<MASTER>
-	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
-	<PhOut>0</PhOut>
-	<PhOutTr>31</PhOutTr>
-</MASTER>
-<REC_OPTION>
-	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
-	<RecQtz>1</RecQtz>
-</REC_OPTION>
-<PLAY_OPTION>
-	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
-	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
-	<AllStrt>31</AllStrt>
-	<AllStp>31</AllStp>
-	<FadeTim>2</FadeTim>
-	<TgtTr>0</TgtTr>
-</PLAY_OPTION>
-<ASSIGN1>
-	<Sw>1</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>79</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN1>
-<ASSIGN2>
-	<Sw>1</Sw>
-	<Src>1</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>37</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>0</TgtMax>
-</ASSIGN2>
-<ASSIGN3>
-	<Sw>1</Sw>
-	<Src>2</Src>
-	<SrcMod>1</SrcMod>
-	<Tgt>38</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>50</TgtMax>
-</ASSIGN3>
-<ASSIGN4>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN4>
-<ASSIGN5>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN5>
-<ASSIGN6>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN6>
-<ASSIGN7>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN7>
-<ASSIGN8>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN8>
-<ASSIGN9>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN9>
-<ASSIGN10>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN10>
-<ASSIGN11>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN11>
-<ASSIGN12>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN12>
-<ASSIGN13>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN13>
-<ASSIGN14>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN14>
-<ASSIGN15>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN15>
-<ASSIGN16>
-	<Sw>0</Sw>
-	<Src>0</Src>
-	<SrcMod>0</SrcMod>
-	<Tgt>20</Tgt>
-	<TgtMin>0</TgtMin>
-	<TgtMax>100</TgtMax>
-</ASSIGN16>
-<INPUT_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>0</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>0</MltTyp1>
-	<MltTyp2>3</MltTyp2>
-	<MltTyp3>8</MltTyp3>
-</INPUT_FX>
-<TRACK_FX>
-	<Mod>1</Mod>
-	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
-	<MltSw>0</MltSw>
-	<MltTyp1>19</MltTyp1>
-	<MltTyp2>2</MltTyp2>
-	<MltTyp3>11</MltTyp3>
-</TRACK_FX>
-<BEAT_FX1>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX1>
-<BEAT_FX2>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX2>
-<BEAT_FX3>
-	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
-	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
-	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
-</BEAT_FX3>
-<INPUT_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX1>
-<INPUT_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX2>
-<INPUT_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</INPUT_FX3>
-<TRACK_FX1>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX1>
-<TRACK_FX2>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX2>
-<TRACK_FX3>
-	<FilTyp>0</FilTyp>
-	<FilRat>50</FilRat>
-	<FilDep>55</FilDep>
-	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
-	<FilStpRat>0</FilStpRat>
-	<PhRat>70</PhRat>
-	<PhDep>50</PhDep>
-	<PhReso>0</PhReso>
-	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
-	<FlRat>25</FlRat>
-	<FlDep>50</FlDep>
-	<FlReso>70</FlReso>
-	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
-	<SynFreq>50</SynFreq>
-	<SynReso>50</SynReso>
-	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
-	<LoFiDep>8</LoFiDep>
-	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
-	<RmBal>100</RmBal>
-	<GToB>50</GToB>
-	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
-	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
-	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
-	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
-	<DistTon>50</DistTon>
-	<DistLvl>50</DistLvl>
-	<VocoCar>0</VocoCar>
-	<VocoSens>50</VocoSens>
-	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
-	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
-	<EqLo>20</EqLo>
-	<EqLoMd>20</EqLoMd>
-	<EqHiMd>20</EqHiMd>
-	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
-	<IsoBnd>0</IsoBnd>
-	<IsoRat>103</IsoRat>
-	<IsoDep>100</IsoDep>
-	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
-	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
-	<PanTyp>0</PanTyp>
-	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
-	<PanStpRat>0</PanStpRat>
-	<PanPos>50</PanPos>
-	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
-	<TrLvl>50</TrLvl>
-	<SlPat>0</SlPat>
-	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
-	<DlyTim>200</DlyTim>
-	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
-	<PanDlyTim>200</PanDlyTim>
-	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
-	<EchRat>50</EchRat>
-	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
-	<GraFb>70</GraFb>
-	<GraLvl>50</GraLvl>
-	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
-	<RllFb>20</RllFb>
-	<RllLvl>50</RllLvl>
-	<ChoRat>50</ChoRat>
-	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
-	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
-	<RevDLvl>100</RevDLvl>
-</TRACK_FX3>
-</mem>
 <mem id="7">
 <TRACK1>
 	<Rev>0</Rev>
@@ -6031,13 +6031,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>830</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>510072</WavLen>
 </TRACK1>
 <TRACK2>
 	<Rev>0</Rev>
@@ -6049,13 +6049,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>830</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>510072</WavLen>
 </TRACK2>
 <TRACK3>
 	<Rev>0</Rev>
@@ -6067,13 +6067,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>830</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>510072</WavLen>
 </TRACK3>
 <TRACK4>
 	<Rev>0</Rev>
@@ -6085,13 +6085,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>352800</WavLen>
 </TRACK4>
 <TRACK5>
 	<Rev>0</Rev>
@@ -6103,13 +6103,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>4</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>830</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>510072</WavLen>
 </TRACK5>
 <RHYTHM>
 	<Sw>0</Sw>
@@ -6137,7 +6137,7 @@
 </NAME>
 <MASTER>
 	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
+	<Tmp>1180</Tmp>
 	<Cs>0</Cs>
 	<Rv>0</Rv>
 	<PhOut>0</PhOut>
@@ -6152,7 +6152,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
+	<LpLen>4</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -6289,9 +6289,9 @@
 <INPUT_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>0</Typ1>
+	<Sw>1</Sw>
+	<Sel>2</Sel>
+	<Typ1>9</Typ1>
 	<Typ2>4</Typ2>
 	<Typ3>17</Typ3>
 	<MltSw>0</MltSw>
@@ -6302,11 +6302,11 @@
 <TRACK_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
+	<Sw>1</Sw>
 	<Sel>0</Sel>
 	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
+	<Typ2>11</Typ2>
+	<Typ3>30</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>19</MltTyp1>
 	<MltTyp2>2</MltTyp2>
@@ -6334,17 +6334,17 @@
 	<RepTyp>0</RepTyp>
 	<RepLen>5</RepLen>
 	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
+	<ShftShft>0</ShftShft>
 	<ScatTyp>0</ScatTyp>
 	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
+	<Flick>18</Flick>
 </BEAT_FX3>
 <INPUT_FX1>
 	<FilTyp>0</FilTyp>
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>100</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -6355,7 +6355,7 @@
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>84</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
@@ -6369,9 +6369,9 @@
 	<SgSens>40</SgSens>
 	<SgRisTim>50</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>5</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
+	<PbBnd>10</PbBnd>
 	<RoboNote>0</RoboNote>
 	<RoboGen>10</RoboGen>
 	<DistDist>50</DistDist>
@@ -6397,7 +6397,7 @@
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>49</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
@@ -6415,11 +6415,11 @@
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
 	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<GraTim>97</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>0</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
@@ -6452,7 +6452,7 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>98</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -6625,7 +6625,7 @@
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>0</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
@@ -6734,15 +6734,15 @@
 	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
 	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
+	<DistDist>83</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>100</VocoBal>
 	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
+	<DynmDynm>40</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
@@ -6754,10 +6754,10 @@
 	<IsoStpRat>0</IsoStpRat>
 	<IsoLvl>100</IsoLvl>
 	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
+	<OctLvl>44</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>45</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
@@ -6768,7 +6768,7 @@
 	<SlDep>100</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>46</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
 	<PanDlyLvl>50</PanDlyLvl>
@@ -6869,14 +6869,14 @@
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>0</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
+	<ChoLvl>28</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>25</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </TRACK_FX3>
 </mem>
@@ -9729,11 +9729,11 @@
 <INPUT_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
+	<Sw>1</Sw>
 	<Sel>0</Sel>
 	<Typ1>0</Typ1>
 	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
+	<Typ3>21</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>0</MltTyp1>
 	<MltTyp2>3</MltTyp2>
@@ -9742,7 +9742,7 @@
 <TRACK_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
+	<Sw>1</Sw>
 	<Sel>0</Sel>
 	<Typ1>2</Typ1>
 	<Typ2>20</Typ2>
@@ -9772,7 +9772,7 @@
 </BEAT_FX2>
 <BEAT_FX3>
 	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
+	<RepLen>0</RepLen>
 	<ShftTyp>0</ShftTyp>
 	<ShftShft>3</ShftShft>
 	<ScatTyp>0</ScatTyp>
@@ -9784,7 +9784,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>32</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -9892,7 +9892,7 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>89</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -9982,27 +9982,27 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<LoFiBal>6</LoFiBal>
+	<RmFreq>48</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>64</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>86</SgRisTim>
 	<SgLvl>50</SgLvl>
 	<Trans>12</Trans>
 	<PbPit>2</PbPit>
 	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
+	<RoboGen>17</RoboGen>
+	<DistDist>44</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>62</VocoBal>
 	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
+	<DynmDynm>25</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
@@ -10017,11 +10017,11 @@
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>7</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
+	<TrDep>26</TrDep>
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
@@ -10031,22 +10031,22 @@
 	<DlyLvl>50</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
+	<PanDlyLvl>0</PanDlyLvl>
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<EchLvl>0</EchLvl>
+	<GraTim>0</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>0</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
 	<ChoLvl>50</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>87</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </INPUT_FX3>
 <TRACK_FX1>
@@ -10065,7 +10065,7 @@
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>0</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
@@ -10208,7 +10208,7 @@
 	<SlDep>100</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>100</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
 	<PanDlyLvl>50</PanDlyLvl>
@@ -67091,13 +67091,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>88200</WavLen>
 </TRACK1>
 <TRACK2>
 	<Rev>0</Rev>
@@ -67109,13 +67109,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>88200</WavLen>
 </TRACK2>
 <TRACK3>
 	<Rev>0</Rev>
@@ -67127,13 +67127,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>88200</WavLen>
 </TRACK3>
 <TRACK4>
 	<Rev>0</Rev>
@@ -67145,13 +67145,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>88200</WavLen>
 </TRACK4>
 <TRACK5>
 	<Rev>0</Rev>
@@ -67163,16 +67163,16 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>1</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>88200</WavLen>
 </TRACK5>
 <RHYTHM>
-	<Sw>0</Sw>
+	<Sw>2</Sw>
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
@@ -67197,7 +67197,7 @@
 </NAME>
 <MASTER>
 	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
+	<Tmp>1110</Tmp>
 	<Cs>0</Cs>
 	<Rv>0</Rv>
 	<PhOut>0</PhOut>
@@ -67212,7 +67212,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
+	<LpLen>1</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -67350,7 +67350,7 @@
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
-	<Sel>0</Sel>
+	<Sel>1</Sel>
 	<Typ1>0</Typ1>
 	<Typ2>4</Typ2>
 	<Typ3>17</Typ3>
@@ -67404,7 +67404,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>0</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -67512,7 +67512,7 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>0</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -67637,7 +67637,7 @@
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>0</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
@@ -79149,13 +79149,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>8</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1120</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>756000</WavLen>
 </TRACK2>
 <TRACK3>
 	<Rev>0</Rev>
@@ -79167,13 +79167,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>8</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1120</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>756000</WavLen>
 </TRACK3>
 <TRACK4>
 	<Rev>0</Rev>
@@ -79203,18 +79203,18 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>8</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>880</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>962176</WavLen>
 </TRACK5>
 <RHYTHM>
 	<Sw>0</Sw>
 	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
+	<Ptn>49</Ptn>
 	<Bt>2</Bt>
 	<LineOut>1</LineOut>
 	<RecCnt>0</RecCnt>
@@ -79237,7 +79237,7 @@
 </NAME>
 <MASTER>
 	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
+	<Tmp>1120</Tmp>
 	<Cs>0</Cs>
 	<Rv>0</Rv>
 	<PhOut>0</PhOut>
@@ -79252,7 +79252,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
+	<LpLen>8</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -79389,11 +79389,11 @@
 <INPUT_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
+	<Sw>1</Sw>
 	<Sel>0</Sel>
-	<Typ1>0</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
+	<Typ1>1</Typ1>
+	<Typ2>1</Typ2>
+	<Typ3>18</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>0</MltTyp1>
 	<MltTyp2>3</MltTyp2>
@@ -79403,10 +79403,10 @@
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
+	<Sel>1</Sel>
+	<Typ1>0</Typ1>
+	<Typ2>24</Typ2>
+	<Typ3>20</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>19</MltTyp1>
 	<MltTyp2>2</MltTyp2>
@@ -79423,34 +79423,34 @@
 </BEAT_FX1>
 <BEAT_FX2>
 	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
+	<RepLen>6</RepLen>
 	<ShftTyp>0</ShftTyp>
-	<ShftShft>3</ShftShft>
+	<ShftShft>2</ShftShft>
 	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
+	<ScatLen>1</ScatLen>
+	<Flick>76</Flick>
 </BEAT_FX2>
 <BEAT_FX3>
 	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
+	<RepLen>3</RepLen>
 	<ShftTyp>0</ShftTyp>
 	<ShftShft>3</ShftShft>
 	<ScatTyp>0</ScatTyp>
 	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
+	<Flick>0</Flick>
 </BEAT_FX3>
 <INPUT_FX1>
 	<FilTyp>0</FilTyp>
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>78</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
 	<PhReso>0</PhReso>
 	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
+	<PhLvl>89</PhLvl>
 	<FlRat>25</FlRat>
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
@@ -79462,7 +79462,7 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>96</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -79471,7 +79471,7 @@
 	<SgLvl>50</SgLvl>
 	<Trans>12</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
+	<PbBnd>93</PbBnd>
 	<RoboNote>0</RoboNote>
 	<RoboGen>10</RoboGen>
 	<DistDist>50</DistDist>
@@ -79642,10 +79642,10 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>100</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>97</GToB>
 	<SgSens>40</SgSens>
 	<SgRisTim>50</SgRisTim>
 	<SgLvl>50</SgLvl>
@@ -79660,7 +79660,7 @@
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>100</VocoBal>
 	<DynmTyp>0</DynmTyp>
 	<DynmDynm>20</DynmDynm>
 	<EqLo>20</EqLo>
@@ -79677,7 +79677,7 @@
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>100</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
@@ -79714,7 +79714,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>32</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -79725,7 +79725,7 @@
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>33</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
@@ -79739,9 +79739,9 @@
 	<SgSens>40</SgSens>
 	<SgRisTim>50</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>5</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
+	<PbBnd>0</PbBnd>
 	<RoboNote>0</RoboNote>
 	<RoboGen>10</RoboGen>
 	<DistDist>50</DistDist>
@@ -79762,7 +79762,7 @@
 	<IsoRat>103</IsoRat>
 	<IsoDep>100</IsoDep>
 	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
+	<IsoLvl>0</IsoLvl>
 	<OctMod>0</OctMod>
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
@@ -79804,68 +79804,68 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>68</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
 	<PhReso>0</PhReso>
 	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
+	<PhLvl>71</PhLvl>
 	<FlRat>25</FlRat>
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>74</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
+	<SynBal>77</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<LoFiBal>62</LoFiBal>
+	<RmFreq>79</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>17</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>29</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>16</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
+	<PbBnd>67</PbBnd>
 	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
+	<RoboGen>14</RoboGen>
+	<DistDist>69</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>70</VocoBal>
 	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
+	<DynmDynm>27</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
 	<EqHi>20</EqHi>
-	<EqLvl>20</EqLvl>
+	<EqLvl>34</EqLvl>
 	<IsoBnd>0</IsoBnd>
 	<IsoRat>103</IsoRat>
 	<IsoDep>100</IsoDep>
 	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
+	<IsoLvl>42</IsoLvl>
 	<OctMod>0</OctMod>
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>37</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
+	<TrDep>64</TrDep>
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
+	<SlDep>72</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
 	<DlyLvl>50</DlyLvl>
@@ -79875,18 +79875,18 @@
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
 	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<GraTim>0</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>0</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
+	<ChoLvl>73</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>74</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </TRACK_FX2>
 <TRACK_FX3>
@@ -79951,14 +79951,14 @@
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
+	<TrDep>27</TrDep>
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
 	<SlDep>100</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>67</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
 	<PanDlyLvl>50</PanDlyLvl>
@@ -80009,13 +80009,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>3</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<WavStat>1</WavStat>
+	<WavLen>264600</WavLen>
 </TRACK2>
 <TRACK3>
 	<Rev>0</Rev>
@@ -80027,13 +80027,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>3</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1070</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>296745</WavLen>
 </TRACK3>
 <TRACK4>
 	<Rev>0</Rev>
@@ -80045,13 +80045,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>3</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>1230</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>258144</WavLen>
 </TRACK4>
 <TRACK5>
 	<Rev>0</Rev>
@@ -80063,18 +80063,18 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>0</MeasLen>
+	<MeasLen>3</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>1200</RecTmp>
-	<WavStat>0</WavStat>
-	<WavLen>0</WavLen>
+	<RecTmp>880</RecTmp>
+	<WavStat>1</WavStat>
+	<WavLen>360816</WavLen>
 </TRACK5>
 <RHYTHM>
 	<Sw>0</Sw>
 	<Lvl>50</Lvl>
-	<Ptn>0</Ptn>
+	<Ptn>14</Ptn>
 	<Bt>2</Bt>
 	<LineOut>1</LineOut>
 	<RecCnt>0</RecCnt>
@@ -80097,7 +80097,7 @@
 </NAME>
 <MASTER>
 	<Lvl>50</Lvl>
-	<Tmp>1200</Tmp>
+	<Tmp>1070</Tmp>
 	<Cs>0</Cs>
 	<Rv>0</Rv>
 	<PhOut>0</PhOut>
@@ -80112,7 +80112,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>0</LpLen>
+	<LpLen>3</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -80250,10 +80250,10 @@
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>0</Typ1>
-	<Typ2>4</Typ2>
-	<Typ3>17</Typ3>
+	<Sel>2</Sel>
+	<Typ1>23</Typ1>
+	<Typ2>26</Typ2>
+	<Typ3>19</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>0</MltTyp1>
 	<MltTyp2>3</MltTyp2>
@@ -80262,11 +80262,11 @@
 <TRACK_FX>
 	<Mod>1</Mod>
 	<MltMod>0</MltMod>
-	<Sw>0</Sw>
-	<Sel>0</Sel>
-	<Typ1>2</Typ1>
-	<Typ2>20</Typ2>
-	<Typ3>27</Typ3>
+	<Sw>1</Sw>
+	<Sel>2</Sel>
+	<Typ1>19</Typ1>
+	<Typ2>0</Typ2>
+	<Typ3>0</Typ3>
 	<MltSw>0</MltSw>
 	<MltTyp1>19</MltTyp1>
 	<MltTyp2>2</MltTyp2>
@@ -80274,12 +80274,12 @@
 </TRACK_FX>
 <BEAT_FX1>
 	<RepTyp>0</RepTyp>
-	<RepLen>5</RepLen>
+	<RepLen>8</RepLen>
 	<ShftTyp>0</ShftTyp>
 	<ShftShft>3</ShftShft>
 	<ScatTyp>0</ScatTyp>
-	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
+	<ScatLen>5</ScatLen>
+	<Flick>94</Flick>
 </BEAT_FX1>
 <BEAT_FX2>
 	<RepTyp>0</RepTyp>
@@ -80297,14 +80297,14 @@
 	<ShftShft>3</ShftShft>
 	<ScatTyp>0</ScatTyp>
 	<ScatLen>3</ScatLen>
-	<Flick>50</Flick>
+	<Flick>62</Flick>
 </BEAT_FX3>
 <INPUT_FX1>
 	<FilTyp>0</FilTyp>
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>42</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -80329,7 +80329,7 @@
 	<SgSens>40</SgSens>
 	<SgRisTim>50</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>22</Trans>
 	<PbPit>2</PbPit>
 	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
@@ -80357,11 +80357,11 @@
 	<OctLvl>50</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>100</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
+	<TrDep>100</TrDep>
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
@@ -80379,14 +80379,14 @@
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>4</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
+	<ChoLvl>90</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>83</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </INPUT_FX1>
 <INPUT_FX2>
@@ -80394,7 +80394,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>100</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -80413,17 +80413,17 @@
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
 	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<RmFreq>44</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>100</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>66</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>0</Trans>
 	<PbPit>2</PbPit>
 	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
+	<RoboGen>20</RoboGen>
 	<DistDist>50</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
@@ -80484,7 +80484,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>0</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -80495,32 +80495,32 @@
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>8</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
+	<SynBal>37</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<LoFiBal>44</LoFiBal>
+	<RmFreq>100</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>94</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>78</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>17</Trans>
 	<PbPit>2</PbPit>
 	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
 	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
+	<DistDist>3</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>89</VocoBal>
 	<DynmTyp>0</DynmTyp>
 	<DynmDynm>20</DynmDynm>
 	<EqLo>20</EqLo>
@@ -80574,45 +80574,45 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>86</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
 	<PhReso>0</PhReso>
 	<PhStpRat>0</PhStpRat>
-	<PhLvl>50</PhLvl>
+	<PhLvl>78</PhLvl>
 	<FlRat>25</FlRat>
 	<FlDep>50</FlDep>
 	<FlReso>70</FlReso>
 	<FlStpRat>0</FlStpRat>
-	<FlLvl>50</FlLvl>
+	<FlLvl>0</FlLvl>
 	<SynFreq>50</SynFreq>
 	<SynReso>50</SynReso>
 	<SynDecay>50</SynDecay>
-	<SynBal>90</SynBal>
+	<SynBal>89</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<LoFiBal>86</LoFiBal>
+	<RmFreq>78</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>71</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>54</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>13</Trans>
 	<PbPit>2</PbPit>
-	<PbBnd>100</PbBnd>
+	<PbBnd>41</PbBnd>
 	<RoboNote>0</RoboNote>
-	<RoboGen>10</RoboGen>
-	<DistDist>50</DistDist>
+	<RoboGen>8</RoboGen>
+	<DistDist>0</DistDist>
 	<DistTon>50</DistTon>
 	<DistLvl>50</DistLvl>
 	<VocoCar>0</VocoCar>
 	<VocoSens>50</VocoSens>
 	<VocoAtck>50</VocoAtck>
-	<VocoBal>50</VocoBal>
+	<VocoBal>97</VocoBal>
 	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
+	<DynmDynm>35</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
@@ -80622,12 +80622,12 @@
 	<IsoRat>103</IsoRat>
 	<IsoDep>100</IsoDep>
 	<IsoStpRat>0</IsoStpRat>
-	<IsoLvl>100</IsoLvl>
+	<IsoLvl>85</IsoLvl>
 	<OctMod>0</OctMod>
-	<OctLvl>50</OctLvl>
+	<OctLvl>83</OctLvl>
 	<PanTyp>0</PanTyp>
 	<PanRat>50</PanRat>
-	<PanDep>50</PanDep>
+	<PanDep>18</PanDep>
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
@@ -80635,17 +80635,17 @@
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
+	<SlDep>120</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>76</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
+	<PanDlyLvl>74</PanDlyLvl>
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<EchLvl>100</EchLvl>
+	<GraTim>90</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
@@ -80654,9 +80654,9 @@
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
+	<ChoLvl>100</ChoLvl>
 	<RevTim>27</RevTim>
-	<RevLvl>50</RevLvl>
+	<RevLvl>0</RevLvl>
 	<RevDLvl>100</RevDLvl>
 </TRACK_FX1>
 <TRACK_FX2>
@@ -80682,7 +80682,7 @@
 	<SynBal>90</SynBal>
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
-	<LoFiBal>50</LoFiBal>
+	<LoFiBal>74</LoFiBal>
 	<RmFreq>50</RmFreq>
 	<RmBal>100</RmBal>
 	<GToB>50</GToB>
@@ -80728,7 +80728,7 @@
 	<SlDep>100</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>48</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
 	<PanDlyLvl>50</PanDlyLvl>
@@ -80754,7 +80754,7 @@
 	<FilRat>50</FilRat>
 	<FilDep>55</FilDep>
 	<FilReso>50</FilReso>
-	<FilCut>50</FilCut>
+	<FilCut>67</FilCut>
 	<FilStpRat>0</FilStpRat>
 	<PhRat>70</PhRat>
 	<PhDep>50</PhDep>
@@ -80773,13 +80773,13 @@
 	<LoFiDep>8</LoFiDep>
 	<LoFiSmpl>15</LoFiSmpl>
 	<LoFiBal>50</LoFiBal>
-	<RmFreq>50</RmFreq>
+	<RmFreq>0</RmFreq>
 	<RmBal>100</RmBal>
-	<GToB>50</GToB>
+	<GToB>88</GToB>
 	<SgSens>40</SgSens>
-	<SgRisTim>50</SgRisTim>
+	<SgRisTim>84</SgRisTim>
 	<SgLvl>50</SgLvl>
-	<Trans>12</Trans>
+	<Trans>0</Trans>
 	<PbPit>2</PbPit>
 	<PbBnd>100</PbBnd>
 	<RoboNote>0</RoboNote>
@@ -80792,7 +80792,7 @@
 	<VocoAtck>50</VocoAtck>
 	<VocoBal>50</VocoBal>
 	<DynmTyp>0</DynmTyp>
-	<DynmDynm>20</DynmDynm>
+	<DynmDynm>17</DynmDynm>
 	<EqLo>20</EqLo>
 	<EqLoMd>20</EqLoMd>
 	<EqHiMd>20</EqHiMd>
@@ -80811,30 +80811,30 @@
 	<PanStpRat>0</PanStpRat>
 	<PanPos>50</PanPos>
 	<TrRat>85</TrRat>
-	<TrDep>50</TrDep>
+	<TrDep>61</TrDep>
 	<TrLvl>50</TrLvl>
 	<SlPat>0</SlPat>
 	<SlRat>110</SlRat>
-	<SlDep>100</SlDep>
+	<SlDep>66</SlDep>
 	<DlyTim>200</DlyTim>
 	<DlyFb>20</DlyFb>
-	<DlyLvl>50</DlyLvl>
+	<DlyLvl>42</DlyLvl>
 	<PanDlyTim>200</PanDlyTim>
 	<PanDlyFb>20</PanDlyFb>
-	<PanDlyLvl>50</PanDlyLvl>
+	<PanDlyLvl>41</PanDlyLvl>
 	<EchRat>50</EchRat>
 	<EchInt>50</EchInt>
-	<EchLvl>50</EchLvl>
-	<GraTim>50</GraTim>
+	<EchLvl>29</EchLvl>
+	<GraTim>21</GraTim>
 	<GraFb>70</GraFb>
 	<GraLvl>50</GraLvl>
 	<RllTim>1008</RllTim>
-	<RllMod>2</RllMod>
+	<RllMod>0</RllMod>
 	<RllFb>20</RllFb>
 	<RllLvl>50</RllLvl>
 	<ChoRat>50</ChoRat>
 	<ChoDep>50</ChoDep>
-	<ChoLvl>50</ChoLvl>
+	<ChoLvl>13</ChoLvl>
 	<RevTim>27</RevTim>
 	<RevLvl>50</RevLvl>
 	<RevDLvl>100</RevDLvl>
