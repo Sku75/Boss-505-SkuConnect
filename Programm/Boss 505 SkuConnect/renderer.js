@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.39, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.40, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -500,6 +500,20 @@ async function laden(li) {
 
   // Initialize fragt bewusst nach. Der Vorgang loescht Aufnahmen und laesst
   // sich am Geraet nicht rueckgaengig machen.
+  // Auf Werkstatt umstellen geht nur am Gerät, weil es dafür kein Laufwerk
+  // zum Schreiben gibt. Statt einer langen Ansage steht hier ein Schritt je
+  // Zeile, damit man sich mit Pfeil runter durchhangeln kann.
+  if (art === "art-werkstatt") {
+    const z = await zustandLesen();
+    letzterZustand = z;
+    if (z === "werkstatt") {
+      sage("Steht schon auf Werkstatt");
+      return false;
+    }
+    setzeKinder(li, WERKSTATT_SCHRITTE.map(s => ({ typ: "aktion", id: "schritt", text: s })));
+    return true;
+  }
+
   if (art === "initfrage") {
     if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return false; }
     setzeKinder(li, [
@@ -1114,6 +1128,25 @@ async function betriebsartAnsagen(li) {
 }
 
 // Stellt die Betriebsart um. ziel ist buehne oder werkstatt.
+// Ein Schritt je Zeile. Beim Wandern mit Pfeil runter liest die Sprachausgabe
+// genau einen Schritt vor. Enter wiederholt ihn.
+const WERKSTATT_SCHRITTE = [
+  "Schritt 1, drei Mal EXIT drücken",
+  "Schritt 2, ein Mal SYSTEM drücken, du stehst auf Eintrag 1",
+  "Schritt 3, elf Mal Pfeil rechts drücken, du stehst auf dem Anker",
+  "Schritt 4, Regler eine Raste nach links drehen",
+  "Schritt 5, ins Mikrofon sprechen",
+  "Schritt 6, wird das Mikrofon in der Box stumm, stehst du richtig",
+  "Schritt 7, Regler sofort eine Raste nach rechts zurück",
+  "Schritt 8, bleibt das Mikrofon hörbar, EXIT drücken und bei Schritt 1 neu beginnen",
+  "Schritt 9, zwei Mal Pfeil rechts drücken, du stehst auf der USB-Betriebsart",
+  "Schritt 10, Regler eine Raste nach links drehen, das ist STORAGE",
+  "Schritt 11, ein Mal EXIT drücken",
+  "Schritt 12, Station ausschalten und wieder einschalten",
+  "Schritt 13, USB abziehen und neu stecken",
+  "Schritt 14, hier im Programm Station suchen wählen"
+];
+
 async function betriebsartWechseln(li, ziel) {
   const z = await zustandLesen();
   letzterZustand = z;
@@ -1152,20 +1185,10 @@ async function betriebsartWechseln(li, ziel) {
   // In der Bühne gibt es kein Laufwerk. Dafür reagiert dort das Bedienfeld,
   // also geht es am Gerät. Der Regler-Schritt ist der entscheidende, er wird
   // am häufigsten vergessen.
-  ergebnis(li, "Am Gerät umstellen, Schritt für Schritt", [
-    "Im Bühnen-Modus gibt es kein Laufwerk, Boss 505 SkuConnect kann nichts schreiben",
+  ergebnis(li, "Das geht nur am Gerät", [
+    "Im Bühnen-Modus gibt es kein Laufwerk, das Programm kann nichts schreiben",
     "Dafür reagiert jetzt das Bedienfeld der Station",
-    "Schritt 1: Taste 2.2, EXIT, drei Mal drücken, damit du sicher im Spielbildschirm bist",
-    "Schritt 2: Taste 1.3, SYSTEM, genau ein Mal drücken. Du stehst auf Wert 01",
-    "Schritt 3: Taste 1.2, Pfeil rechts, elf Mal drücken. Du stehst auf Wert 12",
-    "Kontrolle: Regler eine Raste nach links und ins Mikrofon sprechen",
-    "Wird das Mikrofon in der Box stumm, stehst du richtig. Regler sofort zurück",
-    "Bleibt das Mikrofon an, stehst du woanders. Dann 2.2 drücken und neu beginnen",
-    "Schritt 4: Taste 1.2 noch zwei Mal drücken. Du stehst auf Wert 14, USB-Betriebsart",
-    "Schritt 5: Regler eine Raste nach links, es gibt nur zwei Werte",
-    "Schritt 6: Taste 2.2, EXIT, einmal drücken",
-    "Schritt 7: Station aus und wieder einschalten, dann USB verbinden",
-    "Die Reihenfolge steht auch in der Werkstatt unter Gerätemenü zum Nachzählen"
+    "Die Schritte stehen in diesem Menüpunkt, eine Ebene tiefer"
   ]);
 }
 
@@ -1434,7 +1457,7 @@ const menue = [
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
     { typ: "aktion", id: "art-buehne", text: "Auf Bühne umstellen, Audio und MIDI" },
-    { typ: "aktion", id: "art-werkstatt", text: "Auf Werkstatt umstellen, Datenmodus" },
+    { typ: "ordner", text: "Auf Werkstatt umstellen, Datenmodus", laden: "art-werkstatt" },
     { typ: "aktion", id: "usb-vorbereiten", text: "Trennung vorbereiten" },
     { typ: "aktion", id: "usb-erneuern", text: "Verbindung erneuern" }
   ]},
@@ -1471,9 +1494,10 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.39"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.40"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
+    case "schritt": sage(li.dataset.text); return;
     case "init-abbrechen": sage("Abgebrochen, nichts geändert"); return;
     case "init-ausfuehren": await platzInitialisieren(li); return;
     case "ct-ausfuehren": await spurKopieren(li); return;
