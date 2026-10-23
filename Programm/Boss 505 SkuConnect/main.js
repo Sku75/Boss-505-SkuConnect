@@ -726,6 +726,162 @@ async function treiberInstallieren() {
   };
 }
 
+// =====================================================================
+// Track-Profile
+//
+// Ein Profil haelt die Abweichungen eines Speicherplatzes vom Werkszustand
+// fest, nichts weiter. Damit ist es zugleich das Protokoll: man sieht, was
+// umgestellt wurde. Beim Anwenden werden nur diese Felder geschrieben, der
+// Rest des Platzes bleibt unberuehrt. Der Name gehoert nicht dazu, den
+// vergibt der Nutzer je Platz. Das System menue auch nicht, es gilt fuer
+// das ganze Geraet.
+// =====================================================================
+
+const PROFIL_ABSCHNITTE = ['MASTER', 'REC_OPTION', 'PLAY_OPTION', 'RHYTHM',
+  'TRACK1', 'TRACK2', 'TRACK3', 'TRACK4', 'TRACK5', 'INPUT_FX', 'TRACK_FX',
+  'INPUT_FX1', 'INPUT_FX2', 'INPUT_FX3', 'TRACK_FX1', 'TRACK_FX2', 'TRACK_FX3',
+  'BEAT_FX1', 'BEAT_FX2', 'BEAT_FX3'];
+for (let i = 1; i <= 16; i++) PROFIL_ABSCHNITTE.push('ASSIGN' + i);
+
+// Diese Felder beschreiben eine Aufnahme, keine Einstellung.
+const PROFIL_FELDER_AUS = ['WavStat', 'WavLen', 'RecTmp'];
+
+function profilOrdner() { return path.join(__dirname, 'Profile'); }
+
+function profilName(name) {
+  return String(name || '').replace(/[\\/:*?"<>|.]/g, '').trim().slice(0, 12);
+}
+
+function profilDatei(name) {
+  return path.join(profilOrdner(), profilName(name) + '.json');
+}
+
+// Die Nummer des unbespielten INIT-MEMORY-Platzes. Er ist der Werkszustand.
+function vorlagePlatz(inhalt) {
+  for (let id = 0; id < 99; id++) {
+    const g = blockGrenzen(inhalt, id);
+    if (!g) break;
+    if (nameAusBlock(inhalt, g.start, g.ende).trim() !== 'INIT MEMORY') continue;
+    const block = inhalt.slice(g.start, g.ende);
+    if ([...block.matchAll(/<WavStat>(\d+)<\/WavStat>/g)].some(m => m[1] !== '0')) continue;
+    return id + 1;
+  }
+  return null;
+}
+
+function platzWerte(inhalt, nummer) {
+  const g = blockGrenzen(inhalt, nummer - 1);
+  if (!g) throw new Error('Speicherplatz ' + nummer + ' nicht gefunden');
+  const werte = {};
+  for (const a of PROFIL_ABSCHNITTE) {
+    const w = abschnittLesen(inhalt, a, g.start, g.ende);
+    if (w) werte[a] = w;
+  }
+  return werte;
+}
+
+async function profileLesen() {
+  await fsp.mkdir(profilOrdner(), { recursive: true });
+  const liste = [];
+  for (const datei of await fsp.readdir(profilOrdner())) {
+    if (!datei.toLowerCase().endsWith('.json')) continue;
+    try {
+      const p = JSON.parse(await fsp.readFile(path.join(profilOrdner(), datei), 'utf8'));
+      if (p && p.name && Array.isArray(p.werte)) liste.push(p);
+    } catch (f) {
+      // Unlesbare Datei wird uebersprungen, der Rest bleibt nutzbar.
+    }
+  }
+  liste.sort((a, b) => a.name.localeCompare(b.name, 'de'));
+  return { profile: liste };
+}
+
+// Vergleicht einen Platz mit dem Werkszustand und haelt die Unterschiede fest.
+async function profilAnlegen(rolandPfad, nummer, name) {
+  const kurz = profilName(name);
+  if (!kurz) throw new Error('Der Name ist leer');
+  const inhalt = await dateiLesen(rolandPfad, 'MEMORY');
+  const vorlage = vorlagePlatz(inhalt);
+  if (!vorlage) throw new Error('Kein unbespielter Platz mit dem Namen INIT MEMORY, der Werkszustand fehlt');
+  const ist = platzWerte(inhalt, nummer);
+  const soll = platzWerte(inhalt, vorlage);
+  const werte = [];
+  for (const a of Object.keys(ist)) {
+    for (const f of Object.keys(ist[a])) {
+      if (PROFIL_FELDER_AUS.includes(f)) continue;
+      const werk = soll[a] ? soll[a][f] : undefined;
+      if (werk === undefined || ist[a][f] === werk) continue;
+      werte.push({ abschnitt: a, feld: f, wert: ist[a][f], werk });
+    }
+  }
+  const profil = { name: kurz, quelle: nummer, vorlage, werte,
+    angelegt: new Date().toISOString().slice(0, 10) };
+  await fsp.mkdir(profilOrdner(), { recursive: true });
+  await fsp.writeFile(profilDatei(kurz), JSON.stringify(profil, null, 2), 'utf8');
+  return { profil };
+}
+
+async function profilUmbenennen(alt, neu) {
+  const kurz = profilName(neu);
+  if (!kurz) throw new Error('Der Name ist leer');
+  const profil = JSON.parse(await fsp.readFile(profilDatei(alt), 'utf8'));
+  profil.name = kurz;
+  await fsp.writeFile(profilDatei(kurz), JSON.stringify(profil, null, 2), 'utf8');
+  if (profilName(alt) !== kurz) await fsp.rm(profilDatei(alt), { force: true });
+  return { name: kurz };
+}
+
+async function profilLoeschen(name) {
+  await fsp.rm(profilDatei(name), { force: true });
+  return { geloescht: profilName(name) };
+}
+
+// Schreibt die Werte eines Profils auf einen oder mehrere Plaetze. Einmal
+// lesen, alles setzen, einmal schreiben, danach jedes Feld zurueckpruefen.
+async function profilAnwenden(rolandPfad, name, nummern) {
+  const profil = JSON.parse(await fsp.readFile(profilDatei(name), 'utf8'));
+  if (!profil.werte.length) return { plaetze: 0, felder: 0, abweichungen: 0, bestaetigt: true, leer: true };
+  if (!nummern || !nummern.length) throw new Error('Kein Zielplatz angegeben');
+  await standSichern(rolandPfad);
+  const pfad = dateiPfad(rolandPfad, 'MEMORY');
+  let inhalt = await fsp.readFile(pfad, 'latin1');
+  let felder = 0;
+  for (const nummer of nummern) {
+    for (const w of profil.werte) {
+      const g = blockGrenzen(inhalt, nummer - 1);
+      if (!g) throw new Error('Speicherplatz ' + nummer + ' nicht gefunden');
+      const a = abschnittGrenzen(inhalt, w.abschnitt, g.start, g.ende);
+      if (!a) continue;
+      const f = feldGrenzen(inhalt, w.feld, a.start, a.ende);
+      if (!f) continue;
+      if (inhalt.slice(f.start, f.ende) === String(w.wert)) continue;
+      inhalt = inhalt.slice(0, f.start) + String(w.wert) + inhalt.slice(f.ende);
+      felder++;
+    }
+  }
+  await fsp.writeFile(pfad, inhalt, 'latin1');
+
+  const kontrolle = await fsp.readFile(pfad, 'latin1');
+  let abweichungen = 0;
+  for (const nummer of nummern) {
+    const g = blockGrenzen(kontrolle, nummer - 1);
+    if (!g) { abweichungen++; continue; }
+    for (const w of profil.werte) {
+      const a = abschnittGrenzen(kontrolle, w.abschnitt, g.start, g.ende);
+      if (!a) continue;
+      const f = feldGrenzen(kontrolle, w.feld, a.start, a.ende);
+      if (!f || kontrolle.slice(f.start, f.ende) !== String(w.wert)) abweichungen++;
+    }
+  }
+  return { plaetze: nummern.length, felder, abweichungen, bestaetigt: abweichungen === 0 };
+}
+
+// Leer heisst: auf keiner der fuenf Spuren liegt eine Aufnahme.
+async function leerePlaetze(rolandPfad) {
+  const plaetze = await speicherplaetzeLesen(rolandPfad);
+  return { nummern: plaetze.filter(p => p.spuren === 0).map(p => p.nummer) };
+}
+
 function audioGeraete(aktion, suche, rolle) {
   return new Promise((fertig) => {
     const skript = path.join(__dirname, 'werkzeug', 'audio-geraete.ps1');
@@ -754,6 +910,12 @@ function audioGeraete(aktion, suche, rolle) {
 }
 
 ipcMain.handle('audio-geraete', sicher(audioGeraete));
+ipcMain.handle('profile-lesen', sicher(profileLesen));
+ipcMain.handle('profil-anlegen', sicher(profilAnlegen));
+ipcMain.handle('profil-umbenennen', sicher(profilUmbenennen));
+ipcMain.handle('profil-loeschen', sicher(profilLoeschen));
+ipcMain.handle('profil-anwenden', sicher(profilAnwenden));
+ipcMain.handle('leere-plaetze', sicher(leerePlaetze));
 ipcMain.handle('treiber-pruefen', sicher(treiberPruefen));
 ipcMain.handle('treiber-installieren', sicher(treiberInstallieren));
 ipcMain.handle('usb-steuern', sicher(usbSteuern));

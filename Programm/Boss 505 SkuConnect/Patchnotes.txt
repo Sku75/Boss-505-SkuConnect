@@ -1,5 +1,21 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.45, 23.10.2026
+In der Werkstatt steht neu Track-Profile, direkt unter Station suchen.
+Ein Profil haelt nur die Abweichungen eines Platzes vom Werkszustand fest.
+Damit ist es zugleich das Protokoll: Umschalt und Pfeil runter liest Zeile
+fuer Zeile vor, was umgestellt ist, mit Wert und Werkswert.
+Im Menue eines Profils: auf den gewaehlten Platz schreiben, auf alle leeren
+Plaetze schreiben, ueberschreiben, umbenennen, loeschen, und den gewaehlten
+Platz auf Werkszustand zuruecksetzen.
+Der Name des Platzes gehoert nicht zum Profil, das System menue auch nicht.
+Auf alle leeren Plaetze fragt vorher nach und zaehlt die Plaetze in dem
+Moment neu. Leer heisst: auf keiner der fuenf Spuren liegt eine Aufnahme.
+Geschrieben wird einmal, danach wird jedes Feld zurueckgelesen und
+verglichen. Der Stand davor liegt in Git.
+Die Profile liegen als Dateien im Ordner Profile im Programmordner und
+wandern beim Kopieren mit.
+
 Version 0.44, 23.10.2026
 Im Live-Studio gibt es den Schalter USB-Ton zur Station. Er stellt das
 Wiedergabegeraet von Windows um, zwischen Kopfhoerer am Rechner und der

@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.44, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.45, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -398,6 +398,8 @@ function tooltipZeilen(li) {
     return zeilen;
   }
   if (li._ergebnis) return li._ergebnis;
+  // Ordner mit Vorschau: das Profil sagt Zeile für Zeile, was drin steht.
+  if (li.dataset.typ === "ordner" && li._vorschau) return li._vorschau;
   // Aktionen, die noch nicht gelaufen sind, sagen was danach eingestellt ist,
   // sofern sie eine Vorschau mitbringen. Sonst nur der Hinweis zum Ausführen.
   if (li.dataset.typ === "aktion") return li._vorschau || ["Bitte ausführen"];
@@ -505,6 +507,68 @@ async function laden(li) {
   if (art === "schritte-buehne" || art === "schritte-werkstatt") {
     const ziel = art === "schritte-buehne" ? "buehne" : "werkstatt";
     setzeKinder(li, schritteFuer(ziel).map(s => ({ typ: "aktion", id: "schritt", text: s })));
+    return true;
+  }
+
+  // Track-Profile. Ein Profil hält nur die Abweichungen vom Werkszustand.
+  if (art === "profile") {
+    const e = await window.skuConnect.profileLesen();
+    if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
+    const kinder = e.profile.map(p => ({
+      typ: "ordner", laden: "profil", ziel: p.name,
+      text: p.name + ", " + p.werte.length + (p.werte.length === 1 ? " Abweichung" : " Abweichungen"),
+      vorschau: profilZeilen(p)
+    }));
+    kinder.push({ typ: "aktion", id: "profil-neu", text: "Neues Profil erstellen" });
+    setzeKinder(li, kinder);
+    return true;
+  }
+
+  if (art === "profil") {
+    const name = li.dataset.ziel;
+    const platz = gewaehlterPlatz ? String(gewaehlterPlatz).padStart(2, "0") : null;
+    setzeKinder(li, [
+      { typ: "aktion", id: "profil-platz", ziel: name,
+        text: platz ? "Auf Platz " + platz + " schreiben" : "Auf den gewählten Platz schreiben, noch keiner gewählt" },
+      { typ: "ordner", laden: "profil-leer-frage", ziel: name,
+        text: "Auf alle leeren Speicherplätze schreiben" },
+      { typ: "aktion", id: "profil-ueberschreiben", ziel: name,
+        text: platz ? "Überschreiben mit dem Stand von Platz " + platz : "Überschreiben mit dem gewählten Platz" },
+      { typ: "aktion", id: "profil-umbenennen", ziel: name, text: "Umbenennen" },
+      { typ: "ordner", laden: "profil-loesch-frage", ziel: name, text: "Löschen" },
+      { typ: "ordner", laden: "initfrage", text: "Gewählten Platz auf Werkszustand zurücksetzen" }
+    ]);
+    return true;
+  }
+
+  // Das Schreiben auf alle leeren Plätze fasst viele Plätze an, darum erst
+  // zählen und fragen. Gezählt wird jetzt, nicht aus einer alten Liste.
+  if (art === "profil-leer-frage") {
+    const name = li.dataset.ziel;
+    const pfad = await quelleSichern();
+    if (!pfad || !schreibbar) { sage("Nur mit angeschlossener Station möglich"); return false; }
+    const e = await window.skuConnect.leerePlaetze(pfad);
+    if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
+    if (!e.nummern.length) { sage("Es gibt gerade keinen leeren Speicherplatz"); return false; }
+    const liste = e.nummern.join(", ");
+    setzeKinder(li, [
+      { typ: "aktion", id: "profil-abbrechen", text: "Abbrechen, nichts ändern" },
+      { typ: "aktion", id: "profil-alle", ziel: name,
+        text: "Ja, " + name + " auf " + e.nummern.length + " leere Plätze schreiben",
+        vorschau: ["Danach tragen diese Plätze das Profil " + name,
+                   "Plätze: " + liste,
+                   "Die Namen der Plätze bleiben, wie sie sind",
+                   "Aufnahmen sind dort keine, darum geht nichts verloren"] }
+    ]);
+    return true;
+  }
+
+  if (art === "profil-loesch-frage") {
+    const name = li.dataset.ziel;
+    setzeKinder(li, [
+      { typ: "aktion", id: "profil-abbrechen", text: "Abbrechen, nichts ändern" },
+      { typ: "aktion", id: "profil-weg", ziel: name, text: "Ja, Profil " + name + " löschen" }
+    ]);
     return true;
   }
 
@@ -857,6 +921,96 @@ async function spurKopieren(li) {
     "Auf Platz " + gewaehlterPlatz + ", Spur " + zielspur,
     e.dateien ? e.dateien + " Aufnahme übernommen" : "Die Quellspur war leer",
     "Der Stand davor liegt in Git"]);
+}
+
+// Macht aus den Abweichungen lesbare Zeilen für den Tooltip.
+function profilZeilen(profil) {
+  const zeilen = ["Angelegt am " + profil.angelegt + " von Platz " + profil.quelle,
+                  profil.werte.length + " Abweichungen vom Werkszustand"];
+  for (const w of profil.werte) {
+    const b = feldBeschreibung(w.abschnitt, w.feld) || { text: w.abschnitt + " " + w.feld, art: "zahl" };
+    const kopf = /^TRACK[1-5]$/.test(w.abschnitt) ? "Spur " + w.abschnitt.slice(5) + ", " : "";
+    zeilen.push(kopf + b.text + ": " + wertText(b.art, w.wert, b)
+      + ", Werk " + wertText(b.art, w.werk, b));
+  }
+  return zeilen;
+}
+
+// Legt ein Profil an oder überschreibt eines mit dem Stand des gewählten
+// Platzes. Gespeichert wird nur, was vom Werkszustand abweicht.
+async function profilNeu(li, vorhandenerName) {
+  const pfad = await quelleSichern();
+  if (!pfad) { sage("Nur mit angeschlossener Station möglich"); return; }
+  if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return; }
+  let name = vorhandenerName;
+  if (!name) {
+    name = await frageText("Name des Profils, höchstens 12 Zeichen", "");
+    fokussiere(li);
+    if (name === null) { sage("Abgebrochen"); return; }
+  }
+  const e = await window.skuConnect.profilAnlegen(pfad, gewaehlterPlatz, name);
+  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  const p = e.profil;
+  ergebnis(li, (vorhandenerName ? "Überschrieben: " : "Angelegt: ") + p.name,
+    ["Profil " + p.name + (vorhandenerName ? " überschrieben" : " angelegt"),
+     "Gelesen von Platz " + gewaehlterPlatz,
+     p.werte.length + " Abweichungen vom Werkszustand festgehalten",
+     "Der Name des Platzes gehört nicht dazu"]);
+}
+
+// Schreibt ein Profil auf den gewählten Platz oder auf alle leeren.
+async function profilSchreiben(li, wohin) {
+  const name = li.dataset.ziel;
+  const pfad = await quelleSichern();
+  if (!pfad || !schreibbar) { sage("Nur mit angeschlossener Station möglich"); return; }
+  let nummern;
+  if (wohin === "alle") {
+    const l = await window.skuConnect.leerePlaetze(pfad);
+    if (!l.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", l.fehler]); return; }
+    nummern = l.nummern;
+    sage("Schreibe auf " + nummern.length + " Plätze, das dauert einen Moment");
+  } else {
+    if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return; }
+    nummern = [gewaehlterPlatz];
+  }
+  const e = await window.skuConnect.profilAnwenden(pfad, name, nummern);
+  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  if (e.leer) {
+    ergebnis(li, "Profil ist leer", ["Das Profil " + name + " hält keine Abweichung fest",
+      "Der gewählte Platz stand auf Werkszustand, als es angelegt wurde"]);
+    return;
+  }
+  ergebnis(li, e.bestaetigt ? "Geschrieben, " + e.plaetze + " Plätze" : "Achtung, Kontrolle fehlgeschlagen",
+    e.bestaetigt
+      ? ["Profil " + name + " geschrieben",
+         "Plätze: " + nummern.join(", "),
+         e.felder + " Werte gesetzt",
+         "Die Namen der Plätze sind unberührt",
+         "Der Stand davor liegt in Git"]
+      : [e.abweichungen + " Felder stimmen nach dem Schreiben nicht",
+         "Den Stand am Gerät prüfen",
+         "Der Stand davor liegt in Git"]);
+}
+
+async function profilUmbenennen(li) {
+  const alt = li.dataset.ziel;
+  const neu = await frageText("Neuer Name, höchstens 12 Zeichen", alt);
+  fokussiere(li);
+  if (neu === null) { sage("Abgebrochen"); return; }
+  const e = await window.skuConnect.profilUmbenennen(alt, neu);
+  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(li, "Heißt jetzt " + e.name, ["Umbenannt", "Vorher: " + alt, "Jetzt: " + e.name,
+    "Die Liste der Profile frischt beim nächsten Öffnen auf"]);
+}
+
+async function profilWeg(li) {
+  const name = li.dataset.ziel;
+  const e = await window.skuConnect.profilLoeschen(name);
+  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(li, "Profil " + e.geloescht + " gelöscht",
+    ["Gelöscht: " + e.geloescht,
+     "Die Speicherplätze bleiben, wie sie sind",
+     "Die Liste der Profile frischt beim nächsten Öffnen auf"]);
 }
 
 // Legt eine Sicherung im Ordner Ausgaben und Sicherungen an.
@@ -1429,6 +1583,7 @@ async function inGitSichern(li) {
 const menue = [
   { typ: "ordner", text: "Werkstatt", kinder: [
     { typ: "aktion", id: "station-suchen", text: "Station suchen" },
+    { typ: "ordner", text: "Track-Profile", laden: "profile" },
     { typ: "ordner", text: "Speicherplatz Auswahl", kinder: [
       { typ: "aktion", id: "platz-laden", text: "Speicherplätze laden" }
     ]},
@@ -1504,10 +1659,17 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.44"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.45"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
+    case "profil-neu": await profilNeu(li); return;
+    case "profil-platz": await profilSchreiben(li, null); return;
+    case "profil-alle": await profilSchreiben(li, "alle"); return;
+    case "profil-ueberschreiben": await profilNeu(li, li.dataset.ziel); return;
+    case "profil-umbenennen": await profilUmbenennen(li); return;
+    case "profil-weg": await profilWeg(li); return;
+    case "profil-abbrechen": sage("Abgebrochen, nichts geändert"); return;
     case "init-abbrechen": sage("Abgebrochen, nichts geändert"); return;
     case "init-ausfuehren": await platzInitialisieren(li); return;
     case "ct-ausfuehren": await spurKopieren(li); return;
