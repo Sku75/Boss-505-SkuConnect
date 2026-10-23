@@ -676,11 +676,11 @@ function bossOrdner() {
 // werden dabei frisch eingesetzt und sind relativ zu seinem eigenen Ort.
 // Darum funktioniert er auch, wenn der ganze Boss-Ordner auf einem anderen
 // Rechner und unter einem anderen Benutzernamen liegt.
-async function updaterAblegen() {
+async function begleitdateiAblegen(vorlageName, zielName) {
   const ordner = bossOrdner();
-  const ziel = path.join(ordner, 'Boss 505 SkuConnect Updaten.vbs');
+  const ziel = path.join(ordner, zielName);
   try {
-    const vorlage = await fsp.readFile(path.join(__dirname, 'werkzeug', 'updater-vorlage.vbs'), 'latin1');
+    const vorlage = await fsp.readFile(path.join(__dirname, 'werkzeug', vorlageName), 'latin1');
     const text = vorlage
       .replace('@SKRIPT@', path.relative(ordner, path.join(__dirname, 'werkzeug', 'updater.ps1')))
       .replace('@PROGRAMM@', path.relative(ordner, __dirname));
@@ -690,6 +690,15 @@ async function updaterAblegen() {
   } catch (f) {
     return { pfad: ziel, fehler: String(f.message || f) };
   }
+}
+
+// Starter und Updater liegen im Ordner Boss, damit beide beim Kopieren des
+// Ordners mitwandern und auf dem anderen Rechner sofort stimmen.
+async function updaterAblegen() {
+  const starter = await begleitdateiAblegen('starter-vorlage.vbs', 'Boss 505 SkuConnect Starten.vbs');
+  const updater = await begleitdateiAblegen('updater-vorlage.vbs', 'Boss 505 SkuConnect Updaten.vbs');
+  return { pfad: updater.pfad, erneuert: updater.erneuert || starter.erneuert,
+           fehler: updater.fehler || starter.fehler };
 }
 
 function treiberOrdner() {

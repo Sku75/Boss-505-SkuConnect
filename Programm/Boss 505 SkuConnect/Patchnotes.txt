@@ -1,5 +1,13 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.47, 23.10.2026
+Das Programm legt beim Start auch die Startdatei im Ordner Boss ab, als
+Boss 505 SkuConnect Starten. Wie beim Updater stehen darin nur Pfade
+relativ zu ihrem eigenen Ort. Kopiert man den Ordner Boss auf einen
+anderen Rechner, laeuft sie dort sofort, ohne Verknuepfung und ohne
+Netzwerkabfrage.
+Der Menuepunkt Wo der Updater liegt ist wieder entfernt.
+
 Version 0.46, 23.10.2026
 Es gibt einen Updater. Das Programm legt ihn bei jedem Start neu im Ordner
 Boss ab, als Boss 505 SkuConnect Updaten. Die Pfade darin sind relativ zu
