@@ -1,5 +1,16 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.43, 23.10.2026
+Das Programm sieht beim Start nach, ob der Roland-USB-Treiber eingerichtet
+ist. Fehlt er, sagt es das an und startet das Setup aus dem Ordner Treiber.
+Windows fragt dabei nach, diese Rueckfrage muss bestaetigt werden.
+Ohne diesen Treiber gibt es keinen Buehnen-Modus, die Station kommt dann
+nicht als Audio- und MIDI-Geraet am Rechner an.
+Unter Optionen steht neu: Roland-Treiber pruefen und einrichten.
+Erkannt wird der Treiber am Eintrag in der Programmliste von Windows, das
+geht ohne erhoehte Rechte. Gesucht wird Setup.exe im Ordner Treiber, auch
+eine Ebene tiefer.
+
 Version 0.42, 23.10.2026
 Im Live-Studio stehen jetzt zwischen MIDI verbinden und Ansager drei neue
 Punkte: Metronom an und aus, Metronom einstellen und FX-Regler ansagen.

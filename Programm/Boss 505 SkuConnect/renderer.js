@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.42, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.43, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -1472,6 +1472,7 @@ const menue = [
   ]},
   { typ: "ordner", text: "Optionen", kinder: [
     { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" },
+    { typ: "aktion", id: "treiber", text: "Roland-Treiber prüfen und einrichten" },
     { typ: "ordner", text: "Loop-Aufnahmen der Spuren", laden: "loops" },
     { typ: "aktion", id: "sicherung-klein", text: "Sicherung anlegen, nur Einstellungen" },
     { typ: "aktion", id: "sicherung-gross", text: "Sicherung anlegen, mit Loops, dauert lange" },
@@ -1503,7 +1504,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.42"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.43"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
@@ -1527,6 +1528,7 @@ async function aktiviere(li) {
     case "art-werkstatt": await betriebsartWechseln(li, "werkstatt"); return;
     case "usb-vorbereiten": await usbVorbereiten(li); return;
     case "usb-erneuern": await usbErneuern(li); return;
+    case "treiber": await treiberEinrichten(li, false); return;
     case "git-sichern": await inGitSichern(li); return;
     case "name-aendern": await nameAendern(li); return;
     case "kopieren-nach": await platzUebertragen(li, false); return;
@@ -1638,6 +1640,43 @@ window.setTimeout(() => {
   sage("Boss 505 SkuConnect bereit, " + (erster ? erster.dataset.ansage : ""));
 }, 700);
 
+// Der Roland-Treiber. Fehlt er, gibt es keinen Bühnen-Modus. Beim Start
+// wird darum nachgesehen und, wenn er fehlt, gleich eingerichtet. Das
+// Einrichten braucht eine Windows-Rückfrage, die der Nutzer bestätigt.
+async function treiberEinrichten(li, beimStart) {
+  const stand = await window.skuConnect.treiberPruefen();
+  if (stand.installiert) {
+    if (beimStart) return;
+    ergebnis(li, "Treiber ist eingerichtet", [
+      "Gefunden: " + stand.name,
+      "Die Station kann als Audio- und MIDI-Gerät arbeiten"
+    ]);
+    return;
+  }
+  if (!stand.setupDa) {
+    const zeilen = [
+      "Der Roland-USB-Treiber fehlt",
+      "Im Ordner Treiber liegt kein Setup",
+      "Ohne Treiber gibt es keinen Bühnen-Modus"
+    ];
+    if (beimStart) sage(zeilen.join(". "));
+    else ergebnis(li, "Treiber fehlt", zeilen);
+    return;
+  }
+  sage("Der Roland-Treiber fehlt. Ich richte ihn jetzt ein. "
+     + "Bitte die Rückfrage von Windows mit Ja bestätigen.");
+  const e = await window.skuConnect.treiberInstallieren();
+  const zeilen = e.fertig
+    ? ["Eingerichtet: " + e.name,
+       "Station aus und wieder ein, dann USB neu stecken"]
+    : ["Nicht eingerichtet",
+       e.grund || "Grund unbekannt",
+       "Setup liegt hier: " + e.setup,
+       "Ohne Treiber gibt es keinen Bühnen-Modus"];
+  if (li) ergebnis(li, e.fertig ? "Treiber eingerichtet" : "Treiber nicht eingerichtet", zeilen);
+  else sage((e.fertig ? "Treiber eingerichtet. " : "Treiber nicht eingerichtet. ") + zeilen.join(". "));
+}
+
 // MIDI still im Hintergrund verbinden und den Zustand ab jetzt überwachen.
 // Beim ersten Blick wird noch nichts angesagt, danach jede Änderung.
 (async () => {
@@ -1650,6 +1689,8 @@ window.setTimeout(() => {
       await zustandPruefen(true);
     };
   }
+  await treiberEinrichten(null, true);
+
   window.setInterval(() => zustandPruefen(true), 2000);
 
   // Nottaster aus dem Programmkern entgegennehmen.

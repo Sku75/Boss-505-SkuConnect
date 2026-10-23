@@ -656,6 +656,76 @@ function usbSteuern(aktion) {
 }
 
 // Standard-Audiogeraete von Windows lesen und setzen.
+// =====================================================================
+// Roland-USB-Treiber
+//
+// Ohne ihn arbeitet die Station nicht als Audio- und MIDI-Geraet, der
+// Buehnen-Modus faellt also aus. Auf einem frischen Rechner fehlt er,
+// darum liegt das Setup im Boss-Ordner und das Programm kann es starten.
+// =====================================================================
+
+function treiberOrdner() {
+  // Gleiche Lage wie der Ausgabeordner: drei Ebenen ueber dem Programm.
+  const projekt = path.join(__dirname, '..', '..');
+  const erwartet = fs.existsSync(path.join(projekt, 'Programm'));
+  const basis = erwartet ? path.join(projekt, '..') : __dirname;
+  return path.join(basis, 'Treiber');
+}
+
+// Sucht Setup.exe im Treiberordner, auch eine Ebene tiefer. Roland packt
+// es in einen Unterordner mit Versionsnamen.
+async function treiberSetup() {
+  const ordner = treiberOrdner();
+  const direkt = path.join(ordner, 'Setup.exe');
+  if (fs.existsSync(direkt)) return direkt;
+  try {
+    for (const eintrag of await fsp.readdir(ordner, { withFileTypes: true })) {
+      if (!eintrag.isDirectory()) continue;
+      const tiefer = path.join(ordner, eintrag.name, 'Setup.exe');
+      if (fs.existsSync(tiefer)) return tiefer;
+    }
+  } catch (f) {
+    // Kein Treiberordner vorhanden, dann gibt es nichts einzurichten.
+  }
+  return null;
+}
+
+function treiberSkript(args) {
+  return new Promise((fertig) => {
+    const skript = path.join(__dirname, 'werkzeug', 'treiber.ps1');
+    const alle = ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', skript].concat(args);
+    execFile('powershell.exe', alle, { windowsHide: true, timeout: 600000 }, (f, aus) => {
+      fertig(String(aus || ''));
+    });
+  });
+}
+
+async function treiberPruefen() {
+  const setup = await treiberSetup();
+  const text = await treiberSkript(['-Aktion', 'pruefen']);
+  const da = /^DA=(.*)$/m.exec(text);
+  return {
+    installiert: Boolean(da),
+    name: da ? da[1].trim() : null,
+    setup: setup,
+    setupDa: Boolean(setup)
+  };
+}
+
+async function treiberInstallieren() {
+  const setup = await treiberSetup();
+  if (!setup) return { fertig: false, grund: 'Kein Setup im Ordner Treiber gefunden' };
+  const text = await treiberSkript(['-Aktion', 'installieren', '-Setup', setup]);
+  const fertig = /^FERTIG=(.*)$/m.exec(text);
+  const problem = /^FEHLER=(.*)$/m.exec(text);
+  return {
+    fertig: Boolean(fertig),
+    name: fertig ? fertig[1].trim() : null,
+    grund: problem ? problem[1].trim() : (fertig ? null : 'Setup beendet, der Treiber ist noch nicht eingetragen'),
+    setup: setup
+  };
+}
+
 function audioGeraete(aktion, suche, rolle) {
   return new Promise((fertig) => {
     const skript = path.join(__dirname, 'werkzeug', 'audio-geraete.ps1');
@@ -684,6 +754,8 @@ function audioGeraete(aktion, suche, rolle) {
 }
 
 ipcMain.handle('audio-geraete', sicher(audioGeraete));
+ipcMain.handle('treiber-pruefen', sicher(treiberPruefen));
+ipcMain.handle('treiber-installieren', sicher(treiberInstallieren));
 ipcMain.handle('usb-steuern', sicher(usbSteuern));
 ipcMain.handle('git-sichern', sicher(gitSichern));
 ipcMain.handle('wav-schreiben', sicher(async (ziel, daten) => {
