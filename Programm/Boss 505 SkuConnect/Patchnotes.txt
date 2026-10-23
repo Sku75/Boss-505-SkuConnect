@@ -1,5 +1,18 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.46, 23.10.2026
+Es gibt einen Updater. Das Programm legt ihn bei jedem Start neu im Ordner
+Boss ab, als Boss 505 SkuConnect Updaten. Die Pfade darin sind relativ zu
+seinem eigenen Ort, darum laeuft er auch auf einem anderen Rechner und
+unter einem anderen Benutzernamen.
+Ablauf: Programm schliessen, Updater mit Enter starten. Er sieht bei GitHub
+nach der Version, laedt den Stand und legt ihn ueber den Programmordner.
+Stationsdaten, Profile und node_modules bleiben unberuehrt.
+Das Ergebnis kommt als Fenster, nicht als Konsolentext, damit die
+Sprachausgabe es von allein vorliest.
+Unter Optionen steht Wo der Updater liegt und erklaert den Weg.
+Solange das Repository auf privat steht, meldet der Updater Kein Zugriff.
+
 Version 0.45, 23.10.2026
 In der Werkstatt steht neu Track-Profile, direkt unter Station suchen.
 Ein Profil haelt nur die Abweichungen eines Platzes vom Werkszustand fest.

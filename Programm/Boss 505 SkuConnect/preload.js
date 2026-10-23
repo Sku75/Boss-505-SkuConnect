@@ -20,6 +20,7 @@ contextBridge.exposeInMainWorld('skuConnect', {
   loopExportieren:       (p, n, s, z) => ipcRenderer.invoke('loop-exportieren', p, n, s, z),
   loopImportieren:       (p, n, s, q) => ipcRenderer.invoke('loop-importieren', p, n, s, q),
   audioGeraete:          (a, s, r) => ipcRenderer.invoke('audio-geraete', a, s, r),
+  updaterAblegen:        ()        => ipcRenderer.invoke('updater-ablegen'),
   profileLesen:          ()        => ipcRenderer.invoke('profile-lesen'),
   profilAnlegen:         (p, n, t) => ipcRenderer.invoke('profil-anlegen', p, n, t),
   profilUmbenennen:      (a, b)    => ipcRenderer.invoke('profil-umbenennen', a, b),

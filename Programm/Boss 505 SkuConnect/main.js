@@ -664,12 +664,36 @@ function usbSteuern(aktion) {
 // darum liegt das Setup im Boss-Ordner und das Programm kann es starten.
 // =====================================================================
 
-function treiberOrdner() {
-  // Gleiche Lage wie der Ausgabeordner: drei Ebenen ueber dem Programm.
+// Der Ordner Boss, also die Ebene ueber dem Projektordner. Dort liegen die
+// Handbuecher, die Listen und der Updater.
+function bossOrdner() {
   const projekt = path.join(__dirname, '..', '..');
   const erwartet = fs.existsSync(path.join(projekt, 'Programm'));
-  const basis = erwartet ? path.join(projekt, '..') : __dirname;
-  return path.join(basis, 'Treiber');
+  return erwartet ? path.join(projekt, '..') : __dirname;
+}
+
+// Legt den Updater bei jedem Start neu im Boss-Ordner ab. Die Pfade darin
+// werden dabei frisch eingesetzt und sind relativ zu seinem eigenen Ort.
+// Darum funktioniert er auch, wenn der ganze Boss-Ordner auf einem anderen
+// Rechner und unter einem anderen Benutzernamen liegt.
+async function updaterAblegen() {
+  const ordner = bossOrdner();
+  const ziel = path.join(ordner, 'Boss 505 SkuConnect Updaten.vbs');
+  try {
+    const vorlage = await fsp.readFile(path.join(__dirname, 'werkzeug', 'updater-vorlage.vbs'), 'latin1');
+    const text = vorlage
+      .replace('@SKRIPT@', path.relative(ordner, path.join(__dirname, 'werkzeug', 'updater.ps1')))
+      .replace('@PROGRAMM@', path.relative(ordner, __dirname));
+    const alt = await fsp.readFile(ziel, 'latin1').catch(() => null);
+    if (alt !== text) await fsp.writeFile(ziel, text, 'latin1');
+    return { pfad: ziel, erneuert: alt !== text };
+  } catch (f) {
+    return { pfad: ziel, fehler: String(f.message || f) };
+  }
+}
+
+function treiberOrdner() {
+  return path.join(bossOrdner(), 'Treiber');
 }
 
 // Sucht Setup.exe im Treiberordner, auch eine Ebene tiefer. Roland packt
@@ -910,6 +934,7 @@ function audioGeraete(aktion, suche, rolle) {
 }
 
 ipcMain.handle('audio-geraete', sicher(audioGeraete));
+ipcMain.handle('updater-ablegen', sicher(updaterAblegen));
 ipcMain.handle('profile-lesen', sicher(profileLesen));
 ipcMain.handle('profil-anlegen', sicher(profilAnlegen));
 ipcMain.handle('profil-umbenennen', sicher(profilUmbenennen));

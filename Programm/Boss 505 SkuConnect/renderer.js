@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.45, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.46, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -1628,6 +1628,7 @@ const menue = [
   { typ: "ordner", text: "Optionen", kinder: [
     { typ: "aktion", id: "ueber", text: "Über Boss 505 SkuConnect" },
     { typ: "aktion", id: "treiber", text: "Roland-Treiber prüfen und einrichten" },
+    { typ: "aktion", id: "updater", text: "Wo der Updater liegt" },
     { typ: "ordner", text: "Loop-Aufnahmen der Spuren", laden: "loops" },
     { typ: "aktion", id: "sicherung-klein", text: "Sicherung anlegen, nur Einstellungen" },
     { typ: "aktion", id: "sicherung-gross", text: "Sicherung anlegen, mit Loops, dauert lange" },
@@ -1659,7 +1660,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.45"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.46"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
@@ -1691,6 +1692,7 @@ async function aktiviere(li) {
     case "usb-vorbereiten": await usbVorbereiten(li); return;
     case "usb-erneuern": await usbErneuern(li); return;
     case "treiber": await treiberEinrichten(li, false); return;
+    case "updater": await updaterZeigen(li); return;
     case "git-sichern": await inGitSichern(li); return;
     case "name-aendern": await nameAendern(li); return;
     case "kopieren-nach": await platzUebertragen(li, false); return;
@@ -1803,6 +1805,25 @@ window.setTimeout(() => {
   sage("Boss 505 SkuConnect bereit, " + (erster ? erster.dataset.ansage : ""));
 }, 700);
 
+// Der Updater liegt im Boss-Ordner und wird bei jedem Start erneuert.
+// Starten lässt er sich nur von dort und nur bei geschlossenem Programm,
+// weil er die Programmdateien ersetzt.
+async function updaterZeigen(li) {
+  const e = await window.skuConnect.updaterAblegen();
+  if (!e.ok || e.fehler) {
+    ergebnis(li, "Updater nicht abgelegt", ["Fehler", e.fehler || e.fehler]);
+    return;
+  }
+  ergebnis(li, "Updater liegt bereit", [
+    "Datei: Boss 505 SkuConnect Updaten",
+    "Ort: der Ordner Boss, eine Ebene über dem Projektordner",
+    e.erneuert ? "Gerade erneuert" : "War schon aktuell",
+    "So geht es: dieses Programm schließen, dann den Updater mit Enter starten",
+    "Er sieht bei GitHub nach und meldet das Ergebnis in einem Fenster",
+    "Stationsdaten und Profile bleiben unberührt"
+  ]);
+}
+
 // Der Roland-Treiber. Fehlt er, gibt es keinen Bühnen-Modus. Beim Start
 // wird darum nachgesehen und, wenn er fehlt, gleich eingerichtet. Das
 // Einrichten braucht eine Windows-Rückfrage, die der Nutzer bestätigt.
@@ -1852,6 +1873,7 @@ async function treiberEinrichten(li, beimStart) {
       await zustandPruefen(true);
     };
   }
+  await window.skuConnect.updaterAblegen();
   await treiberEinrichten(null, true);
 
   window.setInterval(() => zustandPruefen(true), 2000);
