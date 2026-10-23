@@ -7751,13 +7751,13 @@
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
 	<MeasMod>0</MeasMod>
-	<MeasLen>2</MeasLen>
+	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
-	<RecTmp>967</RecTmp>
-	<WavStat>1</WavStat>
-	<WavLen>218768</WavLen>
+	<RecTmp>1200</RecTmp>
+	<WavStat>0</WavStat>
+	<WavLen>0</WavLen>
 </TRACK1>
 <TRACK2>
 	<Rev>0</Rev>
@@ -7768,9 +7768,9 @@
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
 	<StpMod>0</StpMod>
-	<MeasMod>2</MeasMod>
-	<MeasLen>1</MeasLen>
-	<MeasBtLp>1</MeasBtLp>
+	<MeasMod>0</MeasMod>
+	<MeasLen>0</MeasLen>
+	<MeasBtLp>0</MeasBtLp>
 	<LpSync>1</LpSync>
 	<TmpSync>1</TmpSync>
 	<RecTmp>1200</RecTmp>
@@ -7856,10 +7856,10 @@
 	<C12>32</C12>
 </NAME>
 <MASTER>
-	<Lvl>51</Lvl>
-	<Tmp>967</Tmp>
+	<Lvl>50</Lvl>
+	<Tmp>1200</Tmp>
 	<Cs>0</Cs>
-	<Rv>1</Rv>
+	<Rv>0</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
@@ -7872,7 +7872,7 @@
 	<SinglePlyChg>0</SinglePlyChg>
 	<LpQtz>0</LpQtz>
 	<LpMod>0</LpMod>
-	<LpLen>2</LpLen>
+	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
 	<AllStp>31</AllStp>
 	<FadeTim>2</FadeTim>
@@ -8007,7 +8007,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>0</Mod>
+	<Mod>1</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
