@@ -1,5 +1,18 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.42, 23.10.2026
+Im Live-Studio stehen jetzt zwischen MIDI verbinden und Ansager drei neue
+Punkte: Metronom an und aus, Metronom einstellen und FX-Regler ansagen.
+Das Metronom zaehlt die MIDI-Uhr der Station mit, 24 Zeichen sind ein
+Schlag. Der erste Schlag im Takt klingt hoeher. Kommt keine Uhr an, laeuft
+es auf eigenem Tempo.
+Einstellbar sind Schlaege je Takt, Klang aus Klick, Holz und Ton,
+Lautstaerke, Tempoquelle und eigenes Tempo. Uhr der Station pruefen sagt,
+ob gerade eine Uhr ankommt.
+FX-Regler ansagen sagt Reglernummer und Wert, hoechstens drei Mal je
+Sekunde. Es gilt fuer die FX-Regler, das Expression-Pedal und Fussschalter
+an CTL 1,2. Mehr sendet die Station nicht.
+
 Version 0.41, 23.10.2026
 Auf Bühne umstellen und Auf Werkstatt umstellen sind jetzt beide Ordner.
 Darin steht oben Anleitung zum Umstellen und darunter Jetzt umstellen,

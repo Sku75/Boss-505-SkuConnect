@@ -23,6 +23,26 @@ let letzterPlatz = null;
 let uhrZeiten = [];
 let aktuellesTempo = null;
 
+// Metronom. Es zählt die MIDI-Uhr der Station mit: 24 Zeichen sind eine
+// Viertelnote, also ein Schlag. Kommt keine Uhr an, läuft es auf eigenem
+// Tempo mit einer Zeitschaltung. Der erste Schlag im Takt klingt höher.
+let metronomAn = false;
+let metronomTakt = 4;             // Schläge je Takt
+let metronomKlang = "klick";      // klick, holz oder ton
+let metronomLaut = 0.5;
+let metronomQuelle = "station";   // station oder eigen
+let metronomTempo = 120;
+let metronomSchlag = 0;           // 0 ist der erste Schlag im Takt
+let uhrZeichen = 0;
+let letzteUhr = 0;
+let eigenerTakter = null;
+let tonKontext = null;
+
+// FX-Regler-Ansage. Die Station schickt beim Drehen Control Change, oft
+// viele kurz hintereinander, darum wird die Ansage gebremst.
+let fxAnsageAn = false;
+let letzteFxAnsage = 0;
+
 // --- Verbinden ---
 
 async function midiVerbinden(li) {
@@ -108,6 +128,25 @@ function midiEmpfang(nachricht) {
       const dauer = uhrZeiten[24] - uhrZeiten[0];   // eine Viertelnote
       if (dauer > 0) aktuellesTempo = 60000 / dauer;
     }
+    letzteUhr = Date.now();
+    uhrZeichen++;
+    if (uhrZeichen >= 24) {
+      uhrZeichen = 0;
+      if (metronomAn && metronomQuelle === "station") metronomSchlagen();
+    }
+    return;
+  }
+
+  // Control Change kommt von den FX-Reglern, vom Expression-Pedal und von
+  // Fußschaltern an CTL 1,2. Mehr sendet die Station nicht.
+  if (art === 0xb0) {
+    if (fxAnsageAn) {
+      const jetzt = Date.now();
+      if (jetzt - letzteFxAnsage > 350) {
+        letzteFxAnsage = jetzt;
+        sage("Regler " + d[1] + ", " + d[2]);
+      }
+    }
     return;
   }
 
@@ -128,8 +167,133 @@ function midiEmpfang(nachricht) {
     return;
   }
 
-  if (d[0] === 0xfa && ansagerAn) sage("Start");
+  if (d[0] === 0xfa) {
+    uhrZeichen = 0;
+    metronomSchlag = 0;
+    if (ansagerAn) sage("Start");
+  }
   if (d[0] === 0xfc && ansagerAn) sage("Stopp");
+}
+
+// Ein Schlag. Der erste im Takt bekommt eine höhere Tonlage, damit man
+// den Taktanfang hört, ohne mitzuzählen.
+function metronomSchlagen() {
+  const betont = metronomSchlag === 0;
+  metronomSchlag = (metronomSchlag + 1) % metronomTakt;
+  tonGeben(betont);
+}
+
+function tonGeben(betont) {
+  try {
+    if (!tonKontext) tonKontext = new (window.AudioContext || window.webkitAudioContext)();
+    const k = tonKontext;
+    const jetzt = k.currentTime;
+    const huelle = k.createGain();
+    huelle.connect(k.destination);
+
+    if (metronomKlang === "holz") {
+      // Rauschstoß, klingt wie ein Holzblock.
+      const laenge = Math.floor(k.sampleRate * 0.03);
+      const puffer = k.createBuffer(1, laenge, k.sampleRate);
+      const daten = puffer.getChannelData(0);
+      for (let i = 0; i < laenge; i++) daten[i] = (Math.random() * 2 - 1) * (1 - i / laenge);
+      const quelle = k.createBufferSource();
+      quelle.buffer = puffer;
+      const filter = k.createBiquadFilter();
+      filter.type = "bandpass";
+      filter.frequency.value = betont ? 2400 : 1500;
+      filter.Q.value = 6;
+      quelle.connect(filter); filter.connect(huelle);
+      huelle.gain.setValueAtTime(metronomLaut, jetzt);
+      huelle.gain.exponentialRampToValueAtTime(0.0001, jetzt + 0.05);
+      quelle.start(jetzt); quelle.stop(jetzt + 0.06);
+      return;
+    }
+
+    const schwinger = k.createOscillator();
+    schwinger.type = metronomKlang === "ton" ? "sine" : "square";
+    schwinger.frequency.value = metronomKlang === "ton"
+      ? (betont ? 880 : 587) : (betont ? 1600 : 1000);
+    schwinger.connect(huelle);
+    const dauer = metronomKlang === "ton" ? 0.09 : 0.03;
+    huelle.gain.setValueAtTime(metronomLaut, jetzt);
+    huelle.gain.exponentialRampToValueAtTime(0.0001, jetzt + dauer);
+    schwinger.start(jetzt);
+    schwinger.stop(jetzt + dauer + 0.01);
+  } catch (f) {
+    // Ohne Tonausgabe bleibt das Metronom still, es soll nichts abbrechen.
+  }
+}
+
+function eigenenTakterStellen() {
+  if (eigenerTakter) { clearInterval(eigenerTakter); eigenerTakter = null; }
+  if (metronomAn && metronomQuelle === "eigen") {
+    eigenerTakter = setInterval(metronomSchlagen, 60000 / metronomTempo);
+  }
+}
+
+function metronomUmschalten(li) {
+  metronomAn = !metronomAn;
+  metronomSchlag = 0;
+  uhrZeichen = 0;
+  eigenenTakterStellen();
+  li.dataset.text = "Metronom: " + (metronomAn ? "An" : "Aus");
+  aktualisiereZeile(li);
+  const zeilen = ["Metronom " + (metronomAn ? "eingeschaltet" : "ausgeschaltet")];
+  if (metronomAn) {
+    zeilen.push(metronomTakt + " Schläge je Takt, Klang " + metronomKlang);
+    if (metronomQuelle === "station") {
+      zeilen.push("Läuft auf der Uhr der Station");
+      zeilen.push(uhrLaeuft() ? "Die Uhr kommt gerade an"
+        : "Es kommt keine Uhr an, der Rhythmus oder eine Schleife muss laufen");
+    } else {
+      zeilen.push("Läuft auf eigenem Tempo " + metronomTempo);
+    }
+    zeilen.push("Der Ton geht dorthin, wo Windows die Wiedergabe hat");
+  }
+  ergebnis(li, "Metronom " + (metronomAn ? "an" : "aus"), zeilen);
+}
+
+function uhrLaeuft() {
+  return Date.now() - letzteUhr < 1500;
+}
+
+function fxAnsageUmschalten(li) {
+  fxAnsageAn = !fxAnsageAn;
+  li.dataset.text = "FX-Regler ansagen: " + (fxAnsageAn ? "An" : "Aus");
+  aktualisiereZeile(li);
+  ergebnis(li, "FX-Regler " + (fxAnsageAn ? "an" : "aus"), [
+    "Ansage der Reglerbewegungen " + (fxAnsageAn ? "eingeschaltet" : "ausgeschaltet"),
+    "Gilt für die FX-Regler, das Expression-Pedal und Fußschalter an CTL 1,2",
+    "Gesagt wird die Reglernummer und der Wert, höchstens drei Mal je Sekunde"
+  ]);
+}
+
+function metronomWert(li) {
+  const was = li.dataset.ziel;
+  const wert = li.dataset.nummer;
+  if (was === "takt") { metronomTakt = parseInt(wert, 10); metronomSchlag = 0;
+    sage(metronomTakt + " Schläge je Takt"); return; }
+  if (was === "klang") { metronomKlang = wert; tonGeben(true);
+    sage("Klang " + wert); return; }
+  if (was === "laut") { metronomLaut = parseInt(wert, 10) / 100; tonGeben(true);
+    sage("Lautstärke " + wert); return; }
+  if (was === "quelle") { metronomQuelle = wert; eigenenTakterStellen();
+    sage(wert === "station" ? "Uhr der Station" : "Eigenes Tempo"); return; }
+  if (was === "tempo") { metronomTempo = parseInt(wert, 10); eigenenTakterStellen();
+    sage("Tempo " + metronomTempo); return; }
+}
+
+function uhrPruefen(li) {
+  const laeuft = uhrLaeuft();
+  ergebnis(li, laeuft ? "Die Uhr kommt an" : "Keine Uhr", laeuft
+    ? ["Die Station sendet die MIDI-Uhr",
+       "Tempo " + (aktuellesTempo ? aktuellesTempo.toFixed(1).replace(".", ",") : "noch unbekannt"),
+       "Das Metronom kann auf der Uhr der Station laufen"]
+    : ["Es kommt gerade keine MIDI-Uhr an",
+       "Die Station sendet sie nur, wenn der Rhythmus oder eine Schleife läuft",
+       "Ist MIDI verbunden?",
+       "Sonst das Metronom auf eigenes Tempo stellen"]);
 }
 
 function tempoAnsagen(li) {
@@ -360,6 +524,9 @@ function wavBauen(bloecke, anzahl, rate) {
 function liveMenue() {
   return [
     { typ: "aktion", id: "midi-verbinden", text: "MIDI verbinden" },
+    { typ: "aktion", id: "metronom", text: "Metronom: Aus" },
+    { typ: "ordner", text: "Metronom einstellen", laden: "metronom-einstellen" },
+    { typ: "aktion", id: "fx-ansage", text: "FX-Regler ansagen: Aus" },
     { typ: "aktion", id: "ansager", text: "Ansager: An" },
     { typ: "aktion", id: "platz-ansagen", text: "Gewählten Platz ansagen" },
     { typ: "aktion", id: "tempo-ansagen", text: "Tempo ansagen" },
@@ -375,6 +542,53 @@ function liveMenue() {
 
 // Baut die Unterlisten des Live-Bereichs.
 function liveLaden(art, li) {
+  if (art === "metronom-einstellen") {
+    return [
+      { typ: "ordner", text: "Schläge je Takt", laden: "metronom-takt" },
+      { typ: "ordner", text: "Klang", laden: "metronom-klang" },
+      { typ: "ordner", text: "Lautstärke", laden: "metronom-laut" },
+      { typ: "ordner", text: "Tempoquelle", laden: "metronom-quelle" },
+      { typ: "ordner", text: "Eigenes Tempo", laden: "metronom-tempo" },
+      { typ: "aktion", id: "uhr-pruefen", text: "Uhr der Station prüfen" }
+    ];
+  }
+  if (art === "metronom-takt") {
+    const e = [];
+    for (let n = 2; n <= 8; n++) {
+      e.push({ typ: "aktion", id: "metronom-wert", ziel: "takt", nummer: n,
+               text: n + " Schläge je Takt" + (n === metronomTakt ? ", eingestellt" : "") });
+    }
+    return e;
+  }
+  if (art === "metronom-klang") {
+    return [
+      { typ: "aktion", id: "metronom-wert", ziel: "klang", nummer: "klick", text: "Klick, kurz und hart" },
+      { typ: "aktion", id: "metronom-wert", ziel: "klang", nummer: "holz", text: "Holz, trockener Schlag" },
+      { typ: "aktion", id: "metronom-wert", ziel: "klang", nummer: "ton", text: "Ton, weicher Piepser" }
+    ];
+  }
+  if (art === "metronom-laut") {
+    const e = [];
+    for (let n = 10; n <= 100; n += 10) {
+      e.push({ typ: "aktion", id: "metronom-wert", ziel: "laut", nummer: n, text: "Lautstärke " + n });
+    }
+    return e;
+  }
+  if (art === "metronom-quelle") {
+    return [
+      { typ: "aktion", id: "metronom-wert", ziel: "quelle", nummer: "station",
+        text: "Uhr der Station, läuft mit dem Rhythmus und den Schleifen" },
+      { typ: "aktion", id: "metronom-wert", ziel: "quelle", nummer: "eigen",
+        text: "Eigenes Tempo, läuft unabhängig" }
+    ];
+  }
+  if (art === "metronom-tempo") {
+    const e = [];
+    for (let n = 40; n <= 240; n += 5) {
+      e.push({ typ: "aktion", id: "metronom-wert", ziel: "tempo", nummer: n, text: "Tempo " + n });
+    }
+    return e;
+  }
   if (art === "midiplatz") {
     const e = [];
     for (let n = 1; n <= 99; n++) {
