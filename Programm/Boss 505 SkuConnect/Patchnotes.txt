@@ -1,5 +1,15 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.44, 23.10.2026
+Im Live-Studio gibt es den Schalter USB-Ton zur Station. Er stellt das
+Wiedergabegeraet von Windows um, zwischen Kopfhoerer am Rechner und der
+Station.
+Damit laesst sich eine Datei vom Rechner in eine Spur aufnehmen: Schalter
+auf An, an der Station USB Audio Routing auf LOOP IN, Spur aufnehmen.
+Die Ansage nennt das gesetzte Geraet und die Pfeil-Druecke fuer das
+Routing. Findet Windows das Geraet nicht, sagt sie warum.
+Der Ablauf steht als Move Datei in eine Spur bei den Listen.
+
 Version 0.43, 23.10.2026
 Das Programm sieht beim Start nach, ob der Roland-USB-Treiber eingerichtet
 ist. Fehlt er, sagt es das an und startet das Setup aus dem Ordner Treiber.

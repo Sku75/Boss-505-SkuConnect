@@ -38,6 +38,11 @@ let letzteUhr = 0;
 let eigenerTakter = null;
 let tonKontext = null;
 
+// Wohin Windows den Ton des Rechners schickt. Aus heisst Kopfhoerer am
+// Rechner, An heisst in die Station. Mit An und USB Audio Routing auf
+// LOOP IN laesst sich eine Datei vom Rechner in eine Spur aufnehmen.
+let usbTonZurStation = false;
+
 // FX-Regler-Ansage. Die Station schickt beim Drehen Control Change, oft
 // viele kurz hintereinander, darum wird die Ansage gebremst.
 let fxAnsageAn = false;
@@ -252,6 +257,33 @@ function metronomUmschalten(li) {
     zeilen.push("Der Ton geht dorthin, wo Windows die Wiedergabe hat");
   }
   ergebnis(li, "Metronom " + (metronomAn ? "an" : "aus"), zeilen);
+}
+
+// Schaltet das Wiedergabegeraet von Windows um. Die Sprachausgabe folgt
+// dem Standardgeraet, wenn sie nicht fest auf den Kopfhoerer gestellt ist.
+async function usbTonUmschalten(li) {
+  const nachStation = !usbTonZurStation;
+  const suche = nachStation ? "RC-505" : HOERGERAET;
+  const e = await window.skuConnect.audioGeraete("setze", suche, "wiedergabe");
+  if (!e.gesetzt) {
+    ergebnis(li, "Gerät nicht gefunden", [
+      "Das Wiedergabegerät " + suche + " ist gerade nicht da",
+      nachStation ? "Steht die Station im Bühnen-Modus?" : "Steckt der Dongle?"
+    ]);
+    return;
+  }
+  usbTonZurStation = nachStation;
+  li.dataset.text = "USB-Ton zur Station: " + (nachStation ? "An" : "Aus");
+  aktualisiereZeile(li);
+  ergebnis(li, nachStation ? "Ton geht in die Station" : "Ton geht auf den Kopfhörer",
+    nachStation
+      ? ["Windows hört: " + e.gesetzt,
+         "Alles vom Rechner läuft jetzt über USB in die Station",
+         "Mit USB Audio Routing auf LOOP IN landet es im Looper",
+         "Routing umstellen: SYSTEM, vierzehn Mal Pfeil rechts, Regler auf LOOP IN",
+         "Die Sprachausgabe folgt mit, wenn sie nicht fest auf dem Kopfhörer steht"]
+      : ["Windows hört: " + e.gesetzt,
+         "Der Rechner schickt nichts mehr in die Station"]);
 }
 
 function uhrLaeuft() {
@@ -527,6 +559,7 @@ function liveMenue() {
     { typ: "aktion", id: "metronom", text: "Metronom: Aus" },
     { typ: "ordner", text: "Metronom einstellen", laden: "metronom-einstellen" },
     { typ: "aktion", id: "fx-ansage", text: "FX-Regler ansagen: Aus" },
+    { typ: "aktion", id: "usb-ton", text: "USB-Ton zur Station: Aus" },
     { typ: "aktion", id: "ansager", text: "Ansager: An" },
     { typ: "aktion", id: "platz-ansagen", text: "Gewählten Platz ansagen" },
     { typ: "aktion", id: "tempo-ansagen", text: "Tempo ansagen" },
