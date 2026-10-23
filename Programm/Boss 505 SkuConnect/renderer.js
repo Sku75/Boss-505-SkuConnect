@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.40, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.41, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -500,17 +500,11 @@ async function laden(li) {
 
   // Initialize fragt bewusst nach. Der Vorgang loescht Aufnahmen und laesst
   // sich am Geraet nicht rueckgaengig machen.
-  // Auf Werkstatt umstellen geht nur am Gerät, weil es dafür kein Laufwerk
-  // zum Schreiben gibt. Statt einer langen Ansage steht hier ein Schritt je
-  // Zeile, damit man sich mit Pfeil runter durchhangeln kann.
-  if (art === "art-werkstatt") {
-    const z = await zustandLesen();
-    letzterZustand = z;
-    if (z === "werkstatt") {
-      sage("Steht schon auf Werkstatt");
-      return false;
-    }
-    setzeKinder(li, WERKSTATT_SCHRITTE.map(s => ({ typ: "aktion", id: "schritt", text: s })));
+  // Die Anleitung steht als ein Schritt je Zeile da, damit man sich mit
+  // Pfeil runter durchhangeln kann und je Zeile genau eine Anweisung hört.
+  if (art === "schritte-buehne" || art === "schritte-werkstatt") {
+    const ziel = art === "schritte-buehne" ? "buehne" : "werkstatt";
+    setzeKinder(li, schritteFuer(ziel).map(s => ({ typ: "aktion", id: "schritt", text: s })));
     return true;
   }
 
@@ -1129,23 +1123,32 @@ async function betriebsartAnsagen(li) {
 
 // Stellt die Betriebsart um. ziel ist buehne oder werkstatt.
 // Ein Schritt je Zeile. Beim Wandern mit Pfeil runter liest die Sprachausgabe
-// genau einen Schritt vor. Enter wiederholt ihn.
-const WERKSTATT_SCHRITTE = [
-  "Schritt 1, drei Mal EXIT drücken",
-  "Schritt 2, ein Mal SYSTEM drücken, du stehst auf Eintrag 1",
-  "Schritt 3, elf Mal Pfeil rechts drücken, du stehst auf dem Anker",
-  "Schritt 4, Regler eine Raste nach links drehen",
-  "Schritt 5, ins Mikrofon sprechen",
-  "Schritt 6, wird das Mikrofon in der Box stumm, stehst du richtig",
-  "Schritt 7, Regler sofort eine Raste nach rechts zurück",
-  "Schritt 8, bleibt das Mikrofon hörbar, EXIT drücken und bei Schritt 1 neu beginnen",
-  "Schritt 9, zwei Mal Pfeil rechts drücken, du stehst auf der USB-Betriebsart",
-  "Schritt 10, Regler eine Raste nach links drehen, das ist STORAGE",
-  "Schritt 11, ein Mal EXIT drücken",
-  "Schritt 12, Station ausschalten und wieder einschalten",
-  "Schritt 13, USB abziehen und neu stecken",
-  "Schritt 14, hier im Programm Station suchen wählen"
-];
+// genau einen Schritt vor, Enter wiederholt ihn. Bühne und Werkstatt laufen
+// gleich, nur die Drehrichtung beim Wert und der Abschluss sind verschieden.
+function schritteFuer(ziel) {
+  const nachWerkstatt = ziel === "werkstatt";
+  const dreh = nachWerkstatt ? "nach links" : "nach rechts";
+  const wert = nachWerkstatt ? "das ist STORAGE, der Datenmodus"
+                             : "das ist AUDIO MIDI, die Bühne";
+  const schluss = nachWerkstatt ? "Schritt 14, hier im Programm Station suchen wählen"
+                                : "Schritt 14, hier im Programm Betriebsart ansagen wählen";
+  return [
+    "Schritt 1, drei Mal EXIT drücken",
+    "Schritt 2, ein Mal SYSTEM drücken, du stehst auf Eintrag 1",
+    "Schritt 3, elf Mal Pfeil rechts drücken, du stehst auf dem Anker",
+    "Schritt 4, Regler eine Raste nach links drehen",
+    "Schritt 5, ins Mikrofon sprechen",
+    "Schritt 6, wird das Mikrofon in der Box stumm, stehst du richtig",
+    "Schritt 7, Regler sofort eine Raste nach rechts zurück",
+    "Schritt 8, bleibt das Mikrofon hörbar, EXIT drücken und bei Schritt 1 neu beginnen",
+    "Schritt 9, zwei Mal Pfeil rechts drücken, du stehst auf der USB-Betriebsart",
+    "Schritt 10, Regler eine Raste " + dreh + " drehen, " + wert,
+    "Schritt 11, ein Mal EXIT drücken",
+    "Schritt 12, Station ausschalten und wieder einschalten",
+    "Schritt 13, USB abziehen und neu stecken",
+    schluss
+  ];
+}
 
 async function betriebsartWechseln(li, ziel) {
   const z = await zustandLesen();
@@ -1188,7 +1191,7 @@ async function betriebsartWechseln(li, ziel) {
   ergebnis(li, "Das geht nur am Gerät", [
     "Im Bühnen-Modus gibt es kein Laufwerk, das Programm kann nichts schreiben",
     "Dafür reagiert jetzt das Bedienfeld der Station",
-    "Die Schritte stehen in diesem Menüpunkt, eine Ebene tiefer"
+    "Die Schritte stehen daneben unter Anleitung zum Umstellen"
   ]);
 }
 
@@ -1456,8 +1459,14 @@ const menue = [
   ].concat(PROFILE.map(p => ({ typ: "aktion", id: p.id, text: p.text, vorschau: p.vorschau }))) },
   { typ: "ordner", text: "Betriebsart und USB", kinder: [
     { typ: "aktion", id: "art-ansagen", text: "Betriebsart ansagen" },
-    { typ: "aktion", id: "art-buehne", text: "Auf Bühne umstellen, Audio und MIDI" },
-    { typ: "ordner", text: "Auf Werkstatt umstellen, Datenmodus", laden: "art-werkstatt" },
+    { typ: "ordner", text: "Auf Bühne umstellen, Audio und MIDI", kinder: [
+      { typ: "ordner", text: "Anleitung zum Umstellen", laden: "schritte-buehne" },
+      { typ: "aktion", id: "art-buehne", text: "Jetzt umstellen, vom Programm aus" }
+    ]},
+    { typ: "ordner", text: "Auf Werkstatt umstellen, Datenmodus", kinder: [
+      { typ: "ordner", text: "Anleitung zum Umstellen", laden: "schritte-werkstatt" },
+      { typ: "aktion", id: "art-werkstatt", text: "Jetzt umstellen, vom Programm aus" }
+    ]},
     { typ: "aktion", id: "usb-vorbereiten", text: "Trennung vorbereiten" },
     { typ: "aktion", id: "usb-erneuern", text: "Verbindung erneuern" }
   ]},
@@ -1494,7 +1503,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.40"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.41"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
