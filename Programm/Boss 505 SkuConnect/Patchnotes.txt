@@ -1,5 +1,18 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.48, 24.10.2026
+Vier Felder sind entsperrt, die Wertelisten stammen aus dem Feldmodell des
+Projekts rc505-editor und liegen als Nachschlagewerk im Ordner Fremdquellen.
+Input Fx Mode und Track Fx Mode: 0 ist MULTI, 1 ist SINGLE. Der Werkswert
+ist 1, die Station steht also von Haus aus auf SINGLE.
+Ein- und Ausblendzeit, Fade Time: 1 bis 64, der Wert ist direkt die
+Taktzahl.
+Assign Quelle: 79 Eintraege mit Namen, Assign Ziel: 143 Eintraege.
+Beide Assign-Listen sind gegen die Werkseinstellung auf der Karte
+nachgerechnet, Assign 1 bis 3 kommen genau so heraus wie im Handbuch.
+Weiter gesperrt bleiben Measure und Loop Mode. Die sind auch in dem
+fremden Projekt unbekannt.
+
 Version 0.47, 23.10.2026
 Das Programm legt beim Start auch die Startdatei im Ordner Boss ab, als
 Boss 505 SkuConnect Starten. Wie beim Updater stehen darin nur Pfade

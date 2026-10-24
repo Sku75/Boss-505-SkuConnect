@@ -191,6 +191,48 @@ for (let m = 0; m < 32; m++) {
   );
 }
 
+// Woran eine Zuweisung haengt. Reihenfolge wie im Geraet.
+const ASSIGN_QUELLEN = [
+  "EXP PEDAL", "CTL1 PEDAL", "CTL2 PEDAL", "INPUT FX KNOB", "TRACK FX KNOB", "TR1 REC/DUB",
+  "TR2 REC/DUB", "TR3 REC/DUB", "TR4 REC/DUB", "TR5 REC/DUB", "TR1 PLAY/STOP",
+  "TR2 PLAY/STOP", "TR3 PLAY/STOP", "TR4 PLAY/STOP", "TR5 PLAY/STOP", "SYNC START/STOP",
+  "#CC 1", "#CC 2", "#CC 3", "#CC 4", "#CC 5", "#CC 6", "#CC 7", "#CC 8", "#CC 9", "#CC 10",
+  "#CC 11", "#CC 12", "#CC 13", "#CC 14", "#CC 15", "#CC 16", "#CC 17", "#CC 18", "#CC 19",
+  "#CC 20", "#CC 21", "#CC 22", "#CC 23", "#CC 24", "#CC 25", "#CC 26", "#CC 27", "#CC 28",
+  "#CC 29", "#CC 30", "#CC 31", "#CC 64", "#CC 65", "#CC 66", "#CC 67", "#CC 68", "#CC 69",
+  "#CC 70", "#CC 71", "#CC 72", "#CC 73", "#CC 74", "#CC 75", "#CC 76", "#CC 77", "#CC 78",
+  "#CC 79", "#CC 80", "#CC 81", "#CC 82", "#CC 83", "#CC 84", "#CC 85", "#CC 86", "#CC 87",
+  "#CC 88", "#CC 89", "#CC 90", "#CC 91", "#CC 92", "#CC 93", "#CC 94", "#CC 95"
+];
+
+// Was eine Zuweisung steuert. Reihenfolge wie im Geraet.
+const ASSIGN_ZIELE = [
+  "TR1 REC/PLAY", "TR2 REC/PLAY", "TR3 REC/PLAY", "TR4 REC/PLAY", "TR5 REC/PLAY",
+  "TR1 PLAY/STOP", "TR2 PLAY/STOP", "TR3 PLAY/STOP", "TR4 PLAY/STOP", "TR5 PLAY/STOP",
+  "TR1 CLEAR", "TR2 CLEAR", "TR3 CLEAR", "TR4 CLEAR", "TR5 CLEAR", "TR1 UNDO/REDO",
+  "TR2 UNDO/REDO", "TR3 UNDO/REDO", "TR4 UNDO/REDO", "TR5 UNDO/REDO", "TR1 PLAY LEVEL",
+  "TR2 PLAY LEVEL", "TR3 PLAY LEVEL", "TR4 PLAY LEVEL", "TR5 PLAY LEVEL", "TR1 PAN",
+  "TR2 PAN", "TR3 PAN", "TR4 PAN", "TR5 PAN", "TGT TR REC/PLAY", "TGT TR STOP",
+  "TGT TR CLEAR", "TGT TR UNDO/REDO", "TGT TR PLAY LEV", "ALL START/STOP", "ALL CLEAR",
+  "UNDO/REDO", "RHYTHM LEVEL", "RHYTHM PATTERN", "MEMORY LEVEL", "TEMPO (TAP)",
+  "MASTER COMP", "MASTER REVERB", "OVERDUB MODE", "INPUT FX ON/OFF", "TRACK FX ON/OFF",
+  "INPUT FX A CONTROL", "INPUT FX B CONTROL", "INPUT FX C CONTROL", "TRACK FX A CONTROL",
+  "TRACK FX B CONTROL", "TRACK FX C CONTROL", "INPUT FX A TYP INC", "INPUT FX A TYP DEC",
+  "INPUT FX B TYP INC", "INPUT FX B TYP DEC", "INPUT FX C TYP INC", "INPUT FX C TYP DEC",
+  "TRACK FX A TYP INC", "TRACK FX A TYP DEC", "TRACK FX B TYP INC", "TRACK FX B TYP DEC",
+  "TRACK FX C TYP INC", "TRACK FX C TYP DEC", "INPUT FX CONTROL", "TRACK FX CONTROL",
+  "INPUT FX TYP INC", "INPUT FX TYP DEC", "TRACK FX TYP INC", "TRACK FX TYP DEC",
+  "INPUT FX INC", "INPUT FX DEC", "TRACK FX INC", "TRACK FX DEC", "TARGET TRACK INC",
+  "TARGET TRACK DEC", "MEMORY INC", "MEMORY DEC", "INPUT LEVEL", "#CC 1", "#CC 2", "#CC 3",
+  "#CC 4", "#CC 5", "#CC 6", "#CC 7", "#CC 8", "#CC 9", "#CC 10", "#CC 11", "#CC 12",
+  "#CC 13", "#CC 14", "#CC 15", "#CC 16", "#CC 17", "#CC 18", "#CC 19", "#CC 20", "#CC 21",
+  "#CC 22", "#CC 23", "#CC 24", "#CC 25", "#CC 26", "#CC 27", "#CC 28", "#CC 29", "#CC 30",
+  "#CC 31", "#CC 64", "#CC 65", "#CC 66", "#CC 67", "#CC 68", "#CC 69", "#CC 70", "#CC 71",
+  "#CC 72", "#CC 73", "#CC 74", "#CC 75", "#CC 76", "#CC 77", "#CC 78", "#CC 79", "#CC 80",
+  "#CC 81", "#CC 82", "#CC 83", "#CC 84", "#CC 85", "#CC 86", "#CC 87", "#CC 88", "#CC 89",
+  "#CC 90", "#CC 91", "#CC 92", "#CC 93", "#CC 94", "#CC 95"
+];
+
 const FELDER = {
   // --- Speicherplatz gesamt ---
   "MASTER.Lvl":   { text: "Speicher-Pegel, Gerät zeigt das Doppelte", art: "zahl", min: 0, max: 100 },
@@ -228,6 +270,8 @@ const FELDER = {
   "RHYTHM.PlyCnt":  { text: "Einzähler vor Wiedergabe", art: "liste", werte: AUS_AN },
 
   // --- Effekt-Bänke Input FX und Track FX ---
+  "FXBANK.Mod":  { text: "Betriebsart der Effekttasten", art: "liste",
+                   werte: ["MULTI, alle drei zusammen", "SINGLE, nur eine wirkt"] },
   "FXBANK.Sw":   { text: "Effekte", art: "liste", werte: AUS_AN },
   "FXBANK.Sel":  { text: "Gewählte Taste", art: "liste", werte: ["A", "B", "C"] },
   "FXBANK.Typ1": { text: "Effekt Taste A", art: "liste", werte: FX_TYPEN },
@@ -239,9 +283,12 @@ const FELDER = {
   "FXBANK.MltTyp3": { text: "Multi, Effekt Taste C", art: "liste", werte: FX_TYPEN },
 
   // --- Assigns ---
+  // Quellen und Ziele mit Nummern, Reihenfolge wie im Gerät
   "ASSIGN.Sw":     { text: "Zuweisung", art: "liste", werte: AUS_AN },
   "ASSIGN.TgtMin": { text: "Kleinster Wert", art: "zahl", min: 0, max: 100 },
   "ASSIGN.TgtMax": { text: "Größter Wert", art: "zahl", min: 0, max: 100 },
+  "ASSIGN.Src":    { text: "Quelle", art: "liste", werte: ASSIGN_QUELLEN },
+  "ASSIGN.Tgt":    { text: "Ziel", art: "liste", werte: ASSIGN_ZIELE },
 
 
   // --- Mit Version 0.33 entsperrt ---
@@ -278,6 +325,9 @@ const FELDER = {
   // Assign 1 am Expression-Pedal steht auf 0, Assign 2 am Fußtaster auf 1.
   "ASSIGN.SrcMod": { text: "Fußtaster arbeitet", art: "liste", werte: ["Tastend", "Umschaltend"] },
 
+  // --- Mit Version 0.48 entsperrt, Werte aus dem Feldmodell des rc505-editor ---
+  "PLAY_OPTION.FadeTim": { text: "Ein- und Ausblendzeit in Takten", art: "zahl", min: 1, max: 64 },
+
   // --- Systemeinstellungen der Station ---
   "SETUP.LcdContrast": { text: "Display-Helligkeit, Gerät zeigt eins mehr", art: "zahl", min: 0, max: 15 },
   "SETUP.PhantomPwr":  { text: "Phantomspeisung", art: "liste", werte: AUS_AN },
@@ -307,14 +357,10 @@ const FELDER = {
 // Lesbare Namen für Felder, die wir anzeigen, aber nicht ändern.
 const NUR_ANZEIGE = {
   "PLAY_OPTION.LpMod": "Loop-Modus, Rohwert",
-  "PLAY_OPTION.FadeTim": "Ein- und Ausblendzeit, Zählweise nicht belegt",
   "TRACK.MeasMod": "Takt-Modus, Zuordnung der Werte nicht belegt",
   "TRACK.MeasLen": "Taktzahl, hängt am Takt-Modus",
   "TRACK.MeasBtLp": "Takt-Schleife, hängt am Takt-Modus",
-  "FXBANK.Mod": "Betriebsart, Rohwert",
   "FXBANK.MltMod": "Multi-Betriebsart, Rohwert",
-  "ASSIGN.Src": "Quelle, nur die ersten drei Werte belegt",
-  "ASSIGN.Tgt": "Ziel, Nummerierung nicht belegt",
   "SETUP.MemNum": "Zuletzt gewählter Speicherplatz",
   "SETUP.DispMod": "Anzeigeart des Startbildschirms, Rohwert",
   "SETUP.AllClr": "Alles löschen, Rohwert",

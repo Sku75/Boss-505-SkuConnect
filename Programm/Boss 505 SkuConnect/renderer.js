@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.47, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.48, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -793,8 +793,8 @@ function memoryEintraege(daten) {
   // Input Fx Mode und Track Fx Mode teilen sich im Dateiformat eine
   // Beschreibung. Im Menü brauchen sie eigene Namen, sonst stehen dort
   // zwei gleich lautende Zeilen.
-  const eigeneNamen = { "INPUT_FX.Mod": "Input Fx Mode, Rohwert",
-                        "TRACK_FX.Mod": "Track Fx Mode, Rohwert" };
+  const eigeneNamen = { "INPUT_FX.Mod": "Input Fx Mode, Effekttasten für Mikrofon und Line in",
+                        "TRACK_FX.Mod": "Track Fx Mode, Effekttasten für die Spuren" };
   const eintraege = MEMORY_MENUE
     .filter(([a, f]) => daten[a] && daten[a][f] !== undefined)
     .map(([a, f]) => {
@@ -1659,7 +1659,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.47"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.48"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
