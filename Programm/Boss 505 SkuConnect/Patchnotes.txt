@@ -1,5 +1,13 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.58, 18.11.2026
+Der Updater sieht jetzt auch bei gleicher Version nach, ob Profile oder
+Stationsdaten fehlen, und ergaenzt sie. Profile aendern sich ohne neue
+Versionsnummer, darum war die alte Abfrage zu streng: sie hat bei
+gleicher Version sofort abgebrochen.
+In diesem Fall wird am Programm selbst nichts angefasst, und das Programm
+darf dabei auch laufen. Die Meldung sagt, wie viele Dateien dazukamen.
+
 Version 0.57, 18.11.2026
 Der Updater nimmt jetzt Profile und Stationsdaten mit, aber nur, was dort
 fehlt. Vorhandene Profile und ein vorhandener Stand der Station bleiben

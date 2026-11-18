@@ -71,13 +71,12 @@ try {
     exit 0
   }
 
-  if ([version]$dort -le [version]$hier) {
-    Sagen "Du hast schon die neueste Fassung.`r`n`r`nHier: $hier`r`nIm Netz: $dort" "Nichts zu tun"
-    exit 0
-  }
+  # Profile aendern sich ohne neue Versionsnummer. Darum wird auch bei
+  # gleicher Version noch nachgesehen, ob Profile oder Stationsdaten fehlen.
+  $nurErgaenzenLauf = [version]$dort -le [version]$hier
 
   # Laeuft das Programm noch, waeren die Dateien gesperrt.
-  if (Get-Process electron -ErrorAction SilentlyContinue) {
+  if (-not $nurErgaenzenLauf -and (Get-Process electron -ErrorAction SilentlyContinue)) {
     Sagen "Boss 505 SkuConnect laeuft noch.`r`n`r`nBitte das Programm schliessen und dieses Update danach noch einmal starten.`r`n`r`nHier: $hier`r`nIm Netz: $dort" "Erst schliessen"
     exit 0
   }
@@ -105,6 +104,8 @@ try {
       $ergaenzt += NurFehlendeKopieren $eintrag.FullName $ziel
       continue
     }
+    # Bei gleicher Version wird am Programm selbst nichts angefasst.
+    if ($nurErgaenzenLauf) { continue }
     if ($eintrag.PSIsContainer) {
       Copy-Item $eintrag.FullName -Destination $Programm -Recurse -Force
     } else {
@@ -113,6 +114,15 @@ try {
     $zahl++
   }
   Remove-Item $temp -Recurse -Force -ErrorAction SilentlyContinue
+
+  if ($nurErgaenzenLauf) {
+    if ($ergaenzt -gt 0) {
+      Sagen "Das Programm war schon aktuell, Version $hier.`r`n`r`n$ergaenzt Dateien bei Profilen und Stationsdaten ergaenzt." "Ergaenzt"
+    } else {
+      Sagen "Alles aktuell.`r`n`r`nVersion $hier, und bei Profilen und Stationsdaten fehlte nichts." "Nichts zu tun"
+    }
+    exit 0
+  }
 
   $jetzt = (Get-Content (Join-Path $Programm "package.json") -Raw | ConvertFrom-Json).version
   if ($jetzt -eq $dort) {
