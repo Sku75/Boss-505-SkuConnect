@@ -8007,7 +8007,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
