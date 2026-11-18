@@ -1,8 +1,15 @@
 # Boss 505 SkuConnect aktualisieren.
 #
 # Holt den aktuellen Stand aus dem GitHub-Repository und legt ihn ueber den
-# Programmordner. Eigene Daten bleiben liegen: Stationsdaten, Profile und
-# node_modules werden nicht angefasst.
+# Programmordner.
+#
+# node_modules bleibt unberuehrt, das ist das Laufzeugs von Electron und steht
+# nicht im Repository.
+#
+# Profile und Stationsdaten werden nur ergaenzt: was dort fehlt, kommt dazu,
+# was schon liegt, bleibt. So wandern neue Profile mit, ohne eigene zu
+# ueberschreiben, und ein frischer Rechner bekommt den Stand der Station
+# gleich mitgeliefert.
 #
 # Das Ergebnis kommt als Fenster, nicht als Konsolentext. Ein Fenster liest
 # die Sprachausgabe von allein vor, Konsolentext nicht.
@@ -14,7 +21,24 @@ Add-Type -AssemblyName System.Windows.Forms | Out-Null
 
 $repo   = "Sku75/Boss-505-SkuConnect"
 $zweig  = "main"
-$bleibt = @("Stationsdaten", "Profile", "node_modules")
+$bleibt       = @("node_modules")
+$nurErgaenzen = @("Profile", "Stationsdaten")
+
+# Kopiert einen Ordner, laesst aber alles stehen, was am Ziel schon da ist.
+function NurFehlendeKopieren($quelle, $ziel) {
+  if (-not (Test-Path $ziel)) { New-Item -ItemType Directory -Path $ziel -Force | Out-Null }
+  $zahl = 0
+  foreach ($eintrag in Get-ChildItem -Path $quelle) {
+    $neuesZiel = Join-Path $ziel $eintrag.Name
+    if ($eintrag.PSIsContainer) {
+      $zahl += NurFehlendeKopieren $eintrag.FullName $neuesZiel
+    } elseif (-not (Test-Path $neuesZiel)) {
+      Copy-Item $eintrag.FullName -Destination $neuesZiel
+      $zahl++
+    }
+  }
+  return $zahl
+}
 
 function Sagen($text, $titel) {
   [System.Windows.Forms.MessageBox]::Show($text, $titel,
@@ -73,9 +97,14 @@ try {
   }
 
   $zahl = 0
+  $ergaenzt = 0
   foreach ($eintrag in Get-ChildItem -Path $neu) {
     if ($bleibt -contains $eintrag.Name) { continue }
     $ziel = Join-Path $Programm $eintrag.Name
+    if ($nurErgaenzen -contains $eintrag.Name) {
+      $ergaenzt += NurFehlendeKopieren $eintrag.FullName $ziel
+      continue
+    }
     if ($eintrag.PSIsContainer) {
       Copy-Item $eintrag.FullName -Destination $Programm -Recurse -Force
     } else {
@@ -87,7 +116,8 @@ try {
 
   $jetzt = (Get-Content (Join-Path $Programm "package.json") -Raw | ConvertFrom-Json).version
   if ($jetzt -eq $dort) {
-    Sagen "Aktualisiert auf Version $jetzt.`r`n`r`nVorher: $hier`r`n$zahl Posten erneuert.`r`n`r`nDeine Stationsdaten und deine Profile sind unberuehrt.`r`n`r`nDie Neuerungen stehen in Patchnotes.txt im Programmordner." "Fertig"
+    $dazu = if ($ergaenzt -gt 0) { "`r`n$ergaenzt Dateien bei Profilen und Stationsdaten ergaenzt." } else { "" }
+    Sagen "Aktualisiert auf Version $jetzt.`r`n`r`nVorher: $hier`r`n$zahl Posten erneuert.$dazu`r`n`r`nVorhandene Profile und Stationsdaten bleiben, wie sie sind.`r`n`r`nDie Neuerungen stehen in Patchnotes.txt im Programmordner." "Fertig"
   } else {
     Sagen "Die Dateien wurden kopiert, aber die Versionsnummer stimmt nicht.`r`n`r`nErwartet: $dort`r`nGefunden: $jetzt`r`n`r`nBitte im Chat melden." "Bitte pruefen"
   }

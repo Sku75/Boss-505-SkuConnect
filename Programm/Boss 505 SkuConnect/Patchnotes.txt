@@ -1,5 +1,13 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.57, 18.11.2026
+Der Updater nimmt jetzt Profile und Stationsdaten mit, aber nur, was dort
+fehlt. Vorhandene Profile und ein vorhandener Stand der Station bleiben
+unberuehrt, neue kommen dazu. Damit wandert ein Profil wie Sku Live von
+einem Rechner auf den anderen, ohne dass dort etwas verloren geht.
+Unberuehrt bleibt weiterhin node_modules, das steht nicht im Repository.
+Die Meldung am Ende nennt, wie viele Dateien ergaenzt wurden.
+
 Version 0.56, 18.11.2026
 Zwei Dinge, eins davon wichtig.
 Der Werkszustand liegt jetzt als eigene Datei im Programmordner, unter
