@@ -7870,7 +7870,7 @@
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
