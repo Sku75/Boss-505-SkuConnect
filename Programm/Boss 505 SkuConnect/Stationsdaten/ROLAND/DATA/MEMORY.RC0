@@ -6889,7 +6889,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -6907,7 +6907,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -6925,7 +6925,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -6943,7 +6943,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -6961,7 +6961,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -6976,8 +6976,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -6998,19 +6998,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -7147,7 +7147,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -7160,7 +7160,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -8609,7 +8609,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -8627,7 +8627,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -8645,7 +8645,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -8663,7 +8663,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -8681,7 +8681,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -8696,8 +8696,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -8718,19 +8718,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -8867,7 +8867,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -8880,7 +8880,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -9469,7 +9469,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -9487,7 +9487,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -9505,7 +9505,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -9523,7 +9523,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -9541,7 +9541,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -9556,8 +9556,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -9578,19 +9578,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -9727,7 +9727,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>1</Sw>
 	<Sel>0</Sel>
@@ -9740,7 +9740,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>1</Sw>
 	<Sel>0</Sel>
@@ -10329,7 +10329,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -10347,7 +10347,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -10365,7 +10365,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -10383,7 +10383,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -10401,7 +10401,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -10416,8 +10416,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -10438,19 +10438,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -10587,7 +10587,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -10600,7 +10600,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -11189,7 +11189,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -11207,7 +11207,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -11225,7 +11225,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -11243,7 +11243,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -11261,7 +11261,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -11276,8 +11276,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -11298,19 +11298,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -11447,7 +11447,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -11460,7 +11460,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -12909,7 +12909,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -12927,7 +12927,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -12945,7 +12945,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -12963,7 +12963,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -12981,7 +12981,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -12996,8 +12996,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -13018,19 +13018,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -13167,7 +13167,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -13180,7 +13180,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -13769,7 +13769,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -13787,7 +13787,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -13805,7 +13805,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -13823,7 +13823,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -13841,7 +13841,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -13856,8 +13856,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -13878,19 +13878,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -14027,7 +14027,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -14040,7 +14040,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -14629,7 +14629,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -14647,7 +14647,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -14665,7 +14665,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -14683,7 +14683,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -14701,7 +14701,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -14716,8 +14716,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -14738,19 +14738,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -14887,7 +14887,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -14900,7 +14900,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -15489,7 +15489,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -15507,7 +15507,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -15525,7 +15525,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -15543,7 +15543,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -15561,7 +15561,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -15576,8 +15576,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -15598,19 +15598,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -15747,7 +15747,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -15760,7 +15760,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -16349,7 +16349,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -16367,7 +16367,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -16385,7 +16385,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -16403,7 +16403,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -16421,7 +16421,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -16436,8 +16436,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -16458,19 +16458,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -16607,7 +16607,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -16620,7 +16620,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -17209,7 +17209,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -17227,7 +17227,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -17245,7 +17245,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -17263,7 +17263,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -17281,7 +17281,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -17296,8 +17296,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -17318,19 +17318,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -17467,7 +17467,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -17480,7 +17480,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -18069,7 +18069,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18087,7 +18087,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18105,7 +18105,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18123,7 +18123,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18141,7 +18141,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18156,8 +18156,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -18178,19 +18178,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -18327,7 +18327,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -18340,7 +18340,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -18929,7 +18929,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18947,7 +18947,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18965,7 +18965,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -18983,7 +18983,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19001,7 +19001,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19016,8 +19016,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -19038,19 +19038,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -19187,7 +19187,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -19200,7 +19200,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -19789,7 +19789,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19807,7 +19807,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19825,7 +19825,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19843,7 +19843,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19861,7 +19861,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -19876,8 +19876,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -19898,19 +19898,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -20047,7 +20047,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -20060,7 +20060,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -20649,7 +20649,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -20667,7 +20667,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -20685,7 +20685,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -20703,7 +20703,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -20721,7 +20721,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -20736,8 +20736,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -20758,19 +20758,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -20907,7 +20907,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -20920,7 +20920,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -21509,7 +21509,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -21527,7 +21527,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -21545,7 +21545,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -21563,7 +21563,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -21581,7 +21581,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -21596,8 +21596,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -21618,19 +21618,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -21767,7 +21767,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -21780,7 +21780,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -22369,7 +22369,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -22387,7 +22387,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -22405,7 +22405,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -22423,7 +22423,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -22441,7 +22441,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -22456,8 +22456,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -22478,19 +22478,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -22627,7 +22627,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -22640,7 +22640,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -23229,7 +23229,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -23247,7 +23247,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -23265,7 +23265,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -23283,7 +23283,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -23301,7 +23301,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -23316,8 +23316,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -23338,19 +23338,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -23487,7 +23487,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -23500,7 +23500,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -24089,7 +24089,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24107,7 +24107,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24125,7 +24125,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24143,7 +24143,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24161,7 +24161,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24176,8 +24176,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -24198,19 +24198,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -24347,7 +24347,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -24360,7 +24360,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -24949,7 +24949,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24967,7 +24967,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -24985,7 +24985,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25003,7 +25003,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25021,7 +25021,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25036,8 +25036,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -25058,19 +25058,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -25207,7 +25207,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -25220,7 +25220,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -25809,7 +25809,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25827,7 +25827,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25845,7 +25845,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25863,7 +25863,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25881,7 +25881,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -25896,8 +25896,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -25918,19 +25918,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -26067,7 +26067,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -26080,7 +26080,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -26669,7 +26669,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -26687,7 +26687,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -26705,7 +26705,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -26723,7 +26723,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -26741,7 +26741,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -26756,8 +26756,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -26778,19 +26778,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -26927,7 +26927,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -26940,7 +26940,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -27529,7 +27529,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -27547,7 +27547,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -27565,7 +27565,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -27583,7 +27583,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -27601,7 +27601,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -27616,8 +27616,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -27638,19 +27638,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -27787,7 +27787,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -27800,7 +27800,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -28389,7 +28389,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -28407,7 +28407,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -28425,7 +28425,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -28443,7 +28443,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -28461,7 +28461,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -28476,8 +28476,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -28498,19 +28498,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -28647,7 +28647,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -28660,7 +28660,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -29249,7 +29249,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -29267,7 +29267,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -29285,7 +29285,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -29303,7 +29303,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -29321,7 +29321,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -29336,8 +29336,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -29358,19 +29358,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -29507,7 +29507,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -29520,7 +29520,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -30109,7 +30109,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -30127,7 +30127,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -30145,7 +30145,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -30163,7 +30163,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -30181,7 +30181,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -30196,8 +30196,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -30218,19 +30218,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -30367,7 +30367,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -30380,7 +30380,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -30969,7 +30969,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -30987,7 +30987,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31005,7 +31005,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31023,7 +31023,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31041,7 +31041,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31056,8 +31056,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -31078,19 +31078,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -31227,7 +31227,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -31240,7 +31240,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -31829,7 +31829,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31847,7 +31847,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31865,7 +31865,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31883,7 +31883,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31901,7 +31901,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -31916,8 +31916,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -31938,19 +31938,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -32087,7 +32087,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -32100,7 +32100,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -32689,7 +32689,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -32707,7 +32707,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -32725,7 +32725,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -32743,7 +32743,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -32761,7 +32761,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -32776,8 +32776,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -32798,19 +32798,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -32947,7 +32947,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -32960,7 +32960,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -33549,7 +33549,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -33567,7 +33567,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -33585,7 +33585,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -33603,7 +33603,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -33621,7 +33621,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -33636,8 +33636,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -33658,19 +33658,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -33807,7 +33807,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -33820,7 +33820,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -34409,7 +34409,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -34427,7 +34427,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -34445,7 +34445,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -34463,7 +34463,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -34481,7 +34481,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -34496,8 +34496,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -34518,19 +34518,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -34667,7 +34667,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -34680,7 +34680,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -35269,7 +35269,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -35287,7 +35287,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -35305,7 +35305,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -35323,7 +35323,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -35341,7 +35341,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -35356,8 +35356,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -35378,19 +35378,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -35527,7 +35527,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -35540,7 +35540,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -36129,7 +36129,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -36147,7 +36147,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -36165,7 +36165,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -36183,7 +36183,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -36201,7 +36201,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -36216,8 +36216,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -36238,19 +36238,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -36387,7 +36387,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -36400,7 +36400,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -36989,7 +36989,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37007,7 +37007,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37025,7 +37025,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37043,7 +37043,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37061,7 +37061,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37076,8 +37076,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -37098,19 +37098,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -37247,7 +37247,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -37260,7 +37260,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -37849,7 +37849,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37867,7 +37867,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37885,7 +37885,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37903,7 +37903,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37921,7 +37921,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -37936,8 +37936,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -37958,19 +37958,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -38107,7 +38107,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -38120,7 +38120,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -38709,7 +38709,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -38727,7 +38727,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -38745,7 +38745,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -38763,7 +38763,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -38781,7 +38781,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -38796,8 +38796,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -38818,19 +38818,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -38967,7 +38967,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -38980,7 +38980,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -39569,7 +39569,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -39587,7 +39587,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -39605,7 +39605,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -39623,7 +39623,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -39641,7 +39641,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -39656,8 +39656,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -39678,19 +39678,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -39827,7 +39827,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -39840,7 +39840,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -40429,7 +40429,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -40447,7 +40447,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -40465,7 +40465,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -40483,7 +40483,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -40501,7 +40501,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -40516,8 +40516,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -40538,19 +40538,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -40687,7 +40687,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -40700,7 +40700,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -41289,7 +41289,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -41307,7 +41307,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -41325,7 +41325,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -41343,7 +41343,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -41361,7 +41361,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -41376,8 +41376,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -41398,19 +41398,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -41547,7 +41547,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -41560,7 +41560,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -42149,7 +42149,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -42167,7 +42167,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -42185,7 +42185,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -42203,7 +42203,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -42221,7 +42221,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -42236,8 +42236,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -42258,19 +42258,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -42407,7 +42407,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -42420,7 +42420,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -43009,7 +43009,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43027,7 +43027,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43045,7 +43045,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43063,7 +43063,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43081,7 +43081,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43096,8 +43096,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -43118,19 +43118,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -43267,7 +43267,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -43280,7 +43280,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -43869,7 +43869,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43887,7 +43887,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43905,7 +43905,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43923,7 +43923,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43941,7 +43941,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -43956,8 +43956,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -43978,19 +43978,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -44127,7 +44127,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -44140,7 +44140,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -44729,7 +44729,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -44747,7 +44747,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -44765,7 +44765,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -44783,7 +44783,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -44801,7 +44801,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -44816,8 +44816,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -44838,19 +44838,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -44987,7 +44987,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -45000,7 +45000,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -45589,7 +45589,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -45607,7 +45607,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -45625,7 +45625,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -45643,7 +45643,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -45661,7 +45661,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -45676,8 +45676,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -45698,19 +45698,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -45847,7 +45847,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -45860,7 +45860,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -46449,7 +46449,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -46467,7 +46467,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -46485,7 +46485,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -46503,7 +46503,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -46521,7 +46521,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -46536,8 +46536,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -46558,19 +46558,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -46707,7 +46707,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -46720,7 +46720,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -47309,7 +47309,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -47327,7 +47327,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -47345,7 +47345,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -47363,7 +47363,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -47381,7 +47381,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -47396,8 +47396,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -47418,19 +47418,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -47567,7 +47567,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -47580,7 +47580,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -48169,7 +48169,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -48187,7 +48187,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -48205,7 +48205,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -48223,7 +48223,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -48241,7 +48241,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -48256,8 +48256,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -48278,19 +48278,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -48427,7 +48427,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -48440,7 +48440,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -49029,7 +49029,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49047,7 +49047,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49065,7 +49065,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49083,7 +49083,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49101,7 +49101,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49116,8 +49116,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -49138,19 +49138,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -49287,7 +49287,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -49300,7 +49300,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -49889,7 +49889,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49907,7 +49907,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49925,7 +49925,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49943,7 +49943,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49961,7 +49961,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -49976,8 +49976,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -49998,19 +49998,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -50147,7 +50147,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -50160,7 +50160,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -50749,7 +50749,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -50767,7 +50767,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -50785,7 +50785,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -50803,7 +50803,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -50821,7 +50821,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -50836,8 +50836,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -50858,19 +50858,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -51007,7 +51007,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -51020,7 +51020,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -51609,7 +51609,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -51627,7 +51627,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -51645,7 +51645,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -51663,7 +51663,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -51681,7 +51681,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -51696,8 +51696,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -51718,19 +51718,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -51867,7 +51867,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -51880,7 +51880,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -52469,7 +52469,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -52487,7 +52487,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -52505,7 +52505,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -52523,7 +52523,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -52541,7 +52541,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -52556,8 +52556,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -52578,19 +52578,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -52727,7 +52727,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -52740,7 +52740,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -53329,7 +53329,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -53347,7 +53347,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -53365,7 +53365,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -53383,7 +53383,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -53401,7 +53401,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -53416,8 +53416,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -53438,19 +53438,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -53587,7 +53587,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -53600,7 +53600,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -54189,7 +54189,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -54207,7 +54207,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -54225,7 +54225,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -54243,7 +54243,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -54261,7 +54261,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -54276,8 +54276,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -54298,19 +54298,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -54447,7 +54447,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -54460,7 +54460,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -55049,7 +55049,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55067,7 +55067,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55085,7 +55085,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55103,7 +55103,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55121,7 +55121,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55136,8 +55136,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -55158,19 +55158,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -55307,7 +55307,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -55320,7 +55320,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -55909,7 +55909,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55927,7 +55927,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55945,7 +55945,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55963,7 +55963,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55981,7 +55981,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -55996,8 +55996,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -56018,19 +56018,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -56167,7 +56167,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -56180,7 +56180,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -56769,7 +56769,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -56787,7 +56787,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -56805,7 +56805,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -56823,7 +56823,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -56841,7 +56841,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -56856,8 +56856,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -56878,19 +56878,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -57027,7 +57027,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -57040,7 +57040,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -57629,7 +57629,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -57647,7 +57647,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -57665,7 +57665,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -57683,7 +57683,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -57701,7 +57701,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -57716,8 +57716,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -57738,19 +57738,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -57887,7 +57887,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -57900,7 +57900,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -58489,7 +58489,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -58507,7 +58507,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -58525,7 +58525,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -58543,7 +58543,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -58561,7 +58561,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -58576,8 +58576,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -58598,19 +58598,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -58747,7 +58747,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -58760,7 +58760,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -59349,7 +59349,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -59367,7 +59367,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -59385,7 +59385,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -59403,7 +59403,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -59421,7 +59421,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -59436,8 +59436,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -59458,19 +59458,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -59607,7 +59607,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -59620,7 +59620,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -60209,7 +60209,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -60227,7 +60227,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -60245,7 +60245,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -60263,7 +60263,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -60281,7 +60281,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -60296,8 +60296,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -60318,19 +60318,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -60467,7 +60467,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -60480,7 +60480,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -61069,7 +61069,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61087,7 +61087,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61105,7 +61105,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61123,7 +61123,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61141,7 +61141,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61156,8 +61156,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -61178,19 +61178,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -61327,7 +61327,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -61340,7 +61340,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -61929,7 +61929,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61947,7 +61947,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61965,7 +61965,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -61983,7 +61983,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62001,7 +62001,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62016,8 +62016,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -62038,19 +62038,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -62187,7 +62187,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -62200,7 +62200,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -62789,7 +62789,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62807,7 +62807,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62825,7 +62825,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62843,7 +62843,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62861,7 +62861,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -62876,8 +62876,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -62898,19 +62898,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -63047,7 +63047,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -63060,7 +63060,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -63649,7 +63649,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -63667,7 +63667,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -63685,7 +63685,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -63703,7 +63703,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -63721,7 +63721,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -63736,8 +63736,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -63758,19 +63758,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -63907,7 +63907,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -63920,7 +63920,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -64509,7 +64509,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -64527,7 +64527,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -64545,7 +64545,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -64563,7 +64563,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -64581,7 +64581,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -64596,8 +64596,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -64618,19 +64618,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -64767,7 +64767,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -64780,7 +64780,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -65369,7 +65369,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -65387,7 +65387,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -65405,7 +65405,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -65423,7 +65423,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -65441,7 +65441,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -65456,8 +65456,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -65478,19 +65478,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -65627,7 +65627,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -65640,7 +65640,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -66229,7 +66229,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -66247,7 +66247,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -66265,7 +66265,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -66283,7 +66283,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -66301,7 +66301,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -66316,8 +66316,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -66338,19 +66338,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -66487,7 +66487,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -66500,7 +66500,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -67949,7 +67949,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -67967,7 +67967,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -67985,7 +67985,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68003,7 +68003,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68021,7 +68021,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68036,8 +68036,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -68058,19 +68058,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -68207,7 +68207,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -68220,7 +68220,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -68809,7 +68809,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68827,7 +68827,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68845,7 +68845,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68863,7 +68863,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68881,7 +68881,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -68896,8 +68896,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -68918,19 +68918,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -69067,7 +69067,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -69080,7 +69080,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -69669,7 +69669,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -69687,7 +69687,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -69705,7 +69705,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -69723,7 +69723,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -69741,7 +69741,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -69756,8 +69756,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -69778,19 +69778,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -69927,7 +69927,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -69940,7 +69940,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -70529,7 +70529,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -70547,7 +70547,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -70565,7 +70565,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -70583,7 +70583,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -70601,7 +70601,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -70616,8 +70616,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -70638,19 +70638,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -70787,7 +70787,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -70800,7 +70800,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -71389,7 +71389,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -71407,7 +71407,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -71425,7 +71425,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -71443,7 +71443,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -71461,7 +71461,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -71476,8 +71476,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -71498,19 +71498,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -71647,7 +71647,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -71660,7 +71660,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -72249,7 +72249,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -72267,7 +72267,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -72285,7 +72285,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -72303,7 +72303,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -72321,7 +72321,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -72336,8 +72336,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -72358,19 +72358,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -72507,7 +72507,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -72520,7 +72520,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -73109,7 +73109,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -73127,7 +73127,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -73145,7 +73145,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -73163,7 +73163,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -73181,7 +73181,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -73196,8 +73196,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -73218,19 +73218,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -73367,7 +73367,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -73380,7 +73380,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -73969,7 +73969,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -73987,7 +73987,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74005,7 +74005,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74023,7 +74023,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74041,7 +74041,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74056,8 +74056,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -74078,19 +74078,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -74227,7 +74227,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -74240,7 +74240,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -74829,7 +74829,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74847,7 +74847,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74865,7 +74865,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74883,7 +74883,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74901,7 +74901,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -74916,8 +74916,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -74938,19 +74938,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -75087,7 +75087,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -75100,7 +75100,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -75689,7 +75689,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -75707,7 +75707,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -75725,7 +75725,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -75743,7 +75743,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -75761,7 +75761,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -75776,8 +75776,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -75798,19 +75798,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -75947,7 +75947,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -75960,7 +75960,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -76549,7 +76549,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -76567,7 +76567,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -76585,7 +76585,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -76603,7 +76603,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -76621,7 +76621,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -76636,8 +76636,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -76658,19 +76658,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -76807,7 +76807,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -76820,7 +76820,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -77409,7 +77409,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -77427,7 +77427,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -77445,7 +77445,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -77463,7 +77463,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -77481,7 +77481,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -77496,8 +77496,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -77518,19 +77518,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -77667,7 +77667,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -77680,7 +77680,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -78269,7 +78269,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -78287,7 +78287,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -78305,7 +78305,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -78323,7 +78323,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -78341,7 +78341,7 @@
 	<TrkFx>1</TrkFx>
 	<PlyMod>0</PlyMod>
 	<StrtMod>0</StrtMod>
-	<StpMod>0</StpMod>
+	<StpMod>2</StpMod>
 	<MeasMod>0</MeasMod>
 	<MeasLen>0</MeasLen>
 	<MeasBtLp>0</MeasBtLp>
@@ -78356,8 +78356,8 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
-	<RecCnt>0</RecCnt>
+	<LineOut>0</LineOut>
+	<RecCnt>1</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
 </RHYTHM>
@@ -78378,19 +78378,19 @@
 <MASTER>
 	<Lvl>50</Lvl>
 	<Tmp>1200</Tmp>
-	<Cs>0</Cs>
-	<Rv>0</Rv>
+	<Cs>5</Cs>
+	<Rv>3</Rv>
 	<PhOut>0</PhOut>
 	<PhOutTr>31</PhOutTr>
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
 	<SinglePlyChg>0</SinglePlyChg>
-	<LpQtz>0</LpQtz>
+	<LpQtz>1</LpQtz>
 	<LpMod>0</LpMod>
 	<LpLen>0</LpLen>
 	<AllStrt>31</AllStrt>
@@ -78527,7 +78527,7 @@
 	<TgtMax>100</TgtMax>
 </ASSIGN16>
 <INPUT_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
@@ -78540,7 +78540,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
