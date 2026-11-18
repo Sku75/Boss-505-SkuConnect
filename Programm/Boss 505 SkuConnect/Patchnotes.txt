@@ -1,5 +1,24 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.55, 18.11.2026
+Effekte lassen sich jetzt aus dem Live-Studio schalten, mit Ansage des
+Effektnamens. Zwei Teile:
+Erstens in der Werkstatt, am Ende des Memory menues: FX-Steuerung fuer das
+Live-Studio einrichten. Das schreibt die Zuweisungen 1 bis 12 auf den
+gewaehlten Platz, mit CC 20 bis 31. Mit Rueckfrage, danach Kontrolle.
+Achtung: die Werkseinstellung auf Zuweisung 1 bis 3 wird dabei
+ueberschrieben, also Expression-Pedal, CTL1 und CTL2.
+Zweitens im Live-Studio der Punkt Effekte, darin Input FX und Track FX mit
+Ein, Aus, Taste A, B und C samt Effektnamen, Effekt waehlen aus allen 31
+Typen, und Reglerwert in Fuenferschritten.
+Die Station kennt nur weiter und zurueck. Darum rechnet das Programm den
+Abstand zum gewuenschten Effekt aus und schickt die Schritte in einem Zug.
+Multi und Einzel-Betrieb werden unterschieden, im Multi-Betrieb liest das
+Programm die Multi-Felder der Effektbank.
+Stand neu einlesen holt den Stand aus der Ruecklage der Stationsdaten.
+Im Spielbetrieb gibt es kein Laufwerk, darum ist die Ruecklage die einzige
+Quelle. Was am Geraet gedrueckt wird, sieht das Programm nicht.
+
 Version 0.54, 18.11.2026
 Metronom einstellen liess sich nicht oeffnen, das Untermenue blieb leer.
 Ursache: die Stelle, die Listen des Live-Bereichs baut, kannte nur drei

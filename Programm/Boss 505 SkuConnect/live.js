@@ -43,6 +43,19 @@ let tonKontext = null;
 // LOOP IN laesst sich eine Datei vom Rechner in eine Spur aufnehmen.
 let usbTonZurStation = false;
 
+// Effekte im Spielbetrieb. Die Station meldet nichts zurueck, darum fuehrt
+// das Programm den Stand selbst mit. Grundlage ist die Ruecklage der
+// Stationsdaten. Was am Geraet gedrueckt wird, sieht es nicht, darum gibt es
+// Stand neu einlesen.
+//
+// Die Nummern muessen zu den Zuweisungen passen, die main.js schreibt.
+const FX_CC = {
+  input: { anaus: 20, weiter: 22, zurueck: 23, typWeiter: 26, typZurueck: 27, regler: 30 },
+  track: { anaus: 21, weiter: 24, zurueck: 25, typWeiter: 28, typZurueck: 29, regler: 31 }
+};
+
+let fxStand = null;
+
 // FX-Regler-Ansage. Die Station schickt beim Drehen Control Change, oft
 // viele kurz hintereinander, darum wird die Ansage gebremst.
 let fxAnsageAn = false;
@@ -328,6 +341,169 @@ function uhrPruefen(li) {
        "Sonst das Metronom auf eigenes Tempo stellen"]);
 }
 
+function fxBankName(bank) { return bank === "input" ? "Input FX" : "Track FX"; }
+
+function fxTypName(nummer) {
+  const liste = (typeof FX_TYPEN !== "undefined") ? FX_TYPEN : [];
+  return liste[nummer] !== undefined ? liste[nummer] : "Effekt " + nummer;
+}
+
+// Liest eine Effektbank aus den Werten eines Speicherplatzes. Im
+// Multi-Betrieb gelten andere Felder als im Einzel-Betrieb, darum beides.
+function fxBankLesen(d) {
+  const zahl = (x, standard) => {
+    const n = parseInt(x, 10);
+    return isNaN(n) ? standard : n;
+  };
+  const multi = zahl(d.Mod, 1) === 0;
+  return {
+    multi,
+    sw: multi ? zahl(d.MltSw, 0) : zahl(d.Sw, 0),
+    sel: zahl(d.Sel, 0),
+    typ: multi ? [zahl(d.MltTyp1, 0), zahl(d.MltTyp2, 0), zahl(d.MltTyp3, 0)]
+               : [zahl(d.Typ1, 0), zahl(d.Typ2, 0), zahl(d.Typ3, 0)]
+  };
+}
+
+// Holt den Stand aus der Ruecklage der Stationsdaten. Im Spielbetrieb gibt es
+// kein Laufwerk, darum ist die Ruecklage die einzige Quelle. Sie stammt vom
+// letzten Besuch in der Werkstatt.
+async function fxEinlesen(li) {
+  const eigen = await window.skuConnect.datenordner();
+  if (!eigen.ok || !eigen.vorhanden) {
+    if (li) ergebnis(li, "Keine Rücklage", [
+      "Es liegt kein Stand der Station im Datenordner",
+      "Einmal in der Werkstatt Station suchen wählen, dann ist er da"]);
+    return false;
+  }
+  const platz = letzterPlatz || 1;
+  const e = await window.skuConnect.speicherplatzLesen(eigen.pfad, platz);
+  if (!e.ok) {
+    if (li) ergebnis(li, "Fehler beim Einlesen", ["Fehler", e.fehler]);
+    return false;
+  }
+  fxStand = {
+    platz,
+    input: fxBankLesen(e.daten.INPUT_FX || {}),
+    track: fxBankLesen(e.daten.TRACK_FX || {})
+  };
+  if (li) {
+    const i = fxStand.input, t = fxStand.track;
+    ergebnis(li, "Stand von Platz " + platz + " eingelesen", [
+      "Platz " + platz,
+      "Input FX " + (i.multi ? "Multi" : "Einzel")
+        + ", A " + fxTypName(i.typ[0]) + ", B " + fxTypName(i.typ[1]) + ", C " + fxTypName(i.typ[2]),
+      "Track FX " + (t.multi ? "Multi" : "Einzel")
+        + ", A " + fxTypName(t.typ[0]) + ", B " + fxTypName(t.typ[1]) + ", C " + fxTypName(t.typ[2]),
+      "Gelesen aus der Rücklage, nicht aus der Station",
+      "Nach Änderungen am Gerät noch einmal einlesen"]);
+  }
+  return true;
+}
+
+function warte(ms) { return new Promise(f => window.setTimeout(f, ms)); }
+
+// Ein Tastendruck als Control Change: erst gedrueckt, dann gelassen.
+async function ccPuls(nummer) {
+  if (!midiSenden([0xb0 | midiKanal, nummer, 127])) return false;
+  await warte(12);
+  midiSenden([0xb0 | midiKanal, nummer, 0]);
+  await warte(12);
+  return true;
+}
+
+function fxBereit(li) {
+  if (!midiAusgang) {
+    ergebnis(li, "Nicht verbunden", ["Kein MIDI-Ausgang", "Erst MIDI verbinden wählen"]);
+    return false;
+  }
+  if (!fxStand) {
+    ergebnis(li, "Stand nicht eingelesen", [
+      "Erst Stand neu einlesen wählen",
+      "Sonst weiß das Programm nicht, welcher Effekt wo liegt"]);
+    return false;
+  }
+  return true;
+}
+
+async function fxAnAus(li, an) {
+  const bank = li.dataset.ziel;
+  if (!fxBereit(li)) return;
+  const cc = FX_CC[bank].anaus;
+  if (!midiSenden([0xb0 | midiKanal, cc, an ? 127 : 0])) return;
+  const b = fxStand[bank];
+  b.sw = an ? (b.multi ? 7 : 1) : 0;
+  ergebnis(li, fxBankName(bank) + (an ? " ein" : " aus"), [
+    fxBankName(bank) + (an ? " eingeschaltet" : " ausgeschaltet"),
+    "Gesendet: CC " + cc + " auf " + (an ? 127 : 0),
+    b.multi ? "Multi-Betrieb, alle drei Tasten zusammen" : "Einzel-Betrieb, Taste "
+      + "ABC".charAt(b.sel) + ", " + fxTypName(b.typ[b.sel])]);
+}
+
+// Schaltet die gewaehlte Taste weiter, bis die gewuenschte erreicht ist.
+async function fxTaste(li) {
+  const bank = li.dataset.ziel;
+  if (!fxBereit(li)) return;
+  const ziel = parseInt(li.dataset.nummer, 10) - 1;
+  const b = fxStand[bank];
+  let schritte = 0;
+  while (b.sel !== ziel && schritte < 3) {
+    const vor = (ziel - b.sel + 3) % 3 <= 1;
+    if (!await ccPuls(vor ? FX_CC[bank].weiter : FX_CC[bank].zurueck)) return;
+    b.sel = (b.sel + (vor ? 1 : 2)) % 3;
+    schritte++;
+  }
+  ergebnis(li, fxBankName(bank) + " Taste " + "ABC".charAt(b.sel) + ", " + fxTypName(b.typ[b.sel]),
+    [fxBankName(bank) + ", Taste " + "ABC".charAt(b.sel),
+     "Effekt " + fxTypName(b.typ[b.sel]),
+     schritte + (schritte === 1 ? " Schritt" : " Schritte") + " gesendet",
+     b.multi ? "Im Multi-Betrieb schaltet das nur die Auswahl, nicht ein oder aus" : ""]
+      .filter(Boolean));
+}
+
+// Schaltet den Effekttyp der gewaehlten Taste bis zum Ziel weiter. Die
+// Station kennt nur weiter und zurueck, darum zaehlt das Programm die
+// Schritte und schickt sie in einem Zug.
+async function fxTyp(li) {
+  const bank = li.dataset.ziel;
+  if (!fxBereit(li)) return;
+  const ziel = parseInt(li.dataset.nummer, 10);
+  const b = fxStand[bank];
+  const jetzt = b.typ[b.sel];
+  const anzahl = (typeof FX_TYPEN !== "undefined") ? FX_TYPEN.length : 31;
+  let vorwaerts = ((ziel - jetzt + anzahl) % anzahl);
+  let rueckwaerts = ((jetzt - ziel + anzahl) % anzahl);
+  const vor = vorwaerts <= rueckwaerts;
+  const schritte = vor ? vorwaerts : rueckwaerts;
+  if (schritte === 0) {
+    ergebnis(li, "Steht schon auf " + fxTypName(ziel), null);
+    return;
+  }
+  sage("Schalte auf " + fxTypName(ziel));
+  for (let i = 0; i < schritte; i++) {
+    if (!await ccPuls(vor ? FX_CC[bank].typWeiter : FX_CC[bank].typZurueck)) return;
+  }
+  b.typ[b.sel] = ziel;
+  ergebnis(li, fxBankName(bank) + " Taste " + "ABC".charAt(b.sel) + ", " + fxTypName(ziel), [
+    fxBankName(bank) + ", Taste " + "ABC".charAt(b.sel),
+    "Jetzt " + fxTypName(ziel) + ", vorher " + fxTypName(jetzt),
+    schritte + (vor ? " Schritte vorwärts" : " Schritte zurück"),
+    "Mit WRITE am Gerät bleibt das im Speicherplatz"]);
+}
+
+async function fxWert(li) {
+  const bank = li.dataset.ziel;
+  if (!fxBereit(li)) return;
+  const wert = parseInt(li.dataset.nummer, 10);
+  const cc = FX_CC[bank].regler;
+  const midiwert = Math.round(wert * 1.27);
+  if (!midiSenden([0xb0 | midiKanal, cc, Math.min(127, midiwert)])) return;
+  ergebnis(li, fxBankName(bank) + " Reglerwert " + wert, [
+    fxBankName(bank) + ", Reglerwert " + wert,
+    "Gesendet: CC " + cc + " auf " + midiwert,
+    "Wirkt auf den Parameter, der am FX-Regler hängt"]);
+}
+
 function tempoAnsagen(li) {
   if (aktuellesTempo === null) {
     ergebnis(li, "Kein Tempo empfangen", [
@@ -560,6 +736,7 @@ function liveMenue() {
     { typ: "ordner", text: "Metronom einstellen", laden: "metronom-einstellen" },
     { typ: "aktion", id: "fx-ansage", text: "FX-Regler ansagen: Aus" },
     { typ: "aktion", id: "usb-ton", text: "USB-Ton zur Station: Aus" },
+    { typ: "ordner", text: "Effekte", laden: "fx" },
     { typ: "aktion", id: "ansager", text: "Ansager: An" },
     { typ: "aktion", id: "platz-ansagen", text: "Gewählten Platz ansagen" },
     { typ: "aktion", id: "tempo-ansagen", text: "Tempo ansagen" },
@@ -575,6 +752,44 @@ function liveMenue() {
 
 // Baut die Unterlisten des Live-Bereichs.
 function liveLaden(art, li) {
+  if (art === "fx") {
+    // Im Hintergrund den Stand holen, damit die Effektnamen gleich dastehen.
+    if (!fxStand) fxEinlesen(null);
+    return [
+      { typ: "ordner", text: "Input FX", laden: "fx-bank", ziel: "input" },
+      { typ: "ordner", text: "Track FX", laden: "fx-bank", ziel: "track" },
+      { typ: "aktion", id: "fx-einlesen", text: "Stand neu einlesen" }
+    ];
+  }
+  if (art === "fx-bank") {
+    const bank = li.dataset.ziel;
+    const b = fxStand ? fxStand[bank] : null;
+    const e = [
+      { typ: "aktion", id: "fx-an", ziel: bank, text: "Ein" },
+      { typ: "aktion", id: "fx-aus", ziel: bank, text: "Aus" }
+    ];
+    for (let i = 0; i < 3; i++) {
+      e.push({ typ: "aktion", id: "fx-taste", ziel: bank, nummer: i + 1,
+               text: "Taste " + "ABC".charAt(i) + (b ? ", " + fxTypName(b.typ[i]) : "") });
+    }
+    e.push({ typ: "ordner", text: "Effekt wählen für die gewählte Taste",
+             laden: "fx-typen", ziel: bank });
+    e.push({ typ: "ordner", text: "Reglerwert", laden: "fx-regler", ziel: bank });
+    return e;
+  }
+  if (art === "fx-typen") {
+    const bank = li.dataset.ziel;
+    const liste = (typeof FX_TYPEN !== "undefined") ? FX_TYPEN : [];
+    return liste.map((name, i) => ({ typ: "aktion", id: "fx-typ", ziel: bank, nummer: i, text: name }));
+  }
+  if (art === "fx-regler") {
+    const bank = li.dataset.ziel;
+    const e = [];
+    for (let w = 0; w <= 100; w += 5) {
+      e.push({ typ: "aktion", id: "fx-wert", ziel: bank, nummer: w, text: "Reglerwert " + w });
+    }
+    return e;
+  }
   if (art === "metronom-einstellen") {
     return [
       { typ: "ordner", text: "Schläge je Takt", laden: "metronom-takt" },

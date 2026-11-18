@@ -760,6 +760,69 @@ async function treiberInstallieren() {
 }
 
 // =====================================================================
+// FX-Steuerung fuer das Live-Studio
+//
+// Im Spielbetrieb nimmt die Station nur Control Change an, und auch das nur,
+// wenn im Speicherplatz eine Zuweisung darauf zeigt. Diese zwoelf
+// Zuweisungen legen fest, welche Nummer welchen Befehl ausloest. Dieselben
+// Nummern stehen in live.js. Wird hier eine geaendert, muss sie dort mit.
+// =====================================================================
+
+const FX_ZUWEISUNGEN = [
+  { nr: 1,  cc: 20, src: 35, tgt: 45, max: 1,   was: 'Input FX ein und aus' },
+  { nr: 2,  cc: 21, src: 36, tgt: 46, max: 1,   was: 'Track FX ein und aus' },
+  { nr: 3,  cc: 22, src: 37, tgt: 71, max: 1,   was: 'Input FX naechste Taste' },
+  { nr: 4,  cc: 23, src: 38, tgt: 72, max: 1,   was: 'Input FX vorige Taste' },
+  { nr: 5,  cc: 24, src: 39, tgt: 73, max: 1,   was: 'Track FX naechste Taste' },
+  { nr: 6,  cc: 25, src: 40, tgt: 74, max: 1,   was: 'Track FX vorige Taste' },
+  { nr: 7,  cc: 26, src: 41, tgt: 67, max: 1,   was: 'Input FX naechster Effekt' },
+  { nr: 8,  cc: 27, src: 42, tgt: 68, max: 1,   was: 'Input FX voriger Effekt' },
+  { nr: 9,  cc: 28, src: 43, tgt: 69, max: 1,   was: 'Track FX naechster Effekt' },
+  { nr: 10, cc: 29, src: 44, tgt: 70, max: 1,   was: 'Track FX voriger Effekt' },
+  { nr: 11, cc: 30, src: 45, tgt: 65, max: 100, was: 'Input FX Reglerwert' },
+  { nr: 12, cc: 31, src: 46, tgt: 66, max: 100, was: 'Track FX Reglerwert' }
+];
+
+async function fxSteuerungEinrichten(rolandPfad, nummer) {
+  await standSichern(rolandPfad);
+  const pfad = dateiPfad(rolandPfad, 'MEMORY');
+  let inhalt = await fsp.readFile(pfad, 'latin1');
+
+  const stellen = [];
+  for (const z of FX_ZUWEISUNGEN) {
+    stellen.push([z.nr, 'Sw', '1'], [z.nr, 'Src', String(z.src)],
+                 [z.nr, 'SrcMod', '0'], [z.nr, 'Tgt', String(z.tgt)],
+                 [z.nr, 'TgtMin', '0'], [z.nr, 'TgtMax', String(z.max)]);
+  }
+
+  let gesetzt = 0;
+  for (const [nr, feld, wert] of stellen) {
+    const g = blockGrenzen(inhalt, nummer - 1);
+    if (!g) throw new Error('Speicherplatz nicht gefunden');
+    const a = abschnittGrenzen(inhalt, 'ASSIGN' + nr, g.start, g.ende);
+    if (!a) throw new Error('Zuweisung ' + nr + ' nicht gefunden');
+    const f = feldGrenzen(inhalt, feld, a.start, a.ende);
+    if (!f) throw new Error('Feld ' + feld + ' in Zuweisung ' + nr + ' nicht gefunden');
+    if (inhalt.slice(f.start, f.ende) === wert) continue;
+    inhalt = inhalt.slice(0, f.start) + wert + inhalt.slice(f.ende);
+    gesetzt++;
+  }
+  await fsp.writeFile(pfad, inhalt, 'latin1');
+
+  const kontrolle = await fsp.readFile(pfad, 'latin1');
+  let abweichungen = 0;
+  for (const [nr, feld, wert] of stellen) {
+    const g = blockGrenzen(kontrolle, nummer - 1);
+    const a = abschnittGrenzen(kontrolle, 'ASSIGN' + nr, g.start, g.ende);
+    const f = a && feldGrenzen(kontrolle, feld, a.start, a.ende);
+    if (!f || kontrolle.slice(f.start, f.ende) !== wert) abweichungen++;
+  }
+  return { zuweisungen: FX_ZUWEISUNGEN.length, gesetzt, abweichungen,
+           bestaetigt: abweichungen === 0,
+           liste: FX_ZUWEISUNGEN.map(z => 'Zuweisung ' + z.nr + ', CC ' + z.cc + ', ' + z.was) };
+}
+
+// =====================================================================
 // Track-Profile
 //
 // Ein Profil haelt die Abweichungen eines Speicherplatzes vom Werkszustand
@@ -943,6 +1006,7 @@ function audioGeraete(aktion, suche, rolle) {
 }
 
 ipcMain.handle('audio-geraete', sicher(audioGeraete));
+ipcMain.handle('fx-steuerung-einrichten', sicher(fxSteuerungEinrichten));
 ipcMain.handle('updater-ablegen', sicher(updaterAblegen));
 ipcMain.handle('profile-lesen', sicher(profileLesen));
 ipcMain.handle('profil-anlegen', sicher(profilAnlegen));

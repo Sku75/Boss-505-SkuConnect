@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.54, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.55, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -608,6 +608,25 @@ async function laden(li) {
     return true;
   }
 
+  // Die zwoelf Zuweisungen, ohne die das Live-Studio die Effekte nicht
+  // schalten kann. Sie gehoeren zum Speicherplatz, darum hier und nicht
+  // im Live-Bereich.
+  if (art === "fxfrage") {
+    if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return false; }
+    setzeKinder(li, [
+      { typ: "aktion", id: "profil-abbrechen", text: "Abbrechen, nichts ändern" },
+      { typ: "aktion", id: "fx-einrichten", nummer: gewaehlterPlatz,
+        text: "Ja, Zuweisung 1 bis 12 auf Platz " + String(gewaehlterPlatz).padStart(2, "0") + " setzen",
+        vorschau: ["Danach kann das Live-Studio die Effekte schalten",
+                   "Belegt werden die Zuweisungen 1 bis 12 und CC 20 bis 31",
+                   "Die Werkseinstellung auf Zuweisung 1 bis 3 wird überschrieben",
+                   "Das sind Expression-Pedal, CTL1 und CTL2",
+                   "Zuweisung 13 bis 16 bleiben frei",
+                   "Danach das Profil überschreiben und neu verteilen"] }
+    ]);
+    return true;
+  }
+
   if (art === "initfrage") {
     if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return false; }
     setzeKinder(li, [
@@ -848,6 +867,8 @@ function memoryEintraege(daten) {
       kinder: felderZuEintraegen("MEMORY", n, "ASSIGN" + i, daten["ASSIGN" + i]) });
   }
   eintraege.push({ typ: "ordner", text: "Zuweisungen, 16 Stück", kinder: zuweisungen });
+  eintraege.push({ typ: "ordner", text: "FX-Steuerung für das Live-Studio einrichten",
+                   laden: "fxfrage" });
 
   return eintraege;
 }
@@ -973,6 +994,25 @@ function listeAuffrischen(li) {
     if (ordner.querySelector(":scope > ul > li[data-id='profil-neu']")) return;
     ordner = elternVon(ordner);
   }
+}
+
+// Schreibt die zwoelf Zuweisungen fuer die FX-Steuerung.
+async function fxSteuerungEinrichten(li) {
+  const pfad = await quelleSichern();
+  if (!pfad || !schreibbar) { sage("Nur mit angeschlossener Station möglich"); return; }
+  const nummer = parseInt(li.dataset.nummer, 10);
+  const e = await window.skuConnect.fxSteuerungEinrichten(pfad, nummer);
+  const ziel = rueckfrageSchliessen(li) || li;
+  if (!e.ok) { ergebnis(ziel, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(ziel, e.bestaetigt
+      ? "FX-Steuerung eingerichtet, Station aus und wieder ein"
+      : "Achtung, Kontrolle fehlgeschlagen",
+    e.bestaetigt
+      ? ["Zwölf Zuweisungen auf Platz " + nummer + " gesetzt",
+         e.gesetzt + " Werte geändert",
+         "Die Station liest die Datei nur beim Einschalten"].concat(e.liste)
+      : [e.abweichungen + " Werte stimmen nach dem Schreiben nicht",
+         "Den Stand am Gerät prüfen"]);
 }
 
 // Macht aus den Abweichungen lesbare Zeilen für den Tooltip.
@@ -1744,7 +1784,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.54"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.55"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
@@ -1756,6 +1796,7 @@ async function aktiviere(li) {
     case "profil-umbenennen": await profilUmbenennen(li); return;
     case "profil-weg": await profilWeg(li); return;
     case "profil-abbrechen": sage("Abgebrochen, nichts geändert"); return;
+    case "fx-einrichten": await fxSteuerungEinrichten(li); return;
     case "init-abbrechen": sage("Abgebrochen, nichts geändert"); return;
     case "init-ausfuehren": await platzInitialisieren(li); return;
     case "ct-ausfuehren": await spurKopieren(li); return;
@@ -1788,6 +1829,12 @@ async function aktiviere(li) {
     case "metronom-wert": metronomWert(li); return;
     case "fx-ansage": fxAnsageUmschalten(li); return;
     case "usb-ton": await usbTonUmschalten(li); return;
+    case "fx-einlesen": await fxEinlesen(li); return;
+    case "fx-an": await fxAnAus(li, true); return;
+    case "fx-aus": await fxAnAus(li, false); return;
+    case "fx-taste": await fxTaste(li); return;
+    case "fx-typ": await fxTyp(li); return;
+    case "fx-wert": await fxWert(li); return;
     case "uhr-pruefen": uhrPruefen(li); return;
     case "ansager": ansagerUmschalten(li); return;
     case "platz-ansagen": platzAnsagen(li); return;
