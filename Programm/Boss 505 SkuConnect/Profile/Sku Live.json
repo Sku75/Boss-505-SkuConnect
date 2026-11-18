@@ -1,8 +1,86 @@
 {
   "name": "Sku Live",
   "quelle": 10,
-  "vorlage": 9,
+  "vorlage": 0,
   "werte": [
+    {
+      "abschnitt": "MASTER",
+      "feld": "Cs",
+      "wert": "5",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "MASTER",
+      "feld": "Rv",
+      "wert": "3",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "REC_OPTION",
+      "feld": "RecAct",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "PLAY_OPTION",
+      "feld": "LpQtz",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "RHYTHM",
+      "feld": "LineOut",
+      "wert": "0",
+      "werk": "1"
+    },
+    {
+      "abschnitt": "RHYTHM",
+      "feld": "RecCnt",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "TRACK1",
+      "feld": "StpMod",
+      "wert": "2",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "TRACK2",
+      "feld": "StpMod",
+      "wert": "2",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "TRACK3",
+      "feld": "StpMod",
+      "wert": "2",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "TRACK4",
+      "feld": "StpMod",
+      "wert": "2",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "TRACK5",
+      "feld": "StpMod",
+      "wert": "2",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "INPUT_FX",
+      "feld": "Mod",
+      "wert": "0",
+      "werk": "1"
+    },
+    {
+      "abschnitt": "TRACK_FX",
+      "feld": "Mod",
+      "wert": "0",
+      "werk": "1"
+    },
     {
       "abschnitt": "ASSIGN1",
       "feld": "Src",
