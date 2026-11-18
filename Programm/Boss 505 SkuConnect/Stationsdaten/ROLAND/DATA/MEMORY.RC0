@@ -8020,7 +8020,7 @@
 	<MltTyp3>8</MltTyp3>
 </INPUT_FX>
 <TRACK_FX>
-	<Mod>1</Mod>
+	<Mod>0</Mod>
 	<MltMod>0</MltMod>
 	<Sw>0</Sw>
 	<Sel>0</Sel>
