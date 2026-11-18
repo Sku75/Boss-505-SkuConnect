@@ -4,82 +4,274 @@
   "vorlage": 9,
   "werte": [
     {
-      "abschnitt": "MASTER",
-      "feld": "Cs",
-      "wert": "5",
+      "abschnitt": "ASSIGN1",
+      "feld": "Src",
+      "wert": "35",
       "werk": "0"
     },
     {
-      "abschnitt": "MASTER",
-      "feld": "Rv",
-      "wert": "3",
-      "werk": "0"
+      "abschnitt": "ASSIGN1",
+      "feld": "Tgt",
+      "wert": "45",
+      "werk": "79"
     },
     {
-      "abschnitt": "REC_OPTION",
-      "feld": "RecAct",
+      "abschnitt": "ASSIGN1",
+      "feld": "TgtMax",
       "wert": "1",
-      "werk": "0"
+      "werk": "100"
     },
     {
-      "abschnitt": "PLAY_OPTION",
-      "feld": "LpQtz",
-      "wert": "1",
-      "werk": "0"
+      "abschnitt": "ASSIGN2",
+      "feld": "Src",
+      "wert": "36",
+      "werk": "1"
     },
     {
-      "abschnitt": "RHYTHM",
-      "feld": "LineOut",
+      "abschnitt": "ASSIGN2",
+      "feld": "SrcMod",
       "wert": "0",
       "werk": "1"
     },
     {
-      "abschnitt": "RHYTHM",
-      "feld": "RecCnt",
+      "abschnitt": "ASSIGN2",
+      "feld": "Tgt",
+      "wert": "46",
+      "werk": "37"
+    },
+    {
+      "abschnitt": "ASSIGN2",
+      "feld": "TgtMax",
       "wert": "1",
       "werk": "0"
     },
     {
-      "abschnitt": "TRACK1",
-      "feld": "StpMod",
-      "wert": "2",
-      "werk": "0"
+      "abschnitt": "ASSIGN3",
+      "feld": "Src",
+      "wert": "37",
+      "werk": "2"
     },
     {
-      "abschnitt": "TRACK2",
-      "feld": "StpMod",
-      "wert": "2",
-      "werk": "0"
-    },
-    {
-      "abschnitt": "TRACK3",
-      "feld": "StpMod",
-      "wert": "2",
-      "werk": "0"
-    },
-    {
-      "abschnitt": "TRACK4",
-      "feld": "StpMod",
-      "wert": "2",
-      "werk": "0"
-    },
-    {
-      "abschnitt": "TRACK5",
-      "feld": "StpMod",
-      "wert": "2",
-      "werk": "0"
-    },
-    {
-      "abschnitt": "INPUT_FX",
-      "feld": "Mod",
+      "abschnitt": "ASSIGN3",
+      "feld": "SrcMod",
       "wert": "0",
       "werk": "1"
     },
     {
-      "abschnitt": "TRACK_FX",
-      "feld": "Mod",
-      "wert": "0",
-      "werk": "1"
+      "abschnitt": "ASSIGN3",
+      "feld": "Tgt",
+      "wert": "71",
+      "werk": "38"
+    },
+    {
+      "abschnitt": "ASSIGN3",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "50"
+    },
+    {
+      "abschnitt": "ASSIGN4",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN4",
+      "feld": "Src",
+      "wert": "38",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN4",
+      "feld": "Tgt",
+      "wert": "72",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN4",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN5",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN5",
+      "feld": "Src",
+      "wert": "39",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN5",
+      "feld": "Tgt",
+      "wert": "73",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN5",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN6",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN6",
+      "feld": "Src",
+      "wert": "40",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN6",
+      "feld": "Tgt",
+      "wert": "74",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN6",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN7",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN7",
+      "feld": "Src",
+      "wert": "41",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN7",
+      "feld": "Tgt",
+      "wert": "67",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN7",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN8",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN8",
+      "feld": "Src",
+      "wert": "42",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN8",
+      "feld": "Tgt",
+      "wert": "68",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN8",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN9",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN9",
+      "feld": "Src",
+      "wert": "43",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN9",
+      "feld": "Tgt",
+      "wert": "69",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN9",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN10",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN10",
+      "feld": "Src",
+      "wert": "44",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN10",
+      "feld": "Tgt",
+      "wert": "70",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN10",
+      "feld": "TgtMax",
+      "wert": "1",
+      "werk": "100"
+    },
+    {
+      "abschnitt": "ASSIGN11",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN11",
+      "feld": "Src",
+      "wert": "45",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN11",
+      "feld": "Tgt",
+      "wert": "65",
+      "werk": "20"
+    },
+    {
+      "abschnitt": "ASSIGN12",
+      "feld": "Sw",
+      "wert": "1",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN12",
+      "feld": "Src",
+      "wert": "46",
+      "werk": "0"
+    },
+    {
+      "abschnitt": "ASSIGN12",
+      "feld": "Tgt",
+      "wert": "66",
+      "werk": "20"
     }
   ],
   "angelegt": "2026-11-18"
