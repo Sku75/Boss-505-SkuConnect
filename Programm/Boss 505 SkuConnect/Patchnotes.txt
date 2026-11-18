@@ -1,5 +1,12 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.52, 18.11.2026
+Das Auffrischen der Profilliste sucht jetzt von der gedrueckten Zeile aus
+nach oben, bis der Ordner kommt, in dem Neues Profil erstellen steht.
+Vorher wurde nur der Ordner direkt darueber neu gelesen, und beim Loeschen
+oder Umbenennen war das der falsche.
+Auch Umbenennen frischt die Liste jetzt auf.
+
 Version 0.51, 18.11.2026
 Ein neu angelegtes Profil fehlte in der Liste, bis man das Programm neu
 startete. Die Liste der Profile wird nach dem Anlegen und nach dem

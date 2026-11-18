@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.51, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.52, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -923,11 +923,17 @@ async function spurKopieren(li) {
     "Der Stand davor liegt in Git"]);
 }
 
-// Sorgt dafür, dass der Ordner über dieser Zeile beim nächsten Öffnen neu
-// gelesen wird. Ohne das fehlt ein neu angelegtes Profil in der Liste.
+// Sorgt dafür, dass die Liste der Profile beim nächsten Öffnen neu gelesen
+// wird. Ohne das fehlt ein neu angelegtes Profil, und ein gelöschtes steht
+// noch da. Gesucht wird nach oben, bis der Ordner kommt, in dem Neues Profil
+// erstellen steht. So stimmt es aus jeder Tiefe heraus.
 function listeAuffrischen(li) {
-  const ordner = elternVon(li);
-  if (ordner) ordner.dataset.geladen = "";
+  let ordner = elternVon(li);
+  while (ordner) {
+    ordner.dataset.geladen = "";
+    if (ordner.querySelector(":scope > ul > li[data-id='profil-neu']")) return;
+    ordner = elternVon(ordner);
+  }
 }
 
 // Macht aus den Abweichungen lesbare Zeilen für den Tooltip.
@@ -1007,6 +1013,7 @@ async function profilUmbenennen(li) {
   if (neu === null) { sage("Abgebrochen"); return; }
   const e = await window.skuConnect.profilUmbenennen(alt, neu);
   if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  listeAuffrischen(li);
   ergebnis(li, "Heißt jetzt " + e.name, ["Umbenannt", "Vorher: " + alt, "Jetzt: " + e.name,
     "Die Liste der Profile frischt beim nächsten Öffnen auf"]);
 }
@@ -1677,7 +1684,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.51"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.52"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
