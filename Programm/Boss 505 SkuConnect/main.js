@@ -34,11 +34,32 @@ function erstelleFenster() {
   fenster.loadFile('index.html');
 }
 
-// Sucht einen unbespielten Platz mit dem Namen INIT MEMORY und gibt dessen
-// Inhalt als Vorlage zurueck. Daraus wird beim Initialisieren der Werkszustand
-// hergestellt. Eine eigene Vorlagedatei waere eine zweite Wahrheit, die
-// irgendwann von der Station abweicht.
+// Der Werkszustand eines Speicherplatzes, aus einer eigenen Datei im
+// Programmordner. Sie stammt aus dem ersten gesicherten Stand der Station,
+// also aus der Zeit vor der ersten Aenderung.
+//
+// Warum nicht von der Karte: sobald ein Profil auf die unbespielten Plaetze
+// geschrieben wird, heissen die weiter INIT MEMORY, tragen aber die eigenen
+// Einstellungen. Als Vergleich sind sie dann wertlos, und ein Profil haelt
+// nur noch fest, was sich davon unterscheidet. Genau das ist einmal
+// passiert, darum liegt der Werkszustand jetzt fest.
+function werksVorlage() {
+  try {
+    return fs.readFileSync(path.join(__dirname, 'Werkszustand', 'INIT MEMORY.txt'), 'latin1');
+  } catch (f) {
+    return null;
+  }
+}
+
+// Vorlage fuer Initialize. Erst die eigene Datei, sonst ein unbespielter
+// Platz mit dem Namen INIT MEMORY auf der Karte.
 function initVorlage(inhalt) {
+  const datei = werksVorlage();
+  if (datei) return datei;
+  return initVorlageVonKarte(inhalt);
+}
+
+function initVorlageVonKarte(inhalt) {
   for (let id = 0; id < 99; id++) {
     const g = blockGrenzen(inhalt, id);
     if (!g) break;
@@ -897,10 +918,24 @@ async function profilAnlegen(rolandPfad, nummer, name) {
   const kurz = profilName(name);
   if (!kurz) throw new Error('Der Name ist leer');
   const inhalt = await dateiLesen(rolandPfad, 'MEMORY');
-  const vorlage = vorlagePlatz(inhalt);
-  if (!vorlage) throw new Error('Kein unbespielter Platz mit dem Namen INIT MEMORY, der Werkszustand fehlt');
   const ist = platzWerte(inhalt, nummer);
-  const soll = platzWerte(inhalt, vorlage);
+
+  // Verglichen wird gegen den festen Werkszustand aus der eigenen Datei.
+  // Fehlt sie, bleibt der alte Weg ueber einen unbespielten Platz.
+  let soll = null;
+  let vorlage = 0;
+  const text = werksVorlage();
+  if (text) {
+    soll = {};
+    for (const a of PROFIL_ABSCHNITTE) {
+      const w = abschnittLesen(text, a, 0, text.length);
+      if (w) soll[a] = w;
+    }
+  } else {
+    vorlage = vorlagePlatz(inhalt);
+    if (!vorlage) throw new Error('Kein Werkszustand gefunden, weder als Datei noch auf der Karte');
+    soll = platzWerte(inhalt, vorlage);
+  }
   const werte = [];
   for (const a of Object.keys(ist)) {
     for (const f of Object.keys(ist[a])) {

@@ -1,5 +1,24 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.56, 18.11.2026
+Zwei Dinge, eins davon wichtig.
+Der Werkszustand liegt jetzt als eigene Datei im Programmordner, unter
+Werkszustand. Vorher nahm das Programm dafuer einen unbespielten Platz mit
+dem Namen INIT MEMORY von der Karte. Sobald ein Profil auf diese Plaetze
+geschrieben wird, heissen sie weiter INIT MEMORY, tragen aber die eigenen
+Einstellungen. Als Vergleich sind sie dann wertlos, und ein neues Profil
+haelt nur noch fest, was sich davon unterscheidet. Genau das ist passiert:
+ein Profil kam mit 45 Abweichungen heraus, die dreizehn Einstellungen
+fehlten darin.
+Die Datei stammt aus dem ersten gesicherten Stand der Station vom
+19.10.2026, also von vor der ersten Aenderung. Von den 92 unbespielten
+INIT-Bloecken darin ist der genommen, der in keinem Feld von der Mehrheit
+abweicht. Damit stimmt auch Auf Boss-Standard zuruecksetzen wieder.
+Im Tooltip eines Profils steht jetzt vor jeder Zeile, wozu sie gehoert:
+Spur 3, Zuweisung 7, Rhythmus, Input FX. Ohne das standen dort zwoelf Mal
+Quelle und zwoelf Mal Ziel ohne Zusammenhang. Oben steht ausserdem, wie
+viele der Abweichungen in den Zuweisungen liegen.
+
 Version 0.55, 18.11.2026
 Effekte lassen sich jetzt aus dem Live-Studio schalten, mit Ansage des
 Effektnamens. Zwei Teile:

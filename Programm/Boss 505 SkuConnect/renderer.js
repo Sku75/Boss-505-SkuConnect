@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.55, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.56, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -1017,11 +1017,22 @@ async function fxSteuerungEinrichten(li) {
 
 // Macht aus den Abweichungen lesbare Zeilen für den Tooltip.
 function profilZeilen(profil) {
+  const zuweisungen = profil.werte.filter(w => /^ASSIGN/.test(w.abschnitt)).length;
   const zeilen = ["Angelegt am " + profil.angelegt + " von Platz " + profil.quelle,
                   profil.werte.length + " Abweichungen vom Werkszustand"];
+  if (zuweisungen) {
+    zeilen.push(zuweisungen + " davon in den Zuweisungen, der Rest sind Einstellungen");
+  }
   for (const w of profil.werte) {
     const b = feldBeschreibung(w.abschnitt, w.feld) || { text: w.abschnitt + " " + w.feld, art: "zahl" };
-    const kopf = /^TRACK[1-5]$/.test(w.abschnitt) ? "Spur " + w.abschnitt.slice(5) + ", " : "";
+    // Ohne Vorsatz stuenden hier zwoelf Mal Quelle und zwoelf Mal Ziel, ohne
+    // dass man hoert, zu welcher Zuweisung oder zu welcher Spur sie gehoeren.
+    let kopf = "";
+    if (/^TRACK[1-5]$/.test(w.abschnitt)) kopf = "Spur " + w.abschnitt.slice(5) + ", ";
+    else if (/^ASSIGN\d+$/.test(w.abschnitt)) kopf = "Zuweisung " + w.abschnitt.slice(6) + ", ";
+    else if (w.abschnitt === "RHYTHM") kopf = "Rhythmus, ";
+    else if (w.abschnitt === "INPUT_FX") kopf = "Input FX, ";
+    else if (w.abschnitt === "TRACK_FX") kopf = "Track FX, ";
     zeilen.push(kopf + b.text + ": " + wertText(b.art, w.wert, b)
       + ", Werk " + wertText(b.art, w.werk, b));
   }
@@ -1784,7 +1795,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.55"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.56"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
