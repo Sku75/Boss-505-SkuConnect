@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.49, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.50, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -1067,6 +1067,15 @@ async function wertSetzen(optionLi) {
 
   const neu = optionLi.dataset.ziel;
   const alterText = wertText(wertLi.dataset.art, wertLi.dataset.rohwert, wertLi._beschreibung);
+  // Der Auftrag beschreibt genau eine Stelle in der Datei: welche Datei,
+  // welcher Speicherplatz, welcher Abschnitt, welches Feld, welcher Wert.
+  const auftrag = {
+    datei: wertLi.dataset.datei,
+    nummer: parseInt(wertLi.dataset.nummer, 10) || 0,
+    abschnitt: wertLi.dataset.abschnitt,
+    feld: wertLi.dataset.feld,
+    wert: neu
+  };
   const e = await window.skuConnect.wertSchreiben(stationsPfad, auftrag);
   if (!e.ok) { ergebnis(wertLi, "Fehler beim Schreiben", ["Fehler", e.fehler]); return; }
 
@@ -1659,7 +1668,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.49"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.50"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;

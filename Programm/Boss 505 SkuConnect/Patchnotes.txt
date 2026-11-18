@@ -1,5 +1,19 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.50, 18.11.2026
+Werte liessen sich im Programm gar nicht setzen. Enter auf einem Wert hat
+nichts getan, ohne Fehlermeldung.
+Ursache: die Funktion zum Setzen hat einen Auftrag an den Programmkern
+geschickt, den sie nie zusammengebaut hat. Der Name war da, der Inhalt
+nicht. Der Syntaxpruefer kann das nicht sehen, es faellt erst beim
+Druecken auf.
+Jetzt wird der Auftrag aus der Zeile gebaut: Datei, Speicherplatz,
+Abschnitt, Feld und der gewaehlte Wert. Danach liest der Programmkern
+zurueck und vergleicht, wie bei jedem Schreiben.
+Betroffen waren alle Wertzeilen im Track menue, Memory menue und System
+menue. Namen aendern, Platz kopieren, Profile und Initialize liefen,
+die gehen einen anderen Weg.
+
 Version 0.49, 18.11.2026
 Der Rhythmus-Eintrag hiess Nur auf Kopfhoerer mit An und Aus, und das war
 verdreht zu lesen. Er heisst jetzt Rhythmus auf die Box, mit den Werten
