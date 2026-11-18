@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.50, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.51, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -923,6 +923,13 @@ async function spurKopieren(li) {
     "Der Stand davor liegt in Git"]);
 }
 
+// Sorgt dafür, dass der Ordner über dieser Zeile beim nächsten Öffnen neu
+// gelesen wird. Ohne das fehlt ein neu angelegtes Profil in der Liste.
+function listeAuffrischen(li) {
+  const ordner = elternVon(li);
+  if (ordner) ordner.dataset.geladen = "";
+}
+
 // Macht aus den Abweichungen lesbare Zeilen für den Tooltip.
 function profilZeilen(profil) {
   const zeilen = ["Angelegt am " + profil.angelegt + " von Platz " + profil.quelle,
@@ -951,6 +958,7 @@ async function profilNeu(li, vorhandenerName) {
   const e = await window.skuConnect.profilAnlegen(pfad, gewaehlterPlatz, name);
   if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
   const p = e.profil;
+  listeAuffrischen(li);
   ergebnis(li, (vorhandenerName ? "Überschrieben: " : "Angelegt: ") + p.name,
     ["Profil " + p.name + (vorhandenerName ? " überschrieben" : " angelegt"),
      "Gelesen von Platz " + gewaehlterPlatz,
@@ -1007,6 +1015,7 @@ async function profilWeg(li) {
   const name = li.dataset.ziel;
   const e = await window.skuConnect.profilLoeschen(name);
   if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  listeAuffrischen(li);
   ergebnis(li, "Profil " + e.geloescht + " gelöscht",
     ["Gelöscht: " + e.geloescht,
      "Die Speicherplätze bleiben, wie sie sind",
@@ -1668,7 +1677,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.50"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.51"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;

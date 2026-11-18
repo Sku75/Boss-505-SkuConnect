@@ -1,5 +1,10 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.51, 18.11.2026
+Ein neu angelegtes Profil fehlte in der Liste, bis man das Programm neu
+startete. Die Liste der Profile wird nach dem Anlegen und nach dem
+Loeschen jetzt neu gelesen, sobald man den Ordner wieder oeffnet.
+
 Version 0.50, 18.11.2026
 Werte liessen sich im Programm gar nicht setzen. Enter auf einem Wert hat
 nichts getan, ohne Fehlermeldung.
