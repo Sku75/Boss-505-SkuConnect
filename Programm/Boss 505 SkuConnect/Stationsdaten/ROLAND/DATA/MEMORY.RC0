@@ -7836,7 +7836,7 @@
 	<Lvl>50</Lvl>
 	<Ptn>0</Ptn>
 	<Bt>2</Bt>
-	<LineOut>1</LineOut>
+	<LineOut>0</LineOut>
 	<RecCnt>0</RecCnt>
 	<PlyCnt>0</PlyCnt>
 	<Stp>1</Stp>
