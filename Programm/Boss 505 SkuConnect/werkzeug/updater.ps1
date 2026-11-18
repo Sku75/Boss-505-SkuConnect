@@ -1,4 +1,4 @@
-# Boss 505 SkuConnect aktualisieren.
+﻿# Boss 505 SkuConnect aktualisieren.
 #
 # Holt den aktuellen Stand aus dem GitHub-Repository und legt ihn ueber den
 # Programmordner.
@@ -6,13 +6,19 @@
 # node_modules bleibt unberuehrt, das ist das Laufzeugs von Electron und steht
 # nicht im Repository.
 #
-# Profile und Stationsdaten werden nur ergaenzt: was dort fehlt, kommt dazu,
+# Profile und Stationsdaten werden nur ergänzt: was dort fehlt, kommt dazu,
 # was schon liegt, bleibt. So wandern neue Profile mit, ohne eigene zu
 # ueberschreiben, und ein frischer Rechner bekommt den Stand der Station
 # gleich mitgeliefert.
 #
-# Das Ergebnis kommt als Fenster, nicht als Konsolentext. Ein Fenster liest
-# die Sprachausgabe von allein vor, Konsolentext nicht.
+# Das Ergebnis kommt als Fenster, nicht als Konsolentext. Konsolentext liest
+# die Sprachausgabe nicht von allein vor.
+#
+# Das Fenster hat oben ein Textfeld mit dem Ergebnis und darunter eine
+# Schaltflaeche Schliessen. Das Textfeld bekommt den Fokus, darum liest die
+# Sprachausgabe den Text sofort, und man kann ihn mit den Pfeiltasten Zeile
+# fuer Zeile nachlesen. Mit Tabulator geht es zur Schaltflaeche, Enter und
+# Escape schließen ebenfalls.
 
 param([string]$Programm = "")
 
@@ -41,14 +47,47 @@ function NurFehlendeKopieren($quelle, $ziel) {
 }
 
 function Sagen($text, $titel) {
-  [System.Windows.Forms.MessageBox]::Show($text, $titel,
-    [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Information) | Out-Null
+  Add-Type -AssemblyName System.Drawing | Out-Null
+
+  $form = New-Object System.Windows.Forms.Form
+  $form.Text = $titel
+  $form.StartPosition = "CenterScreen"
+  $form.FormBorderStyle = "FixedDialog"
+  $form.MinimizeBox = $false
+  $form.MaximizeBox = $false
+  $form.TopMost = $true
+  $form.ClientSize = New-Object System.Drawing.Size(600, 340)
+
+  $feld = New-Object System.Windows.Forms.TextBox
+  $feld.Multiline = $true
+  $feld.ReadOnly = $true
+  $feld.ScrollBars = "Vertical"
+  $feld.WordWrap = $true
+  $feld.Text = $text
+  $feld.AccessibleName = "Ergebnis"
+  $feld.TabIndex = 0
+  $feld.SetBounds(12, 12, 576, 268)
+  $form.Controls.Add($feld)
+
+  $knopf = New-Object System.Windows.Forms.Button
+  $knopf.Text = "Schließen"
+  $knopf.AccessibleName = "Schließen"
+  $knopf.TabIndex = 1
+  $knopf.SetBounds(468, 294, 120, 32)
+  $knopf.DialogResult = [System.Windows.Forms.DialogResult]::OK
+  $form.Controls.Add($knopf)
+
+  $form.AcceptButton = $knopf
+  $form.CancelButton = $knopf
+  $form.Add_Shown({ $feld.Select(); $feld.SelectionStart = 0; $feld.SelectionLength = 0 })
+
+  $form.ShowDialog() | Out-Null
+  $form.Dispose()
 }
 
 try {
   if (-not $Programm -or -not (Test-Path (Join-Path $Programm "package.json"))) {
-    Sagen "Der Programmordner wurde nicht gefunden.`r`n`r`nGesucht wurde hier:`r`n$Programm`r`n`r`nStarte Boss 505 SkuConnect einmal, dann legt es diese Datei neu an." "Update nicht moeglich"
+    Sagen "Der Programmordner wurde nicht gefunden.`r`n`r`nGesucht wurde hier:`r`n$Programm`r`n`r`nStarte Boss 505 SkuConnect einmal, dann legt es diese Datei neu an." "Update nicht möglich"
     exit 0
   }
 
@@ -64,7 +103,7 @@ try {
     $code = $null
     if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode }
     if ($code -eq 404) {
-      Sagen "Das Repository ist von aussen nicht lesbar.`r`n`r`nEntweder steht es auf privat, dann muss es auf oeffentlich gestellt werden, oder der Name hat sich geaendert.`r`n`r`nDeine Fassung hier: $hier" "Kein Zugriff"
+      Sagen "Das Repository ist von außen nicht lesbar.`r`n`r`nEntweder steht es auf privat, dann muss es auf oeffentlich gestellt werden, oder der Name hat sich geändert.`r`n`r`nDeine Fassung hier: $hier" "Kein Zugriff"
     } else {
       Sagen "Die Verbindung zu GitHub hat nicht geklappt.`r`n`r`n$($_.Exception.Message)`r`n`r`nDeine Fassung hier: $hier" "Keine Verbindung"
     }
@@ -77,7 +116,7 @@ try {
 
   # Laeuft das Programm noch, waeren die Dateien gesperrt.
   if (-not $nurErgaenzenLauf -and (Get-Process electron -ErrorAction SilentlyContinue)) {
-    Sagen "Boss 505 SkuConnect laeuft noch.`r`n`r`nBitte das Programm schliessen und dieses Update danach noch einmal starten.`r`n`r`nHier: $hier`r`nIm Netz: $dort" "Erst schliessen"
+    Sagen "Boss 505 SkuConnect läuft noch.`r`n`r`nBitte das Programm schließen und dieses Update danach noch einmal starten.`r`n`r`nHier: $hier`r`nIm Netz: $dort" "Erst schließen"
     exit 0
   }
 
@@ -90,7 +129,7 @@ try {
   $wurzel = Get-ChildItem -Path $temp -Directory | Select-Object -First 1
   $neu = Join-Path $wurzel.FullName "Programm\Boss 505 SkuConnect"
   if (-not (Test-Path (Join-Path $neu "package.json"))) {
-    Sagen "Das heruntergeladene Paket sieht anders aus als erwartet.`r`n`r`nEs wurde nichts geaendert." "Abgebrochen"
+    Sagen "Das heruntergeladene Paket sieht anders aus als erwartet.`r`n`r`nEs wurde nichts geändert." "Abgebrochen"
     Remove-Item $temp -Recurse -Force -ErrorAction SilentlyContinue
     exit 0
   }
@@ -117,7 +156,7 @@ try {
 
   if ($nurErgaenzenLauf) {
     if ($ergaenzt -gt 0) {
-      Sagen "Das Programm war schon aktuell, Version $hier.`r`n`r`n$ergaenzt Dateien bei Profilen und Stationsdaten ergaenzt." "Ergaenzt"
+      Sagen "Das Programm war schon aktuell, Version $hier.`r`n`r`n$ergaenzt Dateien bei Profilen und Stationsdaten ergänzt." "Ergänzt"
     } else {
       Sagen "Alles aktuell.`r`n`r`nVersion $hier, und bei Profilen und Stationsdaten fehlte nichts." "Nichts zu tun"
     }
@@ -126,7 +165,7 @@ try {
 
   $jetzt = (Get-Content (Join-Path $Programm "package.json") -Raw | ConvertFrom-Json).version
   if ($jetzt -eq $dort) {
-    $dazu = if ($ergaenzt -gt 0) { "`r`n$ergaenzt Dateien bei Profilen und Stationsdaten ergaenzt." } else { "" }
+    $dazu = if ($ergaenzt -gt 0) { "`r`n$ergaenzt Dateien bei Profilen und Stationsdaten ergänzt." } else { "" }
     Sagen "Aktualisiert auf Version $jetzt.`r`n`r`nVorher: $hier`r`n$zahl Posten erneuert.$dazu`r`n`r`nVorhandene Profile und Stationsdaten bleiben, wie sie sind.`r`n`r`nDie Neuerungen stehen in Patchnotes.txt im Programmordner." "Fertig"
   } else {
     Sagen "Die Dateien wurden kopiert, aber die Versionsnummer stimmt nicht.`r`n`r`nErwartet: $dort`r`nGefunden: $jetzt`r`n`r`nBitte im Chat melden." "Bitte pruefen"

@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.58, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.59, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -1795,7 +1795,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.58"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.59"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;

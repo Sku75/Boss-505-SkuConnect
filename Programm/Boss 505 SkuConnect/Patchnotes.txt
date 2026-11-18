@@ -1,5 +1,16 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.59, 18.11.2026
+Das Ergebnisfenster des Updaters ist neu gebaut. Es hat jetzt oben ein
+Textfeld mit dem Ergebnis und darunter eine Schaltfläche Schließen.
+Das Textfeld bekommt den Fokus, die Sprachausgabe liest es sofort vor,
+und mit den Pfeiltasten kann man Zeile für Zeile nachlesen. Mit Tabulator
+geht es zur Schaltfläche, Enter und Escape schließen auch.
+Vorher war es ein einfaches Meldungsfenster, dessen Text sich nicht
+nachlesen liess.
+Die Datei updater.ps1 trägt jetzt eine Byte-Marke, damit PowerShell die
+Umlaute richtig liest. Die Meldungen stehen dadurch in richtigem Deutsch.
+
 Version 0.58, 18.11.2026
 Der Updater sieht jetzt auch bei gleicher Version nach, ob Profile oder
 Stationsdaten fehlen, und ergaenzt sie. Profile aendern sich ohne neue
