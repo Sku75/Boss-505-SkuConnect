@@ -1,5 +1,11 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.49, 18.11.2026
+Der Rhythmus-Eintrag hiess Nur auf Kopfhoerer mit An und Aus, und das war
+verdreht zu lesen. Er heisst jetzt Rhythmus auf die Box, mit den Werten
+Aus, nur auf dem Kopfhoerer und An, Box und Kopfhoerer.
+In der Datei ist das Feld Rhythm Line Out. Der Werkswert ist An.
+
 Version 0.48, 24.10.2026
 Vier Felder sind entsperrt, die Wertelisten stammen aus dem Feldmodell des
 Projekts rc505-editor und liegen als Nachschlagewerk im Ordner Fremdquellen.

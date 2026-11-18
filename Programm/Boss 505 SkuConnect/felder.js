@@ -265,7 +265,8 @@ const FELDER = {
   "RHYTHM.Sw":      { text: "Rhythmus", art: "liste", werte: AUS_AN },
   "RHYTHM.Lvl":     { text: "Rhythmus-Pegel, Gerät zeigt das Doppelte", art: "zahl", min: 0, max: 100 },
   "RHYTHM.Ptn":     { text: "Muster", art: "zahl", min: 0, max: 84 },
-  "RHYTHM.LineOut": { text: "Nur auf Kopfhörer", art: "liste", werte: AUS_AN },
+  "RHYTHM.LineOut": { text: "Rhythmus auf die Box", art: "liste",
+                      werte: ["Aus, nur auf dem Kopfhörer", "An, Box und Kopfhörer"] },
   "RHYTHM.RecCnt":  { text: "Einzähler vor Aufnahme", art: "liste", werte: AUS_AN },
   "RHYTHM.PlyCnt":  { text: "Einzähler vor Wiedergabe", art: "liste", werte: AUS_AN },
 
