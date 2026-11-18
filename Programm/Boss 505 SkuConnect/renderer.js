@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.53, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.54, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -484,10 +484,13 @@ async function quelleSichern() {
 async function laden(li) {
   const art = li.dataset.laden;
 
-  // Die Listen des Live-Bereichs brauchen keine Stationsdaten.
-  if (art === "midiplatz" || art === "midicc" || art === "midikanal") {
-    setzeKinder(li, liveLaden(art, li));
-    return true;
+  // Die Listen des Live-Bereichs brauchen keine Stationsdaten. Gefragt wird
+  // das Live-Studio selbst: kennt es die Ladeart, baut es die Liste. So muss
+  // hier nicht jede einzelne Art noch einmal aufgezaehlt werden, und eine
+  // neue Liste im Live-Bereich funktioniert ohne Aenderung an dieser Stelle.
+  if (typeof liveLaden === "function") {
+    const kinder = liveLaden(art, li);
+    if (kinder) { setzeKinder(li, kinder); return true; }
   }
 
   const pfad = await quelleSichern();
@@ -1741,7 +1744,7 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.53"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.54"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;

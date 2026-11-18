@@ -1,5 +1,14 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.54, 18.11.2026
+Metronom einstellen liess sich nicht oeffnen, das Untermenue blieb leer.
+Ursache: die Stelle, die Listen des Live-Bereichs baut, kannte nur drei
+feste Ladearten und hat die neuen des Metronoms nicht durchgelassen.
+Jetzt wird das Live-Studio selbst gefragt: kennt es die Ladeart, baut es
+die Liste. Damit laufen Schlaege je Takt, Klang, Lautstaerke, Tempoquelle,
+eigenes Tempo und Uhr pruefen. Neue Listen im Live-Bereich brauchen an
+dieser Stelle keine Aenderung mehr.
+
 Version 0.53, 18.11.2026
 Das Menue eines Profils ist ueberarbeitet. Es hat jetzt:
 Auf Platz schreiben, darin alle 99 Plaetze mit Namen und Spurzahl, je
