@@ -1,5 +1,22 @@
 Boss 505 SkuConnect Patchnotes
 
+Version 0.53, 18.11.2026
+Das Menue eines Profils ist ueberarbeitet. Es hat jetzt:
+Auf Platz schreiben, darin alle 99 Plaetze mit Namen und Spurzahl, je
+Platz eine Rueckfrage.
+Auf alle leeren Speicherplaetze schreiben, wie bisher.
+Ueberschreiben mit dem Stand von, darin alle Plaetze zur Auswahl.
+Umbenennen, Loeschen, und zuletzt Gewaehlten Platz auf Boss-Standard
+zuruecksetzen.
+Weggefallen sind Auf Platz 10 schreiben und Ueberschreiben mit dem Stand
+von Platz 10. Beide haengten am gewaehlten Platz und waren so nicht
+brauchbar.
+Jede Rueckfrage schliesst sich jetzt, sobald sie erledigt ist. Der Fokus
+geht stumm auf die Zeile zurueck, die sie ausgeloest hat, damit die
+Ansage des Ergebnisses nicht unterbrochen wird. Gilt auch fuer Loeschen
+und fuer das Zuruecksetzen.
+Die Ansage nennt am Ende, dass die Station aus und wieder ein muss.
+
 Version 0.52, 18.11.2026
 Das Auffrischen der Profilliste sucht jetzt von der gedrueckten Zeile aus
 nach oben, bis der Ordner kommt, in dem Neues Profil erstellen steht.

@@ -1,4 +1,4 @@
-// Boss 505 SkuConnect Version 0.52, Werkstatt und Live-Studio.
+// Boss 505 SkuConnect Version 0.53, Werkstatt und Live-Studio.
 //
 // Bedienung:
 //   Pfeil hoch und runter   wandern innerhalb der Ebene
@@ -526,17 +526,49 @@ async function laden(li) {
 
   if (art === "profil") {
     const name = li.dataset.ziel;
-    const platz = gewaehlterPlatz ? String(gewaehlterPlatz).padStart(2, "0") : null;
     setzeKinder(li, [
-      { typ: "aktion", id: "profil-platz", ziel: name,
-        text: platz ? "Auf Platz " + platz + " schreiben" : "Auf den gewählten Platz schreiben, noch keiner gewählt" },
+      { typ: "ordner", laden: "profil-ziel", ziel: name, text: "Auf Platz schreiben" },
       { typ: "ordner", laden: "profil-leer-frage", ziel: name,
         text: "Auf alle leeren Speicherplätze schreiben" },
-      { typ: "aktion", id: "profil-ueberschreiben", ziel: name,
-        text: platz ? "Überschreiben mit dem Stand von Platz " + platz : "Überschreiben mit dem gewählten Platz" },
+      { typ: "ordner", laden: "profil-quelle", ziel: name, text: "Überschreiben mit dem Stand von" },
       { typ: "aktion", id: "profil-umbenennen", ziel: name, text: "Umbenennen" },
       { typ: "ordner", laden: "profil-loesch-frage", ziel: name, text: "Löschen" },
-      { typ: "ordner", laden: "initfrage", text: "Gewählten Platz auf Werkszustand zurücksetzen" }
+      { typ: "ordner", laden: "initfrage", text: "Gewählten Platz auf Boss-Standard zurücksetzen" }
+    ]);
+    return true;
+  }
+
+  // Zielplatz für dieses Profil. Alle 99 Plätze, mit Namen und Spurzahl,
+  // damit man hört, ob dort schon etwas liegt.
+  if (art === "profil-ziel" || art === "profil-quelle") {
+    const name = li.dataset.ziel;
+    const ziel = art === "profil-ziel";
+    const pfad = await quelleSichern();
+    if (!pfad) { sage("Nur mit angeschlossener Station möglich"); return false; }
+    const e = await window.skuConnect.speicherplaetzeLesen(pfad);
+    if (!e.ok) { sage("Fehler: " + e.fehler); return false; }
+    setzeKinder(li, e.plaetze.map(pl => {
+      const kopf = "Platz " + String(pl.nummer).padStart(2, "0")
+        + (ziel ? " als Ziel, " : ", ") + pl.name.trim()
+        + (pl.spuren ? ", " + pl.spuren + (pl.spuren === 1 ? " Aufnahme" : " Aufnahmen") : "");
+      return ziel
+        ? { typ: "ordner", laden: "profil-ziel-frage", ziel: name, nummer: pl.nummer, text: kopf }
+        : { typ: "aktion", id: "profil-von-platz", ziel: name, nummer: pl.nummer, text: kopf };
+    }));
+    return true;
+  }
+
+  if (art === "profil-ziel-frage") {
+    const name = li.dataset.ziel;
+    const nummer = li.dataset.nummer;
+    setzeKinder(li, [
+      { typ: "aktion", id: "profil-abbrechen", text: "Abbrechen, nichts ändern" },
+      { typ: "aktion", id: "profil-einen", ziel: name, nummer,
+        text: "Ja, Platz " + String(nummer).padStart(2, "0") + " mit " + name + " überschreiben",
+        vorschau: ["Danach trägt Platz " + nummer + " die Einstellungen von " + name,
+                   "Der Name des Platzes bleibt, wie er ist",
+                   "Aufnahmen auf dem Platz bleiben liegen",
+                   "Der Stand davor liegt in Git"] }
     ]);
     return true;
   }
@@ -558,7 +590,8 @@ async function laden(li) {
         vorschau: ["Danach tragen diese Plätze das Profil " + name,
                    "Plätze: " + liste,
                    "Die Namen der Plätze bleiben, wie sie sind",
-                   "Aufnahmen sind dort keine, darum geht nichts verloren"] }
+                   "Aufnahmen sind dort keine, darum geht nichts verloren",
+                   "Danach die Station aus und wieder ein"] }
     ]);
     return true;
   }
@@ -899,8 +932,11 @@ async function platzInitialisieren(li) {
   const nummer = parseInt(li.dataset.nummer, 10);
   sage("Setze Platz " + nummer + " zurück");
   const e = await window.skuConnect.platzInitialisieren(pfad, nummer);
-  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
-  ergebnis(li, e.bestaetigt ? "Platz " + nummer + " zurückgesetzt" : "Achtung, nicht bestätigt", [
+  const ziel = rueckfrageSchliessen(li) || li;
+  if (!e.ok) { ergebnis(ziel, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(ziel, e.bestaetigt
+      ? "Platz " + nummer + " auf Boss-Standard, Station aus und wieder ein"
+      : "Achtung, nicht bestätigt", [
     "Platz " + nummer + " steht wieder auf Werkszustand",
     "Die Aufnahmen dieses Platzes sind gelöscht",
     "Der Stand davor liegt in Git"]);
@@ -951,28 +987,43 @@ function profilZeilen(profil) {
 
 // Legt ein Profil an oder überschreibt eines mit dem Stand des gewählten
 // Platzes. Gespeichert wird nur, was vom Werkszustand abweicht.
-async function profilNeu(li, vorhandenerName) {
+async function profilNeu(li, vorhandenerName, quellplatz) {
   const pfad = await quelleSichern();
   if (!pfad) { sage("Nur mit angeschlossener Station möglich"); return; }
-  if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return; }
+  const quelle = quellplatz || gewaehlterPlatz;
+  if (!quelle) { sage("Erst einen Speicherplatz wählen"); return; }
   let name = vorhandenerName;
   if (!name) {
     name = await frageText("Name des Profils, höchstens 12 Zeichen", "");
     fokussiere(li);
     if (name === null) { sage("Abgebrochen"); return; }
   }
-  const e = await window.skuConnect.profilAnlegen(pfad, gewaehlterPlatz, name);
+  const e = await window.skuConnect.profilAnlegen(pfad, quelle, name);
   if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
   const p = e.profil;
   listeAuffrischen(li);
-  ergebnis(li, (vorhandenerName ? "Überschrieben: " : "Angelegt: ") + p.name,
+  const ziel = quellplatz ? (rueckfrageSchliessen(li) || li) : li;
+  ergebnis(ziel, (vorhandenerName ? "Überschrieben: " : "Angelegt: ") + p.name
+      + ", " + p.werte.length + " Abweichungen",
     ["Profil " + p.name + (vorhandenerName ? " überschrieben" : " angelegt"),
-     "Gelesen von Platz " + gewaehlterPlatz,
+     "Gelesen von Platz " + quelle,
      p.werte.length + " Abweichungen vom Werkszustand festgehalten",
      "Der Name des Platzes gehört nicht dazu"]);
 }
 
-// Schreibt ein Profil auf den gewählten Platz oder auf alle leeren.
+// Schliesst eine erledigte Rückfrage und setzt den Fokus auf die Zeile,
+// die sie ausgelöst hat. Stumm, damit die Ansage des Ergebnisses nicht
+// von der Zeile überschrieben wird.
+function rueckfrageSchliessen(optionLi) {
+  const ausloeser = elternVon(optionLi);
+  if (!ausloeser) return null;
+  schliesse(ausloeser);
+  ausloeser.dataset.geladen = "";
+  fokussiere(ausloeser, true);
+  return ausloeser;
+}
+
+// Schreibt ein Profil auf einen Platz oder auf alle leeren.
 async function profilSchreiben(li, wohin) {
   const name = li.dataset.ziel;
   const pfad = await quelleSichern();
@@ -984,22 +1035,27 @@ async function profilSchreiben(li, wohin) {
     nummern = l.nummern;
     sage("Schreibe auf " + nummern.length + " Plätze, das dauert einen Moment");
   } else {
-    if (!gewaehlterPlatz) { sage("Erst einen Speicherplatz wählen"); return; }
-    nummern = [gewaehlterPlatz];
+    nummern = [parseInt(li.dataset.nummer, 10)];
   }
   const e = await window.skuConnect.profilAnwenden(pfad, name, nummern);
-  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  const ziel = rueckfrageSchliessen(li) || li;
+  if (!e.ok) { ergebnis(ziel, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
   if (e.leer) {
-    ergebnis(li, "Profil ist leer", ["Das Profil " + name + " hält keine Abweichung fest",
-      "Der gewählte Platz stand auf Werkszustand, als es angelegt wurde"]);
+    ergebnis(ziel, "Profil ist leer", ["Das Profil " + name + " hält keine Abweichung fest",
+      "Der Platz stand auf Werkszustand, als es angelegt wurde"]);
     return;
   }
-  ergebnis(li, e.bestaetigt ? "Geschrieben, " + e.plaetze + " Plätze" : "Achtung, Kontrolle fehlgeschlagen",
+  const kurz = e.plaetze === 1
+    ? "Platz " + nummern[0] + " geschrieben, Station aus und wieder ein"
+    : "Geschrieben auf " + e.plaetze + " Plätze, Station aus und wieder ein";
+  ergebnis(ziel, e.bestaetigt ? kurz : "Achtung, Kontrolle fehlgeschlagen",
     e.bestaetigt
       ? ["Profil " + name + " geschrieben",
          "Plätze: " + nummern.join(", "),
          e.felder + " Werte gesetzt",
          "Die Namen der Plätze sind unberührt",
+         "Die Station liest die Datei nur beim Einschalten",
+         "Darum jetzt aus und wieder ein",
          "Der Stand davor liegt in Git"]
       : [e.abweichungen + " Felder stimmen nach dem Schreiben nicht",
          "Den Stand am Gerät prüfen",
@@ -1021,9 +1077,10 @@ async function profilUmbenennen(li) {
 async function profilWeg(li) {
   const name = li.dataset.ziel;
   const e = await window.skuConnect.profilLoeschen(name);
-  if (!e.ok) { ergebnis(li, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
   listeAuffrischen(li);
-  ergebnis(li, "Profil " + e.geloescht + " gelöscht",
+  const ziel = rueckfrageSchliessen(li) || li;
+  if (!e.ok) { ergebnis(ziel, "Fehlgeschlagen", ["Fehler", e.fehler]); return; }
+  ergebnis(ziel, "Profil " + e.geloescht + " gelöscht",
     ["Gelöscht: " + e.geloescht,
      "Die Speicherplätze bleiben, wie sie sind",
      "Die Liste der Profile frischt beim nächsten Öffnen auf"]);
@@ -1684,14 +1741,15 @@ async function aktiviere(li) {
       else ergebnis(li, "Konnte den Ordner nicht bestimmen", ["Fehler", e.fehler]);
       return;
     }
-    case "ueber": sage("Boss 505 SkuConnect Version 0.52"); return;
+    case "ueber": sage("Boss 505 SkuConnect Version 0.53"); return;
     case "station-suchen": await stationSuchen(li); return;
     case "platz-laden": await speicherplaetzeLaden(li); return;
     case "schritt": sage(li.dataset.text); return;
     case "profil-neu": await profilNeu(li); return;
-    case "profil-platz": await profilSchreiben(li, null); return;
     case "profil-alle": await profilSchreiben(li, "alle"); return;
-    case "profil-ueberschreiben": await profilNeu(li, li.dataset.ziel); return;
+    case "profil-einen": await profilSchreiben(li, "einer"); return;
+    case "profil-von-platz":
+      await profilNeu(li, li.dataset.ziel, parseInt(li.dataset.nummer, 10)); return;
     case "profil-umbenennen": await profilUmbenennen(li); return;
     case "profil-weg": await profilWeg(li); return;
     case "profil-abbrechen": sage("Abgebrochen, nichts geändert"); return;
