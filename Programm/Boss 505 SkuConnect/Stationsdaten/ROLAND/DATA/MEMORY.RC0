@@ -7865,7 +7865,7 @@
 </MASTER>
 <REC_OPTION>
 	<DubMod>0</DubMod>
-	<RecAct>0</RecAct>
+	<RecAct>1</RecAct>
 	<RecQtz>1</RecQtz>
 </REC_OPTION>
 <PLAY_OPTION>
